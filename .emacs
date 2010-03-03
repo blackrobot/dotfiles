@@ -34,7 +34,7 @@
 (setq-default indent-tabs-mode nil); ;; Use spaces for tabs only!
 
 ;; Fonts
-(set-default-font "monaco-10");
+(set-default-font "DejaVu Sans-10");
 
 ;; Highlight Column 80 in python mode
 ;;(require 'column-marker)
