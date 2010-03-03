@@ -6,8 +6,11 @@
 ;; colors!
 (progn (cd "~/emacs") (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'load-path "~/emacs")
-(require 'color-theme-wombat)
-(color-theme-wombat)
+(require 'color-theme)
+(color-theme-initialize)
+(load-file "~/emacs/color-theme-blackboard.el")
+(require 'color-theme-blackboard)
+(color-theme-blackboard)
 
 ;; php mode
 (load "php-mode")
@@ -31,7 +34,7 @@
 (setq-default indent-tabs-mode nil); ;; Use spaces for tabs only!
 
 ;; Fonts
-(set-default-font "monaco-11");
+(set-default-font "monaco-10");
 
 ;; Highlight Column 80 in python mode
 ;;(require 'column-marker)
@@ -62,7 +65,7 @@
 (setq make-backup-files nil)
 
 ;; Set a default starting directory
-(setq default-directory "/Users/damon/" )
+(setq default-directory "/home/damon/" )
 
 ;; magit for git!
 (when (equal system-type 'darwin)
@@ -71,8 +74,8 @@
 
 (require 'magit)
 
-(global-set-key (kbd "<s-S-return>") 'maximize-frame)
-(maximize-frame)
+;;(global-set-key (kbd "<s-S-return>") 'maximize-frame)
+;;(maximize-frame)
 
 ;; color my css yo!
 (defvar hexcolour-keywords
