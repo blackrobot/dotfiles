@@ -8,9 +8,9 @@
 (add-to-list 'load-path "~/emacs")
 (require 'color-theme)
 (color-theme-initialize)
-(load-file "~/emacs/color-theme-blackboard.el")
-(require 'color-theme-blackboard)
-(color-theme-blackboard)
+;;(load-file "~/emacs/color-theme-blackboard.el")
+(require 'color-theme-wombat)
+(color-theme-wombat)
 
 ;; php mode
 (load "php-mode")
@@ -47,6 +47,13 @@
 ;; (setq x-select-enable-clipboard t)
 ;; (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
+;; Yasnippet for templated code-completion
+(add-to-list 'load-path
+             "~/emacs/plugins/yasnippet")
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory "~/emacs/plugins/yasnippet/snippets")
+
 ;; predictive completion
 (require 'pabbrev )
 (setq pabbrev-read-only-error nil)
@@ -55,8 +62,24 @@
 (autoload 'javascript-mode "javascript" nil t)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 
+;; python
+(add-hook 'python-mode-hook '(lambda () (define-key python-mode-map "\C-m" 'newline-and-indent)))
+
 ;; django-mode
 (load "django-mode.elc")
+
+;; use pyFlakes
+(when (load "flymake" t) 
+  (defun flymake-pyflakes-init () 
+    (let* ((temp-file (flymake-init-create-temp-buffer-copy 
+                       'flymake-create-temp-inplace)) 
+           (local-file (file-relative-name 
+                        temp-file 
+                        (file-name-directory buffer-file-name)))) 
+      (list "pyflakes" (list local-file)))) 
+  (add-to-list 'flymake-allowed-file-name-masks 
+               '("\\.py\\'" flymake-pyflakes-init)))
+(add-hook 'python-mode-hook 'flymake-mode)
 
 ;; haml-mode
 (require 'haml-mode)
