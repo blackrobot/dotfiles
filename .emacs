@@ -88,7 +88,7 @@
 (setq make-backup-files nil)
 
 ;; Set a default starting directory
-(setq default-directory "/home/damon/" )
+(setq default-directory "~/" )
 
 ;; magit for git!
 (when (equal system-type 'darwin)
