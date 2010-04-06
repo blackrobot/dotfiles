@@ -44,8 +44,8 @@
 (global-linum-mode)
 
 ;; let me copy and paste between emacs and other applications! Ubuntu only
-;; (setq x-select-enable-clipboard t)
-;; (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 ;; Yasnippet for templated code-completion
 (add-to-list 'load-path
