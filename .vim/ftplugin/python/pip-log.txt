@@ -1,0 +1,42 @@
+Downloading/unpacking ast
+  Getting page http://pypi.python.org/simple/ast
+  Could not fetch URL http://pypi.python.org/simple/ast: HTTP Error 404: Not Found
+  Will skip URL http://pypi.python.org/simple/ast when looking for download links for ast
+  Getting page http://pypi.python.org/simple/
+  URLs to search for versions for ast:
+  Could not find any downloads that satisfy the requirement ast
+No distributions at all found for ast
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1750, in install_files
+    url = finder.find_requirement(req_to_install, upgrade=self.upgrade)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1029, in find_requirement
+    raise DistributionNotFound('No distributions at all found for %s' % req)
+DistributionNotFound: No distributions at all found for ast
+------------------------------------------------------------
+/usr/bin/pip run on Mon Apr 26 13:29:54 2010
+Requirement 'git+git://github.com/kevinw/pyflakes.git' looks like a filename, but the file does not exist
+Unpacking ./git+git:/github.com/kevinw/pyflakes.git
+Exception:
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 252, in main
+    self.run(options, args)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 408, in run
+    requirement_set.install_files(finder, force_root_egg_info=self.bundle)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1757, in install_files
+    self.unpack_url(url, location)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1817, in unpack_url
+    self.unpack_file(source, location, content_type, link)
+  File "/usr/lib/python2.6/dist-packages/pip.py", line 1917, in unpack_file
+    or tarfile.is_tarfile(filename)
+  File "/usr/lib/python2.6/tarfile.py", line 2523, in is_tarfile
+    t = open(name)
+  File "/usr/lib/python2.6/tarfile.py", line 1647, in open
+    return func(name, "r", fileobj, **kwargs)
+  File "/usr/lib/python2.6/tarfile.py", line 1709, in gzopen
+    fileobj = bltn_open(name, mode + "b")
+IOError: [Errno 2] No such file or directory: '/home/damon/dotfiles/.vim/ftplugin/python/git+git:/github.com/kevinw/pyflakes.git'

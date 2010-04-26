@@ -7,9 +7,19 @@ set smartindent
 set ts=3
 set shiftwidth=3
 set softtabstop=3
+set wrap
+set linebreak
+set nolist
 
 let no_buffers_menu=1
 set mousemodel=popup
+
+filetype on
+filetype plugin on
+
+let mapleader = ","
+
+map <leader>t :FuzzyFinderTextMate<CR>
 
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``

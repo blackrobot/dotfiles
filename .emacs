@@ -44,8 +44,8 @@
 (global-linum-mode)
 
 ;; let me copy and paste between emacs and other applications! Ubuntu only
-;; (setq x-select-enable-clipboard t)
-;; (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 ;; Yasnippet for templated code-completion
 (add-to-list 'load-path
@@ -145,6 +145,23 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+;; Org-mode settings
+(setq load-path (cons "~/emacs/org" load-path))
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+;;(setq org-log-done t)
+;;(setq org-startup-indented t)
+;;(setq org-hide-leading-stars t)
+(setq org-directory "~/Dropbox/org")
+(setq org-agenda-files (list "~/Dropbox/org/work.org"
+                             "~/Dropbox/org/party.org" 
+                             "~/Dropbox/org/life.org"))
+
+;; remember mode
+(org-remember-insinuate)
 
 ;; scratch message
 (setq initial-scratch-message nil)
