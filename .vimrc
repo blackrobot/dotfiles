@@ -56,5 +56,8 @@ set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
 
 let g:closetag_html_style=1
 
+set guioptions-=m
+set guioptions-=T
+
 set t_Co=256
 colorscheme jellybeans
