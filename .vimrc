@@ -55,7 +55,6 @@ set laststatus=2
 set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
 
 let g:closetag_html_style=1
-autocmd FileType html ts=2 sts=2 sw=2 expandtab
 
 set guioptions-=m
 set guioptions-=T
