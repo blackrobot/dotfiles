@@ -55,5 +55,8 @@ set guioptions-=T
 " source $VIMRUNTIME/mswin.vim
 " behave mswin
 
+" remap ctrl+w so we can naviget between splits (vert/horiz)
+map <C-w> :wincmd w
+
 set t_Co=256
 colorscheme jellybeans
