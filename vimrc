@@ -37,26 +37,23 @@ map <leader>f :FuzzyFinderTextMate<CR>
 source ~/Workspace/dotfiles/vim/source/python-ide.vim
 
 " This is for writing django html template files
-fun! s:SelectHTML()
-	let n = 1
-	while n < 50 && n < line("$")
-		if getline(n) =~ '{%\s*\(extends\|block\|comment\|ssi\|if\|for\|blocktrans\)\>'
-			set ft=htmldjango
-			return
-		endif
-	endwhile
-endfun
-autocmd BufRead *.html setfiletype htmldjango
-let g:closetag_html_style=1
+" fun! s:SelectHTML()
+" 	let n = 1
+" 	while n < 50 && n < line("$")
+" 		if getline(n) =~ '{%\s*\(extends\|block\|comment\|ssi\|if\|for\|blocktrans\)\>'
+" 			set ft=htmldjango
+" 			return
+" 		endif
+" 	endwhile
+" endfun
+" autocmd BufRead *.html setfiletype htmldjango
+" let g:closetag_html_style=1
 
 set guioptions-=m
 set guioptions-=T
 
 " source $VIMRUNTIME/mswin.vim
 " behave mswin
-
-" remap ctrl+w so we can naviget between splits (vert/horiz)
-map <C-w> :wincmd w
 
 set t_Co=256
 colorscheme jellybeans

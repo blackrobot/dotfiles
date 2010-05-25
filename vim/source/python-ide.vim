@@ -163,7 +163,6 @@ set title               " show title in console title bar
 set ttyfast             " smoother changes
 set shortmess=atI       " abbreviate messages and suppress welcome
 set nostartofline       " don't jump to first character when paging
-set nowrap              " dont wrap long lines
 set wildmode=list:longest " enable nice tab completion on command line
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.pyo,*.DS_Store,*.db  " ignore some file types
 if has("extra_search")
@@ -187,7 +186,7 @@ if !isdirectory(&backupdir)
 endif
 
 "" Hilight ends of long lines and unwanted whitespace
-autocmd BufWinEnter * let w:m1=matchadd('Search', '\%>80v.\+', -1)
+"" autocmd BufWinEnter * let w:m1=matchadd('Search', '\%>80v.\+', -1)
 
 " Show trailing whitespace and spaces before tabs
 hi link localWhitespaceError Error
@@ -208,10 +207,9 @@ autocmd BufRead,BufNewFile *.js set ft=javascript.jquery
 :imap <C-tab> <ESC>:tabnext<cr>i
 :nmap <C-t> :tabnew<cr>
 :imap <C-t> <ESC>:tabnew<cr>i
-:map <C-w> :tabclose<cr>
 
 "" Closetag plugin
-" autocmd FileType djangohtml,html,xhtml,xml source ~/.vim/plugin/closetag.vim
+autocmd FileType djangohtml,html,xhtml,xml source ~/.vim/plugin/closetag.vim
 
 "" Sane omnicompletion
 let g:SuperTabDefaultCompletionType = "<c-x><c-O>"
@@ -225,7 +223,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 inoremap <Nul> @=(foldlevel('.')?'zM':'l')<CR>
 
 "" xml folding
-autocmd BufNewFile,BufRead *.xml,*.htm,*.html so XMLFolding
+"" autocmd BufNewFile,BufRead *.xml,*.htm,*.html so XMLFolding
 
 " ctrl+f should fullscreen
 nnoremap <c-f> :ZoomWin<CR>
