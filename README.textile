@@ -1,1 +1,3 @@
 just a handful of my dotfiles
+
+spidermonkey: http://packages.ubuntu.com/karmic/libmozjs0d & http://packages.ubuntu.com/hardy/amd64/spidermonkey-bin/download

@@ -1,3 +1,7 @@
+" This is my vimrc file. The first few lines are just general setup, there's
+" other stuff which is more specific to the language i'm using.
+"
+set encoding=utf-8
 set incsearch
 set ignorecase
 set smartcase
@@ -10,6 +14,14 @@ set softtabstop=3
 set wrap
 set linebreak
 set nolist
+set wildmenu
+set ruler
+set guioptions-=T
+set completeopt-=preview
+set gcr=a:blinkon0
+set cmdheight=2
+set laststatus=2
+set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
 
 let no_buffers_menu=1
 set mousemodel=popup
@@ -17,22 +29,14 @@ set mousemodel=popup
 filetype on
 filetype plugin on
 
+" This will enable fuzzy finder like textmate has.
 let mapleader = ","
+map <leader>f :FuzzyFinderTextMate<CR>
 
-map <leader>t :FuzzyFinderTextMate<CR>
+" This is for python
+source ~/Workspace/dotfiles/vim/source/python-ide.vim
 
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
-syntax enable
-
-set wildmenu
-set ruler
-set guioptions-=T
-set completeopt-=preview
-set gcr=a:blinkon0
-
-let g:explHideFiles='^\.,.*\.sw[po]$,.*\.pyc$'
-
+" This is for writing django html template files
 fun! s:SelectHTML()
 	let n = 1
 	while n < 50 && n < line("$")
@@ -42,25 +46,14 @@ fun! s:SelectHTML()
 		endif
 	endwhile
 endfun
-
-autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-let python_highlight_all=1
-let python_highlight_exceptions=0
-let python_highlight_builtins=0
-
 autocmd BufRead *.html setfiletype htmldjango
-
-set cmdheight=2
-set laststatus=2
-set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
-
 let g:closetag_html_style=1
 
 set guioptions-=m
 set guioptions-=T
 
-source $VIMRUNTIME/mswin.vim
-behave mswin
+" source $VIMRUNTIME/mswin.vim
+" behave mswin
 
 set t_Co=256
 colorscheme jellybeans

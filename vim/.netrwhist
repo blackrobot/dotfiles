@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/damon/.prism/blender mail/i9zf9x5e.default'
-let g:netrw_dirhist_2='/home/damon/dotfiles/emacs'
-let g:netrw_dirhist_3='/var/www/nolabels/public/sites/all/modules/civicrm'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/root/.vim-old/.vim'
+let g:netrw_dirhist_2='/root/.vim/after/ftplugin'
+let g:netrw_dirhist_3='/root/.vim-old'
+let g:netrw_dirhist_4='/root/.vim/ftplugin/python/pyflakes'
+let g:netrw_dirhist_5='/root/xanview-dist/xanview'
+let g:netrw_dirhist_6='/root/digi604-django-cms-2.0-3b32886/cms/admin/dialog'
+let g:netrw_dirhist_7='/home/damon/Workspace/django-projects/discovery/src'
