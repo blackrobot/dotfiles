@@ -12,6 +12,14 @@
 (require 'color-theme-wombat)
 (color-theme-wombat)
 
+;; VI Mode
+; Use vi mode.  Remove this line for plain emacs.
+(setq term-setup-hook 'vip-mode)
+; Hide because dangerous in vi mode
+(global-unset-key "\e\e")
+; Turn off binding of colon to eval
+(put 'eval-expression 'disabled nil)
+
 ;; php mode
 (load "php-mode")
 (add-to-list 'auto-mode-alist

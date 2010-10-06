@@ -29,7 +29,7 @@ fu Select_c_style()
     if search('^\t', 'n', 150)
         set shiftwidth=8
         set noexpandtab
-    el 
+    el
         set shiftwidth=4
         set expandtab
     en
@@ -238,7 +238,7 @@ set tabstop=8
 set shiftwidth=4
 set smarttab
 set expandtab
-set textwidth=79
+" set textwidth=79
 set softtabstop=4
 set autoindent
 syntax on
