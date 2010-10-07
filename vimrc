@@ -18,7 +18,6 @@ set wildmenu
 set ruler
 set guioptions-=T
 set completeopt-=preview
-set gcr=a:blinkon0
 set cmdheight=2
 set laststatus=2
 set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
@@ -36,24 +35,8 @@ map <leader>f :FuzzyFinderTextMate<CR>
 " This is for python
 source ~/Workspace/dotfiles/vim/source/python-ide.vim
 
-" This is for writing django html template files
-" fun! s:SelectHTML()
-" 	let n = 1
-" 	while n < 50 && n < line("$")
-" 		if getline(n) =~ '{%\s*\(extends\|block\|comment\|ssi\|if\|for\|blocktrans\)\>'
-" 			set ft=htmldjango
-" 			return
-" 		endif
-" 	endwhile
-" endfun
-" autocmd BufRead *.html setfiletype htmldjango
-" let g:closetag_html_style=1
-
 set guioptions-=m
 set guioptions-=T
-
-" source $VIMRUNTIME/mswin.vim
-" behave mswin
 
 set t_Co=256
 colorscheme jellybeans

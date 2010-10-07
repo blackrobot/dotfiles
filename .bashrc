@@ -36,3 +36,4 @@ PS1='${debian_chroot:+($debian_chroot)}\[\e[34;22m\][\[\e[34;1m\]\t\[\e[34;22m\]
 #if [ -f /etc/bash_completion ]; then
 #    . /etc/bash_completion
 #fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
