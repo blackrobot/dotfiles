@@ -30,7 +30,7 @@ filetype plugin on
 
 " This will enable fuzzy finder like textmate has.
 let mapleader = ","
-map <leader>f :FuzzyFinderTextMate<CR>
+map <leader>f :FuzzyFinderFile<CR>
 
 " This is for python
 source ~/Workspace/dotfiles/vim/source/python-ide.vim
