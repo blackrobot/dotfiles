@@ -4,3 +4,4 @@
 .ropeproject
 *.swp
 *.swo
+.vim
