@@ -39,4 +39,6 @@ set guioptions-=m
 set guioptions-=T
 
 set t_Co=256
-colorscheme jellybeans
+" set background=light
+set background=dark
+colorscheme solarized
