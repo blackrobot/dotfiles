@@ -33,3 +33,11 @@ let mapleader = ","
 set t_Co=256
 set background=dark
 colorscheme solarized
+
+" Enable Autoloading for FileType
+filetype on
+filetype plugin on
+
+" Autoloads for Python
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=htmldjango.html " For SnipMate
