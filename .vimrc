@@ -1,6 +1,3 @@
-" This is my vimrc file. The first few lines are just general setup, there's
-" other stuff which is more specific to the language i'm using.
-"
 set encoding=utf-8
 set incsearch
 set ignorecase
@@ -25,18 +22,14 @@ set statusline=[%l,%c\ %P%M]\ %f\ %r%h%w
 let no_buffers_menu=1
 set mousemodel=popup
 
-filetype on
-filetype plugin on
-
-" This will enable fuzzy finder like textmate has.
-let mapleader = ","
-map <leader>f :FuzzyFinderFile<CR>
-
-" This is for python
-source ~/Workspace/dotfiles/vim/source/python-ide.vim
-
+" This will turn off the menu bars in gVim
 set guioptions-=m
 set guioptions-=T
 
+" Change the leader key to be a ',' (comma)
+let mapleader = ","
+
+" This will set the colorscheme
 set t_Co=256
-colorscheme jellybeans
+set background=dark
+colorscheme solarized
