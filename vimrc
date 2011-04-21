@@ -33,7 +33,7 @@ let mapleader = ","
 map <leader>f :FuzzyFinderFile<CR>
 
 " This is for python
-source ~/Workspace/dotfiles/vim/source/python-ide.vim
+source ~/Workspace/Config/dotfiles/vim/source/python-ide.vim
 
 set guioptions-=m
 set guioptions-=T
