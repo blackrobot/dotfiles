@@ -102,10 +102,6 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
-" TaskList
-map T :TaskList<CR>
-map P :TlistToggle<CR>
-
 " TagList
 let Tlist_Ctags_Cmd='/usr/bin/ctags' " point taglist to ctags
 let Tlist_Exit_OnlyWindow = 1 " Close vim when only taglist window left
