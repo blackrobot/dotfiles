@@ -85,7 +85,11 @@ endif
 
 " This will set the colorscheme
 set t_Co=256
-set background=dark
+if has("gui_running")
+	set background=dark
+else
+	set background=light
+endif
 colorscheme solarized
 
 " Copy & Paste <ctrl> C/V
