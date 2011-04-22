@@ -4,3 +4,5 @@
 .ropeproject
 *.swp
 *.swo
+build/
+.Vimball*

@@ -125,7 +125,7 @@ set iskeyword+=.
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
 map <F2> :marks 
-map <leader>f :FuzzyFinderTextMate<CR>
+map <leader>f :CommandT<CR>
 
 """"""""""""""""
 """" PYTHON """"
