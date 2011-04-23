@@ -106,6 +106,9 @@ let g:miniBufExplModSelTarget = 1
 map T :TaskList<CR>
 map P :TlistToggle<CR>
 
+" Yank Ring
+map <leader>y :YRShow<CR>
+
 " TagList
 let Tlist_Ctags_Cmd='/usr/bin/ctags' " point taglist to ctags
 let Tlist_Exit_OnlyWindow = 1 " Close vim when only taglist window left
