@@ -6,3 +6,4 @@
 *.swo
 build/
 .Vimball*
+.vim/ruby/command-t/
