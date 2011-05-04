@@ -7,3 +7,5 @@
 build/
 .Vimball*
 .vim/ruby/command-t/
+.vim/doc/tags
+.vim/doc/command-t.txt
