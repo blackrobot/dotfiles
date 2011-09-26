@@ -9,6 +9,7 @@ alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
 alias grep='grep --color'
 alias rm='rm -f'
+alias l='ls -al'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
