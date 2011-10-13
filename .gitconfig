@@ -28,3 +28,5 @@
     w = whatchanged
     pom = push origin master
     pop = push origin production
+[github]
+	user = damon

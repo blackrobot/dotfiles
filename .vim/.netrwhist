@@ -1,4 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/damon/Workspace/django-projects/no-labels/src/apps'
 let g:netrw_dirhist_2='/home/damon/Workspace/django-projects/no-labels/src/apps/abstract'
+let g:netrw_dirhist_3='/home/damon/.virtualenvs/aaas/lib/python2.6/site-packages/django/contrib/comments/views'
+let g:netrw_dirhist_4='/home/damon/.virtualenvs/aaas/src/django-cms-develop/cms/models'
+let g:netrw_dirhist_5='/home/damon/Workspace/django-projects/aaas/thinkfinity'
