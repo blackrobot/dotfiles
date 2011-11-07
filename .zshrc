@@ -27,16 +27,23 @@ source /usr/local/bin/virtualenvwrapper.sh
 export WORKSPACE="$HOME/Workspace"
 dj () {
 	cd "$WORKSPACE/django-projects/$1";
-	if [ -f "$WORKON_HOME/$1/bin/activate" ]; then
+   if [ "x$variable" = "x" ];
+	then
+		ls -alh
+	elif [ -f "$WORKON_HOME/$1/bin/activate" ];
+	then
 		source "$WORKON_HOME/$1/bin/activate";
-	elif [ -e "$WORKSPACE/django-projects/$1/local-env/bin/activate" ]; then
+	elif [ -e "$WORKSPACE/django-projects/$1/local-env/bin/activate" ];
+	then
 		source "$WORKSPACE/django-projects/$1/local-env/bin/activate";
 	fi
 }
 runsrv () {
-	if [ -f "source/manage.py" ]; then
+	if [ -f "source/manage.py" ];
+	then
 		python source/manage.py runserver $1;
-	elif [ -f "manage.py" ]; then
+	elif [ -f "manage.py" ];
+	then
 		python manage.py runserver $1;
 	fi
 }
