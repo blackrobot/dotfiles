@@ -124,7 +124,7 @@ set iskeyword+=.
 " Toggle Stuff
 map <F3> :NERDTreeToggle<CR>
 map <F4> :TlistToggle<CR>
-map <F2> :marks 
+map <F2> :marks
 map <leader>f :CommandT<CR>
 
 """"""""""""""""
@@ -151,8 +151,14 @@ au BufRead,BufNewFile *py,*pyw,*.c,*.h,*html,*js set tabstop=8
 " What to use for an indent.
 " This will affect Ctrl-T and 'autoindent'.
 " Python: 4 spaces
-au BufRead,BufNewFile *.py,*pyw,*.html,*.js set shiftwidth=4
+" au BufRead,BufNewFile *.py,*pyw,*.html,*.js set shiftwidth=4
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.html,*.js,*.css,*.less set shiftwidth=2
+au BufRead,BufNewFile *.html,*.js,*.css,*.less set softtabstop=2
+au BufRead,BufNewFile *.html,*.js,*.css,*.less set ts=2
 au BufRead,BufNewFile *.py,*.pyw,*.html,*.js set expandtab
+
+au BufRead,BufNewFile *.less set filetype=less
 
 " Use the below highlight group when displaying bad whitespace is desired.
 highlight BadWhitespace ctermbg=red guibg=red
@@ -165,9 +171,9 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " Use UNIX (\n) line endings.
 " Only used for new files so as to not force existing files to change their
 " line endings.
-au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
+au BufNewFile *.py,*.pyw,*.c,*.h,*.html,*.css,*.less set fileformat=unix
 
-" Folding based on indentation: 
+" Folding based on indentation:
 set foldmethod=indent
 set nofoldenable
 
