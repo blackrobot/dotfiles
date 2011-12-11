@@ -29,7 +29,7 @@ set title
 set ttyfast
 set shortmess=atI
 set wildmode=list:longest
-set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.pyo,*.DS_Store,*.db
+set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.pyo,*.DS_Store,*.db,CACHE,*.jpg,*.jpeg,*.psd,*.png,*.gif
 let python_highlight_all=1
 syntax on
 

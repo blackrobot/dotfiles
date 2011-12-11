@@ -21,30 +21,24 @@ plugins=(django extract git github pip python)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export WORKON="~/.virtualenvs"
+export WORKON="${HOME}/.virtualenvs"
 source /usr/local/bin/virtualenvwrapper.sh
+
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+
 
 export WORKSPACE="$HOME/Workspace"
 dj () {
 	cd "$WORKSPACE/django-projects/$1";
-   if [ "x$variable" = "x" ];
-	then
-		ls -alh
-	elif [ -f "$WORKON_HOME/$1/bin/activate" ];
+	if [ -f "$WORKON_HOME/$1/bin/activate" ];
 	then
 		source "$WORKON_HOME/$1/bin/activate";
 	elif [ -e "$WORKSPACE/django-projects/$1/local-env/bin/activate" ];
 	then
 		source "$WORKSPACE/django-projects/$1/local-env/bin/activate";
-	fi
-}
-runsrv () {
-	if [ -f "source/manage.py" ];
-	then
-		python source/manage.py runserver $1;
-	elif [ -f "manage.py" ];
-	then
-		python manage.py runserver $1;
+	else
+		ls -alh;
 	fi
 }
 wrk () { cd "$WORKSPACE/$1" && ls -alh; }
