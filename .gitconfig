@@ -1,32 +1,26 @@
 [user]
-    name = Damon Jablons
-    email = damonjablons@gmail.com
+	name = Damon Jablons
+	email = damonjablons@gmail.com
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = true
-    pager = true
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+  ui = auto
 
-[color]
-    diff = auto
-    interactive = auto
-    status = auto
-    branch = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
 
-[core]
-    pager = less -FRSX
-    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 
-[alias]
-    co = checkout
-    st = status
-    ci = commit
-    co = checkout
-    w = whatchanged
-    pom = push origin master
-    pop = push origin production
-[github]
-	user = damon
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
