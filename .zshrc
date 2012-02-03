@@ -41,6 +41,9 @@ alias l="ls -alh"
 alias lg="l | grep"
 alias grepir='grep -Ir'
 alias bro='sudo apt-get'
+alias mkdirs='mkdir -p'
+alias ipython="ipython --colors='LightBG'"
+
 unsetopt auto_name_dirs
 
 # export ORACLE_HOME=/usr/lib/oracle/11.2/client64
