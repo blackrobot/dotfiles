@@ -6,6 +6,12 @@ else
   set background=light
 endif
 colorscheme solarized
+" set t_Co=256
+" colorscheme molokai
+
+" Font https://gist.github.com/1630581
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+let Powerline_symbols = 'compatible'
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -25,9 +31,9 @@ set guioptions+=LIRrb " This is a hack to get rid of the right scrollbar.
 set guioptions-=LIRrb " Hack continued...
 " Setup Gundo
 
+" nnoremap <F5> :GundoToggle<CR>
+
 " Change the indent defaults
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType less setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
-
-" nnoremap <F5> :GundoToggle<CR>
