@@ -9,10 +9,6 @@ colorscheme solarized
 " set t_Co=256
 " colorscheme molokai
 
-" Font https://gist.github.com/1630581
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
-let Powerline_symbols = 'compatible'
-
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
