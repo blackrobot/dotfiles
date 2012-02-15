@@ -1,13 +1,14 @@
-if has('gui_running')
-  set background=dark
-else
-  set t_Co=256
-  let g:solarized_termcolors=256
-  set background=light
-endif
-colorscheme solarized
-" set t_Co=256
+" if has('gui_running')
+"   set background=dark
+" else
+"   set t_Co=256
+"   let g:solarized_termcolors=256
+"   set background=light
+" endif
+" colorscheme solarized
+set t_Co=256
 " colorscheme molokai
+colorscheme badwolf
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
