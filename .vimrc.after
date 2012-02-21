@@ -30,8 +30,6 @@ set guioptions-=LIRrb " Hack continued...
 
 " nnoremap <F5> :GundoToggle<CR>
 
-au BufNewFile,BufRead *.less set filetype=less
-
 " Change the indent defaults
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType less setlocal shiftwidth=2 tabstop=2

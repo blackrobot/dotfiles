@@ -1,3 +1,6 @@
 [submodule ".janus/badwolf"]
 	path = .janus/badwolf
 	url = https://github.com/sjl/badwolf.git
+[submodule ".janus/vim-less"]
+	path = .janus/vim-less
+	url = https://github.com/lunaru/vim-less.git
