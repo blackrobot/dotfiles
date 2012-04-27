@@ -4,3 +4,9 @@
 [submodule ".janus/vim-less"]
 	path = .janus/vim-less
 	url = https://github.com/lunaru/vim-less.git
+[submodule ".janus/vim-css3-syntax"]
+  path = .janus/vim-css3-syntax
+  url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule ".janus/vim-powerline"]
+  path = .janus/vim-powerline
+  url = https://github.com/Lokaltog/vim-powerline.git
