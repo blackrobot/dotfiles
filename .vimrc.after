@@ -1,13 +1,4 @@
-" if has('gui_running')
-"   set background=dark
-" else
-"   set t_Co=256
-"   let g:solarized_termcolors=256
-"   set background=light
-" endif
-" colorscheme solarized
 set t_Co=256
-" colorscheme molokai
 colorscheme badwolf
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
@@ -26,11 +17,9 @@ set guioptions-=T
 set guioptions-=r
 set guioptions+=LIRrb " This is a hack to get rid of the right scrollbar.
 set guioptions-=LIRrb " Hack continued...
-" Setup Gundo
-
-" nnoremap <F5> :GundoToggle<CR>
 
 " Change the indent defaults
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType less setlocal shiftwidth=2 tabstop=2
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
