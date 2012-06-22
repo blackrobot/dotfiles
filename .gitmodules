@@ -10,3 +10,6 @@
 [submodule ".janus/vim-powerline"]
   path = .janus/vim-powerline
   url = https://github.com/Lokaltog/vim-powerline.git
+[submodule ".janus/vim-indent-guides"]
+	path = .janus/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
