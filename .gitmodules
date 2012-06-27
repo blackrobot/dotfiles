@@ -13,6 +13,3 @@
 [submodule ".janus/vim-indent-guides"]
 	path = .janus/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule ".janus/lint.vim"]
-	path = .janus/lint.vim
-	url = git@github.com:blackrobot/lint.vim.git
