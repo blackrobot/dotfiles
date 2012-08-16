@@ -1,9 +1,6 @@
 [submodule ".janus/badwolf"]
-	path = .janus/badwolf
-	url = https://github.com/sjl/badwolf.git
-[submodule ".janus/vim-less"]
-	path = .janus/vim-less
-	url = https://github.com/lunaru/vim-less.git
+  path = .janus/badwolf
+  url = https://github.com/sjl/badwolf.git
 [submodule ".janus/vim-css3-syntax"]
   path = .janus/vim-css3-syntax
   url = https://github.com/hail2u/vim-css3-syntax.git
@@ -11,5 +8,5 @@
   path = .janus/vim-powerline
   url = https://github.com/Lokaltog/vim-powerline.git
 [submodule ".janus/vim-indent-guides"]
-	path = .janus/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+  path = .janus/vim-indent-guides
+  url = git://github.com/nathanaelkane/vim-indent-guides.git
