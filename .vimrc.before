@@ -12,3 +12,7 @@ let Powerline_symbols = 'fancy'
 " Disable VimResize
 " ~/.vim/janus/vim/core/before/plugin/gui_settings.vim
 call janus#disable_plugin('gui_settings')
+
+" Enable jshint
+let g:syntastic_javascript_checker = "jshint"
+let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
