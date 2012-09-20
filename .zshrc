@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 export WORKSPACE="${HOME}/Workspace"
-export ZSH="${WORKSPACE}/oh-my-zsh"
+export ZSH="${WORKSPACE}/dotfiles/oh-my-zsh"
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -40,4 +40,4 @@ for local_lib ($WORKSPACE/dotfiles/lib/*.*) source $local_lib
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH=$PATH:/opt/vagrant/bin:$HOME/.rvm/bin
+export PATH=$PATH
