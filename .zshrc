@@ -40,4 +40,4 @@ for local_lib ($WORKSPACE/dotfiles/lib/*.*) source $local_lib
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:/opt/vagrant/bin:$HOME/.rvm/bin
