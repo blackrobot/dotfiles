@@ -1,0 +1,6 @@
+alias l="ls -alh"
+alias grepir='grep -Ir'
+alias bro='sudo apt-get'
+alias mkdirs='mkdir -p'
+alias dj="cd ~/Workspace/django-projects/"
+alias wrk="cd ~/Workspace/"
