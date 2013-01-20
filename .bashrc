@@ -1,3 +1,5 @@
+# vim: set syntax=sh:
+
 # System-wide .bashrc file for interactive bash(1) shells.
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -36,9 +38,13 @@ alias vdir='ls --color=auto --format=long'
 alias grep='grep --color'
 alias rm='rm -f'
 alias grepr='grep -Ir '
+alias tmux="tmux -2"
 
 # set a fancy prompt (non-color, overwrite the one in /etc/profile)
 PS1='${debian_chroot:+($debian_chroot)}\[\e[34;22m\][\[\e[34;1m\]\t\[\e[34;22m\]]\[\e[32;1m\]\u\[\e[34;22m\]@\[\e[32;22m\]\h\[\e[34;22m\]: \[\e[0;1m\]\w \[\e[0m\]\$ '
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+export EDITOR="vim"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
