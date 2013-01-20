@@ -9,7 +9,12 @@ set colorcolumn=80
 
 " CtrlP Ignores
 " let g:ctrlp_custom_ignore = '\.ext$|\.ex2$'
-set wildignore+=*.pyc
+set wildignore+=*.pyc,*.zip,*.tar.gz
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
+set wildignore+=*.pdf,*.doc
+" Ugh, I hate doing this
+" Sets special ignores for a specific project
+set wildignore+=*/rockrose/local-env/*,*/rockrose/src/py/shared/*
 
 " Hide the toolbar, scrollbar, and menubar
 set guioptions-=m

@@ -1,4 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# vim: set syntax=sh:
+
+set -e
+
+echo ''
 
 # Colors :)
 bold="$(tput bold)"
@@ -8,28 +13,34 @@ yellow="$(tput setaf 3)"
 green="$(tput setaf 2)"
 
 function message {
-  echo "---\n${bold}${1}${reset}"
+  echo -e "${bold}${1}[${2}]${reset}\t\t${bold}${3}${reset}"
 }
 
-function error {
-  message "${red}${1}"
+function fail {
+  message $red "FAIL" $1
+  echo ''
   exit
 }
 
 function success {
-  message "${green}${1}"
+  message $green "OK" $1
 }
 
 function warn {
-  message "${yellow}${1}"
+  local hashes=$(head -c (${#1} + 4) < /dev/zero | tr '\0' '#')
+  echo -e "\n${hashes}\n# ${bold}${yellow}${1}${reset} #\n${hashes}"
 }
 
 # Sets the current directory to $DIR
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-function get_and_install {
+function download {
   # Download the url passed as an argument and install it
   curl -L ${1} | sh
+}
+
+function link {
+  ln -s "${DIR}/${1}" "${HOME}"
 }
 
 function install_janus {
@@ -37,53 +48,98 @@ function install_janus {
   local url="https://bit.ly/janus-bootstrap"
 
   warn "Installing Janus"
+
   # Install the pre-requisites
-  sudo apt-get install $pre_reqs
-  # Delete existing .vim files
-  rm -rf "${HOME}/.vim" "${HOME}/.vimrc"
+  sudo apt-get install $pre_reqs &&
+
+  # Delete existing vim files
+  rm -rf "${HOME}/.vim" "${HOME}/.vimrc" &&
+
   # Download and install using the janus boostrap script
-  get_and_install $url
+  download $url &&
+
   # Symlink janus and vim configuration files
-  ln -s "${DIR}/.janus/" "${HOME}"
-  ln -s "${DIR}/.vimrc.before" "${HOME}"
-  ln -s "${DIR}/.vimrc.after" "${HOME}"
+  link ".janus/" &&
+  link ".vimrc.before" &&
+  link ".vimrc.after" &&
+
+  success "Installed Janus" || fail "Could not install Janus"
+}
+
+function install_tmux {
+  warn "Installing Tmux"
+
+  # Install the package
+  sudo apt-get install tmux &&
+
+  # Symlink the config
+  link ".tmux.conf" &&
+  link ".tmux-powerlinerc" &&
+
+  success "Installed Tmux" || fail "Could not install Tmux"
 }
 
 function install_zsh {
   local url="https://goo.gl/1DRPI"
 
   warn "Installing ZSH"
+
   # Download and install using the oh-my-zsh bootstrap script
-  get_and_install $url
+  download $url &&
+
   # Substitude the default .zshrc for our customized one
-  rm -f "${HOME}/.zshrc"
-  ln -s "${DIR}/.zshrc" "${HOME}"
+  rm -f "${HOME}/.zshrc" &&
+  link ".zshrc" &&
+
   # Set this user's default shell to ZSH
-  chsh -s /bin/zsh
+  chsh -s /bin/zsh &&
+
+  success "Installed ZSH" || fail "Could not install ZSH"
 }
 
 function install_extra {
   warn "Setting up fonts and config files"
 
   # Create the symlinks
-  ln -s "${DIR}/.fonts/" "${HOME}"
-  ln -s "${DIR}/.gitconfig" "${HOME}"
+  link ".fonts/" &&
+  link ".gitconfig" &&
+
   # Reset the font cache
   sudo fc-cache -fv
 }
 
+function install_dircolors {
+  local gconf="${HOME}/.gconf/apps/gnome-terminal/profiles"
 
-# Install Janus
-install_janus && \
-  success "Installed Janus" || \
-  error "Could not install Janus"
+  warn "Installing Dircolors"
 
-# Install ZSH
-install_zsh && \
-  success "Installed ZSH" || \
-  error "Could not install ZSH"
+  if [ -d $gconf ]; then
+    mkdir "${gconf}/Blackrobot" &&
+    ln -s "${DIR}/gnome/%gconf.xml" "${gconf}/Blackrobot/"
+  fi
 
-# Install extras
-install_extra && \
-  success "Installed fonts and config files" || \
-  error "Could not install fonts and config files"
+  link ".dircolors" &&
+  eval $(dircolors -b "${DIR}/.dircolors") &&
+
+  success "Installed Dircolors" || fail "Could not install Dircolors"
+}
+
+if [ "${1}" == "server" ]; then
+  install_janus
+  install_tmux
+  install_extra
+
+elif [ "${1}" == "local" ]; then
+  install_janus
+  install_zsh
+  install_tmux
+  install_dircolors
+  install_extra
+
+else
+  echo "Please specify the packages to install:"
+  echo -e "\t ${bold}local${reset}  => Installs everything."
+  echo -e "\t ${bold}server${reset} => Installs everything except for fonts, zsh, and gnome/dircolors."
+  exit
+
+fi

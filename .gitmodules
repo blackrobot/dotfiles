@@ -13,3 +13,6 @@
 [submodule ".janus/vim-less"]
 	path = .janus/vim-less
 	url = https://github.com/groenewege/vim-less
+[submodule "tmux-powerline"]
+	path = tmux-powerline
+	url = git://github.com/erikw/tmux-powerline.git
