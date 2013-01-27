@@ -1,4 +1,4 @@
-# vim: set syntax=sh:
+# vim: set syntax=zsh:
 
 # Path to your oh-my-zsh configuration.
 export WORKSPACE="${HOME}/Workspace"
@@ -16,22 +16,38 @@ export ZSH_THEME="kphoen"
 # export DISABLE_AUTO_UPDATE="true"
 
 # Plugins
-plugins=(django extract git github pip python)
+plugins=(
+  command-not-found
+  django
+  encode64
+  extract
+  fabric
+  gem
+  git
+  git-extras
+  github
+  npm
+  pip
+  python
+  rvm
+  urltools
+  virtualenvwrapper
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # virtualenv, pip, and python
 export WORKON="${HOME}/.virtualenvs"
-source /usr/local/bin/virtualenvwrapper.sh
+[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
 alias man="TERMINFO=~/.terminfo LESS=C TERM=mostlike PAGER=less man"
-source "${HOME}/.aliases"
 
 unsetopt auto_name_dirs
 
-# Include any files in $WORKSPACE/dotfiles/lib/*
+# Include any aliases and files in $WORKSPACE/dotfiles/lib/*
+source "${DOTFILES}/.aliases"
 for local_lib ($DOTFILES/lib/*.*) source $local_lib
 
 # Vim for the win!
