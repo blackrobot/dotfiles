@@ -34,6 +34,9 @@ autocmd FileType python setlocal softtabstop=4 shiftwidth=4 tabstop=4 textwidth=
 
 " Syntax
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+au BufNewFile,BufRead
+  \ /etc/nginx/sites-available/*,/etc/nginx/sites-enabled/*,*/deploy/nginx/*
+  \ setlocal filetype=nginx
 
 " Remove whitespace from the end of lines in python files
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
