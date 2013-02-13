@@ -14,7 +14,7 @@ set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
 set wildignore+=*.pdf,*.doc
 " Ugh, I hate doing this
 " Sets special ignores for a specific project
-set wildignore+=*/rockrose/local-env/*,*/rockrose/src/py/shared/*
+" set wildignore+=*/rockrose/local-env/*,*/rockrose/src/py/shared/*
 
 " Hide the toolbar, scrollbar, and menubar
 set guioptions-=m
@@ -24,8 +24,16 @@ set guioptions+=LIRrb " This is a hack to get rid of the right scrollbar.
 set guioptions-=LIRrb " Hack continued...
 
 " Change the indent defaults
-autocmd FileType php setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType less setlocal shiftwidth=2 tabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType less setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal softtabstop=4 shiftwidth=4 tabstop=4 textwidth=79
+
+" Syntax
+au BufNewFile,BufRead *.html setlocal filetype=htmldjango
+
+" Remove whitespace from the end of lines in python files
+autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
