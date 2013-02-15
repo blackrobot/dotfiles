@@ -66,4 +66,4 @@ PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Path modifications for Heroku and RVM
-export PATH="/usr/local/heroku/bin:$PATH:$HOME/.rvm/bin"
+export PATH="./node_modules/.bin:/usr/local/heroku/bin:$PATH:$HOME/.rvm/bin"
