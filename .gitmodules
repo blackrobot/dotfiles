@@ -11,8 +11,8 @@
   path = .janus/vim-indent-guides
   url = git://github.com/nathanaelkane/vim-indent-guides.git
 [submodule ".janus/vim-less"]
-	path = .janus/vim-less
-	url = https://github.com/groenewege/vim-less
+  path = .janus/vim-less
+  url = https://github.com/groenewege/vim-less
 [submodule "tmux-powerline"]
-	path = tmux-powerline
-	url = git://github.com/erikw/tmux-powerline.git
+  path = tmux-powerline
+  url = git://github.com/erikw/tmux-powerline.git
