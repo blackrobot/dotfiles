@@ -1,0 +1,3 @@
+Bundle 'Lokaltog/powerline'
+Bundle 'nginx'
+Bundle 'django'

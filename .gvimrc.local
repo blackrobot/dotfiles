@@ -1,0 +1,4 @@
+" Font https://gist.github.com/1630581
+set guifont=DejaVu\ Sans\ Mono\ 11
+
+colorscheme molokai
