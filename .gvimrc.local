@@ -1,4 +1,9 @@
-" Font https://gist.github.com/1630581
 set guifont=DejaVu\ Sans\ Mono\ 11
-
 colorscheme molokai
+
+" Hide the toolbar, scrollbar, and menubar
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions+=LIRrb " This is a hack to get rid of the right scrollbar.
+set guioptions-=LIRrb " Hack continued...

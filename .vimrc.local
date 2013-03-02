@@ -8,17 +8,14 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " Highlight the 80th column
 set colorcolumn=80
 
+" Turn off relative line numbering
+UnBundle 'myusuf3/numbers.vim'
+set number
+
 " CtrlP Ignores
 set wildignore+=*.pyc,*.zip,*.tar.gz
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
 set wildignore+=*.pdf,*.doc
-"
-" Hide the toolbar, scrollbar, and menubar
-" set guioptions-=m
-" set guioptions-=T
-" set guioptions-=r
-" set guioptions+=LIRrb " This is a hack to get rid of the right scrollbar.
-" set guioptions-=LIRrb " Hack continued...
 
 " Remove whitespace from the end of lines in python files
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
