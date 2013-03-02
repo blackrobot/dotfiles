@@ -12,6 +12,10 @@ set colorcolumn=80
 UnBundle 'myusuf3/numbers.vim'
 set number
 
+" Remap C-p and add System copy + paste
+vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+
 " CtrlP Ignores
 set wildignore+=*.pyc,*.zip,*.tar.gz
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
