@@ -23,3 +23,14 @@ set wildignore+=*.pdf,*.doc
 
 " Remove whitespace from the end of lines in python files
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+
+" Global
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+set expandtab
+
+" File type specific
+au BufNewFile,BufRead
+  \ /etc/nginx/sites-available/*,/etc/nginx/sites-enabled/*,*/deploy/nginx/*
+  \ setlocal filetype=nginx
