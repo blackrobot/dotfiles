@@ -4,3 +4,6 @@ set guioptions-=T
 set guioptions-=r
 set guioptions+=LIRrb " This is a hack to get rid of the right scrollbar.
 set guioptions-=LIRrb " Hack continued...
+
+" Font
+set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline\ 11
