@@ -4,3 +4,12 @@
 [submodule ".janus/neocomplcache"]
 	path = .janus/neocomplcache
 	url = git@github.com:Shougo/neocomplcache.git
+[submodule ".janus/vim-surround"]
+	path = .janus/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule ".janus/matchit.zip"]
+	path = .janus/matchit.zip
+	url = git@github.com:vim-scripts/matchit.zip.git
+[submodule ".janus/vim-autoclose"]
+	path = .janus/vim-autoclose
+	url = git@github.com:Townk/vim-autoclose.git
