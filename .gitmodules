@@ -1,3 +1,6 @@
 [submodule "powerline"]
 	path = powerline
 	url = git@github.com:Lokaltog/powerline.git
+[submodule ".janus/neocomplcache"]
+	path = .janus/neocomplcache
+	url = git@github.com:Shougo/neocomplcache.git

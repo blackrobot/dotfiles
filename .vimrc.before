@@ -8,14 +8,17 @@ set rtp+=~/.dotfiles/powerline/powerline/bindings/vim
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
-" Font https://gist.github.com/1630581
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
-" let Powerline_symbols = 'fancy'
-
 " Disable VimResize
 " ~/.vim/janus/vim/core/before/plugin/gui_settings.vim
 call janus#disable_plugin('gui_settings')
+call janus#disable_plugin('supertab')
 
-" Enable jshint
-let g:syntastic_javascript_checker = "jshint"
-let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
+" Neocomplcache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_auto_delimiter = 1
+let g:neocomplcache_max_list = 15
+let g:neocomplcache_force_overwrite_completefunc = 1
