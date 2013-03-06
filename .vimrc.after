@@ -26,8 +26,9 @@ au BufNewFile,BufRead *.scss setlocal filetype=scss
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 au BufNewFile,BufRead /etc/nginx/*,*/nginx/*.conf setlocal filetype=nginx
 
-" Remove whitespace from the end of lines in python files
+" Python stuff
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+let g:syntastic_python_checkers = ['flake8']
 
 " Indent Guides
 if has("gui_running")
