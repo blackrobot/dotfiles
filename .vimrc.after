@@ -29,6 +29,17 @@ au BufNewFile,BufRead /etc/nginx/*,*/nginx/*.conf setlocal filetype=nginx
 " Remove whitespace from the end of lines in python files
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 
+" Indent Guides
+if has("gui_running")
+  let g:indent_guides_auto_colors = 1
+else
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=3
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=4
+endif
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 2
+let g:indent_guides_enable_on_vim_startup = 1
+
 " Neocomplcache
 " SuperTab like snippets behavior.
 imap <silent><expr><TAB> neosnippet#expandable() ?
