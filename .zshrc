@@ -1,8 +1,7 @@
 # vim: set syntax=zsh:
 
 # Path to your oh-my-zsh configuration.
-export WORKSPACE="${HOME}/Workspace"
-export DOTFILES="${WORKSPACE}/dotfiles"
+export DOTFILES="${HOME}/.dotfiles"
 export ZSH="${HOME}/.oh-my-zsh"
 
 # Set to the name theme to load.
@@ -46,7 +45,7 @@ alias man="TERMINFO=~/.terminfo LESS=C TERM=mostlike PAGER=less man"
 
 unsetopt auto_name_dirs
 
-# Include any aliases and files in $WORKSPACE/dotfiles/lib/*
+# Include any aliases and files in $DOTFILES/lib/*
 source "${DOTFILES}/.aliases"
 for local_lib ($DOTFILES/lib/*.*) source $local_lib
 

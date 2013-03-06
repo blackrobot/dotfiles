@@ -1,5 +1,5 @@
 set t_Co=256
-colorscheme badwolf
+colorscheme Tomorrow-Night
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -12,25 +12,15 @@ set colorcolumn=80
 set wildignore+=*.pyc,*.zip,*.tar.gz
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
 set wildignore+=*.pdf,*.doc
-" Ugh, I hate doing this
-" Sets special ignores for a specific project
-" set wildignore+=*/rockrose/local-env/*,*/rockrose/src/py/shared/*
-
-" Hide the toolbar, scrollbar, and menubar
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions+=LIRrb " This is a hack to get rid of the right scrollbar.
-set guioptions-=LIRrb " Hack continued...
 
 " Change the indent defaults
-autocmd FileType php setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType less setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType python setlocal softtabstop=4 shiftwidth=4 tabstop=4 textwidth=79
+autocmd FileType php setlocal sw=2 ts=2 sts=2
+autocmd FileType html setlocal sw=2 ts=2 sts=2
+autocmd FileType less setlocal sw=2 ts=2 sts=2
+autocmd FileType scss setlocal sw=2 ts=2 sts=2
+autocmd FileType css setlocal sw=2 ts=2 sts=2
+autocmd FileType javascript setlocal sw=2 ts=2 sts=2
+autocmd FileType python setlocal sts=4 sw=4 ts=4 tw=79
 
 " Syntax
 au BufNewFile,BufRead *.scss setlocal filetype=scss

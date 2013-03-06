@@ -1,13 +1,16 @@
 " Change the leader key to ','
 let mapleader=","
 
+" Powerline
+set rtp+=~/.dotfiles/powerline/powerline/bindings/vim
+
 " Remap C-p and add System copy + paste
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 " Font https://gist.github.com/1630581
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
-let Powerline_symbols = 'fancy'
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
+" let Powerline_symbols = 'fancy'
 
 " Disable VimResize
 " ~/.vim/janus/vim/core/before/plugin/gui_settings.vim
