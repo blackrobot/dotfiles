@@ -1,4 +1,4 @@
-color molokai
+colorscheme molokai
 
 " Hide the toolbar, scrollbar, and menubar
 set guioptions-=m

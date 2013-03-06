@@ -1,5 +1,6 @@
 set t_Co=256
-color pyte
+set background=dark
+colorscheme desert256
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
