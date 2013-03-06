@@ -10,3 +10,6 @@
 [submodule ".janus/vim-autoclose"]
 	path = .janus/vim-autoclose
 	url = git@github.com:Townk/vim-autoclose.git
+[submodule ".janus/vim-matchit"]
+	path = .janus/vim-matchit
+	url = git@github.com:edsono/vim-matchit.git
