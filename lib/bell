@@ -1,4 +1,0 @@
-# Play a bell sound
-function bell() {
-  ogg123 -q "/usr/share/sounds/freedesktop/stereo/complete.oga"
-}
