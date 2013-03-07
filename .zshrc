@@ -17,6 +17,7 @@ export ZSH_THEME="kphoen"
 # Plugins
 plugins=(
   command-not-found
+  cp
   django
   encode64
   extract
@@ -45,9 +46,9 @@ alias man="TERMINFO=~/.terminfo LESS=C TERM=mostlike PAGER=less man"
 
 unsetopt auto_name_dirs
 
-# Include any aliases and files in $DOTFILES/lib/*
+# Include the aliases file and anything in lib
 source "${DOTFILES}/.aliases"
-for local_lib ($DOTFILES/lib/*.*) source $local_lib
+for local_lib ($DOTFILES/lib/*) source $local_lib
 
 # Vim for the win!
 export EDITOR="vim"
