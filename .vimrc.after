@@ -19,6 +19,10 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 
+" Command tabbing
+set wildmode=longest,list,full
+set wildmenu
+
 autocmd FileType python setlocal sts=4 sw=4 ts=4 tw=79
 
 " Syntax
