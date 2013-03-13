@@ -1,0 +1,4 @@
+# Transfer files with rsync instead of scp
+function get() {
+  rsync -avzhW --progress $1 $2
+}

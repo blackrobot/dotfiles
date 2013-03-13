@@ -29,6 +29,7 @@ autocmd FileType python setlocal sts=4 sw=4 ts=4 tw=79
 au BufNewFile,BufRead *.scss setlocal filetype=scss
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 au BufNewFile,BufRead /etc/nginx/*,*/nginx/*.conf setlocal filetype=nginx
+let g:syntastic_python_pep8_args="--ignore=E128"
 
 " Python stuff
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
