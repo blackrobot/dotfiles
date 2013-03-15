@@ -1,9 +1,6 @@
 [submodule "powerline"]
 	path = powerline
 	url = git@github.com:Lokaltog/powerline.git
-[submodule ".janus/neocomplcache"]
-	path = .janus/neocomplcache
-	url = git@github.com:Shougo/neocomplcache.git
 [submodule ".janus/vim-surround"]
 	path = .janus/vim-surround
 	url = git://github.com/tpope/vim-surround.git
@@ -16,6 +13,3 @@
 [submodule ".janus/vim-indent-guides"]
 	path = .janus/vim-indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides.git
-[submodule ".janus/pydoc.vim"]
-	path = .janus/pydoc.vim
-	url = git@github.com:fs111/pydoc.vim.git
