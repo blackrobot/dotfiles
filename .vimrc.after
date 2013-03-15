@@ -31,9 +31,18 @@ au BufNewFile,BufRead *.html setlocal filetype=htmldjango
 au BufNewFile,BufRead /etc/nginx/*,*/nginx/*.conf setlocal filetype=nginx
 let g:syntastic_python_pep8_args="--ignore=E128"
 
+" Omnicomplete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 " Python stuff
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 let g:syntastic_python_checkers = ['flake8']
+highlight BadWhitespace ctermbg=red guibg=red
+au BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
+au BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
 
 " Indent Guides
 if has("gui_running")
