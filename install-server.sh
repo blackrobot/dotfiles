@@ -17,13 +17,14 @@ function message {
 }
 
 function fail {
-  message $red "FAIL" $1
+  message $red "FAIL" "${1}"
   echo ''
   exit
 }
 
 function success {
-  message $green "OK" $1
+  message $green "OK" "${1}"
+  echo ''
 }
 
 function warn {
