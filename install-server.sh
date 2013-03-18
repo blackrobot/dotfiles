@@ -43,6 +43,16 @@ function link {
   ln -s "${DIR}/${1}" "${HOME}"
 }
 
+function clone {
+  warn "Cloning dotfiles repo" &&
+
+  git clone git://github.com/blackrobot/dotfiles.git "${HOME}/.dotfiles" &&
+
+  cd "${HOME}/.dotfiles" &&
+
+  success "Cloned the dotfiles repo" || fail "Could not clone dotfiles repo"
+}
+
 function install_powerline {
   warn "Installing Powerline" &&
 
@@ -115,7 +125,7 @@ function install_extra {
   link ".gitconfig"
 }
 
-
+clone
 install_powerline
 install_janus
 install_zsh
