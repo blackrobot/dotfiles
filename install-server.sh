@@ -36,7 +36,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function download {
   # Download the url passed as an argument and install it
-  curl -L ${1} | sh
+  wget -O - ${1} | bash
 }
 
 function link {
@@ -128,7 +128,6 @@ function install_extra {
   link ".gitconfig"
 }
 
-apt_install curl
 clone
 install_powerline
 install_janus
