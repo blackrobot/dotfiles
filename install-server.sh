@@ -28,7 +28,7 @@ function success {
 }
 
 function warn {
-  echo -e "\n${bold}${yellow}${1}${reset}\n ---"
+  echo -e "\n${bold}${yellow}${1}${reset}\n---"
 }
 
 # Sets the current directory to $DIR
