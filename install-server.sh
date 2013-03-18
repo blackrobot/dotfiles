@@ -27,7 +27,7 @@ function success {
 }
 
 function warn {
-  echo -e " ${bold}${yellow}${1}${reset}\n ---"
+  echo -e "\n${bold}${yellow}${1}${reset}\n ---"
 }
 
 # Sets the current directory to $DIR
@@ -40,6 +40,10 @@ function download {
 
 function link {
   ln -s "${DIR}/${1}" "${HOME}"
+}
+
+function apt_install {
+  sudo apt-get install --quiet --yes $1
 }
 
 function clone {
@@ -67,7 +71,7 @@ function install_janus {
   warn "Installing Janus"
 
   # Install the pre-requisites
-  sudo apt-get install $pre_reqs &&
+  apt_install $pre_reqs &&
 
   # Delete existing vim files
   rm -rf "${HOME}/.vim" "${HOME}/.vimrc" &&
@@ -87,7 +91,7 @@ function install_tmux {
   warn "Installing Tmux"
 
   # Install the package
-  sudo apt-get install tmux &&
+  apt_install tmux &&
 
   # Symlink the config
   link ".tmux.conf" &&
@@ -96,13 +100,12 @@ function install_tmux {
 }
 
 function install_zsh {
-  local pre_reqs="zsh"
   local url="https://goo.gl/1DRPI"
 
   warn "Installing ZSH"
 
   # Install the pre-requisites
-  sudo apt-get install $pre_reqs &&
+  apt_install zsh &&
 
   # Download and install using the oh-my-zsh bootstrap script
   download $url &&
@@ -124,8 +127,7 @@ function install_extra {
   link ".gitconfig"
 }
 
-sudo apt-get install curl
-
+apt_install curl
 clone
 install_powerline
 install_janus
