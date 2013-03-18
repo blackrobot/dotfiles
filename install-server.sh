@@ -125,6 +125,8 @@ function install_extra {
   link ".gitconfig"
 }
 
+sudo apt-get install curl
+
 clone
 install_powerline
 install_janus
