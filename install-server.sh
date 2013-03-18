@@ -27,8 +27,7 @@ function success {
 }
 
 function warn {
-  local hashes=$(head -c (${1} + 4) < /dev/zero | tr '\0' '#')
-  echo -e "\n${hashes}\n# ${bold}${yellow}${1}${reset} #\n${hashes}"
+  echo -e " ${bold}${yellow}${1}${reset}\n ---"
 }
 
 # Sets the current directory to $DIR
