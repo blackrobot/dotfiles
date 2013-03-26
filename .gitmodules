@@ -1,18 +1,21 @@
 [submodule "powerline"]
-	path = powerline
-	url = git://github.com/Lokaltog/powerline.git
+  path = powerline
+  url = git://github.com/Lokaltog/powerline.git
 [submodule ".janus/vim-surround"]
-	path = .janus/vim-surround
-	url = git://github.com/tpope/vim-surround.git
+  path = .janus/vim-surround
+  url = git://github.com/tpope/vim-surround.git
 [submodule ".janus/vim-autoclose"]
-	path = .janus/vim-autoclose
-	url = git://github.com/Townk/vim-autoclose.git
+  path = .janus/vim-autoclose
+  url = git://github.com/Townk/vim-autoclose.git
 [submodule ".janus/vim-matchit"]
-	path = .janus/vim-matchit
-	url = git://github.com/edsono/vim-matchit.git
+  path = .janus/vim-matchit
+  url = git://github.com/edsono/vim-matchit.git
 [submodule ".janus/vim-indent-guides"]
-	path = .janus/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
+  path = .janus/vim-indent-guides
+  url = git://github.com/nathanaelkane/vim-indent-guides.git
 [submodule ".janus/snipmate-snippets"]
-	path = .janus/snipmate-snippets
-	url = git://github.com/honza/snipmate-snippets.git
+  path = .janus/snipmate-snippets
+  url = git://github.com/honza/snipmate-snippets.git
+[submodule ".janus/zencoding-vim"]
+  path = .janus/zencoding-vim
+  url = git://github.com/mattn/zencoding-vim.git
