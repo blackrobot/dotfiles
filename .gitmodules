@@ -13,9 +13,9 @@
 [submodule ".janus/vim-indent-guides"]
   path = .janus/vim-indent-guides
   url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule ".janus/snipmate-snippets"]
-  path = .janus/snipmate-snippets
-  url = git://github.com/honza/snipmate-snippets.git
 [submodule ".janus/zencoding-vim"]
   path = .janus/zencoding-vim
   url = git://github.com/mattn/zencoding-vim.git
+[submodule ".janus/vim-snippets"]
+	path = .janus/vim-snippets
+	url = git://github.com/honza/vim-snippets.git
