@@ -35,6 +35,8 @@ plugins=(
   virtualenvwrapper
 )
 
+export DISABLE_CORRECTION=true
+
 source $ZSH/oh-my-zsh.sh
 
 # virtualenv, pip, and python
@@ -48,7 +50,7 @@ alias man="TERMINFO=~/.terminfo LESS=C TERM=mostlike PAGER=less man"
 unsetopt auto_name_dirs
 
 # Include the aliases file and anything in lib
-source "${DOTFILES}/.aliases"
+source $DOTFILES/.aliases
 for local_lib ($DOTFILES/lib/*) source $local_lib
 
 # Vim for the win!
