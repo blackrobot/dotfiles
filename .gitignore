@@ -12,3 +12,4 @@ build/
 .vim/.netrwhist
 .fonts/*
 !.fonts/*-powerline
+.gitconfig.local

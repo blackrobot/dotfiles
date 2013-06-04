@@ -1,6 +1,9 @@
+[include]
+  path = ~/.gitconfig.local
+
 [user]
-	name = Damon Jablons
-	email = damonjablons@gmail.com
+  name = "Damon Jablons"
+  email = damonjablons@gmail.com
 
 [color]
   branch = auto
@@ -24,9 +27,24 @@
   added = yellow
   changed = green
   untracked = cyan
-[giggle]
-	main-window-maximized = false
-	main-window-geometry = 904x795+332+171
-	history-view-vpane-position = 489
-	main-window-view = HistoryView
-	file-view-vpane-position = 726
+
+[github]
+  user = blackrobot
+
+[merge]
+  tool = vimdiff
+
+[status]
+  relativePaths = true
+  showUntrackedFiles = no
+
+[diff]
+  tool = vimdiff
+  suppressBlankEmpty = true
+  mnemonicprefix = true
+
+[difftool "vimdiff"]
+  prompt = false
+
+[branch]
+  autosetupmerge = true
