@@ -19,3 +19,6 @@
 [submodule ".janus/vim-snippets"]
 	path = .janus/vim-snippets
 	url = git://github.com/honza/vim-snippets.git
+[submodule ".janus/editorconfig-vim"]
+	path = .janus/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
