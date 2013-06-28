@@ -36,7 +36,6 @@
 
 [status]
   relativePaths = true
-  showUntrackedFiles = no
 
 [diff]
   tool = vimdiff
