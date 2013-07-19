@@ -10,6 +10,4 @@ build/
 .vim/doc/tags
 .vim/doc/command-t.txt
 .vim/.netrwhist
-.fonts/*
-!.fonts/*-powerline
 .gitconfig.local
