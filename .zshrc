@@ -6,7 +6,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 
 # Set to the name theme to load. Change it if user is SSHing.
 # Look in ~/.oh-my-zsh/themes/
-[ -n "$SSH_CLIENT" ] && _THEME="robbyrussell" || _THEME="kphoen"
+[ -n "$SSH_CLIENT" ] && _THEME="robbyrussell" || _THEME="agnoster"
 export ZSH_THEME=$_THEME
 
 # Set to this to use case-sensitive completion
