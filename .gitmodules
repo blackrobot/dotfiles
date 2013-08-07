@@ -13,12 +13,12 @@
 [submodule ".janus/vim-indent-guides"]
   path = .janus/vim-indent-guides
   url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule ".janus/zencoding-vim"]
-  path = .janus/zencoding-vim
-  url = git://github.com/mattn/zencoding-vim.git
 [submodule ".janus/vim-snippets"]
   path = .janus/vim-snippets
   url = git://github.com/honza/vim-snippets.git
 [submodule ".janus/editorconfig-vim"]
   path = .janus/editorconfig-vim
   url = git://github.com/editorconfig/editorconfig-vim.git
+[submodule ".janus/emmet-vim"]
+	path = .janus/emmet-vim
+	url = git://github.com/mattn/emmet-vim.git
