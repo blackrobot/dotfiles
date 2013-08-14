@@ -1,1 +1,0 @@
-readline_parse_and_bind "\C-l": clear-screen
