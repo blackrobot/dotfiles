@@ -11,3 +11,7 @@ build/
 .vim/doc/command-t.txt
 .vim/.netrwhist
 .gitconfig.local
+
+# iPython
+.ipython/db/*
+.ipython/history
