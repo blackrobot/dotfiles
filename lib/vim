@@ -1,5 +1,5 @@
 # Allow use of <C-q> in terminal vim sessions
-function vim() {
+function __vim() {
   stty -ixon;
   command vim $* && stty ixon;
 }

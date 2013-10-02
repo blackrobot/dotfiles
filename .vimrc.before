@@ -1,10 +1,7 @@
+set encoding=utf-8
+
 " Change the leader key to ','
 let mapleader=","
-
-" Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 " Remap C-p and add System copy + paste
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>

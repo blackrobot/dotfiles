@@ -11,4 +11,4 @@ set guioptions-=LIRrb " Hack continued...
 set nomousehide
 
 " Font
-set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline\ 11
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
