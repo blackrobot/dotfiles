@@ -2,7 +2,9 @@
 let mapleader=","
 
 " Powerline
-set rtp+=~/.dotfiles/powerline/powerline/bindings/vim
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " Remap C-p and add System copy + paste
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>

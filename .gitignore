@@ -15,3 +15,4 @@ build/
 # iPython
 .ipython/db/*
 .ipython/history
+.ipython/profile_default
