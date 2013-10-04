@@ -17,6 +17,7 @@ export ZSH_THEME="dzj"
 
 # Plugins
 plugins=(
+  autojump
   command-not-found
   cp
   django
@@ -26,7 +27,6 @@ plugins=(
   gem
   git
   git-extras
-  github
   npm
   pip
   python
