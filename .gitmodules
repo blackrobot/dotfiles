@@ -19,3 +19,6 @@
 [submodule ".janus/emmet-vim"]
 	path = .janus/emmet-vim
 	url = git://github.com/mattn/emmet-vim.git
+[submodule ".janus/dockerfile"]
+	path = .janus/dockerfile
+	url = git://github.com/honza/dockerfile.vim.git
