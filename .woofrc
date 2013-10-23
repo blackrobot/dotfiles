@@ -1,0 +1,4 @@
+[main]
+port = 8008
+count = 1000
+compressed = zip
