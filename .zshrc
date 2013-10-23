@@ -64,10 +64,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Fix prompt for Tmux
-PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+# PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+# Golang
+GOPATH="${HOME}/.golang"
+
+# Add rvm and golang to the path
+PATH="${GOPATH}/bin:${HOME}/.rvm/bin:${PATH}"
 
 # RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Path modifications for Heroku and RVM
-export PATH="./node_modules/.bin:/usr/local/heroku/bin:$PATH:$HOME/.rvm/bin"
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
