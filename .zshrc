@@ -1,19 +1,14 @@
 # vim: set syntax=zsh:
 
 # Path to your oh-my-zsh configuration.
-export DOTFILES="${HOME}/.dotfiles"
-export ZSH="${HOME}/.oh-my-zsh"
+DOTFILES="${HOME}/.dotfiles"
+ZSH="${HOME}/.oh-my-zsh"
 
 # Set to the name theme to load. Change it if user is SSHing.
 # Look in ~/.oh-my-zsh/themes/
-[[ -n "$SSH_CLIENT" ]] || export DEFAULT_USER="damon"
-export ZSH_THEME="dzj"
+[[ -z $SSH_CLIENT ]] && DEFAULT_USER="damon"
 
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
+ZSH_THEME="dzj"
 
 # Plugins
 plugins=(
@@ -29,24 +24,29 @@ plugins=(
   git-extras
   npm
   pip
-  python
-  rvm
   urltools
-  virtualenv
-  virtualenvwrapper
 )
 
-export DISABLE_CORRECTION=true
+# Virtualenv
+if [ -d $HOME/.virtualenvs ]; then
+  export WORKON=$HOME/.virtualenvs
+  export PIP_VIRTUALENV_BASE=$WORKON
+  export PIP_RESPECT_VIRTUALENV=true
+  plugins+=('virtualenv')
+  [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh && plugins+=('virtualenvwrapper')
+fi
+
+# RVM
+if [ -d $HOME/.rvm/bin ]; then
+  export PATH=$HOME/.rvm/bin:$PATH
+fi
+if (( $+commands[rvm] )) ; then
+  plugins+=('rvm')
+fi
+
+DISABLE_CORRECTION=true
 
 source $ZSH/oh-my-zsh.sh
-
-# virtualenv, pip, and python
-export WORKON="${HOME}/.virtualenvs"
-[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-
-alias man="TERMINFO=~/.terminfo LESS=C TERM=mostlike PAGER=less man"
 
 unsetopt auto_name_dirs
 
@@ -54,23 +54,17 @@ unsetopt auto_name_dirs
 source $DOTFILES/.aliases
 for local_lib ($DOTFILES/lib/*) source $local_lib
 
-# Vim for the win!
-export EDITOR="vim"
-
 # Use custom dircolors
 export TERM="xterm-256color"
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-# Fix prompt for Tmux
-# PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
-
 # Golang
-GOPATH="${HOME}/.golang"
+if [ -d $HOME/.golang ]; then
+  export GOPATH=$HOME/.golang
+  export PATH=$GOPATH/bin:$PATH
+fi
 
-# Add rvm and golang to the path
-PATH="${GOPATH}/bin:${HOME}/.rvm/bin:${PATH}"
-
-# RVM
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Vim
+export EDITOR="vim"
