@@ -1,6 +1,7 @@
 set t_Co=256
-set background=dark
-colorscheme desert256
+" set background=dark
+" colorscheme desert256
+colorscheme solarized
 
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
@@ -57,6 +58,6 @@ let g:indent_guides_guide_size = 2
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
