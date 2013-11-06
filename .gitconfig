@@ -5,6 +5,9 @@
   name = "Damon Jablons"
   email = damonjablons@gmail.com
 
+[alias]
+  d = difftool
+
 [color]
   branch = auto
   diff = auto
@@ -32,17 +35,17 @@
   user = blackrobot
 
 [merge]
-  tool = vimdiff
+  tool = gvimdiff
 
 [status]
   relativePaths = true
 
 [diff]
-  tool = vimdiff
+  tool = gvimdiff
   suppressBlankEmpty = true
   mnemonicprefix = true
 
-[difftool "vimdiff"]
+[difftool]
   prompt = false
 
 [branch]
