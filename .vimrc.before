@@ -5,8 +5,11 @@ set background=dark
 let g:solarized_termcolors=256
 
 " Change the leader key to ','
-let g:airline_powerline_fonts = 1
 let mapleader=","
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Remap C-p and add System copy + paste
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
