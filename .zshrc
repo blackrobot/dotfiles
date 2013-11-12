@@ -37,9 +37,9 @@ if [ -d $HOME/.virtualenvs ]; then
 fi
 
 # RVM
-if [ -d $HOME/.rvm/bin ]; then
-  export PATH=$HOME/.rvm/bin:$PATH
-fi
+# if [ -d $HOME/.rvm/bin ]; then
+#   export PATH=$HOME/.rvm/bin:$PATH
+# fi
 if (( $+commands[rvm] )) ; then
   plugins+=('rvm')
 fi
@@ -58,12 +58,6 @@ for local_lib ($DOTFILES/lib/*) source $local_lib
 export TERM="xterm-256color"
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
-# Golang
-if [ -d $HOME/.golang ]; then
-  export GOPATH=$HOME/.golang
-  export PATH=$GOPATH/bin:$PATH
 fi
 
 # Vim
