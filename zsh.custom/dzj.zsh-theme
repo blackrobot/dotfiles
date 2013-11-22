@@ -184,9 +184,9 @@ prompt_time() {
 build_prompt() {
   RETVAL=$?
   prompt_status
+  prompt_context
   prompt_virtualenv
   hash rvm-prompt 2>/dev/null && prompt_rvm || true
-  prompt_context
   prompt_dir
   prompt_git
   prompt_hg
