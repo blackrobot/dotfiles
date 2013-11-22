@@ -152,7 +152,7 @@ prompt_virtualenv() {
 prompt_rvm() {
   local rvm_info=$(rvm-prompt i v g)
 
-  if [[ -n "$rvm_info" ]]; then
+  if [[ -n "$rvm_info" && "$rvm_info" == *"@"* ]]; then
     prompt_segment red white "%{%B%}${rvm_info}%{%b%}"
     prompt_segment red white
   fi
