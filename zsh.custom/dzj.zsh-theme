@@ -149,10 +149,10 @@ prompt_virtualenv() {
   fi
 }
 
-# RVM: current rvm info
 prompt_rvm() {
-  if [[ -e ~/.rvm/bin/rvm-prompt ]]; then
-    local rvm_info="$(~/.rvm/bin/rvm-prompt i v g)"
+  local rvm_info=$(rvm-prompt i v g)
+
+  if [[ -n "$rvm_info" ]]; then
     prompt_segment red white "%{%B%}${rvm_info}%{%b%}"
     prompt_segment red white
   fi
@@ -185,7 +185,7 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
-  prompt_rvm
+  hash rvm-prompt 2>/dev/null && prompt_rvm || true
   prompt_context
   prompt_dir
   prompt_git
@@ -194,5 +194,4 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-# RPROMPT='%{%B%F{white}%}⌚  %{%f%F{blue}%}%*%{%f%b%}'
 RPROMPT='$(prompt_time)'
