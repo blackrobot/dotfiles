@@ -145,7 +145,16 @@ prompt_dir() {
 prompt_virtualenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path ]]; then
-    prompt_segment magenta white "(`basename $virtualenv_path`)"
+    prompt_segment magenta white "$(basename $virtualenv_path)"
+  fi
+}
+
+# RVM: current rvm info
+prompt_rvm() {
+  if [[ -e ~/.rvm/bin/rvm-prompt ]]; then
+    local rvm_info="$(~/.rvm/bin/rvm-prompt i v g)"
+    prompt_segment red white "%{%B%}${rvm_info}%{%b%}"
+    prompt_segment red white
   fi
 }
 
@@ -176,6 +185,7 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
+  prompt_rvm
   prompt_context
   prompt_dir
   prompt_git
