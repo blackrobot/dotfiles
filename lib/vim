@@ -1,5 +1,7 @@
 # Allow use of <C-q> in terminal vim sessions
 function __vim() {
-  stty -ixon;
-  command vim $* && stty ixon;
+  stty -ixon
+  command vim $* && stty ixon || stty ixon
 }
+
+alias vim="__vim"

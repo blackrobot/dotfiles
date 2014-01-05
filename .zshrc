@@ -27,19 +27,19 @@ plugins=(
   urltools
 )
 
-# Virtualenv
+# Virtualenv & Virtualenv Wrapper
 if [ -d $HOME/.virtualenvs ]; then
   export WORKON=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON
   export PIP_RESPECT_VIRTUALENV=true
   plugins+=('virtualenv')
-  [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh && plugins+=('virtualenvwrapper')
+  if [[ -s /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+    plugins+=('virtualenvwrapper')
+  fi
 fi
 
 # RVM
-# if [ -d $HOME/.rvm/bin ]; then
-#   export PATH=$HOME/.rvm/bin:$PATH
-# fi
 if (( $+commands[rvm] )) ; then
   plugins+=('rvm')
 fi
