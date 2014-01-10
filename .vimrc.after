@@ -11,9 +11,11 @@ set colorcolumn=80
 
 " CtrlP Ignores
 " let g:ctrlp_custom_ignore = '\.ext$|\.ex2$'
-set wildignore+=*.pyc,*.zip,*.tar.gz
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+set wildignore+=*.pyc,*.zip,*.gz,*.tar
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
-set wildignore+=*.pdf,*.doc
+set wildignore+=*.pdf,*.doc,*.docx
+set wildignore+=.gitkeep
 
 " Change the indent defaults
 set shiftwidth=2
