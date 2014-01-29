@@ -3,6 +3,9 @@ set t_Co=256
 " colorscheme desert256
 colorscheme solarized
 
+" Highlight the cursor's current line
+set cursorline
+
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
@@ -48,6 +51,10 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
+
+" Ruby stuff
+let g:syntastic_ruby_checkers = ['rubocop']
+au Bufread,BufNewFile *.rb let g:syntastic_quiet_warnings = 0
 
 " Indent Guides
 if has("gui_running")

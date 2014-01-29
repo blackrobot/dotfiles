@@ -29,5 +29,5 @@ let g:neocomplcache_max_list = 15
 let g:neocomplcache_force_overwrite_completefunc = 1
 
 " Syntastic
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
+" let g:syntastic_error_symbol = '✗'
+" let g:syntastic_warning_symbol = '⚠'

@@ -62,3 +62,8 @@ fi
 
 # Vim
 export EDITOR="vim"
+
+# Load .zshrc.local if it exists
+if [[ -s $HOME/.zshrc.local ]]; then
+  source $HOME/.zshrc.local
+fi

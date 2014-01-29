@@ -35,15 +35,18 @@
   user = blackrobot
 
 [merge]
-  tool = gvimdiff
+  tool = vimdiff
 
 [status]
   relativePaths = true
 
 [diff]
-  tool = gvimdiff
+  tool = vimdiff
   suppressBlankEmpty = true
   mnemonicprefix = true
+
+[mergetool]
+  keepBackup = false
 
 [difftool]
   prompt = false

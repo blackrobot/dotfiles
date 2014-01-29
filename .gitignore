@@ -12,6 +12,9 @@ build/
 .vim/.netrwhist
 .gitconfig.local
 
+# Fontz
+.fonts/Library
+
 # iPython
 .ipython/db/*
 .ipython/history
