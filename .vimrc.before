@@ -1,7 +1,11 @@
 set encoding=utf-8
 
 syntax enable
-set background=dark
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
 let g:solarized_termcolors=256
 
 " Change the leader key to ','
@@ -27,7 +31,3 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_auto_delimiter = 1
 let g:neocomplcache_max_list = 15
 let g:neocomplcache_force_overwrite_completefunc = 1
-
-" Syntastic
-" let g:syntastic_error_symbol = '✗'
-" let g:syntastic_warning_symbol = '⚠'
