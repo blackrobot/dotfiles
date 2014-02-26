@@ -1,0 +1,18 @@
+# vim: set ft=sh:
+# Shortcut for killing and removing docker containers
+function docker-rm() {
+  local all_good=0
+  echo "Removing containers..."
+  while read cid; do
+    printf "  $(tput bold)"
+    sudo docker kill $cid 2>&1 > /dev/null
+    if sudo docker rm $cid 2>&1 > /dev/null; then
+      printf "$(tput setaf 2)"$'\xe2\x9c\x93'
+    else
+      all_good=1
+      printf "$(tput setaf 1)"$'\xe2\x9c\x97'
+    fi
+    printf "$(tput sgr0) ${cid}\n"
+  done
+  [[ $all_good -eq 0 ]]
+}

@@ -13,7 +13,10 @@ build/
 .gitconfig.local
 
 # Fontz
-.fonts/Library
+.fonts/
+!.fonts/DejaVu*
+!.fonts/Powerline*
+!.fonts/Ubuntu*
 
 # iPython
 .ipython/db/*

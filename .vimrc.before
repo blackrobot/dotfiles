@@ -22,6 +22,9 @@ nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 " Disable VimResize
 call janus#disable_plugin('gui_settings')
 
+" Make gists private
+let g:gist_post_private = 1
+
 " Neocomplcache
 let g:acp_enableAtStartup = 0
 let g:neocomplcache_enable_at_startup = 1

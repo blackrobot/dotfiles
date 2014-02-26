@@ -12,9 +12,7 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Highlight the 80th column
 set colorcolumn=80
 
-" CtrlP Ignores
-" let g:ctrlp_custom_ignore = '\.ext$|\.ex2$'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -cmo --exclude-standard']
 set wildignore+=*.pyc,*.zip,*.gz,*.tar
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
 set wildignore+=*.pdf,*.doc,*.docx
