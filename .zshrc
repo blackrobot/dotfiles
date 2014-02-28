@@ -15,20 +15,20 @@ plugins=(
   autojump
   command-not-found
   cp
-  django
   encode64
   extract
-  fabric
   gem
   git
   git-extras
+  history
   npm
   pip
+  rsync
   urltools
 )
 
 # Virtualenv & Virtualenv Wrapper
-if [ -d $HOME/.virtualenvs ]; then
+if [[ -d $HOME/.virtualenvs ]]; then
   export WORKON=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON
   export PIP_RESPECT_VIRTUALENV=true
@@ -37,6 +37,11 @@ if [ -d $HOME/.virtualenvs ]; then
     source /usr/local/bin/virtualenvwrapper.sh
     plugins+=('virtualenvwrapper')
   fi
+fi
+
+# Docker
+if (( $+commands[docker] )) ; then
+  plugins+=('docker')
 fi
 
 # RVM
