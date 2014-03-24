@@ -4,7 +4,9 @@
 function __docker_list_all() {
   docker ps -a | tail -n +2
 }
-
+function __docker_list_images() {
+  docker images | tail -n +2
+}
 function docker-list() {
   if [[ -z "$@" ]]; then
     __docker_list_all
@@ -12,9 +14,12 @@ function docker-list() {
     __docker_list_all | grep $@
   fi;
 }
-
-function docker-grep() {
-  docker-list | grep $@
+function docker-images() {
+  if [[ -z "$@" ]]; then
+    __docker_list_images
+  else
+    __docker_list_images | grep $@
+  fi
 }
 
 # Shortcut for killing and removing docker containers
@@ -26,23 +31,18 @@ function __docker_output() {
     local s=$'\xe2\x9c\x97'
     local c=1
   fi
-
   printf "$(tput bold)$(tput setaf ${c})"$s"$(tput sgr0)\n"
 }
 function docker-rm() {
   local cool=
   echo "Removing containers..."
-
   while read container; do
     # Parse the cid
     local cid="$(printf $container | awk '{print $1}')"
-
     # Output the container CID
     printf "  $cid "
-
     # Kill the container
     docker kill $cid > /dev/null || exit 1
-
     # Remove the container, break on error
     docker rm $cid > /dev/null
     cool=$?
@@ -50,3 +50,20 @@ function docker-rm() {
     [[ "$cool" != "0" ]] && break || true
   done
 }
+# Shortcut for removing docker images
+function docker-rmi() {
+  echo "Removing images..."
+  while read image; do
+    local iid="$(printf $image | awk '${print $1}')"
+    printf "  $iid "
+    docker rmi $iid > /dev/null
+    __docker_output $?
+  done
+}
+
+alias dk="docker"
+alias dkr="docker run"
+alias dkl="docker-list"
+alias dkli="docker-images"
+alias dkrm="docker-rm"
+alias dkrmi="docker-rmi"
