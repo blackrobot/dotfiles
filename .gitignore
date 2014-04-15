@@ -22,3 +22,4 @@ build/
 .ipython/db/*
 .ipython/history
 .ipython/profile_default
+.ipython/README
