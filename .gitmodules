@@ -39,6 +39,3 @@
 [submodule ".janus/vim-ansible-yaml"]
 	path = .janus/vim-ansible-yaml
 	url = git://github.com/chase/vim-ansible-yaml.git
-[submodule ".janus/vim-jinja2-syntax"]
-	path = .janus/vim-jinja2-syntax
-	url = git://github.com/Glench/Vim-Jinja2-Syntax.git
