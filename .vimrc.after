@@ -44,7 +44,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Python stuff
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args="--ignore=E403"
+let g:syntastic_python_flake8_args = '--ignore=E403'
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
