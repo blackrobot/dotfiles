@@ -6,3 +6,7 @@ alias mkdirs='mkdir -p'
 alias npm-exec='PATH=$(npm bin):$PATH'
 alias wrk="cd ~/Workspace/"
 alias tmux="tmux -2"
+
+# Git
+alias gf="git fetch --prune"
+alias gfa="git fetch --all --prune"
