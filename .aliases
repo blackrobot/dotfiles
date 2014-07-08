@@ -1,12 +1,13 @@
 # vim: set syntax=sh:
-alias l="ls -alh"
+alias l='ls -alh'
 alias grepir='grep -Ir'
 alias bro='sudo apt-get'
 alias mkdirs='mkdir -p'
 alias npm-exec='PATH=$(npm bin):$PATH'
-alias wrk="cd ~/Workspace/"
-alias tmux="tmux -2"
+alias wrk='cd ~/Workspace/'
+alias prj='cd ${PWD/\/Dropbox\/Workspace\//\/Workspace\/}'
+alias tmux='tmux -2'
 
 # Git
-alias gf="git fetch --prune"
-alias gfa="git fetch --all --prune"
+alias gf='git fetch --prune'
+alias gfa='git fetch --all --prune'
