@@ -11,3 +11,5 @@ alias tmux='tmux -2'
 # Git
 alias gf='git fetch --prune'
 alias gfa='git fetch --all --prune'
+alias gr='git reset'
+alias grh='git reset --hard'
