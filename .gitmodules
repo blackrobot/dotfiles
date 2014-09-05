@@ -39,9 +39,6 @@
 [submodule ".janus/Vim-Jinja2-Syntax"]
 	path = .janus/Vim-Jinja2-Syntax
 	url = git://github.com/Glench/Vim-Jinja2-Syntax.git
-[submodule ".janus/YouCompleteMe"]
-	path = .janus/YouCompleteMe
-	url = git://github.com/Valloric/YouCompleteMe.git
 [submodule ".janus/delimitMate"]
 	path = .janus/delimitMate
 	url = git://github.com/Raimondi/delimitMate.git
