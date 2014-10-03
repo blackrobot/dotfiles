@@ -1,7 +1,7 @@
 # vim: set syntax=sh:
 alias l='ls -alh'
 alias grepir='grep -Ir'
-alias bro='sudo apt-get'
+alias bro='docker run --rm -it damon/bro'
 alias mkdirs='mkdir -p'
 alias npm-exec='PATH=$(npm bin):$PATH'
 alias wrk='cd ~/Workspace/'
