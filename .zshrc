@@ -13,6 +13,8 @@ ZSH_THEME="dzj"
 # Plugins
 plugins=(
   autojump
+  colored-man
+  colorize
   command-not-found
   cp
   encode64
