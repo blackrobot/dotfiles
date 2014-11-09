@@ -1,0 +1,6 @@
+# Play a bell sound after 25 mins
+function pomodoro() {
+  sleep 1500 && \
+  ding && \
+  notify-send --icon=tomate 'Complete!' 'Time for a break :)'
+}

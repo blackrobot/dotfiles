@@ -13,3 +13,8 @@ set nomousehide
 
 " Font
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+
+" Indent Guides
+let g:indent_guides_auto_colors = 1
+" au VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#FDF6E3 ctermbg=3
+" au VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#FDF6ED ctermbg=4
