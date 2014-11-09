@@ -2,8 +2,11 @@
 function countdown() {
    date1=$((`date +%s` + $1));
    spacer="  "
+   echo "Started @ $(date '+%X')"
    while [[ "$date1" -ne `date +%s` ]]; do
      showtime="$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)"
      echo -ne "${spacer}${fg_bold[red]}⌚  ${fg_bold[white]}${showtime}${reset_color}\r";
+     sleep 0.2
    done
+   echo "Finished @ $(date '+%X')"
 }
