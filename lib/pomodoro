@@ -1,6 +1,12 @@
 # Play a bell sound after 25 mins
+function __notify_user() {
+  notify-send --icon=tomate "${1}" "${2}"
+}
+
 function pomodoro() {
-  countdown 1500 &&
-  ding &&
-  notify-send --icon=tomate 'Complete!' 'Time for a break :)'
+  local work_time=$(( 25 * 60 ))  # 25 minutes
+  local break_time=$(( 5 * 60 ))  # 5 minutes
+
+  countdown $(( 25 * 60 )) && ding && __notify_user 'Complete!' 'Time for a break :)' &&
+  countdown $(( 5 * 60 )) && ding && __notify_user 'Breaks over buddy' 'Get back to work!'
 }
