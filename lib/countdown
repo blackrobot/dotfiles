@@ -1,3 +1,4 @@
+# vim: set ft=zsh:
 # Countdown seconds
 function countdown() {
    date1=$((`date +%s` + $1));

@@ -1,4 +1,4 @@
-# vim: set ft=sh:
+# vim: set ft=zsh:
 
 # Shortcut for grepping running containers
 function __docker_list_all() {

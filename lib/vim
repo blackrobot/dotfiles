@@ -1,3 +1,4 @@
+# vim: set ft=zsh:
 # Allow use of <C-q> in terminal vim sessions
 function __vim() {
   stty -ixon

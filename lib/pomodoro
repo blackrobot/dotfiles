@@ -1,3 +1,4 @@
+# vim: set ft=zsh:
 # Play a bell sound after 25 mins
 function __notify_user() {
   ding &&
