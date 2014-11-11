@@ -8,7 +8,7 @@ function __record() {
   local pomo_dir=/tmp/pomodoro
   local log_file="${pomo_dir}/$(date '+%Y-%m-%d').log"
   mkdir -p "${pomo_dir}"
-  echo "$(date '+X')" >> "${log_file}"
+  echo "$(date '+%X')" >> "${log_file}"
   echo -e "${fg_bold[blue]}☺ ${reset_color} That's ${fg_bold[green]}$(cat "${log_file}" | wc -l )${reset_color} today!"
 }
 
