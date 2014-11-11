@@ -1,12 +1,22 @@
 # Play a bell sound after 25 mins
 function __notify_user() {
+  ding &&
   notify-send --icon=tomate "${1}" "${2}"
+}
+
+function __record() {
+  local pomo_dir=/tmp/pomodoro
+  local log_file="${pomo_dir}/$(date '+%Y-%m-%d').log"
+  mkdir -p "${pomo_dir}"
+  echo "$(date '+X')" >> "${log_file}"
+  echo -e "${fg_bold[blue]}☺ ${reset_color} That's ${fg_bold[green]}$(cat "${log_file}" | wc -l )${reset_color} today!"
 }
 
 function pomodoro() {
   local work_time=$(( 25 * 60 ))  # 25 minutes
   local break_time=$(( 5 * 60 ))  # 5 minutes
 
-  countdown $(( 25 * 60 )) && ding && __notify_user 'Complete!' 'Time for a break :)' &&
-  countdown $(( 5 * 60 )) && ding && __notify_user 'Breaks over buddy' 'Get back to work!'
+  countdown $work_time && __notify_user 'Complete!' 'Time for a break :)' &&
+  countdown $break_time && __notify_user 'Breaks over buddy' 'Get back to work!' &&
+  __record
 }
