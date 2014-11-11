@@ -1,23 +1,36 @@
 # vim: set ft=zsh:
 # Play a bell sound after 25 mins
+function __pomodoro_log_file() {
+  local pomo_dir=/tmp/pomodoro
+  local pomo_log="${pomo_dir}/$(date '+%Y-%m-%d').log"
+  mkdir -p "${pomo_dir}"
+  touch "${pomo_log}"
+  printf "${pomo_log}"
+}
+
+function __count_pomodoros() {
+  printf "$(cat "$(__pomodoro_log_file)" | wc -l)"
+}
+
 function __notify_user() {
   ding &&
   notify-send --icon=tomate "${1}" "${2}"
 }
 
 function __record() {
-  local pomo_dir=/tmp/pomodoro
-  local log_file="${pomo_dir}/$(date '+%Y-%m-%d').log"
-  mkdir -p "${pomo_dir}"
-  echo "$(date '+%X')" >> "${log_file}"
-  echo -e "${fg_bold[blue]}☺ ${reset_color} That's ${fg_bold[green]}$(cat "${log_file}" | wc -l )${reset_color} today!"
+  echo "$(date '+%X')" >> "$(__pomodoro_log_file)"
+  echo -e "${fg_bold[blue]}☺ ${reset_color} That's ${fg_bold[green]}$(__count_pomodoros)${reset_color} today!"
 }
 
 function pomodoro() {
   local work_time=$(( 25 * 60 ))  # 25 minutes
   local break_time=$(( 5 * 60 ))  # 5 minutes
 
-  countdown $work_time && __notify_user 'Complete!' 'Time for a break :)' &&
-  countdown $break_time && __notify_user 'Breaks over buddy' 'Get back to work!' &&
+  if [[ "$(__count_pomodoros)" == "3" ]]; then
+    break_time=$(( 30 * 60 ))
+  fi
+
+  countdown $work_time && __notify_user 'Complete!' "Time for a $(( break_time / 60 )) minute break :)" &&
+  countdown $break_time && __notify_user "Break's over buddy" 'Get back to work!' &&
   __record
 }
