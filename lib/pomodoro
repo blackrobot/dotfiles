@@ -36,7 +36,6 @@ function __record() {
 function pomodoro() {
   local work_time=$(( 25 * 60 ))  # 25 minutes
   local break_time=$(__break_time)
-  work_time=3
 
   countdown $work_time && __notify_user 'Complete!' "Time for a $(( break_time / 60 )) minute break :)" &&
   countdown $break_time && __notify_user "Break's over buddy" 'Get back to work!' &&
