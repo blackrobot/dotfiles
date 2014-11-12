@@ -12,6 +12,17 @@ function __count_pomodoros() {
   printf "$(cat "$(__pomodoro_log_file)" | wc -l)"
 }
 
+function __break_time() {
+  local short=$(( 5 * 60 ))
+  local long=$(( 30 * 60 ))
+
+  if [[ "$(( $(( $(cat $(__pomodoro_log_file) | wc -l) + 1 )) % 4 ))" == "0" ]]; then
+    printf $long
+  else
+    printf $short
+  fi
+}
+
 function __notify_user() {
   ding &&
   notify-send --icon=tomate "${1}" "${2}"
@@ -24,11 +35,8 @@ function __record() {
 
 function pomodoro() {
   local work_time=$(( 25 * 60 ))  # 25 minutes
-  local break_time=$(( 5 * 60 ))  # 5 minutes
-
-  if [[ "$(__count_pomodoros)" == "3" ]]; then
-    break_time=$(( 30 * 60 ))
-  fi
+  local break_time=$(__break_time)
+  work_time=3
 
   countdown $work_time && __notify_user 'Complete!' "Time for a $(( break_time / 60 )) minute break :)" &&
   countdown $break_time && __notify_user "Break's over buddy" 'Get back to work!' &&
