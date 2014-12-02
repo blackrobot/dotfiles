@@ -1,0 +1,4 @@
+# vim: set ft=zsh:
+function calc() {
+  awk "BEGIN{ print $* }";
+}
