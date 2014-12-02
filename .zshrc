@@ -8,7 +8,7 @@ ZSH="${HOME}/.oh-my-zsh"
 # Look in ~/.oh-my-zsh/themes/
 [[ -z $SSH_CLIENT ]] && DEFAULT_USER="damon"
 
-ZSH_THEME="dzj"
+ZSH_THEME="dzjparty"
 
 # Plugins
 plugins=(

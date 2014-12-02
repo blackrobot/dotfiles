@@ -12,7 +12,7 @@ set guioptions-=LIRrb " Hack continued...
 set nomousehide
 
 " Font
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+set guifont=Monaco\ for\ Powerline:h12
 
 " Indent Guides
 let g:indent_guides_auto_colors = 1

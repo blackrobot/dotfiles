@@ -1,0 +1,30 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+
+# Window Hints
+bind tab:alt hint
+
+# Reload slate
+bind 1:ctrl relaunch
+
+# Push
+bind l:ctrl;alt  push right bar-resize:screenSizeX*.4
+bind h:ctrl;alt  push left  bar-resize:screenSizeX*.6
+bind o:ctrl;alt  push right bar-resize:screenSizeX*.6
+bind u:ctrl;alt  push left  bar-resize:screenSizeX*.4
+bind j:ctrl;alt  push up    bar-resize:screenSizeY/2
+bind k:ctrl;alt  push down  bar-resize:screenSizeY/2
+bind .:ctrl;alt  corner bottom-right resize:screenSizeX*.4;screenSizeY/2
+bind p:ctrl;alt  corner top-right resize:screenSizeX*.4;screenSizeY/2
+
+# Application Shortcuts
+bind k:cmd;alt focus 'Google Chrome'
+bind j:cmd;alt focus 'MacVim'
+bind l:cmd;alt focus 'iTerm'
+bind h:cmd;alt focus 'HipChat'
+bind p:cmd;alt focus 'Preview'
+bind o:cmd;alt focus 'Finder'
