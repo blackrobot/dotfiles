@@ -6,25 +6,30 @@ config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
 
 # Window Hints
-bind tab:alt hint
+bind tab:alt hint QWERTYUIOP
 
 # Reload slate
 bind 1:ctrl relaunch
 
 # Push
-bind l:ctrl;alt  push right bar-resize:screenSizeX*.4
-bind h:ctrl;alt  push left  bar-resize:screenSizeX*.6
-bind o:ctrl;alt  push right bar-resize:screenSizeX*.6
-bind u:ctrl;alt  push left  bar-resize:screenSizeX*.4
-bind j:ctrl;alt  push up    bar-resize:screenSizeY/2
-bind k:ctrl;alt  push down  bar-resize:screenSizeY/2
-bind .:ctrl;alt  corner bottom-right resize:screenSizeX*.4;screenSizeY/2
-bind p:ctrl;alt  corner top-right resize:screenSizeX*.4;screenSizeY/2
+bind right:ctrl;alt chain push right bar-resize:screenSizeX*.5 | push right bar-resize:screenSizeX*.4
+bind left:ctrl;alt chain push left bar-resize:screenSizeX*.5 | push left bar-resize:screenSizeX*.6
+bind up:ctrl;alt push up bar-resize:screenSizeY/2
+bind down:ctrl;alt push down bar-resize:screenSizeY/2
+
+# Resize to full height, and full width
+bind return:ctrl;alt move windowTopLeftX;0 windowSizeX;screenSizeY
+bind space:ctrl;alt move 0;windowTopLeftY screenSizeX;windowSizeY
+bind backslash:ctrl;alt move 0;0 screenSizeX;screenSizeY
+
+# Corners
+bind ]:ctrl;alt chain corner top-right resize:screenSizeX*.5;screenSizeY/2 | corner top-right resize:screenSizeX*.4;screenSizeY/2
+bind [:ctrl;alt chain corner bottom-right resize:screenSizeX*.5;screenSizeY/2 | corner bottom-right resize:screenSizeX*.4;screenSizeY/2
 
 # Application Shortcuts
-bind k:cmd;alt focus 'Google Chrome'
-bind j:cmd;alt focus 'MacVim'
-bind l:cmd;alt focus 'iTerm'
-bind h:cmd;alt focus 'HipChat'
-bind p:cmd;alt focus 'Preview'
-bind o:cmd;alt focus 'Finder'
+bind h:ctrl;alt focus 'Google Chrome'
+bind j:ctrl;alt focus 'MacVim'
+bind k:ctrl;alt focus 'iTerm'
+bind l:ctrl;alt focus 'HipChat'
+bind o:ctrl;alt focus 'Finder'
+bind p:ctrl;alt focus 'Preview'
