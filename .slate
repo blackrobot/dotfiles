@@ -12,15 +12,15 @@ bind tab:alt hint QWERTYUIOP
 bind 1:ctrl relaunch
 
 # Push
-bind right:ctrl;alt chain push right bar-resize:screenSizeX*.5 | push right bar-resize:screenSizeX*.4
-bind left:ctrl;alt chain push left bar-resize:screenSizeX*.5 | push left bar-resize:screenSizeX*.6
-bind up:ctrl;alt push up bar-resize:screenSizeY/2
-bind down:ctrl;alt push down bar-resize:screenSizeY/2
+bind right:ctrl;alt push right bar-resize:screenSizeX/2
+bind left:ctrl;alt push left bar-resize:screenSizeX/2
+bind up:ctrl;alt move windowTopLeftX;0 windowSizeX;screenSizeY/2
+bind down:ctrl;alt move windowTopLeftX;screenSizeY/2 windowSizeX;screenSizeY/2
 
 # Resize to full height, and full width
-bind return:ctrl;alt move windowTopLeftX;0 windowSizeX;screenSizeY
-bind space:ctrl;alt move 0;windowTopLeftY screenSizeX;windowSizeY
 bind backslash:ctrl;alt move 0;0 screenSizeX;screenSizeY
+# Undo
+bind z:ctrl;alt undo
 
 # Corners
 bind ]:ctrl;alt chain corner top-right resize:screenSizeX*.5;screenSizeY/2 | corner top-right resize:screenSizeX*.4;screenSizeY/2

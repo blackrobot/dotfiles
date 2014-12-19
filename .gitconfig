@@ -36,6 +36,8 @@
 
 [merge]
   tool = vimdiff
+  conflictstyle = diff3
+  prompt = false
 
 [status]
   relativePaths = true
@@ -47,6 +49,7 @@
 
 [mergetool]
   keepBackup = false
+  prompt = false
 
 [difftool]
   prompt = false
