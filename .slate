@@ -1,6 +1,9 @@
+# vim: set ft=conf:
+
 config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
+
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
@@ -15,7 +18,7 @@ bind 1:ctrl relaunch
 bind right:ctrl;alt push right bar-resize:screenSizeX/2
 bind left:ctrl;alt push left bar-resize:screenSizeX/2
 bind up:ctrl;alt move windowTopLeftX;0 windowSizeX;screenSizeY/2
-bind down:ctrl;alt move windowTopLeftX;screenSizeY/2 windowSizeX;screenSizeY/2
+bind down:ctrl;alt move windowTopLeftX;windowTopLeftY+(screenSizeY/2) windowSizeX;screenSizeY/2
 
 # Resize to full height, and full width
 bind backslash:ctrl;alt move 0;0 screenSizeX;screenSizeY
