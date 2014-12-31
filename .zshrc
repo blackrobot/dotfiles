@@ -17,6 +17,7 @@ plugins=(
   colorize
   command-not-found
   cp
+  dash
   encode64
   extract
   gem

@@ -18,11 +18,13 @@ bind 1:ctrl relaunch
 # Push
 bind right:ctrl;alt push right bar-resize:screenSizeX/2
 bind left:ctrl;alt push left bar-resize:screenSizeX/2
+
+# Move
 bind up:ctrl;alt move windowTopLeftX;0 windowSizeX;screenSizeY/2
 bind down:ctrl;alt move windowTopLeftX;windowTopLeftY+(screenSizeY/2) windowSizeX;screenSizeY/2
 
 # Resize to full height, and full width
-bind backslash:ctrl;alt move 0;0 screenSizeX;screenSizeY
+bind backslash:ctrl;alt move screenOriginX;screenOriginY screenSizeX;screenSizeY
 # Undo
 bind z:ctrl;alt undo
 
