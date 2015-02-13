@@ -35,7 +35,7 @@
   user = blackrobot
 
 [merge]
-  tool = vimdiff
+  tool = mvimdiff
   conflictstyle = diff3
   prompt = false
 
@@ -43,15 +43,17 @@
   relativePaths = true
 
 [diff]
-  tool = vimdiff
+  tool = mvimdiff
   suppressBlankEmpty = true
   mnemonicprefix = true
 
-[mergetool]
+[mergetool "mvimdiff"]
+  cmd = mvim -f -d \"$LOCAL\" \"REMOTE\"
   keepBackup = false
   prompt = false
 
-[difftool]
+[difftool "mvimdiff"]
+  cmd = mvim -f -d \"$LOCAL\" \"REMOTE\"
   prompt = false
 
 [branch]

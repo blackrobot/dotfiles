@@ -7,7 +7,6 @@ alias npm-exec='PATH=$(npm bin):$PATH'
 alias tmux='tmux -2'
 alias update='sudo apt-get update'
 alias upgrade='sudo apt-get upgrade'
-alias wrk='cd ~/Workspace/'
 
 # Git
 alias gf='git fetch --prune'

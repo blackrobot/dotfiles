@@ -44,3 +44,6 @@
 [submodule ".janus/YouCompleteMe"]
   path = .janus/YouCompleteMe
   url = git://github.com/Valloric/YouCompleteMe.git
+[submodule ".janus/vim-numbertoggle"]
+  path = .janus/vim-numbertoggle
+  url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
