@@ -28,6 +28,8 @@ plugins=(
   pip
   rsync
   urltools
+  vi-mode
+  vi-history-substring
 )
 
 # Virtualenv & Virtualenv Wrapper

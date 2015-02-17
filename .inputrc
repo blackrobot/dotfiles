@@ -1,0 +1,4 @@
+# Vi insert mode
+set editing-mode vi
+set keymap vi-command
+set blink-matching-paren on
