@@ -1,5 +1,5 @@
 " colorscheme molokai
-set background=light
+" set background=light
 
 " Hide the toolbar, scrollbar, and menubar
 set guioptions-=m
