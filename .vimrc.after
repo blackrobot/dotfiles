@@ -53,10 +53,6 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
 
-" Ruby stuff
-let g:syntastic_ruby_checkers = ['rubocop']
-au Bufread,BufNewFile *.rb let g:syntastic_quiet_warnings = 0
-
 " Indent Guides
 " if has("gui_running")
 "   au VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#FDF6E3 ctermbg=3
@@ -68,3 +64,6 @@ au Bufread,BufNewFile *.rb let g:syntastic_quiet_warnings = 0
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 2
 let g:indent_guides_enable_on_vim_startup = 1
+
+" Use silver-searcher (ag) instead of ack-grep
+let g:ackprg = 'ag --nogroup --nocolor --column'
