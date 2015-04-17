@@ -47,3 +47,15 @@
 [submodule ".janus/vim-numbertoggle"]
   path = .janus/vim-numbertoggle
   url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule ".nvim/bundle/vim-sensible"]
+	path = .nvim/bundle/vim-sensible
+	url = git://github.com/tpope/vim-sensible.git
+[submodule ".nvim/bundle/vim-colors-solarized"]
+	path = .nvim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule ".nvim/bundle/ag"]
+	path = .nvim/bundle/ag
+	url = git://github.com/rking/ag.vim
+[submodule ".nvim/bundle/vim-airline"]
+	path = .nvim/bundle/vim-airline
+	url = git://github.com/bling/vim-airline.git
