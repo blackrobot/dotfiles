@@ -1,10 +1,7 @@
 # vim: set syntax=sh:
-alias bro='docker run --rm -it damon/bro'
 alias grepir='grep -Ir'
 alias l='ls -Alh'
 alias mkdirs='mkdir -p'
-alias npm-exec='PATH=$(npm bin):$PATH'
-alias tmux='tmux -2'
 
 # Git
 alias gf='git fetch --prune'
