@@ -38,3 +38,6 @@
 [submodule ".janus/vim-numbertoggle"]
   path = .janus/vim-numbertoggle
   url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
+[submodule ".janus/vim-gitgutter"]
+  path = .janus/vim-gitgutter
+  url = git://github.com/airblade/vim-gitgutter.git
