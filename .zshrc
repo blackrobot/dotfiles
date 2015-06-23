@@ -11,11 +11,13 @@ ZSH_THEME="dzjparty"
 
 # Plugins
 plugins=(
-  autojump
+  boot2docker
   colored-man
   colorize
   command-not-found
   cp
+  docker-compose
+  docker
   encode64
   extract
   git
@@ -32,11 +34,6 @@ function source_if_exists {
     source "${1}"
   fi
 }
-
-# Docker
-if (( $+commands[docker] )) ; then
-  plugins+=('docker')
-fi
 
 source "${DOTFILES}/.env"
 source "${ZSH}/oh-my-zsh.sh"
