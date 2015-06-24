@@ -1,13 +1,6 @@
 set encoding=utf-8
 
 syntax enable
-" if has('gui_running')
-"   set background=light
-" else
-"   set background=dark
-" endif
-set background=dark
-let g:solarized_termcolors=256
 
 " Change the leader key to ','
 let mapleader=","
