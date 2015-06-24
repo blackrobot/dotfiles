@@ -27,6 +27,7 @@ plugins=(
   urltools
   vi-mode
   vi-history-substring
+  z
 )
 
 function source_if_exists {
