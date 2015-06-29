@@ -41,3 +41,6 @@
 [submodule ".janus/vim-gitgutter"]
   path = .janus/vim-gitgutter
   url = git://github.com/airblade/vim-gitgutter.git
+[submodule ".janus/vim-systemd-syntax"]
+  path = .janus/vim-systemd-syntax
+  url = git://github.com/Matt-Deacalion/vim-systemd-syntax.git
