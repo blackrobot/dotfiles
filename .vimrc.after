@@ -54,16 +54,12 @@ au BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
 
 " Indent Guides
-" if has("gui_running")
-"   au VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#FDF6E3 ctermbg=3
-"   au VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#FDF6ED ctermbg=4
-" else
-"   au VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#212121 ctermbg=3
-"   au VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#404040 ctermbg=4
-" endif
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 2
 let g:indent_guides_enable_on_vim_startup = 1
 
 " Use silver-searcher (ag) instead of ack-grep
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" Don't hide quotes in JSON
+let g:vim_json_syntax_conceal = 0
