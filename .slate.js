@@ -17,12 +17,12 @@ var hint = slate.operation('hint', {
 });
 slate.bind("tab:alt", hint);
 
-// Reload Slate
-var relaunch = slate.operation('relaunch');
-slate.bind("1:ctrl", relaunch);
-
 // Push & Move Binding
 var key_chord = "ctrl;alt";
+
+// Reload Slate
+var relaunch = slate.operation('relaunch');
+slate.bind("home:" + key_chord, relaunch);
 
 // Push
 var push = function(dir) {
