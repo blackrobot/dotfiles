@@ -11,7 +11,7 @@ ZSH_THEME="dzjparty"
 
 # Plugins
 plugins=(
-  boot2docker
+  aws
   colored-man
   colorize
   command-not-found
