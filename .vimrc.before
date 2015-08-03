@@ -5,6 +5,9 @@ syntax enable
 " Change the leader key to ','
 let mapleader=","
 
+" Use the default clipboard
+set clipboard=unnamed
+
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
