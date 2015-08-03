@@ -2,6 +2,9 @@
 "" Janus setup
 ""
 
+" Explicitly set the python host
+let g:python_host_prog = '/usr/local/bin/python'
+
 " Define paths
 let g:janus_path = expand("~/.vim/janus/vim")
 let g:janus_vim_path = expand("~/.vim/janus/vim")
