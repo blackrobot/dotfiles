@@ -1,7 +1,6 @@
-set t_Co=256
+" Needed a change
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme base16-atelierlakeside
 
 " Highlight the cursor's current line
 set cursorline
@@ -12,7 +11,6 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Highlight the 80th column
 set colorcolumn=80
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -cmo --exclude-standard']
 set wildignore+=*.pyc,*.zip,*.gz,*.tar
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
 set wildignore+=*.pdf,*.doc,*.docx
