@@ -1,5 +1,6 @@
 " Needed a change
 set background=dark
+let base16colorspace=256
 colorscheme base16-atelierlakeside
 
 " Highlight the cursor's current line

@@ -48,7 +48,8 @@
   mnemonicprefix = true
 
 [mergetool "mvimdiff"]
-  cmd = mvim -f -d \"$LOCAL\" \"REMOTE\"
+  # cmd = mvim -f -d \"$LOCAL\" \"REMOTE\"
+  trustExitCode = true
   keepBackup = false
   prompt = false
 
