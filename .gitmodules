@@ -44,3 +44,6 @@
 [submodule ".janus/vim-systemd-syntax"]
   path = .janus/vim-systemd-syntax
   url = git://github.com/Matt-Deacalion/vim-systemd-syntax.git
+[submodule ".janus/dash.vim"]
+  path = .janus/dash.vim
+  url = git://github.com/rizzatti/dash.vim.git
