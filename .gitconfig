@@ -38,6 +38,7 @@
   tool = mvimdiff
   conflictstyle = diff3
   prompt = false
+  stat = true
 
 [status]
   relativePaths = true
@@ -59,3 +60,6 @@
 
 [branch]
   autosetupmerge = true
+
+[core]
+  whitespace = trailing-space,space-before-tab

@@ -60,6 +60,11 @@ function docker-rmi() {
     __docker_output $?
   done
 }
+# Shortcut for switching docker-machine environments
+function dm-env() {
+  eval "$(docker-machine env ${1})" && docker-machine ls | grep "$1"
+}
+
 
 alias dk="docker"
 alias dkr="docker run"
@@ -67,3 +72,4 @@ alias dkl="docker-list"
 alias dkli="docker-images"
 alias dkrm="docker-rm"
 alias dkrmi="docker-rmi"
+alias dkenv="dm-env"

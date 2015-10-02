@@ -1,0 +1,6 @@
+# vim: set ft=zsh:
+
+# Shortcut for switching docker-machine environments
+function dmac() {
+  eval "$(docker-machine env ${1})" && docker-machine ls
+}
