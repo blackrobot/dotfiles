@@ -91,7 +91,7 @@ var focus = function(app) {
 };
 var chrome = focus("Google Chrome");
 var macvim = focus("MacVim");
-var iterm = focus("iTerm");
+var iterm = focus("iTerm2");
 var hipchat = focus("HipChat");
 var finder = focus("Finder");
 var preview = focus("Preview");
