@@ -1,5 +1,0 @@
-# vim: set ft=zsh:
-# Pretty print json
-function json() {
-  docker run --rm -i -a stdin -a stdout -a stderr damon/json cat
-}

@@ -1,5 +1,0 @@
-# vim: set ft=zsh:
-# Play a bell sound
-function ding() {
-  (ogg123 -q "/usr/share/sounds/freedesktop/stereo/complete.oga" &) > /dev/null
-}
