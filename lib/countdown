@@ -1,17 +1,19 @@
 # vim: set ft=zsh:
+
 # Countdown seconds
+
 function __show_time() {
-  echo -ne "  ${fg_bold[red]}⌚  ${fg_bold[white]}${1}${reset_color}\r";
+  echo -ne "  ⏳ ${fg_bold[white]}${1}${reset_color}\r";
 }
 
 function countdown() {
-  local start_time=$((`date '+%s'` + $1))
   local sleep_secs=0.1
+  local start_time=$(date -v"+${1}S" '+%s')
 
   echo "Started @ $(date '+%X')"
 
   while [[ "${start_time}" -ne "$(date '+%s')" ]]; do
-    __show_time "$(date -u --date @$(($start_time - `date '+%s'`)) '+%H:%M:%S')"
+    __show_time "$(date -u -r $(($start_time - `date '+%s'`)) '+%H:%M:%S')"
     sleep $sleep_secs
   done
 
