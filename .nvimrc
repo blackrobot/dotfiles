@@ -24,6 +24,9 @@ call janus#add_group("colors")
 ""
 
 if filereadable(expand("~/.vimrc.before"))
+  " fzf
+  set rtp+=/usr/local/opt/fzf
+  call janus#disable_plugin('ctrlp')
   source ~/.vimrc.before
 endif
 
@@ -39,3 +42,10 @@ exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 call janus#load_pathogen()
 
 " .vimrc.after is loaded after the plugins have loaded
+" Fuzzy File Finder (fzf)
+let g:fzf_launcher = '/Users/damon/.dotfiles/iterm/macvim_fzf.sh %s'
+let g:fzf_action = {
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \ }
+nnoremap <c-p> :FZF<cr>

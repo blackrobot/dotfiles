@@ -45,4 +45,5 @@ unsetopt auto_name_dirs
 source "${DOTFILES}/.aliases"
 for local_lib ("${DOTFILES}/lib/"*) source "${local_lib}"
 
+source_if_exists "${HOME}/.fzf.zsh"
 source_if_exists "${HOME}/.zshrc.local"

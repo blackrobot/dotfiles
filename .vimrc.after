@@ -26,8 +26,6 @@ set softtabstop=2
 set wildmode=longest,list,full
 set wildmenu
 
-au FileType python setlocal sts=4 sw=4 ts=4 tw=79
-
 " Syntax
 au BufNewFile,BufRead *.scss setlocal filetype=scss
 au BufNewFile,BufRead *.html setlocal filetype=htmldjango
@@ -45,6 +43,7 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 let g:ycm_autoclose_preview_window_after_completion=1
 
 " Python stuff
+au FileType python setlocal sts=4 sw=4 ts=4 tw=79
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore=E403,E128,F403'
 au BufWritePre *.py normal m`:%s/\s\+$//e``

@@ -12,11 +12,10 @@ set clipboard=unnamed
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
-" Disable VimResize
+" Disable unused plugins
 call janus#disable_plugin('gui_settings')
-
-" Disable supertab
 call janus#disable_plugin('supertab')
+call janus#disable_plugin('multiple-cursors')
 
 " Make gists private
 let g:gist_post_private = 1
