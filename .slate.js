@@ -90,13 +90,15 @@ var focus = function(app) {
   return slate.operation('focus', {'app': app});
 };
 var chrome = focus("Google Chrome");
-var macvim = focus("MacVim");
+// var macvim = focus("MacVim");
+var neovim = focus("Neovim");
 var iterm = focus("iTerm2");
 var hipchat = focus("HipChat");
 var finder = focus("Finder");
 var preview = focus("Preview");
 slate.bind('h:' + key_chord, chrome);
-slate.bind('j:' + key_chord, macvim);
+// slate.bind('j:' + key_chord, macvim);
+slate.bind('j:' + key_chord, neovim);
 slate.bind('k:' + key_chord, iterm);
 slate.bind('l:' + key_chord, hipchat);
 slate.bind('o:' + key_chord, finder);

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if pmset -g batt | head -1 | grep -q "AC Power" ; then
+
+  # Update sources
+  /usr/local/bin/brew update
+
+  # Upgrade neovim
+  /usr/local/bin/brew reinstall --HEAD neovim neovim-dot-app
+  /usr/local/bin/brew linkapps neovim neovim-dot-app
+
+  # Upgrade everything else
+  /usr/local/bin/brew upgrade --all
+
+  # Cleanup
+  /usr/local/bin/brew cleanup
+  /usr/local/bin/brew cask cleanup
+
+fi

@@ -47,3 +47,6 @@
 [submodule ".janus/dash.vim"]
   path = .janus/dash.vim
   url = git://github.com/rizzatti/dash.vim.git
+[submodule ".janus/vim-over"]
+	path = .janus/vim-over
+	url = https://github.com/osyo-manga/vim-over.git
