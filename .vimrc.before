@@ -19,3 +19,7 @@ call janus#disable_plugin('multiple-cursors')
 
 " Make gists private
 let g:gist_post_private = 1
+
+" Turn on all python syntax highlighting features
+let g:python_highlight_all = 1
+let g:python_version_2 = 1
