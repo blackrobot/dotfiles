@@ -48,5 +48,8 @@
   path = .janus/dash.vim
   url = git://github.com/rizzatti/dash.vim.git
 [submodule ".janus/vim-over"]
-	path = .janus/vim-over
-	url = https://github.com/osyo-manga/vim-over.git
+  path = .janus/vim-over
+  url = git://github.com/osyo-manga/vim-over.git
+[submodule ".janus/python-syntax"]
+  path = .janus/python-syntax
+  url = git://github.com/hdima/python-syntax.git
