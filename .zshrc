@@ -1,5 +1,4 @@
 # vim: set syntax=zsh:
-
 # Path to your oh-my-zsh configuration.
 DOTFILES="${HOME}/.dotfiles"
 ZSH="${HOME}/.oh-my-zsh"
