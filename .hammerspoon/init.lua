@@ -57,24 +57,19 @@ hs.hotkey.bind(mash, "down", function()
   hs.grid.set(win, cell)
 end)
 
-local chrome = hs.application.get("Google Chrome")
-local iterm = hs.application.get("iTerm2")
-local vim = hs.application.get("MacVim") or hs.application.get("Neovim")
-local hipchat = hs.application.get("HipChat")
-local finder = hs.application.get("Finder")
-local preview = hs.application.get("Preview")
-
-local function activateApp(app)
-  if (app) then
-    return app:activate()
-  else
-    return app
+local function activateApp(...)
+  for i, name in ipairs({...}) do
+    local app = hs.application.get(name)
+    if app then
+      return app:activate()
+    end
   end
+  return nil
 end
 
-hs.hotkey.bind(mash, "h", function() activateApp(chrome) end)
-hs.hotkey.bind(mash, "j", function() activateApp(iterm) end)
-hs.hotkey.bind(mash, "k", function() activateApp(vim) end)
-hs.hotkey.bind(mash, "l", function() activateApp(hipchat) end)
-hs.hotkey.bind(mash, "o", function() activateApp(finder) end)
-hs.hotkey.bind(mash, "p", function() activateApp(preview) end)
+hs.hotkey.bind(mash, "h", function() activateApp("Google Chrome") end)
+hs.hotkey.bind(mash, "j", function() activateApp("iTerm2") end)
+hs.hotkey.bind(mash, "k", function() activateApp("MacVim", "Neovim") end)
+hs.hotkey.bind(mash, "l", function() activateApp("HipChat") end)
+hs.hotkey.bind(mash, "o", function() activateApp("Finder") end)
+hs.hotkey.bind(mash, "p", function() activateApp("Preview") end)
