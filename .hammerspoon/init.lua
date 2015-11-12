@@ -24,6 +24,13 @@ hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
 
 hs.hotkey.bind(mash, "return", hs.grid.show)
 
+-- Screensaver hotkey
+hs.hotkey.bind(mash, "forwarddelete", function()
+  hs.timer.doAfter(0.35, function()
+    hs.applescript.applescript('tell application "ScreenSaverEngine" to activate')
+  end)
+end)
+
 hs.hotkey.bind(mash, "\\", function()
   local win = hs.window.focusedWindow()
   hs.grid.maximizeWindow(win)
