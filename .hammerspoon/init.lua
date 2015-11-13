@@ -80,3 +80,42 @@ hs.hotkey.bind(mash, "k", function() activateApp("MacVim", "Neovim") end)
 hs.hotkey.bind(mash, "l", function() activateApp("HipChat") end)
 hs.hotkey.bind(mash, "o", function() activateApp("Finder") end)
 hs.hotkey.bind(mash, "p", function() activateApp("Preview") end)
+
+
+-- print screen = f13
+
+
+function moveWindowOneSpace(direction)
+  local mouseOrigin = hs.mouse.getAbsolutePosition()
+  local win = hs.window.focusedWindow()
+  local clickPoint = win:zoomButtonRect()
+
+  clickPoint.x = clickPoint.x + clickPoint.w + 5
+  clickPoint.y = clickPoint.y + (clickPoint.h / 2)
+
+  local mouseClickEvent = hs.eventtap.event.newMouseEvent(
+    hs.eventtap.event.types.leftMouseDown, clickPoint)
+  mouseClickEvent:post()
+  hs.timer.usleep(150000)
+
+  local nextSpaceDownEvent = hs.eventtap.event.newKeyEvent(
+    {"ctrl"}, direction, true)
+  nextSpaceDownEvent:post()
+  hs.timer.usleep(150000)
+
+  local nextSpaceUpEvent = hs.eventtap.event.newKeyEvent(
+    {"ctrl"}, direction, false)
+  nextSpaceUpEvent:post()
+  hs.timer.usleep(150000)
+
+  local mouseReleaseEvent = hs.eventtap.event.newMouseEvent(
+    hs.eventtap.event.types.leftMouseUp, clickPoint)
+  mouseReleaseEvent:post()
+  hs.timer.usleep(150000)
+
+  hs.mouse.setAbsolutePosition(mouseOrigin)
+end
+
+mash_too = {"shift", "ctrl", "alt"}
+hs.hotkey.bind(mash_too, "right", function() moveWindowOneSpace("right") end)
+hs.hotkey.bind(mash_too, "left", function() moveWindowOneSpace("left") end)
