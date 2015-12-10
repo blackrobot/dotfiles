@@ -1,3 +1,6 @@
+" Use a light background
+set background=light
+
 " Hide the toolbar, scrollbar, and menubar
 set guioptions-=m
 set guioptions-=T

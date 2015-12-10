@@ -42,6 +42,7 @@ exe 'source ' . g:janus_vim_path . '/core/plugins.vim'
 call janus#load_pathogen()
 
 " .vimrc.after is loaded after the plugins have loaded
+
 " Fuzzy File Finder (fzf)
 let g:fzf_launcher = '/Users/damon/.dotfiles/iterm/macvim_fzf.sh %s'
 let g:fzf_action = {

@@ -1,7 +1,9 @@
 " Needed a change
+" set background=dark
+" let base16colorspace=256
+" colorscheme base16-atelierlakeside
 set background=dark
-let base16colorspace=256
-colorscheme base16-atelierlakeside
+colorscheme PaperColor
 
 " Highlight the cursor's current line
 set cursorline
@@ -61,3 +63,31 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Don't hide quotes in JSON
 let g:vim_json_syntax_conceal = 0
+
+" Gutentags
+" let g:gutentags_tagfile = ".tags"
+let g:gutentags_cache_dir = expand("~/.vim/_temp/tags")
+let g:gutentags_exclude = [
+    \ '.git',
+    \ '.svn',
+    \ '.hg',
+    \ 'bundle',
+    \ 'min',
+    \ 'vendor',
+    \ '\*.min.\*',
+    \ '\*.map',
+    \ '\*.swp',
+    \ '\*.bak',
+    \ '\*.pyc',
+    \ '\*.class',
+    \ '\*.sln',
+    \ '\*.Master',
+    \ '\*.csproj',
+    \ '\*.csproj.user',
+    \ '\*.cache',
+    \ '\*.dll',
+    \ '\*.pdb',
+    \ 'tags',
+    \ 'cscope.\*',
+    \ '\*.tar.\*'
+    \ ]
