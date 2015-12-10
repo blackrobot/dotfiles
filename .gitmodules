@@ -56,3 +56,6 @@
 [submodule ".janus/vim-markdown-composer"]
 	path = .janus/vim-markdown-composer
 	url = git://github.com/euclio/vim-markdown-composer
+[submodule ".janus/papercolor-theme"]
+	path = .janus/papercolor-theme
+	url = git://github.com/NLKNguyen/papercolor-theme.git
