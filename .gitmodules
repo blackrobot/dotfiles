@@ -62,3 +62,6 @@
 [submodule ".janus/vim-gutentags"]
   path = .janus/vim-gutentags
   url = git@github.com:ludovicchabant/vim-gutentags.git
+[submodule ".janus/vim-startify"]
+	path = .janus/vim-startify
+	url = git@github.com:mhinz/vim-startify.git
