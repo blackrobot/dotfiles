@@ -1,9 +1,9 @@
 " Needed a change
-" set background=dark
-" let base16colorspace=256
-" colorscheme base16-atelierlakeside
 set background=dark
-colorscheme PaperColor
+let base16colorspace=256
+colorscheme base16-atelierlakeside
+" set background=dark
+" colorscheme PaperColor
 
 " Highlight the cursor's current line
 set cursorline
