@@ -18,6 +18,7 @@ hs.grid.MARGINY = 0
 -- Funcz
 hs.hotkey.bind(mash, "end", function()
   hs.reload()
+  hs.notify.show("Hammerspoon", "", "Reloaded configuration", "")
 end)
 
 hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
@@ -27,7 +28,7 @@ hs.hotkey.bind(mash, "return", hs.grid.show)
 -- Screensaver hotkey
 hs.hotkey.bind(mash, "forwarddelete", function()
   hs.timer.doAfter(0.35, function()
-    hs.applescript.applescript('tell application "ScreenSaverEngine" to activate')
+    hs.caffeinate.startScreensaver()
   end)
 end)
 
@@ -36,16 +37,49 @@ hs.hotkey.bind(mash, "\\", function()
   hs.grid.maximizeWindow(win)
 end)
 
+local function snapAndSize(win, dir)
+  local pos = hs.grid.snap(win).get(win)
+
+  local max_height = hs.grid.GRIDHEIGHT - 1
+  local min_height = 2
+
+  local max_width = hs.grid.GRIDWIDTH - 1
+  local min_width = 2
+
+  local half_width = hs.grid.GRIDWIDTH / 2
+  local half_height = hs.grid.GRIDHEIGHT / 2
+
+  pos.y = 0
+  pos.h = hs.grid.GRIDHEIGHT
+  pos.w = pos.w - 1
+
+  if pos.w < min_width then
+    pos.w = max_width
+  elseif pos.w > max_width then
+    pos.w = min_width
+  end
+
+  if dir == "right" then
+    pos.x = hs.grid.GRIDWIDTH - pos.w
+  else
+    pos.x = 0
+  end
+
+  hs.grid.set(win, pos)
+end
+
 hs.hotkey.bind(mash, "right", function()
   local win = hs.window.focusedWindow()
-  local half_width = hs.grid.GRIDWIDTH / 2
-  hs.grid.snap(win).set(win, {half_width, 0, half_width, hs.grid.GRIDHEIGHT})
+  -- local half_width = hs.grid.GRIDWIDTH / 2
+  -- hs.grid.snap(win).set(win, {half_width, 0, half_width, hs.grid.GRIDHEIGHT})
+  snapAndSize(win, "right")
 end)
 
 hs.hotkey.bind(mash, "left", function()
   local win = hs.window.focusedWindow()
-  local half_width = hs.grid.GRIDWIDTH / 2
-  hs.grid.snap(win).set(win, {0, 0, half_width, hs.grid.GRIDHEIGHT})
+  -- local half_width = hs.grid.GRIDWIDTH / 2
+  -- hs.grid.snap(win).set(win, {0, 0, half_width, hs.grid.GRIDHEIGHT})
+  snapAndSize(win, "left")
 end)
 
 hs.hotkey.bind(mash, "up", function()
