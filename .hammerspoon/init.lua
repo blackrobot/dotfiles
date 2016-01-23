@@ -1,7 +1,7 @@
 -- General settings
 mash = {"ctrl", "alt"}
 
-hs.window.animationDuration = 0.05
+hs.window.animationDuration = 0.01
 
 -- Hints
 hs.hints.fontSize = 26.0
@@ -40,14 +40,11 @@ end)
 local function snapAndSize(win, dir)
   local pos = hs.grid.snap(win).get(win)
 
-  local max_height = hs.grid.GRIDHEIGHT - 1
+  local max_height = 4
   local min_height = 2
 
-  local max_width = hs.grid.GRIDWIDTH - 1
+  local max_width = 4
   local min_width = 2
-
-  local half_width = hs.grid.GRIDWIDTH / 2
-  local half_height = hs.grid.GRIDHEIGHT / 2
 
   pos.y = 0
   pos.h = hs.grid.GRIDHEIGHT
