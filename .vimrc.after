@@ -64,6 +64,14 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Don't hide quotes in JSON
 let g:vim_json_syntax_conceal = 0
 
+" Startify options
+let g:startify_change_to_dir = 1
+let g:startify_bookmarks = [
+  \ '~/Workspace/howgood/research',
+  \ '~/Workspace/howgood',
+  \ '~/Workspace'
+  \ ]
+
 " Gutentags
 " let g:gutentags_tagfile = ".tags"
 let g:gutentags_cache_dir = expand("~/.vim/_temp/tags")
