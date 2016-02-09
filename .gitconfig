@@ -31,6 +31,12 @@
   changed = green
   untracked = cyan
 
+[color "diff-highlight"]
+  oldNormal = "red bold"
+  oldHighlight = "red bold 52"
+  newNormal = "green bold"
+  newHighlight = "green bold 22"
+
 [github]
   user = blackrobot
 
@@ -63,3 +69,4 @@
 
 [core]
   whitespace = trailing-space,space-before-tab
+  pager = "diff-highlight | diff-so-fancy | less --tabs=1,5 -R"
