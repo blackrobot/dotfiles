@@ -1,0 +1,17 @@
+# vim: set ft=zsh:
+
+# Toggle hidden files in Finder
+__osx_finder_toggle_hidden() {
+  local on_off
+
+  if [[ "$(defaults read com.apple.finder AppleShowAllFiles)" == "1" ]]; then
+    on_off=false
+  else
+    on_off=true
+  fi
+
+  defaults write com.apple.finder AppleShowAllFiles -bool "$on_off" && \
+    killall Finder
+}
+
+alias finder-show="__osx_finder_toggle_hidden"
