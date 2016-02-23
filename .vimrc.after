@@ -35,6 +35,10 @@ au BufnewFile,BufRead *.slim setlocal filetype=slim
 au BufNewFile,BufRead /etc/nginx/*,*/nginx/*.conf setlocal filetype=nginx
 au BufnewFile,BufRead xorg.conf* setlocal filetype=xf86conf
 
+" Spelling
+set spelllang=en_us
+au BufNewFile,BufRead *.md,*.txt setlocal spell
+
 " Omnicomplete
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
