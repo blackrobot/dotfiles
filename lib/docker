@@ -67,6 +67,8 @@ function dm-env() {
 
 
 alias dk="docker"
+alias dc="docker-compose"
+alias dm="docker-machine"
 alias dkr="docker run"
 alias dkl="docker-list"
 alias dkli="docker-images"
