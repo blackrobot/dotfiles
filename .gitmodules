@@ -74,3 +74,6 @@
 [submodule ".janus/vim-airline"]
   path = .janus/vim-airline
   url = git@github.com:vim-airline/vim-airline.git
+[submodule ".janus/vim-airline-themes"]
+  path = .janus/vim-airline-themes
+  url = git@github.com:vim-airline/vim-airline-themes.git
