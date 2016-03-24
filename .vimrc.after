@@ -103,3 +103,6 @@ let g:gutentags_exclude = [
     \ 'cscope.\*',
     \ '\*.tar.\*'
     \ ]
+
+" JSX
+let g:jsx_ext_required = 0
