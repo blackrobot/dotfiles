@@ -60,14 +60,17 @@
   path = .janus/vim-gutentags
   url = git@github.com:ludovicchabant/vim-gutentags.git
 [submodule ".janus/vim-startify"]
-	path = .janus/vim-startify
-	url = git@github.com:mhinz/vim-startify.git
+  path = .janus/vim-startify
+  url = git@github.com:mhinz/vim-startify.git
 [submodule ".janus/fzf.vim"]
-	path = .janus/fzf.vim
-	url = git@github.com:junegunn/fzf.vim.git
+  path = .janus/fzf.vim
+  url = git@github.com:junegunn/fzf.vim.git
 [submodule ".janus/vim-javascript"]
-	path = .janus/vim-javascript
-	url = git://github.com/pangloss/vim-javascript.git
+  path = .janus/vim-javascript
+  url = git://github.com/pangloss/vim-javascript.git
 [submodule ".janus/vim-jsx"]
-	path = .janus/vim-jsx
-	url = git://github.com/mxw/vim-jsx.git
+  path = .janus/vim-jsx
+  url = git://github.com/mxw/vim-jsx.git
+[submodule ".janus/vim-airline"]
+  path = .janus/vim-airline
+  url = git@github.com:vim-airline/vim-airline.git
