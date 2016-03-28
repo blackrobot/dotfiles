@@ -23,3 +23,7 @@ build/
 .ipython/history
 .ipython/profile_default
 .ipython/README
+
+# PtPython
+.ptpython/*
+!.ptpython/config.py
