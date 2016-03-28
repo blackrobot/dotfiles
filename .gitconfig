@@ -47,7 +47,7 @@
   stat = true
 
 [status]
-  relativePaths = true
+  relativePaths = false
 
 [diff]
   tool = mvimdiff
