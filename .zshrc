@@ -29,14 +29,17 @@ plugins=(
   z
 )
 
+fpath=("${DOTFILES}/zsh.plugins" $fpath)
+autoload -Uz async && async
+
 function source_if_exists {
   if [[ -s "${1}" ]]; then
     source "${1}"
   fi
 }
 
-source "${DOTFILES}/.env"
-source "${ZSH}/oh-my-zsh.sh"
+source_if_exists "${DOTFILES}/.env"
+source_if_exists "${ZSH}/oh-my-zsh.sh"
 
 unsetopt auto_name_dirs
 

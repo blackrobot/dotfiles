@@ -49,4 +49,4 @@ let g:fzf_layout = { 'down': '~30%' }
 nnoremap <Leader>ff :GitFiles<CR>
 nnoremap <Leader>fb :Buffers<CR>
 nnoremap <Leader>fa :Ag<Space>
-nnoremap <C-p> :GitFiles<CR>
+nnoremap <C-p> :Files<CR>

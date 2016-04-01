@@ -1,0 +1,7 @@
+# vim: set ft=zsh:
+
+function note() {
+  local notes_dir="${HOME}/Desktop/notes"
+  local note_name="$(date '+%Y-%m-%d') ${1:-Untitled Note}"
+  vim "${notes_dir}/${note_name}.md"
+}
