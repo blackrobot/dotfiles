@@ -6,13 +6,17 @@ ZSH="${HOME}/.oh-my-zsh"
 # Set to the name theme to load. Change it if user is SSHing.
 [[ -z $SSH_CLIENT ]] && DEFAULT_USER="damon"
 
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="yyyy-mm-dd"
+ZSH_CUSTOM="${DOTFILES}/zsh.custom"
+
 ZSH_THEME="dzjparty"
 
 # Plugins
 plugins=(
   aws
   colored-man
-  colorize
   command-not-found
   cp
   docker-compose
@@ -29,8 +33,8 @@ plugins=(
   z
 )
 
-fpath=("${DOTFILES}/zsh.plugins" $fpath)
-autoload -Uz async && async
+# fpath=("${DOTFILES}/zsh.plugins" $fpath)
+# autoload -Uz async && async
 
 function source_if_exists {
   if [[ -s "${1}" ]]; then
@@ -39,7 +43,7 @@ function source_if_exists {
 }
 
 source_if_exists "${DOTFILES}/.env"
-source_if_exists "${ZSH}/oh-my-zsh.sh"
+source "${ZSH}/oh-my-zsh.sh"
 
 unsetopt auto_name_dirs
 
