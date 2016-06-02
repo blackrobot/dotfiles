@@ -98,3 +98,6 @@
   path = .janus/vim-airline-themes
   url = git@github.com:vim-airline/vim-airline-themes.git
   ignore = dirty
+[submodule ".janus/vim-numbertoggle"]
+	path = .janus/vim-numbertoggle
+	url = git@github.com:blackrobot/vim-numbertoggle.git
