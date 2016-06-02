@@ -1,0 +1,9 @@
+# vim: set syntax=zsh:
+
+alias h='history'
+
+function hs {
+  history | grep -v '\bh[si]*\b' | grep -iE $*
+}
+
+alias hsi='hs'

@@ -25,7 +25,6 @@ plugins=(
   extract
   git
   git-extras
-  history
   rsync
   urltools
   vi-mode

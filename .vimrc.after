@@ -104,5 +104,9 @@ let g:gutentags_exclude = [
     \ '\*.tar.\*'
     \ ]
 
+" Markdown Composer
+let g:markdown_composer_open_browser = 0
+let g:markdown_composer_autostart = 0
+
 " JSX
 let g:jsx_ext_required = 0

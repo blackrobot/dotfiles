@@ -1,0 +1,10 @@
+# vim: set ft=zsh:
+
+function gitio {
+  local short_url="$(curl -is https://git.io -F url="${1}" \
+                      | grep -oE 'https?://git.io/[[:alnum:]]+')"
+
+  echo "$short_url" | tr -d '\n' | pbcopy
+
+  echo "Copied \"${short_url}\" to clipboard"
+}

@@ -1,0 +1,5 @@
+# vim: set ft=zsh:
+
+vman() {
+  nvim -c ":Man ${1}"
+}
