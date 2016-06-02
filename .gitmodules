@@ -42,10 +42,6 @@
   path = .janus/YouCompleteMe
   url = git://github.com/Valloric/YouCompleteMe.git
   ignore = dirty
-[submodule ".janus/vim-numbertoggle"]
-  path = .janus/vim-numbertoggle
-  url = git://github.com/jeffkreeftmeijer/vim-numbertoggle.git
-  ignore = dirty
 [submodule ".janus/vim-gitgutter"]
   path = .janus/vim-gitgutter
   url = git://github.com/airblade/vim-gitgutter.git
