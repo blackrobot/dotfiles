@@ -18,10 +18,6 @@
   path = .janus/emmet-vim
   url = git://github.com/mattn/emmet-vim.git
   ignore = dirty
-[submodule ".janus/dockerfile"]
-  path = .janus/dockerfile
-  url = git://github.com/honza/dockerfile.vim.git
-  ignore = dirty
 [submodule ".janus/vim-colors-solarized"]
   path = .janus/vim-colors-solarized
   url = git://github.com/altercation/vim-colors-solarized.git
