@@ -97,3 +97,6 @@
 [submodule ".janus/vim-numbertoggle"]
 	path = .janus/vim-numbertoggle
 	url = git@github.com:blackrobot/vim-numbertoggle.git
+[submodule ".janus/Dockerfile.vim"]
+	path = .janus/Dockerfile.vim
+	url = https://github.com/ekalinin/Dockerfile.vim.git
