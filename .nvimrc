@@ -44,7 +44,7 @@ call janus#load_pathogen()
 " .vimrc.after is loaded after the plugins have loaded
 
 " Fuzzy File Finder (fzf)
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout = { 'down': '~20%' }
 
 nnoremap <Leader>ff :GitFiles<CR>
 nnoremap <Leader>fb :Buffers<CR>
