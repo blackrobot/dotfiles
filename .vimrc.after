@@ -1,7 +1,7 @@
 " Needed a change
 set background=dark
 let base16colorspace=256
-colorscheme base16-atelierlakeside
+colorscheme base16-default
 " set background=dark
 " colorscheme PaperColor
 
