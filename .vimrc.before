@@ -8,10 +8,6 @@ let mapleader=","
 " Use the default clipboard
 set clipboard=unnamed
 
-" Airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-
 " Disable unused plugins
 call janus#disable_plugin('gui_settings')
 call janus#disable_plugin('supertab')
@@ -24,3 +20,18 @@ let g:gist_post_private = 1
 " Turn on all python syntax highlighting features
 let g:python_highlight_all = 1
 let g:python_version_2 = 1
+
+" Airline
+let g:airline#extensions#tabline#enabled=1
+let g:airline_detect_paste=1
+let g:airline_detect_crypt=1
+let g:airline_detect_spell=1
+let g:airline_inactive_collapse=1
+let g:airline_theme='base16'
+let g:airline_skip_empty_sections=1
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.linenr='¶'
+let g:airline_symbols.spell='Ꞩ'
