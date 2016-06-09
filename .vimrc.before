@@ -16,6 +16,7 @@ let g:airline#extensions#tabline#enabled = 1
 call janus#disable_plugin('gui_settings')
 call janus#disable_plugin('supertab')
 call janus#disable_plugin('multiple-cursors')
+call janus#disable_plugin('nerdtree')
 
 " Make gists private
 let g:gist_post_private = 1

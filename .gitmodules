@@ -100,3 +100,6 @@
 [submodule ".janus/Dockerfile.vim"]
 	path = .janus/Dockerfile.vim
 	url = https://github.com/ekalinin/Dockerfile.vim.git
+[submodule ".janus/vim-vinegar"]
+	path = .janus/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
