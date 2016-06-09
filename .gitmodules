@@ -103,3 +103,6 @@
 [submodule ".janus/vim-vinegar"]
 	path = .janus/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule ".janus/vim-rsi"]
+	path = .janus/vim-rsi
+	url = https://github.com/tpope/vim-rsi.git
