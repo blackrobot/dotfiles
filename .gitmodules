@@ -68,15 +68,15 @@
   ignore = dirty
 [submodule ".janus/vim-gutentags"]
   path = .janus/vim-gutentags
-  url = git@github.com:ludovicchabant/vim-gutentags.git
+  url = git://github.com/ludovicchabant/vim-gutentags.git
   ignore = dirty
 [submodule ".janus/vim-startify"]
   path = .janus/vim-startify
-  url = git@github.com:mhinz/vim-startify.git
+  url = git://github.com/mhinz/vim-startify.git
   ignore = dirty
 [submodule ".janus/fzf.vim"]
   path = .janus/fzf.vim
-  url = git@github.com:junegunn/fzf.vim.git
+  url = git://github.com/junegunn/fzf.vim.git
   ignore = dirty
 [submodule ".janus/vim-javascript"]
   path = .janus/vim-javascript
@@ -88,21 +88,21 @@
   ignore = dirty
 [submodule ".janus/vim-airline"]
   path = .janus/vim-airline
-  url = git@github.com:vim-airline/vim-airline.git
+  url = git://github.com/vim-airline/vim-airline.git
   ignore = dirty
 [submodule ".janus/vim-airline-themes"]
   path = .janus/vim-airline-themes
-  url = git@github.com:vim-airline/vim-airline-themes.git
+  url = git://github.com/vim-airline/vim-airline-themes.git
   ignore = dirty
 [submodule ".janus/vim-numbertoggle"]
-	path = .janus/vim-numbertoggle
-	url = git@github.com:blackrobot/vim-numbertoggle.git
+  path = .janus/vim-numbertoggle
+  url = git://github.com/blackrobot/vim-numbertoggle.git
 [submodule ".janus/Dockerfile.vim"]
-	path = .janus/Dockerfile.vim
-	url = https://github.com/ekalinin/Dockerfile.vim.git
+  path = .janus/Dockerfile.vim
+  url = git://github.com/ekalinin/Dockerfile.vim.git
 [submodule ".janus/vim-vinegar"]
-	path = .janus/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar.git
+  path = .janus/vim-vinegar
+  url = git://github.com/tpope/vim-vinegar.git
 [submodule ".janus/vim-rsi"]
-	path = .janus/vim-rsi
-	url = https://github.com/tpope/vim-rsi.git
+  path = .janus/vim-rsi
+  url = git://github.com/tpope/vim-rsi.git
