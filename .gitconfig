@@ -40,29 +40,34 @@
 [github]
   user = blackrobot
 
-[merge]
-  tool = mvimdiff
-  conflictstyle = diff3
-  prompt = false
-  stat = true
-
 [status]
   relativePaths = false
 
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+  prompt = false
+  stat = true
+  keepBackup = false
+  trustExitCode = true
+
+[mergetool]
+  path = nvim
+# [mergetool "vimdiff"]
+#   cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+#   trustExitCode = true
+#   keepBackup = false
+#   prompt = false
+
 [diff]
-  tool = mvimdiff
+  # tool = vimdiff
   suppressBlankEmpty = true
   mnemonicprefix = true
-
-[mergetool "mvimdiff"]
-  # cmd = mvim -f -d \"$LOCAL\" \"REMOTE\"
-  trustExitCode = true
-  keepBackup = false
   prompt = false
 
-[difftool "mvimdiff"]
-  cmd = mvim -f -d \"$LOCAL\" \"REMOTE\"
-  prompt = false
+# [difftool "vimdiff"]
+#   cmd = mvim -f -d \"$LOCAL\" \"REMOTE\"
+#   prompt = false
 
 [branch]
   autosetupmerge = true
@@ -73,3 +78,10 @@
 
 [core]
   whitespace = trailing-space,space-before-tab
+	excludesfile = /Users/damon/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

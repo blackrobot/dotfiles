@@ -1,4 +1,6 @@
 from __future__ import unicode_literals
+import os
+
 from ptpython.layout import CompletionVisualisation
 
 __all__ = (
@@ -23,7 +25,7 @@ def configure(repl):
     repl.show_meta_enter_message = False
 
     # Show completions. (NONE, POP_UP, MULTI_COLUMN or TOOLBAR)
-    repl.completion_visualisation = CompletionVisualisation.POP_UP
+    repl.completion_visualisation = CompletionVisualisation.MULTI_COLUMN
 
     # When CompletionVisualisation.POP_UP has been chosen, use this
     # scroll_offset in the completion menu.
@@ -45,7 +47,7 @@ def configure(repl):
     repl.wrap_lines = True
 
     # Mouse support.
-    repl.enable_mouse_support = True
+    repl.enable_mouse_support = False
 
     # Vi mode.
     repl.vi_mode = True
@@ -74,14 +76,16 @@ def configure(repl):
 
     # Enable open-in-editor. Pressing C-X C-E in emacs mode or 'v' in
     # Vi navigation mode will open the input in the current editor.
-    repl.enable_open_in_editor = True
+    # Only if not running inside of a neovim window
+    running_in_vim = os.environ.get('VIMRUNTIME', False)
+    repl.enable_open_in_editor = not running_in_vim
 
     # Enable system prompt. Pressing meta-! will display the system prompt.
     # Also enables Control-Z suspend.
     repl.enable_system_bindings = True
 
     # Ask for confirmation on exit.
-    repl.confirm_exit = True
+    repl.confirm_exit = False
 
     # Enable input validation. (Don't try to execute when the input contains
     # syntax errors.)
