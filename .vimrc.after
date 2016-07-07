@@ -21,10 +21,8 @@ set relativenumber
 
 augroup numberz
   autocmd!
-  autocmd FocusLost * setlocal number
-  autocmd FocusGained * setlocal relativenumber
-  autocmd InsertEnter * setlocal number
-  autocmd InsertLeave * setlocal relativenumber
+  autocmd FocusLost,InsertEnter,BufLeave,BufWinLeave * :set norelativenumber
+  autocmd FocusGained,InsertLeave,BufEnter,BufWinEnter * :set relativenumber
 augroup END
 
 augroup python
