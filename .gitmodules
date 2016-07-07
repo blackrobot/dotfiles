@@ -106,3 +106,6 @@
 [submodule ".janus/vim-rsi"]
   path = .janus/vim-rsi
   url = git://github.com/tpope/vim-rsi.git
+[submodule ".janus/vim-netrw-tree"]
+	path = .janus/vim-netrw-tree
+	url = git://github.com/blackrobot/vim-netrw-tree.git
