@@ -17,26 +17,35 @@ highlight BadWhitespace ctermbg=red guibg=red
 let colorcolumn=120
 
 set spelllang=en_us
+set relativenumber
+
+augroup numberz
+  autocmd!
+  autocmd FocusLost * setlocal number
+  autocmd FocusGained * setlocal relativenumber
+  autocmd InsertEnter * setlocal number
+  autocmd InsertLeave * setlocal relativenumber
+augroup END
 
 augroup python
-  au!
-  au FileType python let &l:colorcolumn="80,".join(range(120,999),",")
-  au FileType python setlocal omnifunc=pythoncomplete#Complete
-  au FileType python setlocal sts=4 sw=4 ts=4 tw=79
-  au BufWritePre *.py normal m`:%s/\s\+$//e``
+  autocmd!
+  autocmd FileType python let &l:colorcolumn="80,".join(range(120,999),",")
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType python setlocal sts=4 sw=4 ts=4 tw=79
+  autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
   highlight BadWhitespace ctermbg=red guibg=red
-  au BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
-  au BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
+  autocmd BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
+  autocmd BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
 augroup END
 
 augroup gitcommit
-  au!
-  au FileType gitcommit setlocal colorcolumn=73
+  autocmd!
+  autocmd FileType gitcommit setlocal colorcolumn=73
 augroup END
 
 augroup text
-  au!
-  au BufNewFile,BufRead *.md,*.txt,*.scratch setlocal spell wrap
+  autocmd!
+  autocmd BufNewFile,BufRead *.md,*.txt,*.scratch setlocal spell wrap
 augroup END
 
 set wildignore+=*.pyc,*.zip,*.gz,*.tar
@@ -125,51 +134,3 @@ let g:markdown_composer_autostart = 0
 
 " JSX
 let g:jsx_ext_required = 0
-
-" NetRW
-com!  -nargs=* -bar -bang -complete=dir  Lexplore  call netrw#Lexplore(<q-args>, <bang>0)
-
-fun! Lexplore(dir, right)
-  if exists("t:netrw_lexbufnr")
-  " close down netrw explorer window
-  let lexwinnr = bufwinnr(t:netrw_lexbufnr)
-  if lexwinnr != -1
-    let curwin = winnr()
-    exe lexwinnr."wincmd w"
-    close
-    exe curwin."wincmd w"
-  endif
-  unlet t:netrw_lexbufnr
-
-  else
-    " open netrw explorer window in the dir of current file
-    " (even on remote files)
-    let path = substitute(exists("b:netrw_curdir")? b:netrw_curdir : expand("%:p"), '^\(.*[/\\]\)[^/\\]*$','\1','e')
-    exe (a:right? "botright" : "topleft")." vertical ".((g:netrw_winsize > 0)? (g:netrw_winsize*winwidth(0))/100 : -g:netrw_winsize) . " new"
-    if a:dir != ""
-      exe "Explore ".a:dir
-    else
-      exe "Explore ".path
-    endif
-    setlocal winfixwidth
-    let t:netrw_lexbufnr = bufnr("%")
-  endif
-endfun
-
-" Mapped to <leader>n
-map <silent> <leader>n :Lexplore<CR>
-
-" absolute width of netrw window
-let g:netrw_winsize = -28
-
-" do not display info on the top of window
-let g:netrw_banner = 0
-
-" tree-view
-let g:netrw_liststyle = 3
-
-" sort is affecting only: directories on the top, files below
-let g:netrw_sort_sequence = '[\/]$,*'
-
-" use the previous window to open file
-let g:netrw_browse_split = 4
