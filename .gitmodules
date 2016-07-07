@@ -94,9 +94,6 @@
   path = .janus/vim-airline-themes
   url = git://github.com/vim-airline/vim-airline-themes.git
   ignore = dirty
-[submodule ".janus/vim-numbertoggle"]
-  path = .janus/vim-numbertoggle
-  url = git://github.com/blackrobot/vim-numbertoggle.git
 [submodule ".janus/Dockerfile.vim"]
   path = .janus/Dockerfile.vim
   url = git://github.com/ekalinin/Dockerfile.vim.git
@@ -107,5 +104,5 @@
   path = .janus/vim-rsi
   url = git://github.com/tpope/vim-rsi.git
 [submodule ".janus/vim-netrw-tree"]
-	path = .janus/vim-netrw-tree
-	url = git://github.com/blackrobot/vim-netrw-tree.git
+  path = .janus/vim-netrw-tree
+  url = git://github.com/blackrobot/vim-netrw-tree.git
