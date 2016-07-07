@@ -25,6 +25,7 @@ plugins=(
   extract
   git
   git-extras
+  github
   rsync
   urltools
   vi-mode

@@ -1,0 +1,15 @@
+# vim: set ft=zsh:
+# Open up a quick scratch tempfile
+
+function scratch() {
+  local scratch_dir="/tmp/${USER}.scratch-files"
+  local scratch_name="$1"
+
+  mkdir -p "$scratch_dir"
+
+  if [[ -z "$scratch_name" ]]; then
+    scratch_name="$(date +%Y-%m-%d_%H%M%S).scratch";
+  fi
+
+  "$EDITOR" "${scratch_dir}/$scratch_name"
+}
