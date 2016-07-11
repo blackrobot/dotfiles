@@ -47,6 +47,8 @@ source "${ZSH}/oh-my-zsh.sh"
 
 unsetopt auto_name_dirs
 
+export LESS="-R --ignore-case --tabs=4"
+
 # Include the aliases file and anything in lib
 source "${DOTFILES}/.aliases"
 for local_lib ("${DOTFILES}/lib/"*) source "${local_lib}"
