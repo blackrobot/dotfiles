@@ -30,6 +30,12 @@ augroup numberz
     \ if &buftype != 'terminal' | :set relativenumber
 augroup END
 
+" Highlight codetags
+augroup codetags
+  autocmd!
+  autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|XXX\|???\|!!!\|BUG\|HACK\|NOTE\|INFO\|IDEA\)')
+augroup END
+
 augroup python
   autocmd!
   autocmd FileType python let &l:colorcolumn="80,".join(range(120,999),",")
