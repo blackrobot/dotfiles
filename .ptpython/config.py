@@ -64,7 +64,7 @@ def configure(repl):
     # Note: When enable, please disable the `complete_while_typing` option.
     #       otherwise, when there is a completion available, the arrows will
     #       browse through the available completions instead of the history.
-    repl.enable_history_search = True
+    repl.enable_history_search = False
 
     # Complete while typing. (Don't require tab before the
     # completion menu is shown.)
