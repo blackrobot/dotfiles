@@ -1,0 +1,46 @@
+# vim: set ft=zsh:
+
+function __log_update() {
+  echo
+
+  if [[ $# -eq 1 ]] ; then
+    # Title card
+    echo
+    echo "***"
+    echo "* ${1}"
+    echo "***"
+  else
+    echo "[$(date '+%H:%M:%S')] ${1} ${2}"
+  fi
+}
+
+function __update_nvim() {
+  __log_update "Updating Janus"
+  pushd ~/.vim/ >/dev/null
+  rake
+
+  __log_update "Updating Neovim Submodules"
+  (
+    set -e
+    pushd "${DOTFILES}" >/dev/null
+
+    __log_update "Git Submodule:" "Pulling latest"
+    git submodule foreach 'git pull --ff-only origin master'
+
+    __log_update "YouCompleteMe:" "Updating submodules"
+    pushd "${DOTFILES}/.janus/YouCompleteMe" >/dev/null
+    git submodule update --init --recursive
+    __log_update "YouCompleteMe:" "Executing install script"
+    ./install.py --clang-completer
+    popd >/dev/null
+
+    __log_update "Neovim:" "Calling UpdateRemotePlugins"
+    nvim +UpdateRemotePlugins +qall
+
+    popd >/dev/null
+  )
+
+  __log_update "Complete" " "
+}
+
+alias update-nvim=__update_nvim
