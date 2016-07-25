@@ -106,3 +106,6 @@
 [submodule ".janus/vim-netrw-tree"]
   path = .janus/vim-netrw-tree
   url = git://github.com/blackrobot/vim-netrw-tree.git
+[submodule ".janus/deoplete.vim"]
+	path = .janus/deoplete.vim
+	url = git://github.com/Shougo/deoplete.nvim.git
