@@ -16,7 +16,7 @@ ZSH_THEME="dzjparty"
 # Plugins
 plugins=(
   aws
-  colored-man
+  colored-man-pages
   command-not-found
   cp
   docker-compose
@@ -26,6 +26,7 @@ plugins=(
   git
   git-extras
   github
+  httpie
   rsync
   urltools
   vi-mode

@@ -1,6 +1,6 @@
-# vim: set syntax=sh:
+# vim: set ft=zsh:
 alias grepir='grep -Ir'
-alias l='ls -AFlh'
+alias l='ls -AFlh --color=auto'
 alias mkdirs='mkdir -p'
 
 # Git

@@ -1,0 +1,5 @@
+# :vim set ft=zsh:
+
+manpv() {
+  man -t "$@" | open -f -a Preview
+}
