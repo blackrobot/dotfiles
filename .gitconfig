@@ -1,9 +1,11 @@
 [include]
   path = ~/.gitconfig.local
 
+# default username and email
 [user]
-  name = "Damon Jablons"
-  email = damonjablons@gmail.com
+  # name = "Damon Jablons"
+  name = "damon"
+  email = "damonjablons@gmail.com"
 
 [alias]
   d = difftool

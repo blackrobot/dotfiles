@@ -1,7 +1,18 @@
 # vim: set ft=zsh:
 
 function note() {
-  local notes_dir="${HOME}/Desktop/notes"
-  local note_name="$(date '+%Y-%m-%d') ${1:-Untitled Note}"
-  nvim "${notes_dir}/${note_name}.md"
+  local notes_root="${NOTES:-"${HOME}/notes"}"
+  local notes_dir="${notes_root}/$(date '+%Y')"
+  local note_name="$(date '+%m-%d @ %I:%M%p') - ${1:-Untitled Note}"
+  local note_full_path="${notes_dir}/${note_name}.md"
+
+  mkdir -p "$notes_dir"
+  nvim "$note_full_path" && (
+    {
+      pushd "$notes_root";
+      git add "$note_full_path";
+      git commit "$note_full_path" -m "New note ${note_name}";
+      git push origin master;
+    } >/dev/null 2>&1 &
+  ) && true
 }

@@ -62,7 +62,11 @@ function docker-rmi() {
 }
 # Shortcut for switching docker-machine environments
 function dm-env() {
-  eval "$(docker-machine env ${1})" && docker-machine ls | grep "$1"
+  if [[ -z "$1" ]]; then
+    eval "$(docker-machine env -u)"
+  else
+    eval "$(docker-machine env ${1})" && docker-machine ls | grep "$1"
+  fi
 }
 
 
