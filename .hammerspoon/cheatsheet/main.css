@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 20px;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+}
+
+ul,
+li {
+  list-style: inside none;
+  padding: 0 0 5px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.title {
+  padding: 15px;
+}
+
+li.title {
+  padding: 5px 10px 10px 15px;
+  font-size: 118%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 15px;
+}
+
+.content {
+  padding: 0 0 15px;
+  font-size: 12px;
+  margin: 65px auto 0;
+  padding: 0 20px;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-align-content: center;
+  -webkit-align-items: flex-start;
+}
+
+.content > .col {
+  width: 23%;
+  padding: 10px 0 20px 20px;
+}
+
+li:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.cmdModifiers {
+  width: 60px;
+  padding-right: 15px;
+  text-align: right;
+  float: left;
+  font-weight: bold;
+}
+
+.cmdtext {
+  float: left;
+  overflow: hidden;
+  width: 165px;
+}

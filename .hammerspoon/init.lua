@@ -25,6 +25,15 @@ hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
 
 hs.hotkey.bind(mash, "return", hs.grid.show)
 
+-- Cheatsheet
+import = require('import')
+import.clear_cache()
+
+csheet = import('cheatsheet')
+hs.hotkey.bind(mash, "/", function()
+  csheet.toggle()
+end)
+
 -- Screensaver hotkey
 hs.hotkey.bind(mash, "forwarddelete", function()
   hs.timer.doAfter(0.35, function()
