@@ -109,3 +109,6 @@
 [submodule ".janus/onedark.vim"]
   path = .janus/onedark.vim
   url = git@github.com:joshdick/onedark.vim.git
+[submodule ".janus/vim-polyglot"]
+	path = .janus/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git

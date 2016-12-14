@@ -1,9 +1,15 @@
 " Needed a change
 set background=dark
-let base16colorspace=256
-colorscheme base16-default-dark
-" set background=dark
-" colorscheme PaperColor
+" let base16colorspace=256
+" colorscheme base16-default-dark
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  set termguicolors
+endif
+syntax on
+colorscheme onedark
 
 " Highlight the cursor's current line
 set cursorline
