@@ -93,6 +93,8 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 
 " Close that stupid YCM preview window
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 
 " Python stuff
 let g:syntastic_python_checkers = ['flake8']
@@ -118,31 +120,37 @@ let g:startify_bookmarks = [
   \ ]
 
 " Gutentags
-let g:gutentags_cache_dir = expand("~/.vim/_temp/tags")
+let g:gutentags_enabled = 0
+let g:gutentags_cache_dir = expand("~/.tags")
+let g:gutentags_file_list_command = {
+  \ 'markers': {
+    \ '.git': 'git ls-files',
+  \ },
+\ }
 let g:gutentags_exclude = [
-    \ '.git',
-    \ '.svn',
-    \ '.hg',
-    \ 'bundle',
-    \ 'min',
-    \ 'vendor',
-    \ '\*.min.\*',
-    \ '\*.map',
-    \ '\*.swp',
-    \ '\*.bak',
-    \ '\*.pyc',
-    \ '\*.class',
-    \ '\*.sln',
-    \ '\*.Master',
-    \ '\*.csproj',
-    \ '\*.csproj.user',
-    \ '\*.cache',
-    \ '\*.dll',
-    \ '\*.pdb',
-    \ 'tags',
-    \ 'cscope.\*',
-    \ '\*.tar.\*'
-    \ ]
+  \ '.git',
+  \ '.svn',
+  \ '.hg',
+  \ 'bundle',
+  \ 'min',
+  \ 'vendor',
+  \ '\*.min.\*',
+  \ '\*.map',
+  \ '\*.swp',
+  \ '\*.bak',
+  \ '\*.pyc',
+  \ '\*.class',
+  \ '\*.sln',
+  \ '\*.Master',
+  \ '\*.csproj',
+  \ '\*.csproj.user',
+  \ '\*.cache',
+  \ '\*.dll',
+  \ '\*.pdb',
+  \ 'tags',
+  \ 'cscope.\*',
+  \ '\*.tar.\*'
+\ ]
 
 " Markdown Composer
 let g:markdown_composer_open_browser = 0
@@ -150,3 +158,8 @@ let g:markdown_composer_autostart = 0
 
 " JSX
 let g:jsx_ext_required = 0
+
+" Gist.vim
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1

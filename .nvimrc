@@ -54,3 +54,4 @@ nnoremap <C-p> :Files<CR>
 " Terminal
 " tnoremap “ <C-\><C-n>
 let g:terminal_scrollback_buffer_size = 10000
+autocmd TermOpen * setlocal bufhidden=hide

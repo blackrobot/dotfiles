@@ -1,11 +1,6 @@
-[include]
-  path = ~/.gitconfig.local
-
 # default username and email
 [user]
-  # name = "Damon Jablons"
-  name = "damon"
-  email = "damonjablons@gmail.com"
+  name = damon
 
 [alias]
   d = difftool
@@ -81,11 +76,16 @@
 [core]
   whitespace = trailing-space,space-before-tab
 	excludesfile = /Users/damon/.gitignore_global
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
 [push]
 	default = simple
+
+[include]
+  path = ~/.gitconfig.local

@@ -1,8 +1,11 @@
 # vim: set ft=zsh:
 alias grepir='grep -Ir'
-alias l='ls -AFlh --color=auto'
 alias mkdirs='mkdir -p'
 alias ssh='TERM=xterm-256color ssh'
+
+# ls
+alias l='ls -AFlh --color=auto'
+alias ll='ls -aFlh --color=auto'
 
 # Git
 alias gf='git fetch --prune'

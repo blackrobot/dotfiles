@@ -31,6 +31,7 @@ plugins=(
   urltools
   vi-mode
   vi-history-substring
+  yarn
   z
 )
 
@@ -40,6 +41,18 @@ plugins=(
 function source_if_exists {
   if [[ -s "${1}" ]]; then
     source "${1}"
+  fi
+}
+
+function add_to_path {
+  # Adds $1 to $PATH if not already there. Add 'after'
+  # as an arg to append, the default is to prepend.
+  if [[ ":${PATH}:" != *":${1}:"* ]]; then
+    if [[ "$2" == "append" ]]; then
+      PATH="${PATH}:${1}"
+    else
+      PATH="${1}:${PATH}"
+    fi
   fi
 }
 
