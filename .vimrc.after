@@ -43,16 +43,20 @@ augroup codetags
   autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|XXX\|???\|!!!\|BUG\|HACK\|NOTE\|INFO\|IDEA\)')
 augroup END
 
+" Python stuff
 augroup python
   autocmd!
   autocmd FileType python let &l:colorcolumn="80,".join(range(120,999),",")
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType python setlocal sts=4 sw=4 ts=4 tw=79
-  autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+  autocmd FileType python normal zR
   highlight BadWhitespace ctermbg=red guibg=red
-  autocmd BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
-  autocmd BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
 augroup END
+
+" let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--ignore=E403,E128,F403'
+" let g:pymode_folding = 0
+let g:pymode_trim_whitespaces = 1
 
 augroup gitcommit
   autocmd!
@@ -95,10 +99,6 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
-
-" Python stuff
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args = '--ignore=E403,E128,F403'
 
 " Indent Guides
 let g:indent_guides_start_level = 2

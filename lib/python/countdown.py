@@ -23,7 +23,9 @@ hl_style = ESC % ';'.join((BOLD, RED_FG))
 
 
 icon = '⏳'
-prefix = '  ' + icon + '  '
+number_format = '0>2'  # Format as two digits with leading zero
+
+
 
 
 def render(hours, mins, secs):
@@ -35,17 +37,14 @@ def render(hours, mins, secs):
     else:
         style = reg_style
 
-    return '{prefix}{style}{:0>2}{sep}{:0>2}{sep}{:0>2} \t{reset}'.format(
-        hours,
-        mins,
-        secs,
+    return render.template.format(hours, mins, secs, style=style)
 
-        prefix=prefix,
-        time=time,
-        reset=RESET,
-        style=style,
-        sep=':',
-    )
+render.template = (
+    '  {i}  {{style}}'
+    # Hour : Minute : Second
+    '{{:{nf}}}' '{s}' '{{:{nf}}}' '{s}' '{{:{nf}}}'
+    ' \t{reset}'
+).format(i=icon, reset=RESET, nf='0>2', s=':')
 
 
 def get_time_tuple(time_remaining):
