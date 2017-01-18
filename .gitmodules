@@ -112,3 +112,6 @@
 [submodule ".janus/vim-polyglot"]
 	path = .janus/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+[submodule ".janus/python-mode"]
+	path = .janus/python-mode
+	url = git@github.com:klen/python-mode.git
