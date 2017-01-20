@@ -58,10 +58,6 @@
   path = .janus/python-syntax
   url = git://github.com/hdima/python-syntax.git
   ignore = dirty
-[submodule ".janus/vim-markdown-composer"]
-  path = .janus/vim-markdown-composer
-  url = git://github.com/euclio/vim-markdown-composer
-  ignore = dirty
 [submodule ".janus/papercolor-theme"]
   path = .janus/papercolor-theme
   url = git://github.com/NLKNguyen/papercolor-theme.git
