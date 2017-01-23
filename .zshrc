@@ -4,7 +4,7 @@ DOTFILES="${HOME}/.dotfiles"
 ZSH="${HOME}/.oh-my-zsh"
 
 # Set to the name theme to load. Change it if user is SSHing.
-[[ -z $SSH_CLIENT ]] && DEFAULT_USER="damon"
+[[ -z "$SSH_CLIENT" ]] && DEFAULT_USER="damon"
 
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -35,12 +35,9 @@ plugins=(
   z
 )
 
-# fpath=("${DOTFILES}/zsh.plugins" $fpath)
-# autoload -Uz async && async
-
 function source_if_exists {
-  if [[ -s "${1}" ]]; then
-    source "${1}"
+  if [[ -s "$1" ]]; then
+    source "$1"
   fi
 }
 
@@ -56,7 +53,9 @@ function add_to_path {
   fi
 }
 
-source_if_exists "${DOTFILES}/.env"
+export EDITOR='vim'
+export DISABLE_CORRECTION=1
+
 source "${ZSH}/oh-my-zsh.sh"
 
 unsetopt auto_name_dirs
