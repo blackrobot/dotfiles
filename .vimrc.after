@@ -158,3 +158,7 @@ let g:jsx_ext_required = 0
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
+
+" ale
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'

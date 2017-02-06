@@ -43,6 +43,3 @@ let g:vimwiki_list = [{
   \ 'index': 'index',
   \ 'ext': '.md'
 \ }]
-
-" Ale
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
