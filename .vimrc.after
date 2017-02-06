@@ -40,7 +40,7 @@ set number
 " Highlight codetags
 augroup codetags
   autocmd!
-  autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|XXX\|???\|!!!\|BUG\|HACK\|NOTE\|INFO\|IDEA\)')
+  autocmd Syntax * call matchadd('Todo', '\W\zs\(TODO\|FIXME\|XXX\|???\|!!!\|BUG\|HACK\|NOTE\|INFO\|IDEA\):')
 augroup END
 
 " Python stuff
@@ -57,6 +57,7 @@ augroup END
 let g:syntastic_python_flake8_args = '--ignore=E403,E128,F403'
 " let g:pymode_folding = 0
 let g:pymode_trim_whitespaces = 1
+let g:pymode_python = 'python3'
 
 augroup gitcommit
   autocmd!
