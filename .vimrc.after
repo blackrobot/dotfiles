@@ -49,15 +49,14 @@ augroup python
   autocmd FileType python let &l:colorcolumn="80,".join(range(120,999),",")
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType python setlocal sts=4 sw=4 ts=4 tw=79
-  autocmd FileType python normal zR
+  autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+  autocmd BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
+  autocmd BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
   highlight BadWhitespace ctermbg=red guibg=red
 augroup END
 
-" let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore=E403,E128,F403'
-" let g:pymode_folding = 0
-let g:pymode_trim_whitespaces = 1
-let g:pymode_python = 'python3'
 
 augroup gitcommit
   autocmd!
