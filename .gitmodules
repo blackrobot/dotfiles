@@ -108,3 +108,6 @@
 [submodule ".janus/vim-polyglot"]
 	path = .janus/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+[submodule ".janus/ale"]
+	path = .janus/ale
+	url = git@github.com:w0rp/ale.git

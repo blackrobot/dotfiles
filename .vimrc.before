@@ -22,19 +22,19 @@ let g:python_highlight_all = 1
 let g:python_version_2 = 1
 
 " Airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline_detect_paste=1
-let g:airline_detect_crypt=1
-let g:airline_detect_spell=1
-let g:airline_inactive_collapse=1
-let g:airline_theme='onedark'
-let g:airline_skip_empty_sections=1
-let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_detect_paste = 1
+let g:airline_detect_crypt = 1
+let g:airline_detect_spell = 1
+let g:airline_inactive_collapse = 1
+let g:airline_theme = 'onedark'
+let g:airline_skip_empty_sections = 1
+let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_symbols.linenr='¶'
-let g:airline_symbols.spell='Ꞩ'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.spell = 'Ꞩ'
 
 " Vimwiki
 let g:vimwiki_list = [{
@@ -43,3 +43,6 @@ let g:vimwiki_list = [{
   \ 'index': 'index',
   \ 'ext': '.md'
 \ }]
+
+" Ale
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
