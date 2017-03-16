@@ -3,12 +3,6 @@ mash = {"ctrl", "alt"}
 
 hs.window.animationDuration = 0.01
 
--- Hints
-hs.hints.fontSize = 26.0
-hs.hints.showTitleThresh = 0
-hs.hints.hintChars = {"A", "S", "D", "F", "Q", "W", "E", "R",
-                      "J", "K", "L", ";", "U", "I", "O", "P"}
-
 -- Grid
 hs.grid.GRIDHEIGHT = 6
 hs.grid.GRIDWIDTH = 6
@@ -21,11 +15,21 @@ hs.hotkey.bind(mash, "end", function()
   hs.notify.show("Hammerspoon", "", "Reloaded configuration", "")
 end)
 
+-- Window Hints
+hs.hints.fontSize = 26.0
+hs.hints.showTitleThresh = 6
+hs.hints.style = "vimperator"
+-- Ignored when hs.hints.style is "vimperator"
+-- hs.hints.hintChars = {"A", "S", "D", "F", "Q", "W", "E", "R",
+--                       "J", "K", "L", ";", "U", "I", "O", "P"}
+hs.hints.titleMaxSize = 12
 hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
 
 hs.hotkey.bind(mash, "return", hs.grid.show)
 
+--[[
 -- Cheatsheet
+
 import = require('import')
 import.clear_cache()
 
@@ -33,6 +37,7 @@ csheet = import('cheatsheet')
 hs.hotkey.bind(mash, "/", function()
   csheet.toggle()
 end)
+]]
 
 -- Screensaver hotkey
 hs.hotkey.bind(mash, "forwarddelete", function()
