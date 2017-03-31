@@ -164,3 +164,12 @@ let g:gist_post_private = 1
 " ale
 let g:ale_sign_error = '⨉'
 let g:ale_sign_warning = '⚠'
+let g:ale_echo_msg_format = '%linter% ❯ %s'
+let g:ale_linters = {
+  \ 'javascript': ['eslint', 'jshint', 'flow'],
+  \ 'json': ['jsonlint'],
+  \ 'python': ['flake8'],
+  \ 'sh': ['shellcheck']
+\ }
+let g:ale_python_flake8_executable = 'python3'
+let g:ale_python_flake8_args = '-m flake8'
