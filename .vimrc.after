@@ -27,16 +27,6 @@ set spelllang=en_us
 set relativenumber
 set number
 
-" Not for term buffers
-" augroup numberz
-"   autocmd!
-"   autocmd TermOpen * :set nonumber | :set norelativenumber
-"   autocmd FocusLost,InsertEnter,BufLeave,BufWinLeave *
-"     \ if &buftype != 'terminal' | :set norelativenumber
-"   autocmd FocusGained,InsertLeave,BufEnter,BufWinEnter *
-"     \ if &buftype != 'terminal' | :set relativenumber
-" augroup END
-
 " Highlight codetags
 augroup codetags
   autocmd!

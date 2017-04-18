@@ -5,6 +5,9 @@
 [alias]
   d = difftool
 
+[status]
+  showUntrackedFiles = all
+
 [color]
   branch = auto
   diff = auto
