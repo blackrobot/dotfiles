@@ -13,6 +13,9 @@ ZSH_CUSTOM="${DOTFILES}/zsh.custom"
 
 ZSH_THEME="dzjparty"
 
+# Lazy load zsh-nvm
+export NVM_LAZY_LOAD=true
+
 # Plugins
 plugins=(
   aws
@@ -33,6 +36,7 @@ plugins=(
   vi-history-substring
   yarn
   z
+  zsh-nvm
 )
 
 function source_if_exists {

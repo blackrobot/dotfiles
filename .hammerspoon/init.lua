@@ -19,12 +19,18 @@ end)
 hs.hints.fontSize = 26.0
 hs.hints.showTitleThresh = 6
 hs.hints.style = "vimperator"
--- Ignored when hs.hints.style is "vimperator"
--- hs.hints.hintChars = {"A", "S", "D", "F", "Q", "W", "E", "R",
---                       "J", "K", "L", ";", "U", "I", "O", "P"}
 hs.hints.titleMaxSize = 12
-hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
 
+-- * Hint all
+hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
+-- * Hint current app
+hs.hotkey.bind("alt", "`", function()
+  hs.hints.windowHints(
+    hs.window.focusedWindow():application():allWindows()
+  )
+end)
+
+-- Grid
 hs.hotkey.bind(mash, "return", hs.grid.show)
 
 --[[

@@ -111,3 +111,6 @@
 [submodule ".janus/ale"]
 	path = .janus/ale
 	url = git@github.com:w0rp/ale.git
+[submodule "zsh.custom/plugins/zsh-nvm"]
+	path = zsh.custom/plugins/zsh-nvm
+	url = git@github.com:lukechilds/zsh-nvm.git
