@@ -24,6 +24,7 @@ highlight BadWhitespace ctermbg=red guibg=red
 let colorcolumn=120
 
 set spelllang=en_us
+set spellfile=$DOTFILES/vim/dictionary.en.utf-8.add
 set relativenumber
 set number
 

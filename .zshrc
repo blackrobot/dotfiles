@@ -1,6 +1,6 @@
 # vim: set syntax=zsh:
 # Path to your oh-my-zsh configuration.
-DOTFILES="${HOME}/.dotfiles"
+export DOTFILES="${HOME}/.dotfiles"
 ZSH="${HOME}/.oh-my-zsh"
 
 # Set to the name theme to load. Change it if user is SSHing.
