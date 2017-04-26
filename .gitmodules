@@ -114,3 +114,6 @@
 [submodule "zsh.custom/plugins/zsh-nvm"]
 	path = zsh.custom/plugins/zsh-nvm
 	url = git@github.com:lukechilds/zsh-nvm.git
+[submodule ".janus/vim-yaml"]
+	path = .janus/vim-yaml
+	url = git@github.com:stephpy/vim-yaml.git

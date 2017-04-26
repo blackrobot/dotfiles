@@ -30,6 +30,7 @@ plugins=(
   git-extras
   github
   httpie
+  kubectl
   rsync
   urltools
   vi-mode
