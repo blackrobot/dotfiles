@@ -119,7 +119,7 @@ let g:gutentags_file_list_command = {
     \ '.git': 'git ls-files',
   \ },
 \ }
-let g:gutentags_exclude = [
+let g:gutentags_ctags_exclude = [
   \ '.git',
   \ '.svn',
   \ '.hg',
