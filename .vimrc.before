@@ -14,6 +14,7 @@ call janus#disable_plugin('supertab')
 call janus#disable_plugin('multiple-cursors')
 call janus#disable_plugin('nerdtree')
 call janus#disable_plugin('syntastic')
+call janus#disable_plugin('vim-gitgutter')
 
 " Make gists private
 let g:gist_post_private = 1
