@@ -8,10 +8,6 @@ let mapleader=","
 " Use the default clipboard
 set clipboard=unnamed
 
-" Temp for gitgutter
-"set g:gitgutter_log = 1
-let g:gitgutter_log = 1
-
 " Disable unused plugins
 call janus#disable_plugin('gui_settings')
 call janus#disable_plugin('supertab')
