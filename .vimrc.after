@@ -91,6 +91,8 @@ au FileType css set omnifunc=csscomplete#CompleteCSS
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+" Add to YCM identifiers
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Indent Guides
 let g:indent_guides_start_level = 2

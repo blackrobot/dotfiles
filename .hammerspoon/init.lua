@@ -4,10 +4,13 @@ mash = {"ctrl", "alt"}
 hs.window.animationDuration = 0.01
 
 -- Grid
-hs.grid.GRIDHEIGHT = 6
-hs.grid.GRIDWIDTH = 6
+-- hs.grid.GRIDHEIGHT = 6
+-- hs.grid.GRIDWIDTH = 6
+hs.grid.GRIDHEIGHT = 8
+hs.grid.GRIDWIDTH = 8
 hs.grid.MARGINX = 0
 hs.grid.MARGINY = 0
+hs.grid.ui.textSize = 100
 
 -- Funcz
 hs.hotkey.bind(mash, "end", function()
@@ -60,11 +63,16 @@ end)
 local function snapAndSize(win, dir)
   local pos = hs.grid.snap(win).get(win)
 
-  local max_height = 4
-  local min_height = 2
+  -- local max_height = 4
+  -- local min_height = 2
 
-  local max_width = 4
+  -- local max_width = 4
+  -- local min_width = 2
+
+  local min_height = 2
   local min_width = 2
+  local max_height = hs.grid.GRIDHEIGHT - min_height
+  local max_width = hs.grid.GRIDWIDTH - min_width
 
   pos.y = 0
   pos.h = hs.grid.GRIDHEIGHT
