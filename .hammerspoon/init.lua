@@ -3,14 +3,28 @@ mash = {"ctrl", "alt"}
 
 hs.window.animationDuration = 0.01
 
+local function toRGB(color_table)
+  return hs.drawing.color.asRGB(color_table)
+end
+
 -- Grid
--- hs.grid.GRIDHEIGHT = 6
--- hs.grid.GRIDWIDTH = 6
-hs.grid.GRIDHEIGHT = 8
+hs.grid.GRIDHEIGHT = 6
 hs.grid.GRIDWIDTH = 8
 hs.grid.MARGINX = 0
 hs.grid.MARGINY = 0
+-- Grid.ui
+hs.grid.ui.textColor = { 1, 1, 1, 0.95 }
+hs.grid.ui.cellColor = { 0, 0, 0, 0.15 }
+hs.grid.ui.cellStrokeColor = { 0, 0, 0, 0.35 }
+hs.grid.ui.selectedColor = toRGB({ hex = "#EC407A", alpha = 0.5 }) -- Material Pink 400
+hs.grid.ui.highlightColor = toRGB({ hex = "#29B6F6", alpha = 0.5 }) -- Material Light Blue 400
+hs.grid.ui.highlightStrokeColor = toRGB({ hex = "#29B6F6", alpha = 0.6 }) -- Material Light Blue 400
+hs.grid.ui.cyclingHighlightColor = toRGB({ hex = "#FF7043", alpha = 0.5 }) -- Material Deep Orange 400
+hs.grid.ui.cyclingHighlightStrokeColor = toRGB({ hex = "#FF7043", alpha = 0.6 }) -- Material Deep Orange 400
+hs.grid.ui.fontName = 'Ubuntu Light'
 hs.grid.ui.textSize = 100
+hs.grid.ui.cellStrokeWidth = 5
+hs.grid.ui.highlightStrokeWidth = 10
 
 -- Funcz
 hs.hotkey.bind(mash, "end", function()
@@ -36,18 +50,6 @@ end)
 -- Grid
 hs.hotkey.bind(mash, "return", hs.grid.show)
 
---[[
--- Cheatsheet
-
-import = require('import')
-import.clear_cache()
-
-csheet = import('cheatsheet')
-hs.hotkey.bind(mash, "/", function()
-  csheet.toggle()
-end)
-]]
-
 -- Screensaver hotkey
 hs.hotkey.bind(mash, "forwarddelete", function()
   hs.timer.doAfter(0.35, function()
@@ -60,28 +62,28 @@ hs.hotkey.bind(mash, "\\", function()
   hs.grid.maximizeWindow(win)
 end)
 
+grid_limit = {
+  min = {
+    width = 2,
+    height = 1,
+  },
+  max = {
+    width = hs.grid.GRIDWIDTH - 2,
+    height = hs.grid.GRIDHEIGHT - 1,
+  },
+}
+
 local function snapAndSize(win, dir)
   local pos = hs.grid.snap(win).get(win)
-
-  -- local max_height = 4
-  -- local min_height = 2
-
-  -- local max_width = 4
-  -- local min_width = 2
-
-  local min_height = 2
-  local min_width = 2
-  local max_height = hs.grid.GRIDHEIGHT - min_height
-  local max_width = hs.grid.GRIDWIDTH - min_width
 
   pos.y = 0
   pos.h = hs.grid.GRIDHEIGHT
   pos.w = pos.w - 1
 
-  if pos.w < min_width then
-    pos.w = max_width
-  elseif pos.w > max_width then
-    pos.w = min_width
+  if pos.w < grid_limit.min.width then
+    pos.w = grid_limit.max.width
+  elseif pos.w > grid_limit.max.width then
+    pos.w = grid_limit.min.width
   end
 
   if dir == "right" then
@@ -95,15 +97,11 @@ end
 
 hs.hotkey.bind(mash, "right", function()
   local win = hs.window.focusedWindow()
-  -- local half_width = hs.grid.GRIDWIDTH / 2
-  -- hs.grid.snap(win).set(win, {half_width, 0, half_width, hs.grid.GRIDHEIGHT})
   snapAndSize(win, "right")
 end)
 
 hs.hotkey.bind(mash, "left", function()
   local win = hs.window.focusedWindow()
-  -- local half_width = hs.grid.GRIDWIDTH / 2
-  -- hs.grid.snap(win).set(win, {0, 0, half_width, hs.grid.GRIDHEIGHT})
   snapAndSize(win, "left")
 end)
 
@@ -133,15 +131,13 @@ local function activateApp(...)
   return nil
 end
 
+
 hs.hotkey.bind(mash, "h", function() activateApp("Google Chrome") end)
 hs.hotkey.bind(mash, "j", function() activateApp("iTerm2") end)
 hs.hotkey.bind(mash, "k", function() activateApp("MacVim", "Neovim") end)
 hs.hotkey.bind(mash, "l", function() activateApp("Slack") end)
 hs.hotkey.bind(mash, "o", function() activateApp("Finder") end)
 hs.hotkey.bind(mash, "p", function() activateApp("Preview") end)
-
-
--- print screen = f13
 
 
 function moveWindowOneSpace(direction)
