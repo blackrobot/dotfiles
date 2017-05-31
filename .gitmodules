@@ -113,6 +113,6 @@
 [submodule ".janus/vim-yaml"]
   path = .janus/vim-yaml
   url = git@github.com:stephpy/vim-yaml.git
-[submodule ".janus/rainbow"]
-  path = .janus/rainbow
-  url = git@github.com:luochen1990/rainbow.git
+[submodule ".janus/rainbow_parentheses.vim"]
+  path = .janus/rainbow_parentheses.vim
+  url = git@github.com:junegunn/rainbow_parentheses.vim.git

@@ -44,5 +44,3 @@ let g:vimwiki_list = [{
   \ 'index': 'index',
   \ 'ext': '.md'
 \ }]
-
-let g:rainbow_active = 1
