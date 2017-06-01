@@ -116,3 +116,6 @@
 [submodule ".janus/rainbow_parentheses.vim"]
   path = .janus/rainbow_parentheses.vim
   url = git@github.com:junegunn/rainbow_parentheses.vim.git
+[submodule ".janus/requirements.txt.vim"]
+  path = .janus/requirements.txt.vim
+  url = git@github.com:raimon49/requirements.txt.vim.git
