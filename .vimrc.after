@@ -56,9 +56,14 @@ augroup gitcommit
   autocmd FileType gitcommit setlocal colorcolumn=73
 augroup END
 
-augroup text
+augroup text_settings
   autocmd!
   autocmd BufNewFile,BufRead *.md,*.txt,*.scratch setlocal spell wrap
+augroup END
+
+augroup docker_settings
+  autocmd!
+  autocmd BufNewFile,BufRead .dockerignore setlocal filetype=conf
 augroup END
 
 set wildignore+=*.pyc,*.zip,*.gz,*.tar
