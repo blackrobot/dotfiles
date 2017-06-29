@@ -1154,6 +1154,10 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>EnableDivisionView</key>
+	<false/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -1168,6 +1172,13 @@
 			<integer>2</integer>
 			<key>Text</key>
 			<string></string>
+		</dict>
+		<key>0x44-0x120000</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Text</key>
+			<string>alias l='ls -AlhF --color=auto' ; export TERM=xterm-256color \r</string>
 		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
@@ -1282,11 +1293,13 @@
 	<key>HotKeyTogglesWindow</key>
 	<true/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
-	<integer>63247</integer>
+	<integer>0</integer>
 	<key>HotkeyCode</key>
-	<integer>111</integer>
+	<integer>0</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>9437448</integer>
 	<key>IRMemory</key>
@@ -1393,15 +1406,15 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>1501 936 616 174 0 0 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 45 599 505 0 0 2560 1417 </string>
+	<string>295 548 599 519 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>440 668 918 495 0 0 2560 1417 </string>
+	<string>543 813 958 433 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>962 8 1592 1409 0 0 2560 1417 </string>
+	<string>962 0 1592 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1650,10 +1663,30 @@
 			</dict>
 			<key>Guid</key>
 			<string>DF0F0783-9A25-4F87-990C-865FD22268F6</string>
+			<key>Has Hotkey</key>
+			<true/>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
+			<key>HotKey Characters</key>
+			<string></string>
+			<key>HotKey Characters Ignoring Modifiers</key>
+			<string></string>
+			<key>HotKey Key Code</key>
+			<integer>111</integer>
+			<key>HotKey Modifier Flags</key>
+			<integer>9437448</integer>
+			<key>HotKey Window Animates</key>
+			<true/>
+			<key>HotKey Window AutoHides</key>
+			<true/>
+			<key>HotKey Window Dock Click Action</key>
+			<integer>0</integer>
+			<key>HotKey Window Floats</key>
+			<false/>
+			<key>HotKey Window Reopens On Activation</key>
+			<false/>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -2798,6 +2831,8 @@
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
+			<key>Reduce Flicker</key>
+			<true/>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -4511,6 +4546,8 @@
 			<string>No</string>
 			<key>Allow Title Reporting</key>
 			<false/>
+			<key>Allow Title Setting</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -4815,11 +4852,11 @@
 				<real>0.84705882352941175</real>
 			</dict>
 			<key>Guid</key>
-			<string>0890FAC5-2C49-4876-84A5-BDD18F35DAA7</string>
+			<string>57C13C65-0129-4275-954E-310FA76C6FD0</string>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>1</real>
+			<real>0.90000000000000002</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -5129,13 +5166,13 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>Copy of Default</string>
+			<string>Default Backup 2017-05-31 @ 15:54</string>
 			<key>Non Ascii Font</key>
-			<string>MonacoForPowerline 13</string>
+			<string>FuraCodeNerdFontCM-Retina 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>OperatorMono-Light 14</string>
+			<string>OperatorMono-Medium 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -5145,7 +5182,7 @@
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
-			<integer>-1</integer>
+			<integer>-2</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
@@ -5292,6 +5329,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color-italic</string>
+			<key>Thin Strokes</key>
+			<integer>2</integer>
 			<key>Transparency</key>
 			<real>0.11191753298044205</real>
 			<key>Triggers</key>
@@ -5306,7 +5345,11 @@
 			<false/>
 			<key>Use Cursor Guide</key>
 			<false/>
+			<key>Use HFS Plus Mapping</key>
+			<false/>
 			<key>Use Italic Font</key>
+			<true/>
+			<key>Use Non-ASCII Font</key>
 			<true/>
 			<key>Use Tab Color</key>
 			<false/>
@@ -5491,7 +5534,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-25T19:36:14Z</date>
+	<date>2017-06-23T21:22:54Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -5506,12 +5549,14 @@
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.11861728876829147</real>
+	<key>StretchTabsToFillBar</key>
+	<false/>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
 	<key>TabStyle</key>
-	<integer>3</integer>
+	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>1</integer>
 	<key>ThreeFingerEmulates</key>
@@ -5540,7 +5585,7 @@
 	<key>WebKitStandardFont</key>
 	<string>.Helvetica Neue DeskInterface</string>
 	<key>WindowNumber</key>
-	<true/>
+	<false/>
 	<key>WindowStyle</key>
 	<integer>0</integer>
 	<key>WordCharacters</key>
@@ -5550,7 +5595,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.15</string>
+	<string>3.1.beta.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
