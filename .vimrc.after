@@ -66,6 +66,11 @@ augroup docker_settings
   autocmd BufNewFile,BufRead .dockerignore setlocal filetype=conf
 augroup END
 
+augroup crontab_settings
+  autocmd!
+  autocmd FileType crontab setlocal backupcopy=yes
+augroup END
+
 set wildignore+=*.pyc,*.zip,*.gz,*.tar
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
 set wildignore+=*.pdf,*.doc,*.docx
