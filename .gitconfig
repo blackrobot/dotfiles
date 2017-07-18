@@ -48,9 +48,9 @@
 [branch]
   autosetupmerge = true
 
-[pager]
-  diff = "diff-so-fancy | less --tabs=4 -RFX"
-  show = "diff-so-fancy | less --tabs=4 -RFX"
+# [pager]
+#   diff = "diff-so-fancy | less --tabs=4 -RFX"
+#   show = "diff-so-fancy | less --tabs=4 -RFX"
 
 [core]
   whitespace = trailing-space,space-before-tab
