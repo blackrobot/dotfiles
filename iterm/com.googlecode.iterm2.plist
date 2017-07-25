@@ -1178,7 +1178,7 @@
 			<key>Action</key>
 			<integer>12</integer>
 			<key>Text</key>
-			<string>alias l='ls -AlhF --color=auto' ; export TERM=xterm-256color \r</string>
+			<string>alias l='ls -AlhF --color=auto' ; export TERM=xterm-256color \n</string>
 		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
