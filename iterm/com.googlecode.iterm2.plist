@@ -1317,7 +1317,7 @@
 	<key>NSColorPanelMode</key>
 	<string>6</string>
 	<key>NSFontPanelAttributes</key>
-	<string>1, 5</string>
+	<string>1, 0</string>
 	<key>NSFontPanelPreviewHeight</key>
 	<real>0.0</real>
 	<key>NSFontPanelSizeList</key>
@@ -1400,7 +1400,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>165 444 884 77 0 0 2560 1417 </string>
+	<string>165 310 884 77 0 0 2560 1417 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>666 961 606 456 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
@@ -1408,13 +1408,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>295 548 599 519 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>543 813 958 433 0 0 2560 1417 </string>
+	<string>419 780 918 507 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>962 0 1592 1417 0 0 2560 1417 </string>
+	<string>1282 0 1277 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2510,7 +2510,7 @@
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
-			<real>0.90000000000000002</real>
+			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
@@ -2826,7 +2826,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>OperatorMono-Medium 13</string>
+			<string>OperatorMonoNerdFontCM-Book 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -5534,7 +5534,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-06-23T21:22:54Z</date>
+	<date>2017-07-24T11:13:02Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -5592,6 +5592,8 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
