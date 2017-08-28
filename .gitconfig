@@ -1,6 +1,7 @@
 # default username and email
 [user]
   name = damon
+	useconfigonly = false
 
 [alias]
   d = difftool

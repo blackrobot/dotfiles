@@ -1406,9 +1406,9 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>1501 936 616 174 0 0 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>295 548 599 519 0 0 2560 1417 </string>
+	<string>295 548 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>419 780 918 507 0 0 2560 1417 </string>
+	<string>323 795 958 433 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
@@ -5534,7 +5534,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-24T11:13:02Z</date>
+	<date>2017-07-26T11:13:08Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
