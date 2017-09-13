@@ -94,18 +94,12 @@
 [submodule ".janus/onedark.vim"]
   path = .janus/onedark.vim
   url = git@github.com:joshdick/onedark.vim.git
-[submodule ".janus/vim-polyglot"]
-  path = .janus/vim-polyglot
-  url = git@github.com:sheerun/vim-polyglot.git
 [submodule ".janus/ale"]
   path = .janus/ale
   url = git@github.com:w0rp/ale.git
 [submodule "zsh.custom/plugins/zsh-nvm"]
   path = zsh.custom/plugins/zsh-nvm
   url = git@github.com:lukechilds/zsh-nvm.git
-[submodule ".janus/vim-yaml"]
-  path = .janus/vim-yaml
-  url = git@github.com:stephpy/vim-yaml.git
 [submodule ".janus/rainbow_parentheses.vim"]
   path = .janus/rainbow_parentheses.vim
   url = git@github.com:junegunn/rainbow_parentheses.vim.git
