@@ -34,10 +34,6 @@
   path = .janus/delimitMate
   url = git://github.com/Raimondi/delimitMate.git
   ignore = dirty
-[submodule ".janus/YouCompleteMe"]
-  path = .janus/YouCompleteMe
-  url = git://github.com/Valloric/YouCompleteMe.git
-  ignore = dirty
 [submodule ".janus/vim-systemd-syntax"]
   path = .janus/vim-systemd-syntax
   url = git://github.com/Matt-Deacalion/vim-systemd-syntax.git
