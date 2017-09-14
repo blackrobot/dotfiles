@@ -22,8 +22,7 @@ plugins=(
   colored-man-pages
   command-not-found
   cp
-  docker-compose
-  docker
+  docker-complete
   encode64
   extract
   git
@@ -39,6 +38,8 @@ plugins=(
   z
   zsh-nvm
 )
+
+autoload -U compinit && compinit
 
 function source_if_exists {
   if [[ -s "$1" ]]; then
