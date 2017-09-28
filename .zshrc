@@ -7,7 +7,8 @@ ZSH="${HOME}/.oh-my-zsh"
 [[ -z "$SSH_CLIENT" ]] && DEFAULT_USER="damon"
 
 COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY=true
+DISABLE_UPDATE_PROMPT=true
 HIST_STAMPS="yyyy-mm-dd"
 ZSH_CUSTOM="${DOTFILES}/zsh.custom"
 
@@ -22,7 +23,8 @@ plugins=(
   colored-man-pages
   command-not-found
   cp
-  docker-complete
+  docker-compose
+  docker
   encode64
   extract
   git

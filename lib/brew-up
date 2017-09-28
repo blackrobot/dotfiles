@@ -1,0 +1,61 @@
+# vim: set ft=zsh:
+
+# Alias for brew upgrading
+function bubu {
+  TERM="xterm-256color"
+
+  local reset;
+  local bold;
+  local icon;
+  local cmd_style;
+
+  reset="$(tput sgr0)"
+  bold="$(tput bold)"
+  icon="➥"
+  cmd_style="$(tput setaf 102)"
+
+  function __bubu_banner {
+    local color;
+    color="$(tput setaf ${1})"
+
+    printf "%s${2}%s %s${3}%s \n" \
+      "${color}${bold}" \
+      "$reset" \
+      "$color" \
+      "$reset"
+  }
+
+  __bubu_banner 5 "$icon" "Update"
+  printf "%s  $ %s %s \n" \
+    "$cmd_style" \
+    "brew update --verbose" \
+    "$reset"
+  brew update --verbose
+  echo
+
+  __bubu_banner 5 "$icon" "Upgrade"
+  printf "%s  $ %s %s \n" \
+    "$cmd_style" \
+    "brew upgrade --cleanup" \
+    "$reset"
+  brew upgrade --cleanup
+  echo
+
+  __bubu_banner 4 "$icon" "Cleanup"
+  printf "%s  $ %s %s \n" \
+    "$cmd_style" \
+    "brew cleanup" \
+    "$reset"
+  brew cleanup
+  echo
+
+  __bubu_banner 4 "$icon" "Cask Cleanup"
+  printf "%s  $ %s %s \n" \
+    "$cmd_style" \
+    "brew cask cleanup" \
+    "$reset"
+  brew cask cleanup
+  echo
+
+  __bubu_banner 1 "☭" "$(tput setaf 3)Done"
+}

@@ -32,6 +32,7 @@ if dein#load_state('~/.cache/dein')
 
   " Other stuff
   call dein#add('sheerun/vim-polyglot')
+  call dein#add('mhartington/oceanic-next')
 
   " Deoplete
   call dein#add('Shougo/deoplete.nvim')
@@ -77,6 +78,9 @@ call janus#add_group("colors")
 "" Customisations
 ""
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+
 if filereadable(expand("~/.vimrc.before"))
   " fzf
   set rtp+=/usr/local/opt/fzf
@@ -98,7 +102,7 @@ call janus#load_pathogen()
 " .vimrc.after is loaded after the plugins have loaded
 
 " Fuzzy File Finder (fzf)
-let g:fzf_layout = { 'down': '~20%' }
+let g:fzf_layout = { 'down': '~15%' }
 
 nnoremap <Leader>ff :GitFiles<CR>
 nnoremap <Leader>fb :Buffers<CR>

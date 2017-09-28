@@ -1408,13 +1408,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>295 548 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>876 602 918 485 0 0 2560 1417 </string>
+	<string>846 591 796 473 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1282 1 1277 1416 0 0 2560 1417 </string>
+	<string>1282 711 1277 706 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -5482,6 +5482,8 @@
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
+	<key>PerformDNSLookups</key>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -5538,7 +5540,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-05T17:34:26Z</date>
+	<date>2017-09-13T15:40:36Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -5601,7 +5603,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.beta.8</string>
+	<string>3.1.beta.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

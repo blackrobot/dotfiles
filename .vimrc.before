@@ -1,5 +1,3 @@
-" set encoding=utf-8
-
 syntax enable
 
 " Change the leader key to ','
@@ -28,7 +26,10 @@ let g:airline_detect_paste = 1
 let g:airline_detect_crypt = 1
 let g:airline_detect_spell = 1
 let g:airline_inactive_collapse = 1
-let g:airline_theme = 'onedark'
+
+" let g:airline_theme = 'onedark'
+let g:airline_theme = 'oceanicnext'
+
 let g:airline_skip_empty_sections = 1
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
