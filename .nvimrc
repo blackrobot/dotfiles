@@ -22,9 +22,13 @@ endif
 " Required:
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
+let g:dein#install_max_processes = 16
+let g:dein#install_progress_type = 'echo'
+let g:dein#enable_notification = 0
+
 " Required:
 if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
+  call dein#begin('~/.cache/dein', [expand('<sfile>')])
 
   " Let dein manage dein
   " Required:
@@ -33,9 +37,11 @@ if dein#load_state('~/.cache/dein')
   " Other stuff
   call dein#add('sheerun/vim-polyglot')
   call dein#add('mhartington/oceanic-next')
+  call dein#add('mbbill/undotree')
 
   " Deoplete
   call dein#add('Shougo/deoplete.nvim')
+  call dein#add('autozimu/LanguageClient-neovim')
   call dein#add('Shougo/neco-syntax')
   call dein#add('zchee/deoplete-jedi')
   call dein#add('Shougo/neco-vim')
@@ -61,6 +67,7 @@ syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
+  call map(dein#check_clean(), "delete(v:val, 'rf')")
   call dein#install()
   call dein#remote_plugins()
 endif
