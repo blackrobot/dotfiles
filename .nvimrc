@@ -3,8 +3,8 @@
 ""
 
 " Explicitly set the python host
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = expand("~/.pyenv/versions/neovim2/bin/python")
+let g:python3_host_prog = expand("~/.pyenv/versions/neovim3/bin/python")
 
 " Define paths
 let g:janus_path = expand("~/.vim/janus/vim")
@@ -28,20 +28,27 @@ let g:dein#enable_notification = 0
 
 " Required:
 if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein', [expand('<sfile>')])
+  " call dein#begin('~/.cache/dein', [expand('<sfile>')])
+  call dein#begin('~/.cache/dein')
 
   " Let dein manage dein
   " Required:
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
+  " Colors
+  call dein#add('mhartington/oceanic-next')
+  call dein#add('MaxSt/FlatColor')
+  call dein#add('KeitaNakamura/neodark.vim')
+  call dein#add('vim-airline/vim-airline-themes')
+
   " Other stuff
   call dein#add('sheerun/vim-polyglot')
-  call dein#add('mhartington/oceanic-next')
   call dein#add('mbbill/undotree')
+  call dein#add('ludovicchabant/vim-gutentags')
 
   " Deoplete
   call dein#add('Shougo/deoplete.nvim')
-  call dein#add('autozimu/LanguageClient-neovim')
+  " call dein#add('autozimu/LanguageClient-neovim')
   call dein#add('Shougo/neco-syntax')
   call dein#add('zchee/deoplete-jedi')
   call dein#add('Shougo/neco-vim')
@@ -67,7 +74,7 @@ syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
-  call map(dein#check_clean(), "delete(v:val, 'rf')")
+  " call map(dein#check_clean(), "delete(v:val, 'rf')")
   call dein#install()
   call dein#remote_plugins()
 endif
@@ -121,28 +128,18 @@ nnoremap <C-p> :Files<CR>
 let g:terminal_scrollback_buffer_size = 10000
 autocmd TermOpen * setlocal bufhidden=hide
 
+" Undotree
+nnoremap <F5> :UndotreeToggle<cr>
+if has('persistent_undo')
+  set undodir=~/.vim/_temp/undo/
+  set undofile
+endif
+
 "
 " <deoplete>
 "
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#max_list = 20
-
-" Taken from rafi/vim-config -> https://git.io/v5ZUz
-let g:deoplete#enable_refresh_always = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#max_abbr_width = 35
-let g:deoplete#max_menu_width = 20
-let g:deoplete#skip_chars = ['(', ')', '<', '>']
-let g:deoplete#tag#cache_limit_size = 800000
-let g:deoplete#file#enable_buffer_path = 1
-
-
 " use tab for completion
-" inoremap <silent><expr> <Tab>
-"   \ pumvisible() ? "\<C-n>" :
-"   \ deoplete#mappings#manual_complete()
 inoremap <silent><expr> <TAB>
 		\ pumvisible() ? "\<C-n>" :
 		\ <SID>check_back_space() ? "\<TAB>" :
@@ -157,8 +154,41 @@ inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
 autocmd CompleteDone * silent! pclose!
 
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#max_list = 20
+let g:deoplete#auto_complete_start_length = 1
+let g:deoplete#sources#jedi#enable_cache = 1
+
+" Taken from rafi/vim-config -> https://git.io/v5ZUz
+let g:deoplete#enable_refresh_always = 1
+let g:deoplete#enable_camel_case = 1
+let g:deoplete#max_abbr_width = 35
+let g:deoplete#max_menu_width = 20
+let g:deoplete#skip_chars = ['(', ')', '<', '>']
+let g:deoplete#tag#cache_limit_size = 8000000
+let g:deoplete#file#enable_buffer_path = 1
+
+let g:deoplete#sources = get(g:, 'deoplete#sources', {})
+" let g:deoplete#sources._ = []
+
 " Deoplete Jedi
+let g:deoplete#sources#jedi#statement_length = 30
 let g:deoplete#sources#jedi#show_docstring = 1
+let g:deoplete#sources#jedi#short_types = 1
+
+call deoplete#custom#source('_', 'min_pattern_length', 2)
+
+" let g:deoplete#sources._ = []
+" let g:deoplete#sources.python = [
+"   \ 'buffer',
+"   \ 'file',
+"   \ 'tag',
+"   \ 'jedi',
+"   \ 'around',
+"   \ 'syntax',
+"   \ 'omni'
+" \ ]
 
 " Deoplete Tern
 let g:deoplete#sources#ternjs#depths = 1
@@ -173,18 +203,10 @@ let g:deoplete#omni#functions.markdown = 'htmlcomplete#CompleteTags'
 " let g:deoplete#omni#functions.javascript =
 "	\ [ 'tern#Complete', 'jspc#omni', 'javascriptcomplete#CompleteJS' ]
 
-let g:deoplete#sources#jedi#statement_length = 30
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:deoplete#sources#jedi#short_types = 1
-
-call deoplete#custom#set('_', 'min_pattern_length', 2)
-
-let g:deoplete#sources = get(g:, 'deoplete#sources', {})
-
 let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
 let g:deoplete#omni_patterns.html = '<[^>]*'
-" let g:deoplete#omni_patterns.javascript = '[^. *\t]\.\w*'
-" let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%\(\h\w*\)\?'
+let g:deoplete#omni_patterns.javascript = '[^. *\t]\.\w*'
+let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%\(\h\w*\)\?'
 
 let g:deoplete#omni#input_patterns = get(g:, 'deoplete#omni#input_patterns', {})
 let g:deoplete#omni#input_patterns.xml = '<[^>]*'
@@ -196,31 +218,29 @@ let g:deoplete#omni#input_patterns.python = ''
 let g:deoplete#omni#input_patterns.javascript = ''
 
 " Default rank is 100, higher is better.
-call deoplete#custom#set('omni',          'mark', '⌾')
-call deoplete#custom#set('ternjs',        'mark', '⌁')
-call deoplete#custom#set('jedi',          'mark', '⌁')
-call deoplete#custom#set('vim',           'mark', '⌁')
-call deoplete#custom#set('neosnippet',    'mark', '⌘')
-call deoplete#custom#set('tag',           'mark', '⌦')
-call deoplete#custom#set('around',        'mark', '↻')
-call deoplete#custom#set('buffer',        'mark', 'ℬ')
-call deoplete#custom#set('tmux-complete', 'mark', '⊶')
-call deoplete#custom#set('syntax',        'mark', '♯')
+call deoplete#custom#source('omni',          'mark', '⌾')
+call deoplete#custom#source('ternjs',        'mark', '⌁')
+call deoplete#custom#source('jedi',          'mark', '⌁')
+call deoplete#custom#source('vim',           'mark', '⌁')
+call deoplete#custom#source('neosnippet',    'mark', '⌘')
+call deoplete#custom#source('tag',           'mark', '⌦')
+call deoplete#custom#source('around',        'mark', '↻')
+call deoplete#custom#source('buffer',        'mark', 'ℬ')
+call deoplete#custom#source('syntax',        'mark', '♯')
 
-call deoplete#custom#set('vim',           'rank', 630)
-call deoplete#custom#set('ternjs',        'rank', 620)
-call deoplete#custom#set('jedi',          'rank', 610)
-call deoplete#custom#set('omni',          'rank', 600)
-call deoplete#custom#set('neosnippet',    'rank', 510)
-call deoplete#custom#set('member',        'rank', 500)
-call deoplete#custom#set('file_include',  'rank', 420)
-call deoplete#custom#set('file',          'rank', 410)
-call deoplete#custom#set('tag',           'rank', 400)
-call deoplete#custom#set('around',        'rank', 330)
-call deoplete#custom#set('buffer',        'rank', 320)
-call deoplete#custom#set('dictionary',    'rank', 310)
-call deoplete#custom#set('tmux-complete', 'rank', 300)
-call deoplete#custom#set('syntax',        'rank', 200)
+call deoplete#custom#source('vim',           'rank', 630)
+call deoplete#custom#source('ternjs',        'rank', 620)
+call deoplete#custom#source('jedi',          'rank', 610)
+call deoplete#custom#source('omni',          'rank', 600)
+call deoplete#custom#source('neosnippet',    'rank', 510)
+call deoplete#custom#source('member',        'rank', 500)
+call deoplete#custom#source('file_include',  'rank', 420)
+call deoplete#custom#source('file',          'rank', 410)
+call deoplete#custom#source('tag',           'rank', 400)
+call deoplete#custom#source('around',        'rank', 330)
+call deoplete#custom#source('buffer',        'rank', 320)
+call deoplete#custom#source('dictionary',    'rank', 310)
+call deoplete#custom#source('syntax',        'rank', 200)
 
 "
 " </deoplete>

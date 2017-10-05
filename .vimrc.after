@@ -5,16 +5,15 @@
 "   set termguicolors
 " endif
 
-" set background=dark
+set background=dark
 
-" let g:onedark_terminal_italics=1
-" syntax on
-" colorscheme onedark
-" let g:airline_theme = 'onedark'
+let g:onedark_terminal_italics=1
+syntax on
+colorscheme onedark
 
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
+" colorscheme OceanicNext
 " let g:airline_theme = 'oceanicnext'
 
 " Highlight the cursor's current line
@@ -122,14 +121,15 @@ let g:startify_bookmarks = [
   \ ]
 
 " Gutentags
-let g:gutentags_enabled = 0
-let g:gutentags_cache_dir = expand("~/.tags")
+let g:gutentags_enabled = 1
+let g:gutentags_cache_dir = expand("~/.vim/_temp/tags")
 let g:gutentags_file_list_command = {
   \ 'markers': {
     \ '.git': 'git ls-files',
   \ },
 \ }
 let g:gutentags_ctags_exclude = [
+  \ '.tmp',
   \ '.git',
   \ '.svn',
   \ '.hg',

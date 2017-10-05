@@ -10,7 +10,7 @@ set clipboard=unnamed
 call janus#disable_plugin('gui_settings')
 call janus#disable_plugin('supertab')
 call janus#disable_plugin('multiple-cursors')
-call janus#disable_plugin('nerdtree')
+" call janus#disable_plugin('nerdtree')
 call janus#disable_plugin('syntastic')
 
 " Make gists private
@@ -27,8 +27,9 @@ let g:airline_detect_crypt = 1
 let g:airline_detect_spell = 1
 let g:airline_inactive_collapse = 1
 
+let g:airline_theme = 'base16_spacemacs'
 " let g:airline_theme = 'onedark'
-let g:airline_theme = 'oceanicnext'
+" let g:airline_theme = 'oceanicnext'
 
 let g:airline_skip_empty_sections = 1
 let g:airline_powerline_fonts = 1

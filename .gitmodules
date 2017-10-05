@@ -54,10 +54,6 @@
   path = .janus/papercolor-theme
   url = git://github.com/NLKNguyen/papercolor-theme.git
   ignore = dirty
-[submodule ".janus/vim-gutentags"]
-  path = .janus/vim-gutentags
-  url = git://github.com/ludovicchabant/vim-gutentags.git
-  ignore = dirty
 [submodule ".janus/vim-startify"]
   path = .janus/vim-startify
   url = git://github.com/mhinz/vim-startify.git

@@ -70,9 +70,12 @@ unsetopt auto_name_dirs
 
 export LESS="-R --ignore-case --tabs=4"
 
-# Include the aliases file and anything in lib
 source "${DOTFILES}/.aliases"
-for local_lib ("${DOTFILES}/lib/"*) source "${local_lib}"
+
+# Only include files without a leading underscore
+for local_lib in $(find ~/.dotfiles/lib -maxdepth 1 -type f ! -name '_*'); do
+  source "${local_lib}"
+done
 
 source_if_exists "${HOME}/.fzf.zsh"
 source_if_exists "${HOME}/.zshrc.local"

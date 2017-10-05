@@ -1,7 +1,7 @@
 # vim: set ft=zsh:
 
-# Alias for brew upgrading
-function bubu {
+# Update and upgrade various things
+function update-stuff {
   TERM="xterm-256color"
 
   local reset;
@@ -43,17 +43,9 @@ function bubu {
     echo
   }
 
-  __bubu_banner 5 "Update"
-  __bubu_cmd "brew update --verbose"
+  # update heroku
+  __bubu_banner 5 "heroku"
+  __bubu_cmd "heroku update"
 
-  __bubu_banner 5 "Upgrade"
-  __bubu_cmd "brew upgrade --cleanup"
-
-  __bubu_banner 4 "Cleanup"
-  __bubu_cmd "brew cleanup"
-
-  __bubu_banner 4 "Cask Cleanup"
-  __bubu_cmd "brew cask cleanup"
-
-  __bubu_banner 1 "$(tput setaf 3)Done" "☭"
+  bubu
 }
