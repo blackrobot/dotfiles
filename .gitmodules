@@ -58,10 +58,6 @@
   path = .janus/vim-startify
   url = git://github.com/mhinz/vim-startify.git
   ignore = dirty
-[submodule ".janus/fzf.vim"]
-  path = .janus/fzf.vim
-  url = git://github.com/junegunn/fzf.vim.git
-  ignore = dirty
 [submodule ".janus/vim-javascript"]
   path = .janus/vim-javascript
   url = git://github.com/pangloss/vim-javascript.git

@@ -45,6 +45,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('mbbill/undotree')
   call dein#add('ludovicchabant/vim-gutentags')
+  call dein#add('junegunn/fzf.vim')
 
   " Deoplete
   call dein#add('Shougo/deoplete.nvim')
