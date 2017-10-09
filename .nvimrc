@@ -116,13 +116,49 @@ call janus#load_pathogen()
 
 " .vimrc.after is loaded after the plugins have loaded
 
-" Fuzzy File Finder (fzf)
-let g:fzf_layout = { 'down': '~15%' }
+set lazyredraw
 
-nnoremap <Leader>ff :GitFiles<CR>
-nnoremap <Leader>fb :Buffers<CR>
-nnoremap <Leader>fa :Ag<Space>
-nnoremap <C-p> :Files<CR>
+" Fuzzy File Finder (fzf)
+let $FZF_DEFAULT_OPTS = '--height 40% --border --inline-info'
+let $FZF_PREVIEW_HEIGHT = '35%'
+let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+let g:fzf_buffers_jump = 1
+let g:fzf_colors = { 'fg':      ['fg', 'Normal'],
+                   \ 'bg':      ['bg', 'Normal'],
+                   \ 'hl':      ['fg', 'Comment'],
+                   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+                   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+                   \ 'hl+':     ['fg', 'Statement'],
+                   \ 'info':    ['fg', 'PreProc'],
+                   \ 'prompt':  ['fg', 'Conditional'],
+                   \ 'pointer': ['fg', 'Exception'],
+                   \ 'marker':  ['fg', 'Keyword'],
+                   \ 'spinner': ['fg', 'Label'],
+                   \ 'header':  ['fg', 'Comment'] }
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), 0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(),
+  \   0)
+
+" nnoremap <Leader>fs :Ag<CR>
+nnoremap <silent> <Leader>fs :Rg!<CR>
+nnoremap <silent> <Leader>fh :Commits!<CR>
+nnoremap <silent> <C-p> :Files!<CR>
+
+function! s:fzf_statusline()
+  highlight fzf1 ctermfg=161 ctermbg=251
+  highlight fzf2 ctermfg=23 ctermbg=251
+  highlight fzf3 ctermfg=237 ctermbg=251
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
 " Terminal
 " tnoremap “ <C-\><C-n>
@@ -142,13 +178,13 @@ endif
 
 " use tab for completion
 inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ deoplete#mappings#manual_complete()
-		function! s:check_back_space() abort "{{{
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-		endfunction"}}}
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#mappings#manual_complete()
+    function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction"}}}
 
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
@@ -202,7 +238,7 @@ let g:deoplete#omni#functions.css = 'csscomplete#CompleteCSS'
 let g:deoplete#omni#functions.html = 'htmlcomplete#CompleteTags'
 let g:deoplete#omni#functions.markdown = 'htmlcomplete#CompleteTags'
 " let g:deoplete#omni#functions.javascript =
-"	\ [ 'tern#Complete', 'jspc#omni', 'javascriptcomplete#CompleteJS' ]
+" \ [ 'tern#Complete', 'jspc#omni', 'javascriptcomplete#CompleteJS' ]
 
 let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
 let g:deoplete#omni_patterns.html = '<[^>]*'
