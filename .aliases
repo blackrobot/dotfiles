@@ -12,8 +12,14 @@ alias mkcd='__mkcd'
 alias l='ls -AFlh --color=auto'
 alias ll='ls -aFlh --color=auto'
 
+# cheat.sh
+function cheat {
+  curl "cheat.sh/${1}"
+}
+
 # Git
-alias gf='git fetch --prune'
-alias gfa='git fetch --all --prune'
 alias gr='git reset'
 alias grh='git reset --hard'
+
+alias gf='git fetch --prune'
+alias gfa='git fetch --all --prune'
