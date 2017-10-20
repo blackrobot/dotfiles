@@ -134,7 +134,7 @@ end
 
 hs.hotkey.bind(mash, "h", function() activateApp("Google Chrome") end)
 hs.hotkey.bind(mash, "j", function() activateApp("iTerm2") end)
-hs.hotkey.bind(mash, "k", function() activateApp("MacVim", "Neovim", "VimR") end)
+hs.hotkey.bind(mash, "k", function() activateApp("Code", "VimR") end)
 hs.hotkey.bind(mash, "l", function() activateApp("Slack") end)
 hs.hotkey.bind(mash, "o", function() activateApp("Finder") end)
 hs.hotkey.bind(mash, "p", function() activateApp("Preview") end)
