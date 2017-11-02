@@ -3,7 +3,7 @@
 alias h='history'
 
 function hs {
-  history | grep -v '\bh[si]*\b' | grep -iE $*
+  history | rg -v '\b(?:history|hsi?|hs)\b' | rg $*
 }
 
 alias hsi='hs'
