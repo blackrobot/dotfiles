@@ -1,4 +1,5 @@
 # vim: set syntax=zsh:
+
 # Path to your oh-my-zsh configuration.
 export DOTFILES="${HOME}/.dotfiles"
 ZSH="${HOME}/.oh-my-zsh"
@@ -14,9 +15,6 @@ ZSH_CUSTOM="${DOTFILES}/zsh.custom"
 
 ZSH_THEME="dzjparty"
 
-# Lazy load zsh-nvm
-export NVM_LAZY_LOAD=true
-
 # Plugins
 plugins=(
   aws
@@ -31,14 +29,12 @@ plugins=(
   git-extras
   github
   httpie
-  kubectl
   rsync
   urltools
   vi-mode
   vi-history-substring
   yarn
   z
-  zsh-nvm
 )
 
 autoload -U compinit && compinit
@@ -62,7 +58,8 @@ function add_to_path {
 }
 
 export EDITOR='vim'
-export DISABLE_CORRECTION=1
+DISABLE_CORRECTION=1
+HIST_IGNORE_SPACE=1
 
 source "${ZSH}/oh-my-zsh.sh"
 
