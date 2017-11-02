@@ -1,0 +1,166 @@
+{
+    /* Main config */
+    "editor.fontFamily": "Operator Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 13,
+    "editor.renderWhitespace": "boundary",
+    "editor.lineNumbers": "relative",
+    "editor.rulers": [79, 119],
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.occurrencesHighlight": false,
+    "editor.renderLineHighlight": "gutter",
+    "editor.renderControlCharacters": true,
+    "editor.minimap.enabled": false,
+
+    "explorer.openEditors.visible": 0,
+
+    "files.useExperimentalFileWatcher": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    },
+
+    "search.quickOpen.includeSymbols": true,
+
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.scrollback": 2000,
+    "terminal.integrated.fontSize": 13,
+
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+
+    "window.openFilesInNewWindow": "default",
+    "window.nativeTabs": false,
+    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "window.zoomLevel": 0,
+
+    "workbench.colorTheme": "One Dark Doom",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.labelFormat": "short",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.activityBar.visible": false,
+
+    /*
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#0288d1",
+        "statusBar.noFolderBackground": "#0288d1",
+        "statusBar.debuggingBackground": "#0288d1"
+        // "editor.lineHighlightBackground": "#282D39"
+        // "editor.lineHighlightBackground": "#30353F"
+    },
+    */
+
+    /* Vim config */
+    "vim.leader": ",",
+    "vim.cmdLineInitialColon": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
+    "vim.foldfix": true,
+    // vim: easy motion
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontWeight": "bold",
+    // vim: status bar
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors" : {
+        "normal": "#212121",
+        "insert": "#0288d1",
+        "visual": "#f50057",
+        "visualline": "#f50057",
+        "visualblock": "#e53935",
+        "replace": "#d50000"
+    },
+    // vim: neovim
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.disableAnnoyingNeovimMessage": true,
+    // vim: key bindings
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-l>"],
+            "after": [],
+            "commands": [{ "command": ":nohl", "args": [] }]
+        }
+    ],
+
+    /* Python config */
+    "[python]": {
+        "editor.rulers": [72, 79, 120]
+    },
+    "python.pythonPath": "/usr/local/bin/python2",
+    "python.venvPath": "~/.pyenv/versions/",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.lintOnTextChange": true,
+    "python.autoComplete.addBrackets": true,
+
+    /* Other extension config */
+    "git.enableCommitSigning": true,
+
+    "todohighlight.include": [
+        "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.html",
+        "**/*.php", "**/*.css", "**/*.scss", "**/*.py", "**/*.md",
+        ""
+    ],
+    "todohighlight.defaultStyle": {
+        "backgroundColor": "#b71c1c",
+        "color": "#FFF",
+        "borderRadius": "2px",
+        "padding": "1px"
+    },
+    "todohighlight.keywords": [
+        "TODO:",
+        "FIXME:",
+        {
+            "text": "XXX:",
+            "color": "#FFF",
+            "backgroundColor": "#b71c1c"
+        },
+        "???:",
+        "!!!:",
+        "BUG:",
+        "HACK:",
+        {
+            "text": "NOTE:",
+            "color": "#FFF",
+            "backgroundColor": "#2196F3",
+            "isWholeLine": false
+        },
+        "INFO:",
+        "IDEA:"
+    ],
+    "gitlens.gitExplorer.files.layout": "tree",
+    "gitlens.codeLens.recentChange.enabled": false,
+    "material-icon-theme.showUpdateMessage": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#212121",
+        "statusBar.noFolderBackground": "#212121",
+        "statusBar.debuggingBackground": "#212121"
+    }
+    /**
+
+    // Sync
+    "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
+    "sync.lastUpload": "2017-10-24T16:18:08.198Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": true,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false
+
+    **/
+}
