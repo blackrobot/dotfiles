@@ -94,3 +94,6 @@
 [submodule ".janus/requirements.txt.vim"]
   path = .janus/requirements.txt.vim
   url = git@github.com:raimon49/requirements.txt.vim.git
+[submodule ".janus/editorconfig-vim"]
+	path = .janus/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
