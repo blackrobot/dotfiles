@@ -10,10 +10,6 @@
   path = .janus/vim-snippets
   url = git://github.com/honza/vim-snippets.git
   ignore = dirty
-[submodule ".janus/editorconfig-vim"]
-  path = .janus/editorconfig-vim
-  url = git://github.com/editorconfig/editorconfig-vim.git
-  ignore = dirty
 [submodule ".janus/emmet-vim"]
   path = .janus/emmet-vim
   url = git://github.com/mattn/emmet-vim.git

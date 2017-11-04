@@ -88,7 +88,10 @@
         {
             "before": ["<C-l>"],
             "after": [],
-            "commands": [{ "command": ":nohl", "args": [] }]
+            "commands": [{
+                "command": ":nohlsearch",
+                "args": []
+            }]
         }
     ],
 
@@ -146,7 +149,9 @@
         "statusBar.background": "#212121",
         "statusBar.noFolderBackground": "#212121",
         "statusBar.debuggingBackground": "#212121"
-    }
+    },
+    "explorer.confirmDelete": false,
+    "workbench.panel.location": "bottom"
     /**
 
     // Sync

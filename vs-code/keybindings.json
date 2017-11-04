@@ -1,13 +1,19 @@
 // Place your key bindings in this file to overwrite the defaults
 [
 
-{ "key": "ctrl+l",    "command": "keybindings.editor.clearSearchResults",
-                         "when": "inKeybindings && inKeybindingsSearch" },
+{ "key": "ctrl+l",
+  "command": "keybindings.editor.clearSearchResults",
+  "when": "inKeybindings && inKeybindingsSearch" },
 
-{ "key": "ctrl+l",    "command": "list.clear",
-                         "when": "listFocus" },
+{ "key": "ctrl+l",
+  "command": "list.clear",
+  "when": "listFocus" },
 
-{ "key": "ctrl+l",    "command": "settings.action.clearSearchResults",
-                         "when": "inSettingsSearch" }
+{ "key": "ctrl+l",
+  "command": "settings.action.clearSearchResults",
+  "when": "inSettingsSearch" },
+
+{ "key": "shift+cmd+\\",
+  "command": "workbench.action.toggleEditorGroupLayout" }
 
 ]

@@ -13,7 +13,8 @@ DISABLE_UPDATE_PROMPT=true
 HIST_STAMPS="yyyy-mm-dd"
 ZSH_CUSTOM="${DOTFILES}/zsh.custom"
 
-ZSH_THEME="dzjparty"
+# ZSH_THEME="dzjparty"
+ZSH_THEME=""
 
 # Plugins
 plugins=(
@@ -62,6 +63,15 @@ DISABLE_CORRECTION=1
 HIST_IGNORE_SPACE=1
 
 source "${ZSH}/oh-my-zsh.sh"
+
+# pure theme
+fpath=( "${DOTFILES}/zsh.plugins" $fpath )
+autoload -U promptinit; promptinit
+# PURE_CMD_MAX_EXEC_TIME=5
+# PURE_GIT_PULL=0
+# PURE_GIT_UNTRACKED_DIRTY=0
+# PURE_GIT_DELAY_DIRTY_CHECK=1800
+prompt pure
 
 unsetopt auto_name_dirs
 
