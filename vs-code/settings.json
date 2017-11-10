@@ -97,7 +97,8 @@
 
     /* Python config */
     "[python]": {
-        "editor.rulers": [72, 79, 120]
+        "editor.rulers": [72, 79, 119],
+        "editor.wordWrap": "off"
     },
     "python.pythonPath": "/usr/local/bin/python2",
     "python.venvPath": "~/.pyenv/versions/",
@@ -105,6 +106,15 @@
     "python.linting.flake8Enabled": true,
     "python.linting.lintOnTextChange": true,
     "python.autoComplete.addBrackets": true,
+
+    /* Markdown config */
+    "[markdown]": {
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 80,
+        "editor.quickSuggestions": false,
+        "editor.tabSize": 4
+    },
+    "markdown.extension.italic.indicator": "_",
 
     /* Other extension config */
     "git.enableCommitSigning": true,
@@ -151,7 +161,7 @@
         "statusBar.debuggingBackground": "#212121"
     },
     "explorer.confirmDelete": false,
-    "workbench.panel.location": "bottom"
+    "workbench.panel.location": "right"
     /**
 
     // Sync
