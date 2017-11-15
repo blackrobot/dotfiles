@@ -32,6 +32,7 @@
     "search.quickOpen.includeSymbols": true,
 
     "terminal.external.osxExec": "iTerm.app",
+    "terminal.explorerKind": "external",
     "terminal.integrated.scrollback": 2000,
     "terminal.integrated.fontSize": 13,
 
@@ -70,6 +71,7 @@
     "vim.easymotion": true,
     "vim.easymotionMarkerFontWeight": "bold",
     // vim: status bar
+    "vim.showmodename": false,
     "vim.statusBarColorControl": true,
     "vim.statusBarColors" : {
         "normal": "#212121",
@@ -79,6 +81,14 @@
         "visualblock": "#e53935",
         "replace": "#d50000"
     },
+    "vim.cursorStylePerMode": {
+        "normal": "block",
+        "insert": "line",
+        "replace": "underline",
+        "visual": "block-outline",
+        "visualline": "block-outline",
+        "visualblock": "block-outline"
+    },
     // vim: neovim
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
@@ -86,14 +96,16 @@
     // vim: key bindings
     "vim.otherModesKeyBindingsNonRecursive": [
         {
-            "before": ["<C-l>"],
+            "before": ["<C-n>"],
             "after": [],
             "commands": [{
-                "command": ":nohlsearch",
+                // "command": ":nohlsearch",
+                "command": ":nohl",
                 "args": []
             }]
         }
     ],
+
 
     /* Python config */
     "[python]": {
@@ -161,21 +173,78 @@
         "statusBar.debuggingBackground": "#212121"
     },
     "explorer.confirmDelete": false,
-    "workbench.panel.location": "right"
-    /**
+    "workbench.panel.location": "bottom",
 
-    // Sync
-    "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
-    "sync.lastUpload": "2017-10-24T16:18:08.198Z",
-    "sync.autoDownload": false,
-    "sync.autoUpload": true,
-    "sync.lastDownload": "",
-    "sync.forceDownload": false,
-    "sync.anonymousGist": false,
-    "sync.host": "",
-    "sync.pathPrefix": "",
-    "sync.quietSync": false,
-    "sync.askGistName": false
+    "terminal.integrated.commandsToSkipShell": [
+        "editor.action.toggleTabFocusMode",
+        "workbench.action.debug.continue",
+        "workbench.action.debug.pause",
+        "workbench.action.debug.restart",
+        "workbench.action.debug.run",
+        "workbench.action.debug.start",
+        "workbench.action.debug.stop",
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.focusSecondEditorGroup",
+        "workbench.action.focusThirdEditorGroup",
+        "workbench.action.navigateDown",
+        "workbench.action.navigateLeft",
+        "workbench.action.navigateRight",
+        "workbench.action.navigateUp",
+        "workbench.action.openNextRecentlyUsedEditorInGroup",
+        "workbench.action.openPreviousRecentlyUsedEditorInGroup",
+        "workbench.action.quickOpen",
+        "workbench.action.quickOpenPreviousEditor",
+        "workbench.action.quickOpenView",
+        "workbench.action.showCommands",
+        "workbench.action.tasks.build",
+        "workbench.action.tasks.restartTask",
+        "workbench.action.tasks.runTask",
+        "workbench.action.tasks.showLog",
+        "workbench.action.tasks.showTasks",
+        "workbench.action.tasks.terminate",
+        "workbench.action.tasks.test",
+        "workbench.action.terminal.clear",
+        "workbench.action.terminal.copySelection",
+        "workbench.action.terminal.deleteWordLeft",
+        "workbench.action.terminal.deleteWordRight",
+        "workbench.action.terminal.findWidget.history.showNext",
+        "workbench.action.terminal.findWidget.history.showPrevious",
+        "workbench.action.terminal.focus",
+        "workbench.action.terminal.focusAtIndex1",
+        "workbench.action.terminal.focusAtIndex2",
+        "workbench.action.terminal.focusAtIndex3",
+        "workbench.action.terminal.focusAtIndex4",
+        "workbench.action.terminal.focusAtIndex5",
+        "workbench.action.terminal.focusAtIndex6",
+        "workbench.action.terminal.focusAtIndex7",
+        "workbench.action.terminal.focusAtIndex8",
+        "workbench.action.terminal.focusAtIndex9",
+        "workbench.action.terminal.focusFindWidget",
+        "workbench.action.terminal.focusNext",
+        "workbench.action.terminal.focusPrevious",
+        "workbench.action.terminal.hideFindWidget",
+        "workbench.action.terminal.kill",
+        "workbench.action.terminal.new",
+        "workbench.action.terminal.paste",
+        "workbench.action.terminal.runActiveFile",
+        "workbench.action.terminal.runSelectedText",
+        "workbench.action.terminal.scrollDown",
+        "workbench.action.terminal.scrollDownPage",
+        "workbench.action.terminal.scrollToBottom",
+        "workbench.action.terminal.scrollToTop",
+        "workbench.action.terminal.scrollUp",
+        "workbench.action.terminal.scrollUpPage",
+        "workbench.action.terminal.selectAll",
+        "workbench.action.terminal.toggleTerminal",
+        "workbench.action.togglePanel",
 
-    **/
+        // Vim commands
+        "extension.vim_navigateLeft",
+        "extension.vim_navigateRight",
+        "extension.vim_navigateGroups",
+        "extension.vim_navigateDown",
+        "extension.vim_navigateUp",
+        "extension.vim_ctrl+w"
+    ]
 }
