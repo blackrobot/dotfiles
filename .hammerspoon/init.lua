@@ -27,10 +27,30 @@ hs.grid.ui.cellStrokeWidth = 5
 hs.grid.ui.highlightStrokeWidth = 10
 
 -- Funcz
-hs.hotkey.bind(mash, "end", function()
+function shouldReload(files)
+  for _, file in pairs(files) do
+    if file:sub(-4) == ".lua" then
+      return true
+    end
+  end
+
+  return false
+end
+
+function reloadConfig()
   hs.reload()
   hs.notify.show("Hammerspoon", "", "Reloaded configuration", "")
-end)
+end
+
+hs.hotkey.bind(mash, "end", reloadConfig)
+confWatcher = hs.pathwatcher.new(
+  os.getenv("HOME") .. "/.hammerspoon",
+  function(files)
+    if shouldReload(files) then
+      reloadConfig()
+    end
+  end
+):start()
 
 -- Window Hints
 hs.hints.fontSize = 26.0
@@ -132,7 +152,9 @@ local function activateApp(...)
 end
 
 
-hs.hotkey.bind(mash, "h", function() activateApp("Google Chrome") end)
+hs.hotkey.bind(mash, "h", function()
+  activateApp("Google Chrome", "Nightly")
+end)
 hs.hotkey.bind(mash, "j", function() activateApp("iTerm2") end)
 hs.hotkey.bind(mash, "l", function() activateApp("Slack") end)
 hs.hotkey.bind(mash, "o", function() activateApp("Finder") end)
