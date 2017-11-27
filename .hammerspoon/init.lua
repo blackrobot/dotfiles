@@ -153,7 +153,7 @@ end
 
 
 hs.hotkey.bind(mash, "h", function()
-  activateApp("Google Chrome", "Nightly")
+  activateApp("Google Chrome", "Nightly", "FirefoxDeveloperEdition")
 end)
 hs.hotkey.bind(mash, "j", function() activateApp("iTerm2") end)
 hs.hotkey.bind(mash, "l", function() activateApp("Slack") end)
