@@ -1,9 +1,0 @@
-# vim: set ft=zsh:
-# Get a line from ~/.ssh/config and store it in the clipboard
-function _ssh_pass() {
-  local _pw=$(grep -A1 $1 ~/.ssh/config | grep -i '# pass'  | awk '{print $4}')
-  printf $_pw | xclip -in -selection clipboard
-  echo "$(tput bold)$_pw$(tput sgr0) has been stored in the clipboard"
-}
-
-alias -- ssh-pass=_ssh_pass

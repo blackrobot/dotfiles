@@ -1,0 +1,24 @@
+# vim: set syntax=zsh:"
+
+# To generate this file:
+#
+#   $ cd "$DOTFILES"
+#   $ cat /dev/null > ./lib-includes
+#   $ for local_lib in $(find ./lib -maxdepth 1 -type f ! -name '_*')
+#     do
+#       printf 'source "%s"\n' "$local_lib" >> ./lib-includes
+#     done
+#
+# After generating, you'll probably have to tweak it in vim little
+
+source "${DOTFILES}/lib/brew-up"
+source "${DOTFILES}/lib/countdown"
+source "${DOTFILES}/lib/docker"
+source "${DOTFILES}/lib/history"
+source "${DOTFILES}/lib/note"
+source "${DOTFILES}/lib/osx-utils"
+source "${DOTFILES}/lib/pomodoro"
+source "${DOTFILES}/lib/scratch"
+source "${DOTFILES}/lib/update-stuff"
+source "${DOTFILES}/lib/vi-mode"
+source "${DOTFILES}/lib/vman"

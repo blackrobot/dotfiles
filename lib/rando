@@ -1,5 +1,0 @@
-# vim: set ft=zsh:
-# Generates a random alpha numberic password of given length
-function rando() {
-  echo $(</dev/urandom tr -dc '[:alnum:]' | head -c ${1:-16})
-}
