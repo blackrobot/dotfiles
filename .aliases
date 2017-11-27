@@ -9,6 +9,7 @@ function __mkcd {
 alias mkcd='__mkcd'
 
 # ls
+alias ls='gls'
 alias l='ls -AFlh --color=auto'
 alias ll='ls -aFlh --color=auto'
 
