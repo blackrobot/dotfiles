@@ -26,6 +26,7 @@ NVM_LAZY_LOAD=true
 add_to_path "/usr/local/opt/python/libexec/bin"
 add_to_path "/usr/local/sbin"
 add_to_path "/usr/local/opt/coreutils/libexec/gnubin"
+add_to_path "${HOME}/.yarn/bin"
 add_to_path "${DOTFILES}/bin"
 # add_to_path "~/.config/yarn/global/node_modules/.bin" 'append'
 
