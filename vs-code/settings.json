@@ -68,7 +68,7 @@
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.visualstar": true,
-    "vim.foldfix": true,
+    "vim.foldfix": false,  // causes bug when `true` - git.io/vbfWp
     // vim: easy motion
     "vim.easymotion": true,
     "vim.easymotionMarkerFontWeight": "bold",
@@ -177,7 +177,7 @@
     "workbench.panel.location": "bottom",
 
     "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
-    "sync.lastUpload": "2017-11-21T19:57:36.750Z",
+    "sync.lastUpload": "2017-12-02T00:51:15.144Z",
     "sync.autoUpload": true,
     "sync.autoDownload": false,
     "sync.forceDownload": false,
@@ -187,5 +187,15 @@
     "sync.pathPrefix": "",
     "sync.quietSync": false,
     "sync.askGistName": false,
-    "extensions.ignoreRecommendations": false
+    "extensions.ignoreRecommendations": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": true,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": true
+    }
 }
