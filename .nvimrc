@@ -95,8 +95,10 @@ call janus#add_group("colors")
 "" Customisations
 ""
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
+if $GOTTY_TERM != '1'
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  set termguicolors
+endif
 
 if filereadable(expand("~/.vimrc.before"))
   " fzf

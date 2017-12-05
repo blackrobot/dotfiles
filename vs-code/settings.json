@@ -177,7 +177,7 @@
     "workbench.panel.location": "bottom",
 
     "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
-    "sync.lastUpload": "2017-12-02T00:51:15.144Z",
+    "sync.lastUpload": "2017-12-05T19:54:38.737Z",
     "sync.autoUpload": true,
     "sync.autoDownload": false,
     "sync.forceDownload": false,
@@ -197,5 +197,8 @@
         "suppressNoRepositoryWarning": false,
         "suppressUpdateNotice": true,
         "suppressWelcomeNotice": true
+    },
+    "files.associations": {
+        "*.sh": "shellscript"
     }
 }
