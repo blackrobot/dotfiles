@@ -1,0 +1,18 @@
+
+/**
+ * Useful links:
+ *   - https://userchrome.org
+ *   - https://github.com/Timvde/UserChrome-Tweaks
+ *   - https://redd.it/7fxtdm
+ */
+
+/**
+ * findbar.css: tweaks to the search in page modal
+ * https://git.io/vb4ij
+ */
+@import url('findbar.css') screen;
+
+/* macOS fix */
+findbar .textbox-input-box {
+  margin-left: 12px !important;
+}
