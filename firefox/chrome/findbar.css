@@ -35,6 +35,17 @@ findbar {
 	right: 38px;
 }
 
+.browserContainer > findbar {
+	border-top: 0 !important;
+	border-right: 1px solid var(--toolbox-border-bottom-color) !important;
+	border-bottom: 1px solid var(--toolbox-border-bottom-color) !important;
+	border-left: 1px solid var(--toolbox-border-bottom-color) !important;
+	border-radius: 4px;
+	/* box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.10); */
+	border-radius: 0 0 var(--toolbarbutton-border-radius) var(--toolbarbutton-border-radius);
+	top: -2px !important;
+}
+
 findbar[hidden="true"] {
 	animation: 0.2s scale-out;
 }
