@@ -97,3 +97,6 @@
 [submodule ".janus/editorconfig-vim"]
 	path = .janus/editorconfig-vim
 	url = git@github.com:editorconfig/editorconfig-vim.git
+[submodule "zsh.custom/plugins/zsh-autosuggestions"]
+	path = zsh.custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git

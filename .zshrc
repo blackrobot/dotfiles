@@ -11,7 +11,10 @@ DISABLE_UNTRACKED_FILES_DIRTY=true
 DISABLE_UPDATE_PROMPT=true
 ZSH_CUSTOM="${DOTFILES}/zsh.custom"
 
-# ZSH_THEME="dzjparty"
+# async suggestions
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+# set to blank string for pure prompt
 ZSH_THEME=""
 
 # Plugins
@@ -35,6 +38,7 @@ plugins=(
   yarn
   z
   zsh-nvm
+  zsh-autosuggestions
 )
 
 autoload -U compinit && compinit
