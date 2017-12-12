@@ -177,7 +177,7 @@
     "workbench.panel.location": "bottom",
 
     "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
-    "sync.lastUpload": "2017-12-09T02:38:25.569Z",
+    "sync.lastUpload": "2017-12-11T21:40:48.378Z",
     "sync.autoUpload": false,
     "sync.autoDownload": false,
     "sync.forceDownload": false,
@@ -200,5 +200,11 @@
     },
     "files.associations": {
         "*.sh": "shellscript"
-    }
+    },
+    "spellright.ignoreFiles": [
+        "**/requirements.txt",
+        "**/requirements/*.txt",
+        "**/.gitignore",
+        "**/.spellignore"
+    ]
 }
