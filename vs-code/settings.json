@@ -20,6 +20,7 @@
 
     "explorer.openEditors.visible": 0,
 
+    "files.defaultLanguage": "markdown",
     "files.useExperimentalFileWatcher": true,
     "files.exclude": {
         "**/.git": true,
@@ -31,6 +32,11 @@
         "**/*.pyc": true
     },
 
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/tags": true
+    },
     "search.quickOpen.includeSymbols": true,
 
     "terminal.external.osxExec": "iTerm.app",
@@ -122,10 +128,9 @@
 
     /* Markdown config */
     "[markdown]": {
-        "editor.wordWrap": "bounded",
-        "editor.wordWrapColumn": 80,
+        "editor.wordWrap": "on",
         "editor.quickSuggestions": false,
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "markdown.extension.italic.indicator": "_",
 

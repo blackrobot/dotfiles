@@ -19,6 +19,16 @@
 */
 
 { "key": "shift+cmd+\\",
-  "command": "workbench.action.toggleEditorGroupLayout" }
-
+  "command": "workbench.action.toggleEditorGroupLayout"
+},
+{
+  "key": "cmd+b",
+  "command": "-markdown.extension.editing.toggleBold",
+  "when": "editorTextFocus && editorLangId == 'markdown'"
+},
+{
+  "key": "cmd+i",
+  "command": "-markdown.extension.editing.toggleItalic",
+  "when": "editorTextFocus && editorLangId == 'markdown'"
+}
 ]
