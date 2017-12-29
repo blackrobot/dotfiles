@@ -1,20 +1,16 @@
-# default username and email
-[user]
-  name = damon
-	useconfigonly = false
-
 [alias]
   d = difftool
+  pushf = "push --force-with-lease"
 
-[status]
-  showUntrackedFiles = all
+[branch]
+  autosetupmerge = true
 
 [color]
   branch = auto
   diff = auto
   status = auto
   interactive = auto
-  ui = true
+  ui = auto
 
 [color "branch"]
   current = yellow reverse
@@ -29,60 +25,83 @@
   new = green bold
   whitespace = red reverse
 
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-
 [color "diff-highlight"]
   oldNormal = "red bold"
   oldHighlight = "red bold 52"
   newNormal = "green bold"
   newHighlight = "green bold 22"
 
-[github]
-  user = blackrobot
-
-[status]
-  relativePaths = false
-
-[branch]
-  autosetupmerge = true
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
 
 [core]
-  whitespace = trailing-space,space-before-tab
   excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
-
-[push]
-  default = tracking
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  whitespace = trailing-space,space-before-tab
+  # Make `git rebase` safer on macOS
+  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+  trustctime = false
+  # Speed up commands involving untracked files such as `git status`.
+  # https://git-scm.com/docs/git-update-index#_untracked_cache
+  untrackedCache = true
 
 [diff]
-  suppressBlankEmpty = true
+  algorithm = histogram
+  indentHeuristic = true
   mnemonicprefix = true
   prompt = false
-
-[merge]
-  keepBackup = false
-  prompt = false
-  stat = true
-  tool = meld
-  # conflictstyle = diff3
-  # trustExitCode = true
+  suppressBlankEmpty = true
 
 [difftool]
-  prompt = false
-
-[mergetool]
   prompt = false
 
 [difftool "meld"]
   trustExitCode = true
   cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
 
+[fetch]
+  prune = true
+
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+
+[github]
+  user = blackrobot
+
+[merge]
+  keepBackup = false
+  prompt = false
+  stat = true
+  tool = meld
+
+[mergetool]
+  prompt = false
+
 [mergetool "meld"]
   trustExitCode = true
   cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+
+[pull]
+  rebase = true
+
+[push]
+  default = simple
+
+[submodule]
+  fetchJobs = 4
+
+[status]
+  relativePaths = false
+  showUntrackedFiles = all
+
+[user]
+  name = damon
+  useConfigOnly = false
 
 [include]
   path = ~/.gitconfig.local
