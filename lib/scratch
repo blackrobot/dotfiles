@@ -8,8 +8,8 @@ function scratch() {
   mkdir -p "$scratch_dir"
 
   if [[ -z "$scratch_name" ]]; then
-    scratch_name="$(date +%Y-%m-%d_%H%M%S).scratch";
+    scratch_name="$(date +%Y-%m-%d_%H%M%S).scratch.md";
   fi
 
-  "$EDITOR" "${scratch_dir}/$scratch_name"
+  exec $EDITOR "${scratch_dir}/${scratch_name}"
 }
