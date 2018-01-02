@@ -24,3 +24,6 @@ alias grh='git reset --hard'
 
 alias gf='git fetch --prune'
 alias gfa='git fetch --all --prune'
+
+# fast copying files
+alias rcopy='rsync -vhxpogiW --progress --stats --numeric-ids'
