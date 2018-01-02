@@ -6,7 +6,7 @@ ZSH="${HOME}/.oh-my-zsh"
 # Set to the name theme to load. Change it if user is SSHing.
 [[ -z "$SSH_CLIENT" ]] && DEFAULT_USER="damon"
 
-COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS=true
 DISABLE_UNTRACKED_FILES_DIRTY=true
 DISABLE_UPDATE_PROMPT=true
 ZSH_CUSTOM="${DOTFILES}/zsh.custom"
