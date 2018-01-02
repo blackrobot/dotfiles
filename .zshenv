@@ -33,7 +33,7 @@ add_to_path "${DOTFILES}/bin"
 # pyenv
 PYENV_ROOT="${HOME}/.pyenv"
 add_to_path "${PYENV_ROOT}/bin"
-eval "$(pyenv init --no-rehash -)" && eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
 
 # rust
 add_to_path "${HOME}/.cargo/bin"
