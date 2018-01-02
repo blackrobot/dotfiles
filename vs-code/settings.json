@@ -32,6 +32,8 @@
         "**/*.pyc": true
     },
 
+    "problems.decorations.enabled": true,
+
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
@@ -119,11 +121,11 @@
         "editor.rulers": [72, 79, 119],
         "editor.wordWrap": "off"
     },
-    "python.pythonPath": "/usr/local/bin/python2",
+    "python.pythonPath": "/usr/local/opt/python3/bin/python3.6",
     "python.venvPath": "~/.pyenv/versions/",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.lintOnTextChange": true,
+    "python.linting.lintOnSave": true,
     "python.autoComplete.addBrackets": false,
 
     /* Markdown config */
@@ -179,18 +181,17 @@
         "statusBar.debuggingBackground": "#212121"
     },
     "explorer.confirmDelete": false,
-    "workbench.panel.location": "bottom",
 
     "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
-    "sync.lastUpload": "2017-12-11T21:40:48.378Z",
     "sync.autoUpload": false,
     "sync.autoDownload": false,
     "sync.forceDownload": false,
     "sync.anonymousGist": false,
     "sync.lastDownload": "",
+    "sync.lastUpload": "2017-12-21T01:41:13.700Z",
     "sync.host": "",
     "sync.pathPrefix": "",
-    "sync.quietSync": false,
+    "sync.quietSync": true,
     "sync.askGistName": false,
     "extensions.ignoreRecommendations": false,
     "gitlens.advanced.messages": {
@@ -203,13 +204,50 @@
         "suppressUpdateNotice": true,
         "suppressWelcomeNotice": true
     },
+
     "files.associations": {
-        "*.sh": "shellscript"
+        "*.sh": "shellscript",
+        "*.zsh": "shellscript",
+        "*.env": "shellscript",
+        ".gitconfig*": "properties"
     },
+
+    "spellright.statusBarIndicator": false,
     "spellright.ignoreFiles": [
         "**/requirements.txt",
         "**/requirements/*.txt",
         "**/.gitignore",
         "**/.spellignore"
-    ]
+    ],
+
+    /* Project Manager */
+    "projectManager.git.baseFolders": [
+        "$home/Workspace"
+    ],
+    "projectManager.git.ignoredFolders": [
+        "build",
+        "node_modules",
+        "test",
+        ".tmp"
+    ],
+    "projectManager.vscode.baseFolders": [
+        "$home/Workspace"
+    ],
+    "projectManager.vscode.ignoredFolders": [
+        "build",
+        "node_modules",
+        "test",
+        ".tmp"
+    ],
+    "projectManager.showProjectNameInStatusBar": false,
+    "projectManager.removeCurrentProjectFromList": true,
+    "projectManager.groupList": true,
+
+    "markdownlint.config": {
+        "MD001": false,
+        "MD004": false,
+        "MD013": false,
+        "MD014": false,
+        "MD041": false
+    }
 }
