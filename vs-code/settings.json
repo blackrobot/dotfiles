@@ -17,6 +17,7 @@
     "editor.roundedSelection": true,
     "editor.minimap.enabled": false,
     "editor.smoothScrolling": true,
+    "editor.tabSize": 2,
 
     "explorer.openEditors.visible": 0,
 
@@ -119,7 +120,8 @@
     /* Python config */
     "[python]": {
         "editor.rulers": [72, 79, 119],
-        "editor.wordWrap": "off"
+        "editor.wordWrap": "off",
+        "editor.tabSize": 4
     },
     "python.pythonPath": "/usr/local/opt/python3/bin/python3.6",
     "python.venvPath": "~/.pyenv/versions/",
@@ -132,7 +134,6 @@
     "[markdown]": {
         "editor.wordWrap": "on",
         "editor.quickSuggestions": false,
-        "editor.tabSize": 2
     },
     "markdown.extension.italic.indicator": "_",
 
@@ -249,5 +250,6 @@
         "MD013": false,
         "MD014": false,
         "MD041": false
-    }
+    },
+    "explorer.confirmDragAndDrop": false
 }
