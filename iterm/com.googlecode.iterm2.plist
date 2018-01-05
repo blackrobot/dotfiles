@@ -1430,15 +1430,15 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>972 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>295 498 599 519 0 0 2560 1417 </string>
+	<string>1009 574 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1165 691 1018 447 0 0 2560 1417 </string>
+	<string>483 628 1018 447 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 24 1276 753 0 0 1280 777 </string>
+	<string>1601 0 958 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2938,7 +2938,7 @@
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Reduce Flicker</key>
-			<true/>
+			<false/>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -4692,7 +4692,7 @@
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Reduce Flicker</key>
-			<true/>
+			<false/>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -5647,7 +5647,7 @@
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Reduce Flicker</key>
-			<true/>
+			<false/>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -6050,7 +6050,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-29T16:16:34Z</date>
+	<date>2018-01-04T16:58:02Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -6058,7 +6058,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
@@ -6102,7 +6102,7 @@
 	<key>UseExperimentalFontMetrics</key>
 	<false/>
 	<key>UseLayers</key>
-	<true/>
+	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>WebKitDefaultFontSize</key>
