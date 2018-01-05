@@ -1,5 +1,3 @@
-# vim: set syntax=zsh:
-
 # Path to your oh-my-zsh configuration.
 ZSH="${HOME}/.oh-my-zsh"
 

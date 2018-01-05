@@ -1,14 +1,14 @@
 # vim: set ft=zsh:
 
 function note() {
-  local note_editor="${NOTE_EDITOR:-"${EDITOR}"}"
+  local note_editor=${NOTE_EDITOR:-$EDITOR}
   local notes_root="${NOTES:-"${HOME}/notes"}"
   local notes_dir="${notes_root}/$(date '+%Y')"
   local note_name="$(date '+%m-%d @ %I:%M%p') - ${1:-Untitled Note}"
   local note_full_path="${notes_dir}/${note_name}.md"
 
   mkdir -p "$notes_dir"
-  "$note_editor" "$note_full_path" && (
+  $note_editor "$note_full_path" && (
     {
       pushd "$notes_root";
       git add "$note_full_path";

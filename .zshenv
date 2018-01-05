@@ -1,4 +1,3 @@
-
 DOTFILES="${HOME}/.dotfiles"
 EDITOR=vim
 PAGER=less
@@ -21,13 +20,12 @@ function add_to_path {
 
 
 # nvm
-NVM_LAZY_LOAD=true
+# NVM_LAZY_LOAD=true
 
 add_to_path "/usr/local/opt/python/libexec/bin"
 add_to_path "/usr/local/sbin"
 add_to_path "/usr/local/opt/coreutils/libexec/gnubin"
 add_to_path "${HOME}/.yarn/bin"
-add_to_path "${DOTFILES}/bin"
 # add_to_path "~/.config/yarn/global/node_modules/.bin" 'append'
 
 # pyenv
@@ -42,3 +40,6 @@ add_to_path "${HOME}/.cargo/bin"
 ANDROID_HOME="${HOME}/Library/Android/sdk"
 add_to_path "${ANDROID_HOME}/tools" 'append'
 add_to_path "${ANDROID_HOME}/platform-tools" 'append'
+
+# first in $PATH
+add_to_path "${DOTFILES}/bin"
