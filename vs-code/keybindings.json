@@ -18,4 +18,10 @@
   "when": "editorTextFocus && editorLangId == 'markdown'"
 }
 
+/* {
+  "key": "shift+;",
+  "command": "workbench.action.gotoLine",
+  "when": "editorTextFocus && vim.active && !inDebugRepl && !terminalFocus && vim.mode != 'Insert'"
+} */
+
 ]
