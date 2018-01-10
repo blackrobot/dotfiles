@@ -36,4 +36,4 @@ alias rcopy='rsync -vhxpogiW --progress --stats --numeric-ids'
 #       --rsh "ssh -T -c ${ciphers} -o Compression=no -x" \
 #       source:/path/to/files /path/to/dest [/path/to/other-dest...]
 # lookup remote ssh algos using: nmap --script ssh2-enum-algos -sV -p <port> <host>
-alias rcopy-remote='rsync -vhxirP --stats --progress -e "ssh -T -c aes128-gcm@openssh.com,aes256-gcm@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,* -o Compression=no -x"'
+alias rcopy-remote='rsync -vhxirP --stats --progress -e "ssh -T -o Ciphers=aes128-gcm@openssh.com,aes256-gcm@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,* -o Compression=no -x"'
