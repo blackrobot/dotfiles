@@ -21,6 +21,7 @@ function add_to_path {
 
 # nvm
 # NVM_LAZY_LOAD=true
+NVM_DIR="${HOME}/.nvm"
 
 add_to_path "/usr/local/opt/python/libexec/bin"
 add_to_path "/usr/local/sbin"
