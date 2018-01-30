@@ -1,8 +1,8 @@
 {
     /* Main config */
-    "editor.fontFamily": "Operator Mono",
     "editor.fontLigatures": true,
-    "editor.fontSize": 13,
+    "editor.fontFamily": "Operator Mono",
+    "editor.fontSize": 13.75,
     "editor.renderWhitespace": "boundary",
     "editor.lineNumbers": "relative",
     "editor.rulers": [79, 119],
@@ -12,14 +12,19 @@
         "strings": false
     },
     "editor.occurrencesHighlight": false,
-    "editor.renderLineHighlight": "gutter",
+    "editor.renderLineHighlight": "all",
     "editor.renderControlCharacters": true,
     "editor.roundedSelection": true,
     "editor.minimap.enabled": false,
     "editor.smoothScrolling": true,
     "editor.tabSize": 2,
+    "editor.overviewRulerBorder": true,
+    "editor.tabCompletion": true,
+    "editor.snippetSuggestions": "bottom",
+    "editor.parameterHints": false,
 
     "explorer.openEditors.visible": 0,
+    "workbench.editor.showTabs": true,
 
     "files.defaultLanguage": "markdown",
     "files.useExperimentalFileWatcher": true,
@@ -46,6 +51,7 @@
     "terminal.explorerKind": "external",
     "terminal.integrated.scrollback": 2000,
     "terminal.integrated.fontSize": 13,
+    "terminal.integrated.shellArgs.osx": [],
 
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
@@ -55,11 +61,41 @@
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "window.zoomLevel": 0,
 
-    "workbench.colorTheme": "Dracula Soft",
+    "workbench.colorTheme": "Dracula",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.labelFormat": "short",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.activityBar.visible": false,
+    "workbench.editor.revealIfOpen": true,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.tips.enabled": true,
+
+    "workbench.colorCustomizations": {
+        // "statusBar.background": "#212121",
+        // "statusBar.noFolderBackground": "#212121",
+        // "statusBar.debuggingBackground": "#212121"
+        // "statusBar.border": "#0000001a",
+        "editorRuler.foreground": "#ffffff0f",
+        "editorWhitespace.foreground": "#ffffff0a",
+        "editor.lineHighlightBackground": "#ffffff05",
+        "editor.lineHighlightBorder": "#ffffff00",
+    },
+    "editor.tokenColorCustomizations": {
+        /*
+        "lightBlue": "#8af1eb",
+        "pink": "#dea2f6",
+        "blue": "#7eb3e1",
+        "white": "#f5faff",
+        "darkGray": "#2a2e37",
+        "bgGray": "#2a2d38"
+        */
+        "comments": {
+            "fontStyle": "italic"
+        },
+        "strings": {
+            "foreground": "#E9F284E7"
+        }
+    },
 
     /*
     "workbench.colorCustomizations": {
@@ -102,7 +138,6 @@
     },
     // vim: neovim
     "vim.enableNeovim": true,
-    "vim.disableAnnoyingNeovimMessage": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     // vim: key bindings
     "vim.otherModesKeyBindingsNonRecursive": [
@@ -177,11 +212,6 @@
     "gitlens.codeLens.recentChange.enabled": false,
     "material-icon-theme.showUpdateMessage": false,
     "vsicons.dontShowNewVersionMessage": true,
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#212121",
-        "statusBar.noFolderBackground": "#212121",
-        "statusBar.debuggingBackground": "#212121"
-    },
     "explorer.confirmDelete": false,
 
     "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
@@ -253,5 +283,6 @@
         "MD014": false,
         "MD041": false
     },
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "workbench.startupEditor": "newUntitledFile"
 }
