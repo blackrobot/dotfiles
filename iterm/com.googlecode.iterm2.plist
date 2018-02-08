@@ -1159,7 +1159,7 @@
 	<key>DimInactiveSplitPanes</key>
 	<false/>
 	<key>DimOnlyText</key>
-	<false/>
+	<true/>
 	<key>DisableCustomBoxDrawing</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
@@ -1432,13 +1432,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1009 574 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>542 674 796 473 0 0 2560 1417 </string>
+	<string>798 280 796 473 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1280 500 0 0 1280 777 </string>
+	<string>1601 0 958 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -5809,13 +5809,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.2039215714</real>
+				<real>0.19207984209060669</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.17254902420000001</real>
+				<real>0.15676683187484741</real>
 				<key>Red Component</key>
-				<real>0.15686275059999999</real>
+				<real>0.13673341274261475</real>
 			</dict>
 			<key>Tags</key>
 			<array>
@@ -6048,7 +6048,7 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=65</string>
+	<string>https://iterm2.com/appcasts/nightly.xml?shard=65</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
@@ -6060,6 +6060,8 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
+	<false/>
+	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
@@ -6080,9 +6082,9 @@
 	<key>TabViewType</key>
 	<integer>1</integer>
 	<key>TerminalMargin</key>
-	<integer>10</integer>
+	<integer>7</integer>
 	<key>TerminalVMargin</key>
-	<integer>10</integer>
+	<integer>2</integer>
 	<key>ThreeFingerEmulates</key>
 	<false/>
 	<key>TmuxDashboardLimit</key>
@@ -6107,6 +6109,8 @@
 	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
+	<key>UseMetal</key>
+	<true/>
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
@@ -6126,7 +6130,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5.beta.2</string>
+	<string>3.2.20180208-nightly</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
@@ -7265,6 +7269,8 @@
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>kCPKUseSystemColorPicker</key>
 	<false/>
 </dict>
 </plist>
