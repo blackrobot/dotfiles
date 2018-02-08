@@ -209,7 +209,6 @@
         "IDEA:"
     ],
     "gitlens.gitExplorer.files.layout": "tree",
-    "gitlens.codeLens.recentChange.enabled": false,
     "material-icon-theme.showUpdateMessage": false,
     "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
@@ -239,8 +238,9 @@
 
     "files.associations": {
         "*.sh": "shellscript",
+        "*.bash": "shellscript",
         "*.zsh": "shellscript",
-        "*.env": "shellscript",
+        "*.env": "properties",
         ".gitconfig*": "properties",
         "*Dockerfile*": "dockerfile"
     },
@@ -284,5 +284,22 @@
         "MD041": false
     },
     "explorer.confirmDragAndDrop": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+
+    "shellcheck.run": "onType",
+    "shellcheck.customArgs": [
+        "--external-sources",
+    ],
+
+    "gitlens.codeLens.scopes": [
+        "document",
+    ],
+    "gitlens.statusBar.enabled": false,
+    "gitlens.recentChanges.highlight.locations": [
+        "gutter",
+        "line",
+        "overview",
+    ],
+
+    "symbolOutline.doSelect": false,
 }
