@@ -1432,13 +1432,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1009 574 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>531 488 918 512 0 0 2560 1417 </string>
+	<string>542 674 796 473 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 424 0 0 2560 1417 </string>
+	<string>0 0 1280 500 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2187,7 +2187,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color-italic</string>
 			<key>Transparency</key>
-			<real>0.088348265406648085</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -3935,7 +3935,9 @@
 				<real>0.72352492809295654</real>
 			</dict>
 			<key>Tags</key>
-			<array/>
+			<array>
+				<string>archive</string>
+			</array>
 			<key>Terminal Type</key>
 			<string>xterm-256color-italic</string>
 			<key>Transparency</key>
@@ -4869,7 +4871,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.090347398477157309</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Underline Color</key>
@@ -5825,7 +5827,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.04109890545685279</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Underline Color</key>
@@ -6050,7 +6052,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-24T00:12:41Z</date>
+	<date>2018-02-08T23:06:51Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
