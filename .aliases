@@ -1,4 +1,5 @@
-# vim: set ft=zsh:
+# shellcheck shell=bash
+
 alias grepir='grep -Ir'
 alias ssh='TERM=xterm-256color ssh'
 alias mkdirs='mkdir -p'
@@ -16,6 +17,15 @@ function ls_bin {
   l "$(which ${1})"
 }
 alias lb=ls_bin
+
+# env
+function es {
+  if [[ -n "$*" ]]; then
+    env | sort | rg -i "$*"
+  else
+    env | sort
+  fi
+}
 
 # cheat.sh
 function cheat {

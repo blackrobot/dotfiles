@@ -3,6 +3,7 @@
     "editor.fontLigatures": true,
     "editor.fontFamily": "Operator Mono",
     "editor.fontSize": 13.75,
+    "editor.lineHeight": 0,
     "editor.renderWhitespace": "boundary",
     "editor.lineNumbers": "relative",
     "editor.rulers": [79, 119],
@@ -22,6 +23,9 @@
     "editor.tabCompletion": true,
     "editor.snippetSuggestions": "bottom",
     "editor.parameterHints": false,
+
+    "extensions.ignoreRecommendations": false,
+    "extensions.showRecommendationsOnlyOnDemand": true,
 
     "explorer.openEditors.visible": 0,
     "workbench.editor.showTabs": true,
@@ -45,6 +49,7 @@
         "**/bower_components": true,
         "**/tags": true
     },
+    "search.location": "sidebar",
     "search.quickOpen.includeSymbols": true,
 
     "terminal.external.osxExec": "iTerm.app",
@@ -75,10 +80,14 @@
         // "statusBar.noFolderBackground": "#212121",
         // "statusBar.debuggingBackground": "#212121"
         // "statusBar.border": "#0000001a",
+        "editorActiveLineNumber.foreground": "#ffffffde",
         "editorRuler.foreground": "#ffffff0f",
         "editorWhitespace.foreground": "#ffffff0a",
         "editor.lineHighlightBackground": "#ffffff05",
         "editor.lineHighlightBorder": "#ffffff00",
+        // "editor.findMatchHighlightBackground": "#03a9f410",
+        "editor.findMatchHighlightBackground": "#ffffff07",
+        "editor.findMatchHighlightBorder": "#ffffff4d",
     },
     "editor.tokenColorCustomizations": {
         /*
@@ -166,6 +175,12 @@
     "python.linting.lintOnSave": true,
     "python.autoComplete.addBrackets": false,
 
+    "python.workspaceSymbols.ctagsPath": "/usr/local/bin/ctags",
+    "python.workspaceSymbols.enabled": true,
+    "python.workspaceSymbols.rebuildOnFileSave": true,
+    "python.workspaceSymbols.rebuildOnStart": true,
+    "python.workspaceSymbols.tagFilePath": "${workspaceFolder}/.vscode/tags",
+
     /* Markdown config */
     "[markdown]": {
         "editor.wordWrap": "on",
@@ -205,26 +220,24 @@
             "backgroundColor": "#2196F3",
             "isWholeLine": false
         },
-        "INFO:",
+        // "INFO:",
         "IDEA:"
     ],
     "gitlens.gitExplorer.files.layout": "tree",
     "material-icon-theme.showUpdateMessage": false,
-    "vsicons.dontShowNewVersionMessage": true,
+    // "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
 
     "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
     "sync.autoUpload": false,
     "sync.autoDownload": false,
     "sync.forceDownload": false,
-    "sync.anonymousGist": false,
     "sync.lastDownload": "",
-    "sync.lastUpload": "2017-12-21T01:41:13.700Z",
+    "sync.lastUpload": "2018-03-12T22:23:38.616Z",
     "sync.host": "",
     "sync.pathPrefix": "",
     "sync.quietSync": true,
     "sync.askGistName": false,
-    "extensions.ignoreRecommendations": false,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -278,7 +291,9 @@
 
     "markdownlint.config": {
         "MD001": false,
+        "MD002": false,
         "MD004": false,
+        "MD012": false,
         "MD013": false,
         "MD014": false,
         "MD041": false
@@ -302,4 +317,20 @@
     ],
 
     "symbolOutline.doSelect": false,
+    "search.smartCase": true,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "workbench.statusBar.feedback.visible": false,
+    "eslint.packageManager": "yarn",
+    "[csv]": {
+        "editor.minimap.enabled": true,
+        "editor.minimap.maxColumn": 80,
+        "editor.minimap.renderCharacters": false,
+    },
+    "gitlens.keymap": "alternate",
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true,
+    "git.confirmSync": false,
+
+    "emojisense.emojiDecoratorsEnabled": false,
+    "emojisense.unicodeCompletionsEnabled": true,
 }

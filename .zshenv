@@ -31,8 +31,8 @@ add_to_path "${HOME}/.yarn/bin"
 
 # pyenv
 PYENV_ROOT="${HOME}/.pyenv"
-add_to_path "${PYENV_ROOT}/bin"
-eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
+PATH="${PYENV_ROOT}/bin:${PATH}"
+# eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
 
 # rust
 add_to_path "${HOME}/.cargo/bin"
