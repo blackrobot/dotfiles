@@ -6,7 +6,7 @@
     "editor.lineHeight": 0,
     "editor.renderWhitespace": "boundary",
     "editor.lineNumbers": "relative",
-    "editor.rulers": [79, 119],
+    "editor.rulers": [80, 120],
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
@@ -66,7 +66,6 @@
     "window.title": "${activeEditorMedium}${separator}${rootName}",
     "window.zoomLevel": 0,
 
-    "workbench.colorTheme": "Dracula",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.labelFormat": "short",
     "workbench.iconTheme": "material-icon-theme",
@@ -75,46 +74,103 @@
     "workbench.editor.tabSizing": "shrink",
     "workbench.tips.enabled": true,
 
+    "workbench.colorTheme": "One Dark Pro Vivid",
     "workbench.colorCustomizations": {
-        // "statusBar.background": "#212121",
-        // "statusBar.noFolderBackground": "#212121",
-        // "statusBar.debuggingBackground": "#212121"
-        // "statusBar.border": "#0000001a",
-        "editorActiveLineNumber.foreground": "#ffffffde",
-        "editorRuler.foreground": "#ffffff0f",
-        "editorWhitespace.foreground": "#ffffff0a",
-        "editor.lineHighlightBackground": "#ffffff05",
-        "editor.lineHighlightBorder": "#ffffff00",
-        // "editor.findMatchHighlightBackground": "#03a9f410",
-        "editor.findMatchHighlightBackground": "#ffffff07",
-        "editor.findMatchHighlightBorder": "#ffffff4d",
+        "[Dracula]": {
+            "editorLineNumber.activeForeground": "#ffffffde",
+            "editorRuler.foreground": "#ffffff0f",
+            "editorWhitespace.foreground": "#ffffff0a",
+            "editor.lineHighlightBackground": "#ffffff05",
+            "editor.lineHighlightBorder": "#ffffff00",
+            "editor.findMatchHighlightBackground": "#fce4ec0a",
+            "editor.findMatchHighlightBorder": "#fce4ec4f",
+            "editor.findMatchBackground": "#c2185b", /* PINK 700 */
+        },
+        "[Palenight Operator]": {
+            "editorLineNumber.activeForeground": "#ffffffde",
+            "editorRuler.foreground": "#ffffff0f",
+            "editorWhitespace.foreground": "#ffffff0e",
+            "editorIndentGuide.background": "#ffffff0f",
+            "sideBar.foreground": "#B9BDCF",
+        },
     },
     "editor.tokenColorCustomizations": {
-        /*
-        "lightBlue": "#8af1eb",
-        "pink": "#dea2f6",
-        "blue": "#7eb3e1",
-        "white": "#f5faff",
-        "darkGray": "#2a2e37",
-        "bgGray": "#2a2d38"
-        */
-        "comments": {
-            "fontStyle": "italic"
+        "[Dracula]": {
+            "comments": { "fontStyle": "italic" },
+            "strings": { "foreground": "#E9F284E7" },
         },
-        "strings": {
-            "foreground": "#E9F284E7"
+        "[Palenight Operator]": {
+            // "strings": { "fontStyle": "" },
+            "textMateRules": [
+                {
+                    "name": "JSON Property Names",
+                    "scope": [
+                        "source.json meta.structure.dictionary support.type.property-name.json",
+                    ],
+                    "settings": {
+                        "foreground": "#A29BC0",
+                        "fontStyle": "",
+                    },
+                },
+            ]
+        },
+        "[One Dark Pale]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "support.type.property-name.json",
+                    ],
+                    "settings": {
+                        "foreground": "#e06c75",
+                    },
+                }
+            ]
+        },
+        "[One Dark Pro Vivid]": {
+            "textMateRules": [
+                {
+                    "scope": [
+                        "source.json meta.structure.dictionary support.type.property-name.json",
+                        "string.quoted.docstring.multi.python",
+                    ],
+                    "settings": {
+                        "fontStyle": "italic",
+                    },
+                },
+                {
+                    "scope": [
+                        "string.quoted.docstring.multi.python punctuation.definition.string.begin",
+                        "string.quoted.docstring.multi.python punctuation.definition.string.end",
+                    ],
+                    "settings": {
+                        "fontStyle": "",
+                    }
+                },
+                {
+                    "scope": [
+                        "string.quoted.docstring.multi.python",
+                        "string.quoted.docstring.multi.python punctuation.definition.string.begin",
+                        "string.quoted.docstring.multi.python punctuation.definition.string.end",
+                    ],
+                    "settings": {
+                        "foreground": "#7F848E",
+                    },
+                },
+                {
+                    "scope": [
+                        "string",
+                        "punctuation.definition.string.begin", //{ "foreground": "#98c378" }
+                        "punctuation.definition.string.end",
+                    ],
+                    "settings": {
+                        // "foreground": "#89CA78",
+                        // "foreground": "#bfe2b6",
+                        "foreground": "#9fd392",
+                    }
+                }
+            ],
         }
     },
-
-    /*
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#0288d1",
-        "statusBar.noFolderBackground": "#0288d1",
-        "statusBar.debuggingBackground": "#0288d1"
-        // "editor.lineHighlightBackground": "#282D39"
-        // "editor.lineHighlightBackground": "#30353F"
-    },
-    */
 
     /* Vim config */
     "vim.leader": ",",
@@ -158,13 +214,29 @@
                 "command": ":nohl",
                 "args": []
             }]
-        }
+        },
+        {
+            "before": ["<C-w>H"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.moveEditorToPreviousGroup",
+                "args": [],
+            }],
+        },
+        {
+            "before": ["<C-w>L"],
+            "after": [],
+            "commands": [{
+                "command": "workbench.action.moveEditorToNextGroup",
+                "args": [],
+            }],
+        },
     ],
 
 
     /* Python config */
     "[python]": {
-        "editor.rulers": [72, 79, 119],
+        "editor.rulers": [72, 79, 120],
         "editor.wordWrap": "off",
         "editor.tabSize": 4
     },
@@ -223,7 +295,7 @@
         // "INFO:",
         "IDEA:"
     ],
-    "gitlens.gitExplorer.files.layout": "tree",
+    "gitlens.gitExplorer.files.layout": "auto",
     "material-icon-theme.showUpdateMessage": false,
     // "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
@@ -233,7 +305,7 @@
     "sync.autoDownload": false,
     "sync.forceDownload": false,
     "sync.lastDownload": "",
-    "sync.lastUpload": "2018-03-12T22:23:38.616Z",
+    "sync.lastUpload": "2018-03-24T20:39:45.400Z",
     "sync.host": "",
     "sync.pathPrefix": "",
     "sync.quietSync": true,
@@ -245,6 +317,8 @@
         "suppressGitVersionWarning": false,
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
         "suppressUpdateNotice": true,
         "suppressWelcomeNotice": true
     },
@@ -309,7 +383,6 @@
     "gitlens.codeLens.scopes": [
         "document",
     ],
-    "gitlens.statusBar.enabled": false,
     "gitlens.recentChanges.highlight.locations": [
         "gutter",
         "line",
@@ -333,4 +406,8 @@
 
     "emojisense.emojiDecoratorsEnabled": false,
     "emojisense.unicodeCompletionsEnabled": true,
+    "gitlens.defaultDateFormat": "MMM Do, YYYY h:mma",
+    "gitlens.historyExplorer.enabled": true,
+    "gitlens.blame.format": "${authorAgoOrDate|40-}",
+    "gitlens.statusBar.enabled": false,
 }

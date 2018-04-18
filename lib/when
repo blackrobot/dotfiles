@@ -1,0 +1,21 @@
+##
+# when
+# ----
+# Filter the command line history by the given regexp, only showing the last
+# $WHEN_NUM_LINES lines (by default $WHEN_NUM_LINES==10). If no argument is
+# given, this just displays the last $WHEN_NUM_LINES of history.
+##
+
+function when {
+  local lines
+  local query
+
+  lines="${WHEN_NUM_LINES:-10}"
+  query="$1"
+
+  if [[ -n "$query" ]]; then
+    fc -il 1 | rg -e "$query" | tail -${lines}
+  else
+    fc -il 1 | tail -${lines}
+  fi
+}

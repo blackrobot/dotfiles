@@ -1,27 +1,47 @@
 // Place your key bindings in this file to overwrite the defaults
 [
 
-{ "key": "ctrl+l",
-  "command": "settings.action.clearSearchResults" },
-
-{ "key": "shift+cmd+\\",
-  "command": "workbench.action.toggleEditorGroupLayout"
+{
+  "key": "ctrl+l",
+  "command": "settings.action.clearSearchResults",
 },
+
+{
+  "key": "shift+cmd+\\",
+  "command": "workbench.action.toggleEditorGroupLayout",
+},
+/*
+{
+  // "key": "cmd+k cmd+right"
+  "key": "ctrl+w l",
+  "command": "workbench.action.focusNextGroup",
+},
+{
+  // "key": "cmd+k cmd+left",
+  "key": "ctrl+w h",
+  "command": "workbench.action.focusPreviousGroup",
+},
+{
+  // "key": "ctrl+cmd+right",
+  "key": "ctrl+w shift+l",
+  "command": "workbench.action.moveEditorToNextGroup",
+},
+{
+  // "key": "ctrl+cmd+left",
+  "key": "ctrl+w shift+h",
+  "command": "workbench.action.moveEditorToPreviousGroup",
+},
+*/
+
 {
   "key": "cmd+b",
   "command": "-markdown.extension.editing.toggleBold",
-  "when": "editorTextFocus && editorLangId == 'markdown'"
+  "when": "editorTextFocus && editorLangId == 'markdown'",
 },
 {
   "key": "cmd+i",
   "command": "-markdown.extension.editing.toggleItalic",
-  "when": "editorTextFocus && editorLangId == 'markdown'"
-}
-
-/* {
-  "key": "shift+;",
-  "command": "workbench.action.gotoLine",
-  "when": "editorTextFocus && vim.active && !inDebugRepl && !terminalFocus && vim.mode != 'Insert'"
-} */
+  "when": "editorTextFocus && editorLangId == 'markdown'",
+},
 
 ]
