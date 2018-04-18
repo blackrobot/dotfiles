@@ -1,16 +1,35 @@
-# vim: set ft=zsh:
+##
+# -------
+# note.sh
+# -------
+#
+#  usage:
+#    export NOTES="/path/to/notes" source note.sh && note "My Note Title"
+#
+#  Use this to create the note command by sourcing this file in your .zshrc
+#  file. Set the $NOTES variable to a path where the notes should be stored.
+##
 
-function note() {
-  local note_editor=${NOTE_EDITOR:-$EDITOR}
-  local notes_root="${NOTES:-"${HOME}/notes"}"
-  local notes_dir="${notes_root}/$(date '+%Y')"
-  local note_name="$(date '+%m-%d @ %I:%M%p') - ${1:-Untitled Note}"
-  local note_full_path="${notes_dir}/${note_name}.md"
+
+NOTES="${NOTES:-"${HOME}/notes"}"
+
+
+function note {
+  local notes_dir
+  local note_name
+  local note_full_path
+
+  notes_dir="${NOTES}/$(date '+%Y')"
+  note_name="$(date '+%m-%d @ %I:%M%p') - ${1:-Untitled Note}"
+  note_full_path="${notes_dir}/${note_name}.md"
 
   mkdir -p "$notes_dir"
-  $note_editor "$note_full_path" && (
+
+  cp "${NOTES}/_template.md" "$note_full_path"
+
+  /usr/local/bin/code --new-window --wait "$NOTES" "$note_full_path" && (
     {
-      pushd "$notes_root";
+      pushd "$NOTES";
       git add "$note_full_path";
       git commit "$note_full_path" -m "New note ${note_name}";
       git push origin master;

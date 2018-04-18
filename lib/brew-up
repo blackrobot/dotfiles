@@ -1,18 +1,23 @@
-# vim: set ft=zsh:
-
 # Alias for brew upgrading
 function bubu {
   TERM="xterm-256color"
 
-  local reset;
-  local bold;
-  local icon;
-  local cmd_style;
+  local reset
+  local bold
+  local icon
+  local cmd_style
+  local verbose
 
   reset="$(tput sgr0)"
   bold="$(tput bold)"
   icon="➥"
   cmd_style="$(tput setaf 102)"
+
+  if [[ "$1" == "-v" || "$1" == "--verbose" ]] ; then
+    verbose='--verbose'
+  else
+    verbose=''
+  fi
 
   function __bubu_banner {
     local color;
@@ -44,7 +49,7 @@ function bubu {
   }
 
   __bubu_banner 5 "Update"
-  __bubu_cmd "brew update --verbose"
+  __bubu_cmd "brew update ${verbose}"
 
   __bubu_banner 5 "Upgrade"
   __bubu_cmd "brew upgrade --cleanup"
@@ -57,3 +62,5 @@ function bubu {
 
   __bubu_banner 1 "$(tput setaf 3)Done" "☭"
 }
+
+alias cbubu='clear ; bubu'
