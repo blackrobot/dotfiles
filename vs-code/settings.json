@@ -6,11 +6,11 @@
     "editor.lineHeight": 0,
     "editor.renderWhitespace": "boundary",
     "editor.lineNumbers": "relative",
-    "editor.rulers": [80, 120],
+    "editor.rulers": [88, 120],
     "editor.quickSuggestions": {
         "other": true,
         "comments": false,
-        "strings": false
+        "strings": false,
     },
     "editor.occurrencesHighlight": false,
     "editor.renderLineHighlight": "all",
@@ -23,6 +23,7 @@
     "editor.tabCompletion": true,
     "editor.snippetSuggestions": "bottom",
     "editor.parameterHints": false,
+    "editor.suggestFontSize": 13,
 
     "extensions.ignoreRecommendations": false,
     "extensions.showRecommendationsOnlyOnDemand": true,
@@ -86,6 +87,13 @@
             "editor.findMatchHighlightBorder": "#fce4ec4f",
             "editor.findMatchBackground": "#c2185b", /* PINK 700 */
         },
+        "[One Dark Pro Vivid]": {
+            "tab.border": "#00000020",
+            "tab.activeBorder": "#00000020",
+            "editorGroupHeader.tabsBorder": "#00000000",
+            "editor.findMatchBorder": "#457dff60",
+        },
+        /*
         "[Palenight Operator]": {
             "editorLineNumber.activeForeground": "#ffffffde",
             "editorRuler.foreground": "#ffffff0f",
@@ -93,38 +101,12 @@
             "editorIndentGuide.background": "#ffffff0f",
             "sideBar.foreground": "#B9BDCF",
         },
+        */
     },
     "editor.tokenColorCustomizations": {
         "[Dracula]": {
             "comments": { "fontStyle": "italic" },
             "strings": { "foreground": "#E9F284E7" },
-        },
-        "[Palenight Operator]": {
-            // "strings": { "fontStyle": "" },
-            "textMateRules": [
-                {
-                    "name": "JSON Property Names",
-                    "scope": [
-                        "source.json meta.structure.dictionary support.type.property-name.json",
-                    ],
-                    "settings": {
-                        "foreground": "#A29BC0",
-                        "fontStyle": "",
-                    },
-                },
-            ]
-        },
-        "[One Dark Pale]": {
-            "textMateRules": [
-                {
-                    "scope": [
-                        "support.type.property-name.json",
-                    ],
-                    "settings": {
-                        "foreground": "#e06c75",
-                    },
-                }
-            ]
         },
         "[One Dark Pro Vivid]": {
             "textMateRules": [
@@ -169,7 +151,24 @@
                     }
                 }
             ],
-        }
+        },
+        /*
+        "[Palenight Operator]": {
+            // "strings": { "fontStyle": "" },
+            "textMateRules": [
+                {
+                    "name": "JSON Property Names",
+                    "scope": [
+                        "source.json meta.structure.dictionary support.type.property-name.json",
+                    ],
+                    "settings": {
+                        "foreground": "#A29BC0",
+                        "fontStyle": "",
+                    },
+                },
+            ]
+        },
+        */
     },
 
     /* Vim config */
@@ -185,6 +184,7 @@
     // vim: status bar
     "vim.showmodename": true,
     "vim.statusBarColorControl": false,
+    /*
     "vim.statusBarColors" : {
         "normal": "#212121",
         "insert": "#0288d1",
@@ -193,6 +193,7 @@
         "visualblock": "#e53935",
         "replace": "#d50000"
     },
+    */
     "vim.cursorStylePerMode": {
         "normal": "block",
         "insert": "line",
@@ -247,11 +248,11 @@
     "python.linting.lintOnSave": true,
     "python.autoComplete.addBrackets": false,
 
-    "python.workspaceSymbols.ctagsPath": "/usr/local/bin/ctags",
+    // "python.workspaceSymbols.ctagsPath": "/usr/local/bin/ctags",
+    // "python.workspaceSymbols.tagFilePath": "${workspaceFolder}/.vscode/tags",
     "python.workspaceSymbols.enabled": true,
     "python.workspaceSymbols.rebuildOnFileSave": true,
     "python.workspaceSymbols.rebuildOnStart": true,
-    "python.workspaceSymbols.tagFilePath": "${workspaceFolder}/.vscode/tags",
 
     /* Markdown config */
     "[markdown]": {
@@ -389,7 +390,6 @@
         "overview",
     ],
 
-    "symbolOutline.doSelect": false,
     "search.smartCase": true,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "workbench.statusBar.feedback.visible": false,
@@ -410,4 +410,10 @@
     "gitlens.historyExplorer.enabled": true,
     "gitlens.blame.format": "${authorAgoOrDate|40-}",
     "gitlens.statusBar.enabled": false,
+
+    "prettier.trailingComma": "es5",
+    "zenMode.centerLayout": false,
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideTabs": false,
 }

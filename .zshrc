@@ -17,7 +17,7 @@ ZSH_THEME=""
 
 # Plugins
 plugins=(
-  aws
+  # aws
   colored-man-pages
   command-not-found
   cp
@@ -53,6 +53,9 @@ HIST_IGNORE_SPACE=1
 HIST_STAMPS="yyyy-mm-dd"
 
 source "${ZSH}/oh-my-zsh.sh"
+
+# remove annoying `work_in_progress` garbage – git.io/vhTp1
+unfunction work_in_progress
 
 # zsh opts
 setopt hist_ignore_all_dups
