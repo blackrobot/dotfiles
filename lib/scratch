@@ -11,5 +11,5 @@ function scratch() {
     scratch_name="$(date +%Y-%m-%d_%H%M%S).scratch.md";
   fi
 
-  exec $EDITOR "${scratch_dir}/${scratch_name}"
+  /usr/local/bin/code "$scratch_dir" "${scratch_dir}/${scratch_name}"
 }

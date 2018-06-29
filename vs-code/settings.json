@@ -18,7 +18,6 @@
     "editor.roundedSelection": true,
     "editor.minimap.enabled": false,
     "editor.smoothScrolling": true,
-    "editor.tabSize": 2,
     "editor.overviewRulerBorder": true,
     "editor.tabCompletion": true,
     "editor.snippetSuggestions": "bottom",
@@ -50,7 +49,7 @@
         "**/bower_components": true,
         "**/tags": true
     },
-    "search.location": "sidebar",
+    "search.location": "panel",
     "search.quickOpen.includeSymbols": true,
 
     "terminal.external.osxExec": "iTerm.app",
@@ -173,7 +172,6 @@
 
     /* Vim config */
     "vim.leader": ",",
-    "vim.cmdLineInitialColon": true,
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.visualstar": true,
@@ -206,23 +204,29 @@
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     // vim: key bindings
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "before": ["<C-n>"],
-            "after": [],
-            "commands": [{
-                // "command": ":nohlsearch",
-                "command": ":nohl",
-                "args": []
-            }]
+            "before": ["<C-l>"],
+            "after": ["<Esc>"],
+            "commands": [
+                {
+                    "command": ":nohl",
+                },
+                {
+                    // "command": "search.action.clearSearchResults",
+                    "command": "closeFindWidget",
+                },
+            ],
         },
         {
             "before": ["<C-w>H"],
             "after": [],
-            "commands": [{
-                "command": "workbench.action.moveEditorToPreviousGroup",
-                "args": [],
-            }],
+            "commands": [
+                {
+                    "command": "workbench.action.moveEditorToPreviousGroup",
+                    "args": [],
+                },
+            ],
         },
         {
             "before": ["<C-w>L"],
@@ -234,6 +238,10 @@
         },
     ],
 
+    // "material-icon-theme.folders.color": "#42a5f5",
+    "material-icon-theme.showUpdateMessage": false,
+    "material-icon-theme.folders.color": "#42a5f5",
+    "material-icon-theme.opacity": 0.9,
 
     /* Python config */
     "[python]": {
@@ -260,6 +268,9 @@
         "editor.quickSuggestions": false,
     },
     "markdown.extension.italic.indicator": "_",
+    "markdown.extension.toc.githubCompatibility": true,
+    "markdown.extension.toc.orderedList": false,
+    "markdown.extension.toc.updateOnSave": false,
 
     /* Other extension config */
     "git.enableCommitSigning": true,
@@ -270,34 +281,21 @@
         ""
     ],
     "todohighlight.defaultStyle": {
-        "backgroundColor": "#b71c1c",
+        "backgroundColor": "#F44336",
         "color": "#FFF",
-        "borderRadius": "2px",
-        "padding": "1px"
     },
     "todohighlight.keywords": [
-        "TODO:",
-        "FIXME:",
+        "TODO:", "FIXME:", "???:", "!!!:", "BUG:",
         {
-            "text": "XXX:",
-            "color": "#FFF",
-            "backgroundColor": "#b71c1c"
+            "text": "HACK:",
+            "backgroundColor": "#9C27B0",
         },
-        "???:",
-        "!!!:",
-        "BUG:",
-        "HACK:",
         {
             "text": "NOTE:",
-            "color": "#FFF",
             "backgroundColor": "#2196F3",
-            "isWholeLine": false
         },
-        // "INFO:",
-        "IDEA:"
     ],
     "gitlens.gitExplorer.files.layout": "auto",
-    "material-icon-theme.showUpdateMessage": false,
     // "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
 
@@ -371,7 +369,8 @@
         "MD012": false,
         "MD013": false,
         "MD014": false,
-        "MD041": false
+        "MD026": false,
+        "MD041": false,
     },
     "explorer.confirmDragAndDrop": false,
     "workbench.startupEditor": "newUntitledFile",
@@ -416,4 +415,22 @@
     "zenMode.hideActivityBar": false,
     "zenMode.hideStatusBar": false,
     "zenMode.hideTabs": false,
+    "spellright.language": "en",
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "git-commit",
+    ],
+    "editor.tabSize": 2,
+    "todohighlight.isEnable": true,
+    "python.autoComplete.showAdvancedMembers": true,
+    "python.linting.ignorePatterns": [
+        ".vscode/*.py",
+        "**/site-packages/**/*.py",
+        ".tmp/**/*.py",
+    ],
+    "docker.showExplorer": true,
+    "[git-commit]": {
+        "editor.rulers": [50, 72],
+    },
 }

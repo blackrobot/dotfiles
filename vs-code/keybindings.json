@@ -1,17 +1,17 @@
 // Place your key bindings in this file to overwrite the defaults
 [
 
-{
+/* {
   "key": "ctrl+l",
   "command": "settings.action.clearSearchResults",
-},
+}, */
 
 {
   "key": "shift+cmd+\\",
   "command": "workbench.action.toggleEditorGroupLayout",
 },
-/*
-{
+
+/* {
   // "key": "cmd+k cmd+right"
   "key": "ctrl+w l",
   "command": "workbench.action.focusNextGroup",
@@ -30,8 +30,7 @@
   // "key": "ctrl+cmd+left",
   "key": "ctrl+w shift+h",
   "command": "workbench.action.moveEditorToPreviousGroup",
-},
-*/
+}, */
 
 {
   "key": "cmd+b",
@@ -43,5 +42,11 @@
   "command": "-markdown.extension.editing.toggleItalic",
   "when": "editorTextFocus && editorLangId == 'markdown'",
 },
+
+/* {
+  "key": "shift+escape",
+  "command": "closeFindWidget",
+  "when": "editorFocus && findWidgetVisible"
+}, */
 
 ]
