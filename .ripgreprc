@@ -1,0 +1,3 @@
+# configuration for ripgrep (rg)
+
+--smart-case

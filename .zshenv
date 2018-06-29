@@ -18,6 +18,8 @@ function add_to_path {
   fi
 }
 
+# ripgrep config
+export RIPGREP_CONFIG_PATH="${DOTFILES}/.ripgreprc"
 
 # nvm
 # NVM_LAZY_LOAD=true
@@ -44,3 +46,7 @@ add_to_path "${ANDROID_HOME}/platform-tools" 'append'
 
 # first in $PATH
 add_to_path "${DOTFILES}/bin"
+
+# For vs-code
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
