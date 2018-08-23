@@ -5,8 +5,8 @@
 " language en_US
 
 " Explicitly set the python host
-let g:python_host_prog = expand("~/.pyenv/versions/neovim2/bin/python")
-let g:python3_host_prog = expand("~/.pyenv/versions/neovim3/bin/python")
+let g:python_host_prog = expand("~/.pyenv/shims/python2")
+let g:python3_host_prog = expand("~/.pyenv/shims/python3")
 
 " Define paths
 let g:janus_path = expand("~/.vim/janus/vim")
