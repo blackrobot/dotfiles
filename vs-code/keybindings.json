@@ -1,52 +1,61 @@
-// Place your key bindings in this file to overwrite the defaults
 [
 
-/* {
-  "key": "ctrl+l",
-  "command": "settings.action.clearSearchResults",
-}, */
-
+/**
+ * Use <⇧ + ⌘ + \> to toggle between horizontal and vertical split layouts
+ */
 {
   "key": "shift+cmd+\\",
   "command": "workbench.action.toggleEditorGroupLayout",
 },
 
-/* {
-  // "key": "cmd+k cmd+right"
-  "key": "ctrl+w l",
-  "command": "workbench.action.focusNextGroup",
+/**
+ * Use <⇧ + Enter> for reverse find, and remove it elsewhere
+ */
+{
+  "key": "shift+enter",
+  "command": "-python.execSelectionInTerminal",
 },
 {
-  // "key": "cmd+k cmd+left",
-  "key": "ctrl+w h",
-  "command": "workbench.action.focusPreviousGroup",
+  "key": "shift+enter",
+  "command": "-markdown-preview-enhanced.runCodeChunk",
 },
 {
-  // "key": "ctrl+cmd+right",
-  "key": "ctrl+w shift+l",
-  "command": "workbench.action.moveEditorToNextGroup",
+  "key": "shift+enter",
+  "command": "-markdown.extension.onShiftEnterKey",
 },
 {
-  // "key": "ctrl+cmd+left",
-  "key": "ctrl+w shift+h",
-  "command": "workbench.action.moveEditorToPreviousGroup",
-}, */
+  "key": "shift+cmd+enter",
+  "command": "-editor.action.insertLineBefore",
+},
 
+/**
+ * Markdown
+ * ---
+ * Only use keyboard shortcuts for editing text when in vim insert mode.
+ */
 {
+  // Use <⌘ + b> to enbolden text, only in vim insert mode
+  "key": "cmd+b",
+  "command": "markdown.extension.editing.toggleBold",
+  "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown' && vim.active && vim.mode == 'Insert'",
+},
+{
+  // Remove <⌘ + b> when not in vim insert mode
   "key": "cmd+b",
   "command": "-markdown.extension.editing.toggleBold",
-  "when": "editorTextFocus && editorLangId == 'markdown'",
+  // "when": "vim.active && vim.mode != 'Insert'",
 },
 {
+  // Use <⌘ + i> to italicize text, only in vim insert mode
+  "key": "cmd+i",
+  "command": "markdown.extension.editing.toggleItalic",
+  "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown' && vim.active && vim.mode == 'Insert'",
+},
+{
+  // Remove <⌘ + i> when not in vim insert mode
   "key": "cmd+i",
   "command": "-markdown.extension.editing.toggleItalic",
-  "when": "editorTextFocus && editorLangId == 'markdown'",
+  // "when": "vim.active && vim.mode != 'Insert'"
 },
-
-/* {
-  "key": "shift+escape",
-  "command": "closeFindWidget",
-  "when": "editorFocus && findWidgetVisible"
-}, */
 
 ]
