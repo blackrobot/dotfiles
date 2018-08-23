@@ -20,21 +20,20 @@ function bubu {
   fi
 
   function __bubu_banner {
+    local timestamp;
     local color;
     local ico;
     local msg;
 
+    timestamp="$(date '+%b %d @ %I:%M:%S %p')"
     color="$(tput setaf ${1})"
     ico="${3:-"${icon}"}"
     msg="$2"
 
-    printf "%s%s%s %s%s%s \n" \
-      "${color}${bold}" \
-      "$ico" \
-      "$reset" \
-      "$color" \
-      "$msg" \
-      "$reset"
+    printf "%s%s%s %s%s%s %s%s%s \n" \
+      "${color}${bold}" "$ico" "$reset" \
+      "$color" "$msg" "$reset" \
+      "$cmd_style" "$timestamp" "$reset"
   }
 
   function __bubu_cmd {
@@ -56,9 +55,6 @@ function bubu {
 
   __bubu_banner 4 "Cleanup"
   __bubu_cmd "brew cleanup"
-
-  __bubu_banner 4 "Cask Cleanup"
-  __bubu_cmd "brew cask cleanup"
 
   __bubu_banner 1 "$(tput setaf 3)Done" "☭"
 }
