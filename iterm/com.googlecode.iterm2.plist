@@ -8,6 +8,8 @@
 	<true/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -1336,6 +1338,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>MiddleClickClosesTab</key>
+	<false/>
 	<key>NSColorPanelMode</key>
 	<string>6</string>
 	<key>NSFontPanelAttributes</key>
@@ -1432,13 +1436,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1009 574 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>719 441 918 494 0 0 2560 1417 </string>
+	<string>1345 694 1018 447 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 484 0 0 2560 1417 </string>
+	<string>1601 0 958 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -5329,6 +5333,7 @@
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>zsh</string>
+				<string>/usr/local/bin/zsh</string>
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
@@ -6052,7 +6057,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-06-13T19:26:34Z</date>
+	<date>2018-08-14T17:58:58Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -6084,7 +6089,7 @@
 	<key>TerminalMargin</key>
 	<integer>7</integer>
 	<key>TerminalVMargin</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>ThreeFingerEmulates</key>
 	<false/>
 	<key>TmuxDashboardLimit</key>
@@ -6130,7 +6135,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.6beta5</string>
+	<string>3.2.0beta9</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
