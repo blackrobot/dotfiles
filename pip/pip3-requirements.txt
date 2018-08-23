@@ -1,0 +1,14 @@
+# pip3 install -U pip3-requirements.txt
+
+requests
+black
+neovim
+flake8
+isort
+
+ipython
+jedi==0.12.0
+ptpython
+
+numpy
+pandas
