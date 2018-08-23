@@ -1,0 +1,28 @@
+# Config for zplug
+# https://github.com/zplug/zplug
+
+export ZPLUG_HOME="/usr/local/opt/zplug"
+
+source "${ZPLUG_HOME}/init.zsh"
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+export forgit_add="fga"
+export forgit_log="glo"
+export forgit_diff="fgd"
+export forgit_ignore="fgi"
+export forgit_restore="fgcf"
+export forgit_clean="fgclean"
+
+zplug 'wfxr/forgit', defer:1
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+zplug load

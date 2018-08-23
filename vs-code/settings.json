@@ -452,6 +452,6 @@
     "markdown-preview-enhanced.protocolsWhiteList": "http://, https://, mailto:, tel:",
     "breadcrumbs.enabled": false,
     "editor.acceptSuggestionOnEnter": "smart",
-    "sync.lastUpload": "2018-08-23T03:26:06.504Z",
+    "sync.lastUpload": "2018-08-23T18:24:03.806Z",
     "workbench.editor.enablePreviewFromQuickOpen": false,
 }

@@ -47,6 +47,10 @@ function source_if_exists {
   fi
 }
 
+function source_dotfile {
+  source_if_exists "${DOTFILES}/${1}"
+}
+
 # oh-my-zsh opts
 DISABLE_CORRECTION=1
 HIST_IGNORE_SPACE=1
@@ -72,8 +76,14 @@ prompt pure
 # less options
 LESS='-R --ignore-case --tabs=4'
 
-source "${DOTFILES}/.aliases"
-source "${DOTFILES}/lib-includes"
+# zplug
+source_dotfile ".zplugrc"
 
+# fzf
 source_if_exists "${HOME}/.fzf.zsh"
+source_dotfile ".fzfrc"
+
+source_dotfile ".aliases"
+source_dotfile "lib-includes"
+
 source_if_exists "${HOME}/.zshrc.local"
