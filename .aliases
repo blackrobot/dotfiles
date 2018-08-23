@@ -29,7 +29,7 @@ function es {
 
 # cheat.sh
 function cheat {
-  curl "cheat.sh/${1}"
+  curl "https://cheat.sh/${1}"
 }
 
 # beep - plays a sound
