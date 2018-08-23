@@ -27,8 +27,7 @@
     "extensions.ignoreRecommendations": false,
     "extensions.showRecommendationsOnlyOnDemand": true,
 
-    "explorer.openEditors.visible": 0,
-    "workbench.editor.showTabs": true,
+    "explorer.openEditors.visible": 5,
 
     "files.defaultLanguage": "markdown",
     "files.useExperimentalFileWatcher": true,
@@ -63,10 +62,8 @@
 
     "window.openFilesInNewWindow": "default",
     "window.nativeTabs": false,
-    "window.title": "${activeEditorMedium}${separator}${rootName}",
+    "window.title": "${activeEditorMedium}${dirty}${separator}${rootName}",
     "window.zoomLevel": 0,
-
-    "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.labelFormat": "short",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.activityBar.visible": false,
@@ -84,23 +81,14 @@
             "editor.lineHighlightBorder": "#ffffff00",
             "editor.findMatchHighlightBackground": "#fce4ec0a",
             "editor.findMatchHighlightBorder": "#fce4ec4f",
-            "editor.findMatchBackground": "#c2185b", /* PINK 700 */
+            "editor.findMatchBackground": "#c2185b"
         },
         "[One Dark Pro Vivid]": {
             "tab.border": "#00000020",
             "tab.activeBorder": "#00000020",
             "editorGroupHeader.tabsBorder": "#00000000",
-            "editor.findMatchBorder": "#457dff60",
+            "editor.findMatchBorder": "#457dff60"
         },
-        /*
-        "[Palenight Operator]": {
-            "editorLineNumber.activeForeground": "#ffffffde",
-            "editorRuler.foreground": "#ffffff0f",
-            "editorWhitespace.foreground": "#ffffff0e",
-            "editorIndentGuide.background": "#ffffff0f",
-            "sideBar.foreground": "#B9BDCF",
-        },
-        */
     },
     "editor.tokenColorCustomizations": {
         "[Dracula]": {
@@ -182,6 +170,10 @@
     // vim: status bar
     "vim.showmodename": true,
     "vim.statusBarColorControl": false,
+    /**
+     * This is disabled because it causes bad things to happen
+     *   github.com/vscodevim/vim/issues/2124
+     **/
     /*
     "vim.statusBarColors" : {
         "normal": "#212121",
@@ -237,6 +229,24 @@
             }],
         },
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
 
     // "material-icon-theme.folders.color": "#42a5f5",
     "material-icon-theme.showUpdateMessage": false,
@@ -255,6 +265,8 @@
     "python.linting.flake8Enabled": true,
     "python.linting.lintOnSave": true,
     "python.autoComplete.addBrackets": false,
+    "python.jediEnabled": true,
+    "vsintellicode.python.completionsEnabled": false,
 
     // "python.workspaceSymbols.ctagsPath": "/usr/local/bin/ctags",
     // "python.workspaceSymbols.tagFilePath": "${workspaceFolder}/.vscode/tags",
@@ -300,11 +312,10 @@
     "explorer.confirmDelete": false,
 
     "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
-    "sync.autoUpload": false,
+    "sync.autoUpload": true,
     "sync.autoDownload": false,
     "sync.forceDownload": false,
     "sync.lastDownload": "",
-    "sync.lastUpload": "2018-03-24T20:39:45.400Z",
     "sync.host": "",
     "sync.pathPrefix": "",
     "sync.quietSync": true,
@@ -433,4 +444,14 @@
     "[git-commit]": {
         "editor.rulers": [50, 72],
     },
+    "prettier.printWidth": 88,
+    "prettier.disableLanguages": [
+        "vue",
+    ],
+    "markdown-preview-enhanced.previewTheme": "github-light.css",
+    "markdown-preview-enhanced.protocolsWhiteList": "http://, https://, mailto:, tel:",
+    "breadcrumbs.enabled": false,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "sync.lastUpload": "2018-08-23T03:26:06.504Z",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
 }
