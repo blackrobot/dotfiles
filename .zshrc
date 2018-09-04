@@ -19,21 +19,20 @@ ZSH_THEME=""
 plugins=(
   # aws
   colored-man-pages
-  command-not-found
+  # command-not-found
   cp
   docker-compose
   docker
-  encode64
-  extract
+  # encode64
+  # extract
   git
   git-extras
   github
   httpie
-  rsync
-  urltools
+  # rsync
   vi-mode
   vi-history-substring
-  yarn
+  # yarn
   z
   zsh-nvm
   zsh-autosuggestions
@@ -74,7 +73,10 @@ autoload -U promptinit ; promptinit
 prompt pure
 
 # less options
-LESS='-R --ignore-case --tabs=4'
+export LESS='-R --ignore-case --tabs=4'
+
+# bat options | https://github.com/sharkdp/bat
+export BAT_THEME="TwoDark"
 
 # zplug
 source_dotfile ".zplugrc"
