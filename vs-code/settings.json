@@ -48,7 +48,7 @@
         "**/bower_components": true,
         "**/tags": true
     },
-    "search.location": "panel",
+    "search.location": "sidebar",
     "search.quickOpen.includeSymbols": true,
 
     "terminal.external.osxExec": "iTerm.app",
@@ -62,7 +62,7 @@
 
     "window.openFilesInNewWindow": "default",
     "window.nativeTabs": false,
-    "window.title": "${activeEditorMedium}${dirty}${separator}${rootName}",
+    "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
     "window.zoomLevel": 0,
     "workbench.editor.labelFormat": "short",
     "workbench.iconTheme": "material-icon-theme",
@@ -71,7 +71,7 @@
     "workbench.editor.tabSizing": "shrink",
     "workbench.tips.enabled": true,
 
-    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.colorTheme": "Dracula",
     "workbench.colorCustomizations": {
         "[Dracula]": {
             "editorLineNumber.activeForeground": "#ffffffde",
@@ -184,14 +184,12 @@
         "replace": "#d50000"
     },
     */
-    "vim.cursorStylePerMode": {
-        "normal": "block",
-        "insert": "line",
-        "replace": "underline",
-        "visual": "block-outline",
-        "visualline": "block-outline",
-        "visualblock": "block-outline"
-    },
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.replace": "underline",
+    "vim.cursorStylePerMode.visual": "block-outline",
+    "vim.cursorStylePerMode.visualline": "block-outline",
+    "vim.cursorStylePerMode.visualblock": "block-outline",
     // vim: neovim
     "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
@@ -259,14 +257,14 @@
         "editor.wordWrap": "off",
         "editor.tabSize": 4
     },
-    "python.pythonPath": "/usr/local/opt/python3/bin/python3.6",
+    "python.pythonPath": "/Users/damon/.pyenv/versions/3.7.0/bin/python",
     "python.venvPath": "~/.pyenv/versions/",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.lintOnSave": true,
     "python.autoComplete.addBrackets": false,
     "python.jediEnabled": true,
-    "vsintellicode.python.completionsEnabled": false,
+    // "vsintellicode.python.completionsEnabled": false,
 
     // "python.workspaceSymbols.ctagsPath": "/usr/local/bin/ctags",
     // "python.workspaceSymbols.tagFilePath": "${workspaceFolder}/.vscode/tags",
@@ -315,9 +313,6 @@
     "sync.autoUpload": true,
     "sync.autoDownload": false,
     "sync.forceDownload": false,
-    "sync.lastDownload": "",
-    "sync.host": "",
-    "sync.pathPrefix": "",
     "sync.quietSync": true,
     "sync.askGistName": false,
     "gitlens.advanced.messages": {
@@ -403,7 +398,6 @@
     "search.smartCase": true,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "workbench.statusBar.feedback.visible": false,
-    "eslint.packageManager": "yarn",
     "[csv]": {
         "editor.minimap.enabled": true,
         "editor.minimap.maxColumn": 80,
@@ -452,6 +446,5 @@
     "markdown-preview-enhanced.protocolsWhiteList": "http://, https://, mailto:, tel:",
     "breadcrumbs.enabled": false,
     "editor.acceptSuggestionOnEnter": "smart",
-    "sync.lastUpload": "2018-08-23T18:24:03.806Z",
     "workbench.editor.enablePreviewFromQuickOpen": false,
 }
