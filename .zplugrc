@@ -6,6 +6,11 @@ export ZPLUG_HOME="/usr/local/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'zsh-users/zsh-autosuggestions', as:'plugin', from:'github'
+zplug 'plugins/colored-man-pages', from:'oh-my-zsh'
+zplug 'plugins/git', from:'oh-my-zsh'
+zplug 'plugins/git-extras', from:'oh-my-zsh'
+zplug 'plugins/github', from:'oh-my-zsh'
 
 export forgit_add="fga"
 export forgit_log="glo"

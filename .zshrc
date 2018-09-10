@@ -18,16 +18,16 @@ ZSH_THEME=""
 # Plugins
 plugins=(
   # aws
-  colored-man-pages
+  # colored-man-pages
   # command-not-found
   cp
   docker-compose
   docker
   # encode64
   # extract
-  git
-  git-extras
-  github
+  # git
+  # git-extras
+  # github
   httpie
   # rsync
   vi-mode
@@ -35,7 +35,7 @@ plugins=(
   # yarn
   z
   zsh-nvm
-  zsh-autosuggestions
+  # zsh-autosuggestions
 )
 
 autoload -U compinit && compinit
@@ -57,6 +57,9 @@ HIST_STAMPS="yyyy-mm-dd"
 
 source "${ZSH}/oh-my-zsh.sh"
 
+# zplug
+source_dotfile ".zplugrc"
+
 # remove annoying `work_in_progress` garbage – git.io/vhTp1
 unfunction work_in_progress
 
@@ -77,9 +80,6 @@ export LESS='-R --ignore-case --tabs=4'
 
 # bat options | https://github.com/sharkdp/bat
 export BAT_THEME="TwoDark"
-
-# zplug
-source_dotfile ".zplugrc"
 
 # fzf
 source_if_exists "${HOME}/.fzf.zsh"
