@@ -1,5 +1,27 @@
 [
 
+/*
+{
+  "key": "",
+  "command": "",
+  "when": "",
+},
+*/
+
+/**
+ * Use <^ + Tab> to move back and forth between terminal windows
+ */
+{
+  "key": "ctrl+tab",
+  "command": "workbench.action.terminal.focusNext",
+  "when": "terminalFocus",
+},
+{
+  "key": "ctrl+shift+tab",
+  "command": "workbench.action.terminal.focusPrevious",
+  "when": "terminalFocus",
+},
+
 /**
  * Use <⇧ + ⌘ + \> to toggle between horizontal and vertical split layouts
  */

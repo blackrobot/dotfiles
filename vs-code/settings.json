@@ -2,7 +2,7 @@
     /* Main config */
     "editor.fontLigatures": true,
     "editor.fontFamily": "Operator Mono",
-    "editor.fontSize": 13.75,
+    "editor.fontSize": 14.00,
     "editor.lineHeight": 0,
     "editor.renderWhitespace": "boundary",
     "editor.lineNumbers": "relative",
@@ -21,7 +21,7 @@
     "editor.overviewRulerBorder": true,
     "editor.tabCompletion": true,
     "editor.snippetSuggestions": "bottom",
-    "editor.parameterHints": false,
+    // "editor.parameterHints": false,
     "editor.suggestFontSize": 13,
 
     "extensions.ignoreRecommendations": false,
@@ -81,7 +81,8 @@
             "editor.lineHighlightBorder": "#ffffff00",
             "editor.findMatchHighlightBackground": "#fce4ec0a",
             "editor.findMatchHighlightBorder": "#fce4ec4f",
-            "editor.findMatchBackground": "#c2185b"
+            "editor.findMatchBackground": "#c2185b",
+            // "breadcrumb": "#ff0000"
         },
         "[One Dark Pro Vivid]": {
             "tab.border": "#00000020",
@@ -139,26 +140,12 @@
                 }
             ],
         },
-        /*
-        "[Palenight Operator]": {
-            // "strings": { "fontStyle": "" },
-            "textMateRules": [
-                {
-                    "name": "JSON Property Names",
-                    "scope": [
-                        "source.json meta.structure.dictionary support.type.property-name.json",
-                    ],
-                    "settings": {
-                        "foreground": "#A29BC0",
-                        "fontStyle": "",
-                    },
-                },
-            ]
-        },
-        */
     },
 
-    /* Vim config */
+    /* Vim config
+     *   https://github.com/vscodevim/vim/blob/master/README.md
+     *   https://github.com/vscodevim/vim/blob/master/ROADMAP.md#custom-commands
+     */
     "vim.leader": ",",
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
@@ -170,20 +157,6 @@
     // vim: status bar
     "vim.showmodename": true,
     "vim.statusBarColorControl": false,
-    /**
-     * This is disabled because it causes bad things to happen
-     *   github.com/vscodevim/vim/issues/2124
-     **/
-    /*
-    "vim.statusBarColors" : {
-        "normal": "#212121",
-        "insert": "#0288d1",
-        "visual": "#f50057",
-        "visualline": "#f50057",
-        "visualblock": "#e53935",
-        "replace": "#d50000"
-    },
-    */
     "vim.cursorStylePerMode.normal": "block",
     "vim.cursorStylePerMode.insert": "line",
     "vim.cursorStylePerMode.replace": "underline",
@@ -225,6 +198,19 @@
                 "command": "workbench.action.moveEditorToNextGroup",
                 "args": [],
             }],
+        },
+        {
+            // Toggle breadcrumbs
+            "before": ["<leader>", "b"],
+            "commands": [{
+                "command": "breadcrumbs.toggle",
+            }],
+        },
+        {
+            "before": ["g", "t"],
+            "commands": [{
+                "command": "workbench.action.terminal.focus",
+            }]
         },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -447,4 +433,5 @@
     "breadcrumbs.enabled": false,
     "editor.acceptSuggestionOnEnter": "smart",
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "terminal.integrated.rendererType": "dom",
 }
