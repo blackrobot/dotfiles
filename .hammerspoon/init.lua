@@ -198,3 +198,21 @@ end
 mash_too = {"shift", "ctrl", "alt"}
 hs.hotkey.bind(mash_too, "right", function() moveWindowOneSpace("right") end)
 hs.hotkey.bind(mash_too, "left", function() moveWindowOneSpace("left") end)
+
+function changeVolume(ticks)
+  return function()
+    local currentVolume = hs.audiodevice.defaultOutputDevice():volume()
+    local newVolume = math.min(100, math.max(0, math.floor(currentVolume + ticks)))
+
+    if newVolume > 0 then
+      hs.audiodevice.defaultOutputDevice():setMuted(false)
+    end
+
+    hs.alert.closeAll(0.0)
+    hs.alert.show("Volume " .. newVolume .. "%", {}, 0.5)
+    hs.audiodevice.defaultOutputDevice():setVolume(newVolume)
+  end
+end
+
+hs.hotkey.bind(mash, "f11", changeVolume(-3))
+hs.hotkey.bind(mash, "f12", changeVolume(3))
