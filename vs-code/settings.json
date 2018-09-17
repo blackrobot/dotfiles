@@ -249,8 +249,10 @@
     "python.linting.flake8Enabled": true,
     "python.linting.lintOnSave": true,
     "python.autoComplete.addBrackets": false,
-    "python.jediEnabled": true,
-    // "vsintellicode.python.completionsEnabled": false,
+
+    "python.globalModuleInstallation": true,
+    "python.jediEnabled": false,
+    "vsintellicode.python.completionsEnabled": false,
 
     // "python.workspaceSymbols.ctagsPath": "/usr/local/bin/ctags",
     // "python.workspaceSymbols.tagFilePath": "${workspaceFolder}/.vscode/tags",
@@ -434,4 +436,12 @@
     "editor.acceptSuggestionOnEnter": "smart",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "terminal.integrated.rendererType": "dom",
+    "github.hosts": [
+        {
+            "host": "https://github.com",
+            "username": "oauth",
+            "token": "system",
+        },
+    ],
+    "telemetry.optout": true,
 }
