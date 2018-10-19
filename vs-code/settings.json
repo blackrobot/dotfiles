@@ -341,6 +341,7 @@
         "*.sh": "shellscript",
         "*.bash": "shellscript",
         "*.zsh": "shellscript",
+        "/tmp/{[a-z]sh,bash,!*.}*": "shellscript",
         "*.env": "properties",
         ".gitconfig*": "properties",
         "*Dockerfile*": "dockerfile"
