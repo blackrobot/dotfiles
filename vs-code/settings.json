@@ -19,7 +19,7 @@
     "editor.minimap.enabled": false,
     "editor.smoothScrolling": true,
     "editor.overviewRulerBorder": true,
-    "editor.tabCompletion": true,
+    "editor.tabCompletion": "on",
     "editor.snippetSuggestions": "bottom",
     // "editor.parameterHints": false,
     "editor.suggestFontSize": 13,
@@ -49,16 +49,15 @@
         "**/tags": true
     },
     "search.location": "sidebar",
-    "search.quickOpen.includeSymbols": true,
 
     "terminal.external.osxExec": "iTerm.app",
     "terminal.explorerKind": "external",
     "terminal.integrated.scrollback": 2000,
     "terminal.integrated.fontSize": 13,
-    "terminal.integrated.shellArgs.osx": [],
+    "terminal.integrated.shellArgs.osx": ["-l"],
+    "terminal.integrated.rendererType": "canvas",
 
     "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
 
     "window.openFilesInNewWindow": "default",
     "window.nativeTabs": false,
@@ -207,11 +206,38 @@
             }],
         },
         {
+            "before": ["<leader>", "="],
+            "commands": [{
+                "command": "workbench.action.minimizeOtherEditors",
+            }],
+        },
+        {
             "before": ["g", "t"],
             "commands": [{
                 "command": "workbench.action.terminal.focus",
-            }]
+            }],
         },
+        // Temporary fix for undo and redo
+        {
+            "before": ["u"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo",
+                    "args": [],
+                },
+            ],
+        },
+        {
+            "before": ["<C-r>"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo",
+                    "args": [],
+                },
+            ],
+        }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -251,14 +277,9 @@
     "python.autoComplete.addBrackets": false,
 
     "python.globalModuleInstallation": true,
-    "python.jediEnabled": false,
-    "vsintellicode.python.completionsEnabled": false,
 
-    // "python.workspaceSymbols.ctagsPath": "/usr/local/bin/ctags",
-    // "python.workspaceSymbols.tagFilePath": "${workspaceFolder}/.vscode/tags",
-    "python.workspaceSymbols.enabled": true,
-    "python.workspaceSymbols.rebuildOnFileSave": true,
-    "python.workspaceSymbols.rebuildOnStart": true,
+    // Use microsoft's python language server
+    "python.jediEnabled": false,
 
     /* Markdown config */
     "[markdown]": {
@@ -394,7 +415,6 @@
     "gitlens.keymap": "alternate",
     "sync.removeExtensions": true,
     "sync.syncExtensions": true,
-    "git.confirmSync": false,
 
     "emojisense.emojiDecoratorsEnabled": false,
     "emojisense.unicodeCompletionsEnabled": true,
@@ -435,7 +455,6 @@
     "breadcrumbs.enabled": false,
     "editor.acceptSuggestionOnEnter": "smart",
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "terminal.integrated.rendererType": "dom",
     "github.hosts": [
         {
             "host": "https://github.com",
@@ -443,5 +462,16 @@
             "token": "system",
         },
     ],
-    "telemetry.optout": true,
+    "editor.quickSuggestionsDelay": 8,
+    "markdownShortcuts.icons.italic": false,
+    "markdownShortcuts.icons.bullets": false,
+    "markdownShortcuts.icons.bold": false,
+    "markdownShortcuts.icons.strikethrough": false,
+    "editor.suggest.localityBonus": true,
+    "git.allowForcePush": true,
+    "git.alwaysSignOff": true,
+    "git.rebaseWhenSync": true,
+    "githubPullRequests.telemetry.enabled": false,
+    "searchRipgrep.enable": true,
+    "extensions.autoUpdate": true,
 }
