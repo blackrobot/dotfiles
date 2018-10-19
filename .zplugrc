@@ -6,11 +6,23 @@ export ZPLUG_HOME="/usr/local/opt/zplug"
 source "${ZPLUG_HOME}/init.zsh"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug 'zsh-users/zsh-autosuggestions', as:'plugin', from:'github'
+
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'knu/z', use:'z.sh', nice:10
+# zplug 'plugins/z', from:'oh-my-zsh'
+# zplug 'rupa/z', use:'z.sh'
+
+# oh-my-zsh plugins
 zplug 'plugins/colored-man-pages', from:'oh-my-zsh'
+zplug 'plugins/cp', from:'oh-my-zsh'
+zplug 'plugins/docker', from:'oh-my-zsh'
+zplug 'plugins/docker-compose', from:'oh-my-zsh'
+zplug 'plugins/httpie', from:'oh-my-zsh'
 zplug 'plugins/git', from:'oh-my-zsh'
 zplug 'plugins/git-extras', from:'oh-my-zsh'
 zplug 'plugins/github', from:'oh-my-zsh'
+zplug 'plugins/vi-mode', from:'oh-my-zsh'
+zplug 'plugins/zsh-nvm', from:'oh-my-zsh'
 
 export forgit_add="fga"
 export forgit_log="glo"

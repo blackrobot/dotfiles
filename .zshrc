@@ -20,30 +20,28 @@ plugins=(
   # aws
   # colored-man-pages
   # command-not-found
-  cp
-  docker-compose
-  docker
+  # cp
+  # docker-compose
+  # docker
   # encode64
   # extract
   # git
   # git-extras
   # github
-  httpie
+  # httpie
   # rsync
-  vi-mode
+  # vi-mode
   vi-history-substring
   # yarn
-  z
-  zsh-nvm
+  # z
+  # zsh-nvm
   # zsh-autosuggestions
 )
 
 autoload -U compinit && compinit
 
 function source_if_exists {
-  if [[ -s "$1" ]]; then
-    source "$1"
-  fi
+  source "$1" 2>/dev/null || true
 }
 
 function source_dotfile {
