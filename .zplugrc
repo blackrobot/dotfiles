@@ -24,22 +24,44 @@ zplug 'plugins/github', from:'oh-my-zsh'
 zplug 'plugins/vi-mode', from:'oh-my-zsh'
 zplug 'plugins/zsh-nvm', from:'oh-my-zsh'
 
-export forgit_add="fga"
-export forgit_log="glo"
-export forgit_diff="fgd"
-export forgit_ignore="fgi"
-export forgit_restore="fgcf"
-export forgit_clean="fgclean"
+##
+# Setup and fix forgit environment
+##
 
-zplug 'wfxr/forgit', defer:1
+FG_DISABLE="__fg_disable__"
+export forgit_add="fga" \
+       forgit_log="fgl" \
+       forgit_diff="fgd" \
+       forgit_ignore="fg-ignore" \
+       forgit_stash_show="fg-stash" \
+       forgit_restore=$FG_DISABLE \
+       forgit_clean=$FG_DISABLE
+
+function fg_cleanup {
+  unalias "${FG_DISABLE}" && \
+  unset FG_DISABLE \
+        forgit_add \
+        forgit_log \
+        forgit_diff \
+        forgit_ignore \
+        forgit_stash_show \
+        forgit_restore \
+        forgit_clean
+  unfunction fg_cleanup
+}
+
+zplug 'wfxr/forgit', defer:1, hook-load:"fg_cleanup"
+
 
 if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  else
+    echo
+  fi
 fi
 
+
 zplug load
+
