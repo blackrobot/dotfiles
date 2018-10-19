@@ -9,6 +9,27 @@
 */
 
 /**
+ * Use <^ + ⌘ + H> and <^ + ⌘ + L> to move editor into prev/next group
+ */
+
+{
+  "key": "ctrl+cmd+h",
+  "command": "workbench.action.moveEditorToPreviousGroup",
+},
+{
+  "key": "ctrl+cmd+l",
+  "command": "workbench.action.moveEditorToNextGroup",
+},
+
+/**
+ * Use <^ + ⌘ + M> to maximize the current editor group
+ */
+{
+  "key": "ctrl+cmd+m",
+  "command": "workbench.action.minimizeOtherEditors",
+},
+
+/**
  * Use <^ + Tab> to move back and forth between terminal windows
  */
 {
@@ -78,6 +99,11 @@
   "key": "cmd+i",
   "command": "-markdown.extension.editing.toggleItalic",
   // "when": "vim.active && vim.mode != 'Insert'"
+},
+{
+  "key": "shift+alt+f",
+  "command": "-extension.beautifySql",
+  "when": "editorTextFocus && !editorReadonly && editorLangId == 'sql'"
 },
 
 ]
