@@ -42,6 +42,46 @@ function beep {
   afplay "${BEEP_SOUND_FILE:-"${HOME}/Library/Sounds/sms_alert_popcorn.caf"}"
 }
 
+# Restart the docker-for-mac app
+function docker-mac {
+  function d4m_stop {
+    printf 'Stopping \t'
+    osascript -e 'quit app "Docker"' \
+      && printf '[ok]\n' \
+      || printf '[fail]\n'
+  }
+
+  function d4m_start {
+    printf 'Starting \t'
+    open -a Docker \
+      && printf '[ok]\n' \
+      || printf '[fail]\n'
+  }
+
+  if [[ "$1" == "stop" || "$1" == "quit" ]] ; then
+    d4m_stop
+  elif [[ "$1" == "start" ]] ; then
+    d4m_start
+  elif [[ "$1" == "restart" ]] ; then
+    d4m_stop
+    d4m_start
+
+    printf 'Waiting \t'
+
+    while [ -z "$(docker info 2> /dev/null )" ]; do
+      printf '.'
+      sleep 1
+    done
+
+    printf '\r\033[0K'
+    printf 'Waiting \t[ok] '
+    echo
+
+  else
+    echo "docker-mac: start | stop | restart"
+  fi
+}
+
 # Git
 alias gr='git reset'
 alias grh='git reset --hard'
@@ -61,3 +101,4 @@ alias rcopy='rsync -vhxpogiW --progress --stats --numeric-ids'
 #       source:/path/to/files /path/to/dest [/path/to/other-dest...]
 # lookup remote ssh algos using: nmap --script ssh2-enum-algos -sV -p <port> <host>
 alias rcopy-remote='rsync -vhxirP --stats --progress -e "ssh -T -o Ciphers=aes128-gcm@openssh.com,aes256-gcm@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,* -o Compression=no -x"'
+
