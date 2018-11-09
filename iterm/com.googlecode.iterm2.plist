@@ -34,6 +34,8 @@
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
+	<key>ColoredSelectedTabOutlineStrength</key>
+	<real>0.5</real>
 	<key>CommandSelection</key>
 	<true/>
 	<key>Control</key>
@@ -1438,13 +1440,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1009 574 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>764 743 918 452 0 0 2560 1417 </string>
+	<string>829 770 918 452 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
 	<string>479 421 260 358 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1600 0 960 1417 0 0 2560 1417 </string>
+	<string>763 21 1015 1393 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1282 22 1278 1395 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -5625,13 +5627,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.93489384651184082</real>
+				<real>0.94901960784313721</real>
 				<key>Color Space</key>
-				<string>Calibrated</string>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.61235702037811279</real>
+				<real>0.67843137254901964</real>
 				<key>Red Component</key>
-				<real>0.30268973112106323</real>
+				<real>0.36078431372549019</real>
 			</dict>
 			<key>Log Directory</key>
 			<string></string>
@@ -5816,13 +5818,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.18823529411764706</real>
+				<real>0.2039215714</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.15294117647058825</real>
+				<real>0.17254902420000001</real>
 				<key>Red Component</key>
-				<real>0.13333333333333333</real>
+				<real>0.15686275059999999</real>
 			</dict>
 			<key>Tags</key>
 			<array>
@@ -6059,7 +6061,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-04T16:33:27Z</date>
+	<date>2018-10-26T20:49:01Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -6139,7 +6141,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.1beta2</string>
+	<string>3.2.4beta4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
