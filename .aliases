@@ -44,18 +44,39 @@ function beep {
 
 # Restart the docker-for-mac app
 function docker-mac {
+  function ok_msg {
+    printf "%s[ok]%s\n" "$(tput setaf 2)" "$(tput sgr0)"
+  }
+  function fail_msg {
+    printf "%s[fail]%s\n" "$(tput setaf 1)" "$(tput sgr0)"
+  }
+
   function d4m_stop {
     printf 'Stopping \t'
     osascript -e 'quit app "Docker"' \
-      && printf '[ok]\n' \
-      || printf '[fail]\n'
+      && ok_msg \
+      || fail_msg
   }
 
   function d4m_start {
     printf 'Starting \t'
     open -a Docker \
-      && printf '[ok]\n' \
-      || printf '[fail]\n'
+      && ok_msg \
+      || fail_msg
+  }
+
+  function d4m_restart {
+    d4m_stop && \
+    sleep 1 && \
+    d4m_start
+
+    printf 'Waiting \t'
+    while [ -z "$(docker info 2> /dev/null )" ]; do
+      printf '%s.%s' "$(tput setaf 3)" "$(tput sgr0)"
+      sleep 1
+    done
+    printf '\r\033[0K'  # clear entire line
+    printf 'Waiting \t' ; ok_msg
   }
 
   if [[ "$1" == "stop" || "$1" == "quit" ]] ; then
@@ -63,22 +84,10 @@ function docker-mac {
   elif [[ "$1" == "start" ]] ; then
     d4m_start
   elif [[ "$1" == "restart" ]] ; then
-    d4m_stop
-    d4m_start
-
-    printf 'Waiting \t'
-
-    while [ -z "$(docker info 2> /dev/null )" ]; do
-      printf '.'
-      sleep 1
-    done
-
-    printf '\r\033[0K'
-    printf 'Waiting \t[ok] '
-    echo
-
+    d4m_restart
   else
     echo "docker-mac: start | stop | restart"
+    false
   fi
 }
 
