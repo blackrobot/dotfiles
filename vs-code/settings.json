@@ -260,8 +260,16 @@
 
     // "material-icon-theme.folders.color": "#42a5f5",
     "material-icon-theme.showUpdateMessage": false,
-    "material-icon-theme.folders.color": "#42a5f5",
-    "material-icon-theme.opacity": 0.9,
+    "material-icon-theme.folders.color": "#e1bee7",
+    "material-icon-theme.opacity": 1,
+    "material-icon-theme.activeIconPack": "react_redux",
+    // "material-icon-theme.folders.theme": "classic",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.hidesExplorerArrows": true,
+    "material-icon-theme.folders.associations": {
+        "hogo": "python",
+    },
+
 
     /* Python config */
     "[python]": {
@@ -304,7 +312,7 @@
         "color": "#FFF",
     },
     "todohighlight.keywords": [
-        "TODO:", "FIXME:", "???:", "!!!:", "BUG:",
+        "TODO:", "FIXME:", "???:", "!!!:", "\bBUG:",
         {
             "text": "HACK:",
             "backgroundColor": "#9C27B0",
@@ -429,7 +437,9 @@
     "zenMode.hideActivityBar": false,
     "zenMode.hideStatusBar": false,
     "zenMode.hideTabs": false,
-    "spellright.language": "en",
+    "spellright.language": [
+        "en",
+    ],
     "spellright.documentTypes": [
         "markdown",
         "latex",
@@ -456,13 +466,6 @@
     "breadcrumbs.enabled": false,
     "editor.acceptSuggestionOnEnter": "smart",
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "github.hosts": [
-        {
-            "host": "https://github.com",
-            "username": "oauth",
-            "token": "system",
-        },
-    ],
     "editor.quickSuggestionsDelay": 8,
     "markdownShortcuts.icons.italic": false,
     "markdownShortcuts.icons.bullets": false,
@@ -475,4 +478,18 @@
     "githubPullRequests.telemetry.enabled": false,
     "searchRipgrep.enable": true,
     "extensions.autoUpdate": true,
+    "git.confirmSync": false,
+    "githubPullRequests.hosts": [
+        {
+            "host": "https://github.com",
+            "username": "oauth",
+            "token": "system"
+        }
+    ],
+    "markdownShortcuts.bullets.marker": "-",
+
+    // TabNine auto-completer
+    // "tabnine.disable_file_regex": [],
+    // "tabnine.disable_line_regex": [],
+    "editor.wordBasedSuggestions": false,
 }
