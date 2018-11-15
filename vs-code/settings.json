@@ -473,7 +473,6 @@
     "markdownShortcuts.icons.strikethrough": false,
     "editor.suggest.localityBonus": true,
     "git.allowForcePush": true,
-    "git.alwaysSignOff": true,
     "git.rebaseWhenSync": true,
     "githubPullRequests.telemetry.enabled": false,
     "searchRipgrep.enable": true,
@@ -492,4 +491,9 @@
     // "tabnine.disable_file_regex": [],
     // "tabnine.disable_line_regex": [],
     "editor.wordBasedSuggestions": false,
+    "search.usePCRE2": true,
+    "search.showLineNumbers": true,
+    "terminal.integrated.experimentalBufferImpl": "TypedArray",
+    "workbench.fontAliasing": "auto",
+    "workbench.settings.editor": "json",
 }
