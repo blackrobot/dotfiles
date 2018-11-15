@@ -1,4 +1,5 @@
 require('console').init()
+require('spoons').init(true)
 
 
 -- General settings
@@ -31,39 +32,6 @@ hs.grid.ui.highlightStrokeWidth = 10
 
 -- General settings
 hs.application.enableSpotlightForNameSearches(true)
-
--- Funcz
-function shouldReload(files)
-  for _, file in pairs(files) do
-    if file:sub(-4) == ".lua" then
-      return true
-    end
-  end
-
-  return false
-end
-
-function reloadConfig()
-  hs.reload()
-  hs.notify.new(nil, {
-    title           = "Hammerspoon",
-    subTitle        = "",
-    informativeText = "Reloaded configuration",
-    alwaysPresent   = false,
-    autoWithdraw    = true,
-    withdrawAfter   = 1,
-  }):send()
-end
-
-hs.hotkey.bind(mash, "end", reloadConfig)
-confWatcher = hs.pathwatcher.new(
-  os.getenv("HOME") .. "/.hammerspoon",
-  function(files)
-    if shouldReload(files) then
-      reloadConfig()
-    end
-  end
-):start()
 
 -- Window Hints
 hs.hints.fontSize = 26.0

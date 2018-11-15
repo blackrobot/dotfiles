@@ -1,4 +1,4 @@
-# General
+# general
 .DS_Store
 *~
 \#*\#
@@ -9,21 +9,24 @@
 build/
 .gitconfig.local
 
-# Vim
+# vim
 *.spl
 
-# Fontz
+# fontz
 .fonts/
 !.fonts/DejaVu*
 !.fonts/Powerline*
 !.fonts/Ubuntu*
 
-# iPython
+# ipython
 .ipython/db/*
 .ipython/history
 .ipython/profile_default
 .ipython/README
 
-# PtPython
+# ptpython
 .ptpython/*
 !.ptpython/config.py
+
+# hammerspoon
+.hammerspoon/Spoons/*
