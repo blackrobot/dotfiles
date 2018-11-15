@@ -6,6 +6,7 @@ alias mkdirs='mkdir -p'
 alias cat='/usr/local/bin/bat'
 alias ping='/usr/local/bin/prettyping --nolegend'
 alias du='ncdu --color dark -rr -x --exclude .git --exclude node_modules'
+alias ptpy='ptipython'
 
 function mkcd {
   mkdir -p "$@" && cd "$_"
