@@ -1,3 +1,6 @@
+require('console').init()
+
+
 -- General settings
 mash = {"ctrl", "alt"}
 
@@ -26,6 +29,9 @@ hs.grid.ui.textSize = 100
 hs.grid.ui.cellStrokeWidth = 5
 hs.grid.ui.highlightStrokeWidth = 10
 
+-- General settings
+hs.application.enableSpotlightForNameSearches(true)
+
 -- Funcz
 function shouldReload(files)
   for _, file in pairs(files) do
@@ -39,7 +45,14 @@ end
 
 function reloadConfig()
   hs.reload()
-  hs.notify.show("Hammerspoon", "", "Reloaded configuration", "")
+  hs.notify.new(nil, {
+    title           = "Hammerspoon",
+    subTitle        = "",
+    informativeText = "Reloaded configuration",
+    alwaysPresent   = false,
+    autoWithdraw    = true,
+    withdrawAfter   = 1,
+  }):send()
 end
 
 hs.hotkey.bind(mash, "end", reloadConfig)
@@ -162,6 +175,21 @@ hs.hotkey.bind(mash, "p", function() activateApp("Preview") end)
 hs.hotkey.bind(mash, "k", function()
   activateApp("Code - Insiders", "Code", "VimR")
 end)
+
+
+-- Workspaces
+--   * Main monitor
+--     1. Chrome left, iterm right
+--     2. Chrome left, iterm left, vs-code right
+--   * Laptop monitor
+--     - Slack
+-- local monitors = {
+--   main   = "DELL U2715H",
+--   laptop = "Color LCD",
+-- }
+-- local layout1 = {
+--   { "Slack", nil, laptop, hs.layout.maximized, nil, nil },
+-- }
 
 
 function moveWindowOneSpace(direction)
