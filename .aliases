@@ -40,7 +40,11 @@ function cheat {
 #   Sound files copied into ~/Library/Sounds/ from:
 #   /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/
 function beep {
-  afplay "${BEEP_SOUND_FILE:-"${HOME}/Library/Sounds/sms_alert_popcorn.caf"}"
+  if [[ -z "$BEEP_SOUND_FILE" || ! -e "$BEEP_SOUND_FILE" ]]; then
+    BEEP_SOUND_FILE="${HOME}/Library/Sounds/sms_alert_popcorn.caf"
+  fi
+
+  afplay "$BEEP_SOUND_FILE" > /dev/null 2>&1
 }
 
 # Restart the docker-for-mac app
