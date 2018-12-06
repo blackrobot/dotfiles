@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    ".aliases": "shellscript",
+    "**/lib/*": "shellscript",
+    "lib-includes": "shellscript",
+    ".*rc": "shellscript",
+    ".z*": "shellscript",
+  },
+  "git.detectSubmodulesLimit": 20,
+  "shellcheck.enable": false,
+}

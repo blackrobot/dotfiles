@@ -77,7 +77,9 @@ prompt pure
 export LESS='-R --ignore-case --tabs=4'
 
 # bat options | https://github.com/sharkdp/bat
-export BAT_THEME="TwoDark"
+# export BAT_THEME="TwoDark"
+# export BAT_THEME="OneDark"
+export BAT_THEME="OneHalfDark"
 
 # fzf
 source_if_exists "${HOME}/.fzf.zsh"

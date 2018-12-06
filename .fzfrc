@@ -2,14 +2,6 @@
 # https://github.com/junegunn/fzf
 
 # Ignore files hidden by .gitignore in fzf
-export FZF_DEFAULT_COMMAND="rg "
-FZF_DEFAULT_COMMAND="${FZF_DEFAULT_COMMAND} --files "
-FZF_DEFAULT_COMMAND="${FZF_DEFAULT_COMMAND} --no-ignore "
-FZF_DEFAULT_COMMAND="${FZF_DEFAULT_COMMAND} --hidden "
-FZF_DEFAULT_COMMAND="${FZF_DEFAULT_COMMAND} --follow "
-FZF_DEFAULT_COMMAND="${FZF_DEFAULT_COMMAND} -g \"!{.git,.node_modules}/*\" "
-FZF_DEFAULT_COMMAND="${FZF_DEFAULT_COMMAND} 2> /dev/null"
-
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .node_modules'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find

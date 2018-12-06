@@ -9,6 +9,9 @@
 build/
 .gitconfig.local
 
+# vs-code
+.vscode/tags
+
 # vim
 *.spl
 

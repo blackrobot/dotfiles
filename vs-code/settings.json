@@ -217,6 +217,12 @@
                 "command": "workbench.action.terminal.focus",
             }],
         },
+        {
+            "before": ["<leader>", "o"],
+            "commands": [{
+                "command": "outline.focus",
+            }],
+        },
         // Temporary fix for undo and redo
         {
             "before": ["u"],
@@ -352,7 +358,8 @@
         "/tmp/{[a-z]sh,bash,!*.}*": "shellscript",
         "*.env": "properties",
         ".gitconfig*": "properties",
-        "*Dockerfile*": "dockerfile"
+        "*Dockerfile*": "dockerfile",
+        "*.toml": "toml"
     },
 
     "spellright.statusBarIndicator": false,
@@ -496,4 +503,9 @@
     "terminal.integrated.experimentalBufferImpl": "TypedArray",
     "workbench.fontAliasing": "auto",
     "workbench.settings.editor": "json",
+    "workbench.sideBar.location": "left",
+    "gitlens.insiders": true,
+    "gitlens.views.repositories.files.layout": "auto",
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
 }
