@@ -11,6 +11,7 @@
 #
 # After generating, you'll probably have to tweak it in vim little
 
+source "${DOTFILES}/lib/ask"
 source "${DOTFILES}/lib/brew-up"
 source "${DOTFILES}/lib/countdown"
 source "${DOTFILES}/lib/docker"

@@ -1,0 +1,77 @@
+##
+# ---
+# ask
+# ---
+#
+#  usage:
+#    ask "Do you want to continue?" && echo "You answered YES" || echo "You answered No"
+#
+#  This is a general-purpose function to ask Yes/No questions in Bash, either with or
+#  without a default answer. It keeps repeating the question until it gets a valid
+#  answer.
+#
+#  This is a modified version of the script found here:
+#  https://gist.github.com/davejamesmiller/1965569
+##
+
+# function ask {
+#   local prompt default reply
+#
+#   if [ "${2:-}" = "Y" ]; then
+#       prompt="Y/n"
+#       default=Y
+#   elif [ "${2:-}" = "N" ]; then
+#       prompt="y/N"
+#       default=N
+#   else
+#       prompt="y/n"
+#       default=
+#   fi
+#
+#   while true; do
+#     # Ask the question (not using "read -p" as it uses stderr not stdout)
+#     echo -n "$1 [$prompt] "
+#     # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+#     read reply < /dev/tty
+#     # Default?
+#     if [ -z "$reply" ]; then
+#       reply=$default
+#     fi
+#     # Check if the reply is valid
+#     case "$reply" in
+#       Y*|y*) return 0 ;;
+#       N*|n*) return 1 ;;
+#     esac
+#   done
+# }
+
+function ask {
+  local compcontext='yn:yes or no:(y n)'
+  local question default reply
+
+  question="${1:-"Would you like to continue?"}"
+  question="%B${question}%b"  # add color
+
+  if [[ "$2" == "Y" || "$2" == "y" ]]; then
+    default="Y"
+    question="${question} (Y/n)"
+  elif [[ "$2" == "N" || "$2" == "n" ]]; then
+    default="N"
+    question="${question} (y/N)"
+  else
+    question="${question} (y/n)"
+  fi
+
+  while true; do
+    vared -e -p "${question} " reply
+
+    if [[ -z "$reply" ]]; then
+      reply="$default"
+    fi
+
+    case "$reply" in
+      Y*|y*) return 0 ;;
+      N*|n*) return 1 ;;
+    esac
+  done
+}
