@@ -1,0 +1,66 @@
+# Toggle hidden files in Finder
+__macos_finder_toggle_hidden() {
+  local on_off
+
+  if [[ "$(defaults read com.apple.finder AppleShowAllFiles)" == "1" ]]; then
+    on_off=false
+  else
+    on_off=true
+  fi
+
+  defaults write com.apple.finder AppleShowAllFiles -bool "$on_off" && \
+    killall Finder
+}
+
+alias finder-show="__macos_finder_toggle_hidden"
+
+
+# Fix font smoothing & dark mode on macOS Mojave on some apps
+# https://reddit.com/r/apple/comments/9leavs/fix_mojave_font_rendering_issues_on_a_perapp_basis
+# https://github.com/Microsoft/vscode/issues/59887#issuecomment-449636774
+# https://apple.stackexchange.com/questions/102452/can-i-undo-changes-made-via-defaults-write
+# https://www.reddit.com/r/apple/comments/9jr2zy/how_to_enable_mojave_dark_mode_for_applications/
+
+function macos::defaults::set_bool {
+  local bundle_id="$1"
+  local setting_key="$2"
+  local setting_value="$3"
+
+  set -x
+  defaults write "$bundle_id" "$setting_key" -bool "$setting_value"
+  { set +x ; } 2>/dev/null
+}
+function macos::defaults::set_true {
+  macos::defaults::set_bool "$1" "$2" YES
+}
+function macos::defaults::set_false {
+  macos::defaults::set_bool "$1" "$2" NO
+}
+function macos::defaults::fix_mojave {
+  # Use darkmode fix for vscode
+  macos::defaults::set_false "com.microsoft.VSCode" "NSRequiresAquaSystemAppearance"
+
+  # Use font-smoothing fix for vscode
+  macos::defaults::set_false "com.microsoft.VSCode" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_false "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_false "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_false "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+
+  # Use font-smoothing fix for spotify
+  macos::defaults::set_false "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_false "com.spotify.client.helper" "CGFontRenderingFontSmoothingDisabled"
+}
+function macos::defaults::unfix_mojave {
+  # Use darkmode fix for vscode
+  macos::defaults::set_true "com.microsoft.VSCode" "NSRequiresAquaSystemAppearance"
+
+  # Use font-smoothing fix for vscode
+  macos::defaults::set_true "com.microsoft.VSCode" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_true "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_true "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_true "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+
+  # Use font-smoothing fix for spotify
+  macos::defaults::set_true "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_true "com.spotify.client.helper" "CGFontRenderingFontSmoothingDisabled"
+}

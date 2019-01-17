@@ -1,3 +1,5 @@
+export HOMEBREW_INSTALL_CLEANUP=1
+
 # Alias for brew upgrading
 function bubu {
   TERM="xterm-256color"
@@ -51,7 +53,7 @@ function bubu {
   __bubu_cmd "brew update ${verbose}"
 
   __bubu_banner 5 "Upgrade"
-  __bubu_cmd "brew upgrade --cleanup --display-times"
+  __bubu_cmd "brew upgrade --display-times"
 
   __bubu_banner 4 "Cleanup"
   __bubu_cmd "brew cleanup"
