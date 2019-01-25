@@ -1,9 +1,9 @@
 require('console').init()
 require('spoons').init(true)
 
-
 -- General settings
-mash = {"ctrl", "alt"}
+mash = { "ctrl", "alt" }
+shift_mash = { "ctrl", "alt", "shift" }
 
 hs.window.animationDuration = 0.01
 
@@ -34,10 +34,11 @@ hs.grid.ui.highlightStrokeWidth = 10
 hs.application.enableSpotlightForNameSearches(true)
 
 -- Window Hints
+hs.hints.fontName = "SFUIText-Regular"
 hs.hints.fontSize = 26.0
-hs.hints.showTitleThresh = 6
+hs.hints.showTitleThresh = 8
 hs.hints.style = "vimperator"
-hs.hints.titleMaxSize = 12
+hs.hints.titleMaxSize = 20
 
 -- * Hint all
 hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
@@ -50,6 +51,15 @@ end)
 
 -- Grid
 hs.hotkey.bind(mash, "return", hs.grid.show)
+
+-- Space mover
+space_mover = require("space_mover")
+hs.hotkey.bind(shift_mash, "right", function()
+  space_mover.moveNext()
+end)
+hs.hotkey.bind(shift_mash, "left", function()
+  space_mover.movePrevious()
+end)
 
 -- Screensaver hotkey
 hs.hotkey.bind(mash, "forwarddelete", function()
@@ -145,56 +155,6 @@ hs.hotkey.bind(mash, "k", function()
 end)
 
 
--- Workspaces
---   * Main monitor
---     1. Chrome left, iterm right
---     2. Chrome left, iterm left, vs-code right
---   * Laptop monitor
---     - Slack
--- local monitors = {
---   main   = "DELL U2715H",
---   laptop = "Color LCD",
--- }
--- local layout1 = {
---   { "Slack", nil, laptop, hs.layout.maximized, nil, nil },
--- }
-
-
-function moveWindowOneSpace(direction)
-  local mouseOrigin = hs.mouse.getAbsolutePosition()
-  local win = hs.window.focusedWindow()
-  local clickPoint = win:zoomButtonRect()
-
-  clickPoint.x = clickPoint.x + clickPoint.w + 5
-  clickPoint.y = clickPoint.y + (clickPoint.h / 2)
-
-  local mouseClickEvent = hs.eventtap.event.newMouseEvent(
-    hs.eventtap.event.types.leftMouseDown, clickPoint)
-  mouseClickEvent:post()
-  hs.timer.usleep(150000)
-
-  local nextSpaceDownEvent = hs.eventtap.event.newKeyEvent(
-    {"ctrl"}, direction, true)
-  nextSpaceDownEvent:post()
-  hs.timer.usleep(150000)
-
-  local nextSpaceUpEvent = hs.eventtap.event.newKeyEvent(
-    {"ctrl"}, direction, false)
-  nextSpaceUpEvent:post()
-  hs.timer.usleep(150000)
-
-  local mouseReleaseEvent = hs.eventtap.event.newMouseEvent(
-    hs.eventtap.event.types.leftMouseUp, clickPoint)
-  mouseReleaseEvent:post()
-  hs.timer.usleep(150000)
-
-  hs.mouse.setAbsolutePosition(mouseOrigin)
-end
-
-mash_too = {"shift", "ctrl", "alt"}
-hs.hotkey.bind(mash_too, "right", function() moveWindowOneSpace("right") end)
-hs.hotkey.bind(mash_too, "left", function() moveWindowOneSpace("left") end)
-
 function changeVolume(ticks)
   return function()
     local currentVolume = hs.audiodevice.defaultOutputDevice():volume()
@@ -212,3 +172,4 @@ end
 
 hs.hotkey.bind(mash, "f11", changeVolume(-3))
 hs.hotkey.bind(mash, "f12", changeVolume(3))
+
