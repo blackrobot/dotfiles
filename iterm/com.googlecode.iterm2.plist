@@ -1444,7 +1444,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1009 574 606 469 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1181 755 937 514 0 0 2560 1417 </string>
+	<string>1205 697 770 429 0 0 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>229 833 592 584 0 0 2560 1417 </string>
 	<key>NSWindow Frame com.apple.typography_panel_OperatorMono-Medium</key>
@@ -6067,7 +6067,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-14T19:18:25Z</date>
+	<date>2019-01-18T20:48:19Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -6147,7 +6147,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.6beta3</string>
+	<string>3.2.7beta3</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
