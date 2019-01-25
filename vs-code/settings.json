@@ -431,7 +431,9 @@
   "editor.tabSize": 2,
   "todohighlight.isEnable": true,
   "python.autoComplete.showAdvancedMembers": true,
-  "python.linting.ignorePatterns": [".vscode/*.py", "**/site-packages/**/*.py", ".tmp/**/*.py"],
+  "python.linting.ignorePatterns": [
+    ".vscode/*.py", "**/site-packages/**/*.py", ".tmp/**/*.py",
+  ],
   "docker.showExplorer": true,
   "[git-commit]": {
     "editor.rulers": [50, 72]
@@ -469,5 +471,18 @@
   "gitlens.insiders": true,
   "gitlens.views.repositories.files.layout": "auto",
   "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.lineHistory.enabled": true
+  "gitlens.views.lineHistory.enabled": true,
+  // "todo.timer.statusbar.enabled": "estimate",
+  "todo.statistics.statusbar.enabled": "false",
+  "todo.file.include": [
+    "**/TODO",
+    "**/*.todo",
+    "**/*.todos",
+    // "**/*.task",
+    "**/*.tasks",
+    // "**/*.taskpaper",
+    "**/todolist.txt",
+    "**/todo.txt",
+  ],
+  "todo.embedded.provider": "rg",
 }
