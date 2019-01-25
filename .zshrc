@@ -68,11 +68,6 @@ setopt hist_save_no_dups
 setopt hist_reduce_blanks
 unsetopt auto_name_dirs
 
-# pure theme setup
-fpath=( "${DOTFILES}/zsh.plugins" $fpath )
-autoload -U promptinit ; promptinit
-prompt pure
-
 # less options
 export LESS='-R --ignore-case --tabs=4'
 
