@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Toggle hidden files in Finder
 __macos_finder_toggle_hidden() {
   local on_off
