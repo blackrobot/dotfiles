@@ -8,8 +8,11 @@ source "${ZPLUG_HOME}/init.zsh"
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Pure theme
+#  - prompt color chart:
+#    https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 zplug 'mafredri/zsh-async', from:github
-zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
+zplug 'sindresorhus/pure', use:'pure.zsh', from:github, as:theme, \
+  hook-load:'PURE_PROMPT_VICMD_SYMBOL="%F{208}❮%f"'
 
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'knu/z', use:'z.sh', nice:10
@@ -25,8 +28,10 @@ zplug 'plugins/httpie', from:'oh-my-zsh'
 zplug 'plugins/git', from:'oh-my-zsh'
 zplug 'plugins/git-extras', from:'oh-my-zsh'
 zplug 'plugins/github', from:'oh-my-zsh'
-zplug 'plugins/vi-mode', from:'oh-my-zsh'
 zplug 'plugins/zsh-nvm', from:'oh-my-zsh'
+
+zplug 'plugins/vi-mode', from:'oh-my-zsh', \
+  hook-load:'unset RPS1 MODE_INDICATOR'  # Prevent the plugin from adding the right prompt
 
 ##
 # Setup and fix forgit environment
