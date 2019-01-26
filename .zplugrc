@@ -18,6 +18,7 @@ zplug 'zsh-users/zsh-autosuggestions'
 zplug 'knu/z', use:'z.sh', nice:10
 # zplug 'plugins/z', from:'oh-my-zsh'
 # zplug 'rupa/z', use:'z.sh'
+zplug 'changyuheng/zsh-interactive-cd'
 
 # oh-my-zsh plugins
 zplug 'plugins/colored-man-pages', from:'oh-my-zsh'
