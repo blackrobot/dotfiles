@@ -15,7 +15,7 @@ zplug 'sindresorhus/pure', use:'pure.zsh', from:github, as:theme, \
   hook-load:'PURE_PROMPT_VICMD_SYMBOL="%F{208}❮%f"'
 
 zplug 'zsh-users/zsh-autosuggestions'
-zplug 'knu/z', use:'z.sh', nice:10
+zplug 'knu/z', use:'z.sh', defer:2
 # zplug 'plugins/z', from:'oh-my-zsh'
 # zplug 'rupa/z', use:'z.sh'
 zplug 'changyuheng/zsh-interactive-cd'
