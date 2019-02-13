@@ -29,6 +29,7 @@ zplug 'plugins/httpie', from:'oh-my-zsh'
 zplug 'plugins/git', from:'oh-my-zsh'
 zplug 'plugins/git-extras', from:'oh-my-zsh'
 zplug 'plugins/github', from:'oh-my-zsh'
+zplug 'plugins/osx', from:'oh-my-zsh'
 zplug 'plugins/zsh-nvm', from:'oh-my-zsh'
 
 zplug 'plugins/vi-mode', from:'oh-my-zsh', \
