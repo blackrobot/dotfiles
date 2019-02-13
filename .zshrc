@@ -38,8 +38,6 @@ plugins=(
   # zsh-autosuggestions
 )
 
-autoload -U compinit && compinit
-
 function source_if_exists {
   source "$1" 2>/dev/null || true
 }
