@@ -69,8 +69,6 @@
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.tips.enabled": true,
-
-  "workbench.colorTheme": "Dracula",
   "workbench.colorCustomizations": {
     "[Dracula]": {
       "editorLineNumber.activeForeground": "#ffffffde",
@@ -454,7 +452,7 @@
   "git.allowForcePush": true,
   "git.rebaseWhenSync": true,
   "githubPullRequests.telemetry.enabled": false,
-  "extensions.autoUpdate": true,
+  "extensions.autoUpdate": false,
   "git.confirmSync": false,
   "markdownShortcuts.bullets.marker": "-",
 
@@ -462,7 +460,6 @@
   // "tabnine.disable_file_regex": [],
   // "tabnine.disable_line_regex": [],
   "editor.wordBasedSuggestions": false,
-  "search.usePCRE2": true,
   "search.showLineNumbers": true,
   "terminal.integrated.experimentalBufferImpl": "TypedArray",
   "workbench.fontAliasing": "auto",
@@ -485,4 +482,6 @@
     "**/todo.txt",
   ],
   "todo.embedded.provider": "rg",
+  "workbench.useExperimentalGridLayout": false,
+  "workbench.colorTheme": "Dracula",
 }
