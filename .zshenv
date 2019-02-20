@@ -50,3 +50,6 @@ add_to_path "${DOTFILES}/bin"
 # For vs-code
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+# Python startup
+export PYTHONSTARTUP="${DOTFILES}/python_startup.py"

@@ -4,7 +4,7 @@ import os
 from ptpython.layout import CompletionVisualisation
 
 __all__ = (
-    'configure',
+    "configure",
 )
 
 
@@ -56,7 +56,7 @@ def configure(repl):
     repl.paste_mode = False
 
     # Use the classic prompt. (Display '>>>' instead of 'In [1]'.)
-    repl.prompt_style = 'classic'  # 'classic' or 'ipython'
+    repl.prompt_style = "classic"  # 'classic' or 'ipython'
 
     # History Search.
     # When True, going back in history will filter the history on the records
@@ -77,7 +77,7 @@ def configure(repl):
     # Enable open-in-editor. Pressing C-X C-E in emacs mode or 'v' in
     # Vi navigation mode will open the input in the current editor.
     # Only if not running inside of a neovim window
-    running_in_vim = os.environ.get('VIMRUNTIME', False)
+    running_in_vim = os.environ.get("VIMRUNTIME", False)
     repl.enable_open_in_editor = not running_in_vim
 
     # Enable system prompt. Pressing meta-! will display the system prompt.
@@ -93,8 +93,12 @@ def configure(repl):
 
     # Use this colorscheme for the code.
     # repl.use_code_colorscheme('monokai')
-    repl.use_code_colorscheme('native')
+    repl.use_code_colorscheme("native")
 
     # Enable 24bit True color. (Not all terminals support this. -- maybe check
     # $TERM before changing.)
     repl.true_color = True
+    # repl.color_depth = "DEPTH_24_bit"
+    repl.color_depth = "DEPTH_8_BIT"
+
+    repl.enable_syntax_highlighting = True

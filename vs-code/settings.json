@@ -295,7 +295,8 @@
   /* Markdown config */
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": false
+    "editor.wrappingIndent": "deepIndent",
+    "editor.quickSuggestions": false,
   },
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.toc.githubCompatibility": true,
@@ -452,7 +453,7 @@
   "git.allowForcePush": true,
   "git.rebaseWhenSync": true,
   "githubPullRequests.telemetry.enabled": false,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": true,
   "git.confirmSync": false,
   "markdownShortcuts.bullets.marker": "-",
 
