@@ -17,4 +17,5 @@
   // "git.detectSubmodulesLimit": 20,
   "git.detectSubmodules": false,
   "shellcheck.enable": false,
+  "python.formatting.provider": "black",
 }
