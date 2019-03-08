@@ -317,7 +317,6 @@
     "**/*.scss",
     "**/*.py",
     "**/*.md",
-    ""
   ],
   "todohighlight.defaultStyle": {
     "backgroundColor": "#F44336",
@@ -328,15 +327,9 @@
     "FIXME:",
     "???:",
     "!!!:",
-    "\bBUG:",
-    {
-      "text": "HACK:",
-      "backgroundColor": "#9C27B0"
-    },
-    {
-      "text": "NOTE:",
-      "backgroundColor": "#2196F3"
-    }
+    "BUG:",
+    { "text": "HACK:", "backgroundColor": "#9C27B0" },
+    { "text": "NOTE:", "backgroundColor": "#2196F3" },
   ],
   // "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDelete": false,
@@ -403,7 +396,7 @@
   "gitlens.recentChanges.highlight.locations": ["gutter", "line", "overview"],
 
   "search.smartCase": true,
-  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.suggestSelection": "first",
   "workbench.statusBar.feedback.visible": false,
   "[csv]": {
     "editor.minimap.enabled": true,
@@ -439,32 +432,16 @@
   },
   "prettier.printWidth": 88,
   "prettier.disableLanguages": ["vue"],
-  "markdown-preview-enhanced.previewTheme": "github-light.css",
-  "markdown-preview-enhanced.protocolsWhiteList": "http://, https://, mailto:, tel:",
   "breadcrumbs.enabled": false,
   "editor.acceptSuggestionOnEnter": "smart",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.quickSuggestionsDelay": 8,
-  "markdownShortcuts.icons.italic": false,
-  "markdownShortcuts.icons.bullets": false,
-  "markdownShortcuts.icons.bold": false,
-  "markdownShortcuts.icons.strikethrough": false,
-  "editor.suggest.localityBonus": true,
   "git.allowForcePush": true,
   "git.rebaseWhenSync": true,
   "githubPullRequests.telemetry.enabled": false,
   "extensions.autoUpdate": true,
   "git.confirmSync": false,
-  "markdownShortcuts.bullets.marker": "-",
-
-  // TabNine auto-completer
-  // "tabnine.disable_file_regex": [],
-  // "tabnine.disable_line_regex": [],
-  "editor.wordBasedSuggestions": false,
   "search.showLineNumbers": true,
-  "terminal.integrated.experimentalBufferImpl": "TypedArray",
   "workbench.fontAliasing": "auto",
-  "workbench.settings.editor": "json",
   "workbench.sideBar.location": "left",
   "gitlens.insiders": true,
   "gitlens.views.repositories.files.layout": "auto",
@@ -485,4 +462,10 @@
   "todo.embedded.provider": "rg",
   "workbench.useExperimentalGridLayout": false,
   "workbench.colorTheme": "Dracula",
+  "workbench.settings.editor": "json",
+  "editor.suggest.shareSuggestSelections": true,
+  "editor.find.seedSearchStringFromSelection": false,
+  "editor.suggest.localityBonus": true,
+  "editor.codeInsets": true,
+  "editor.hover.delay": 200,
 }
