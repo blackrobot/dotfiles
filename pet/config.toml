@@ -4,13 +4,14 @@
   column = 40
   selectcmd = "fzf --ansi --height 15% --layout reverse --prompt '? '"
   backend = "gist"
+  sortby = "description"
 
 [Gist]
   file_name = "pet-snippet.toml"
   access_token = ""
   gist_id = ""
   public = false
-  auto_sync = false
+  auto_sync = true
 
 [GitLab]
   file_name = "pet-snippet.toml"
