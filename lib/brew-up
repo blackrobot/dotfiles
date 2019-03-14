@@ -4,38 +4,36 @@ export HOMEBREW_INSTALL_CLEANUP=1
 function bubu {
   TERM="xterm-256color"
 
-  local reset
-  local bold
-  local icon
-  local cmd_style
-  local verbose
+  # Style
+  local reset="$(tput sgr0)"
+  local bold="$(tput bold)"
+  local icon="➥"
+  local cmd_style="$(tput setaf 102)"
+  # Colors
+  local blue="$(tput setaf 4)"
+  local magenta="$(tput setaf 5)"
+  local red="$(tput setaf 1)"
+  local yellow="$(tput setaf 3)"
 
-  reset="$(tput sgr0)"
-  bold="$(tput bold)"
-  icon="➥"
-  cmd_style="$(tput setaf 102)"
+  local verbose=""
 
   if [[ "$1" == "-v" || "$1" == "--verbose" ]] ; then
     verbose='--verbose'
-  else
-    verbose=''
   fi
 
+  function bubu::timestamp {
+    date '+%b %d @ %I:%M:%S %p'
+  }
+
   function bubu::banner {
-    local timestamp;
-    local color;
-    local ico;
-    local msg;
+    local color="$1"
+    local msg="$2"
+    local ico="${3:-$icon}"
 
-    timestamp="$(date '+%b %d @ %I:%M:%S %p')"
-    color="$(tput setaf ${1})"
-    ico="${3:-"${icon}"}"
-    msg="$2"
-
-    printf "%s%s%s %s%s%s %s%s%s \n" \
-      "${color}${bold}" "$ico" "$reset" \
-      "$color" "$msg" "$reset" \
-      "$cmd_style" "$timestamp" "$reset"
+    printf "%s %s %s \n" \
+      "${color}${bold}${ico}${reset}" \
+      "${color}${msg}${reset}" \
+      "${cmd_style}$(bubu::timestamp)${reset}"
   }
 
   function bubu::cmd {
@@ -45,20 +43,16 @@ function bubu {
       "$reset"
 
     eval "$1"
-
     echo
   }
 
-  bubu::banner 5 "Update"
+  bubu::banner "$magenta" "Update"
   bubu::cmd "brew update ${verbose}"
 
-  bubu::banner 5 "Upgrade"
+  bubu::banner "$blue" "Upgrade"
   bubu::cmd "brew upgrade --display-times"
 
-  bubu::banner 4 "Cleanup"
-  bubu::cmd "brew cleanup"
-
-  bubu::banner 1 "$(tput setaf 3)Done" "☭"
+  bubu::banner "$red" "${yellow}Done" "☭"
 }
 
 alias cbubu='clear ; bubu'
