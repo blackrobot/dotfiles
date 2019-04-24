@@ -12,7 +12,7 @@ def import_to_namespace(name, package=None, alias=None):
 
 
 modules_to_import = (
-    ("datetime",),
+    ("datetime", None, "dt"),
     ("pathlib",),
     ("os",),
 )
@@ -27,3 +27,4 @@ print("\n* imported: {}\n".format(", ".join(x for x, *_ in modules_to_import)))
 
 # cleanup
 del import_to_namespace, modules_to_import, importlib
+
