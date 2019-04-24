@@ -67,30 +67,20 @@
    * ---
    * Only use keyboard shortcuts for editing text when in vim insert mode.
    */
+
   {
-    // Use <⌘ + b> to enbolden text, only in vim insert mode
+    // Remove <⌘ + b> markdown remap
     "key": "cmd+b",
-    "command": "markdown.extension.editing.toggleBold",
-    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown' && vim.active && vim.mode == 'Insert'"
+    "command": "-markdown.extension.editing.toggleBold",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
   },
   {
-    // Remove <⌘ + b> when not in vim insert mode
-    "key": "cmd+b",
-    "command": "-markdown.extension.editing.toggleBold"
-    // "when": "vim.active && vim.mode != 'Insert'",
-  },
-  {
-    // Use <⌘ + i> to italicize text, only in vim insert mode
+    // Remove <⌘ + i> markdown remap
     "key": "cmd+i",
-    "command": "markdown.extension.editing.toggleItalic",
-    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown' && vim.active && vim.mode == 'Insert'"
+    "command": "-markdown.extension.editing.toggleItalic",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
   },
-  {
-    // Remove <⌘ + i> when not in vim insert mode
-    "key": "cmd+i",
-    "command": "-markdown.extension.editing.toggleItalic"
-    // "when": "vim.active && vim.mode != 'Insert'"
-  },
+
   {
     "key": "shift+alt+f",
     "command": "-extension.beautifySql",
@@ -129,6 +119,7 @@
       "command": "-extension.vim_ctrl+w",
       "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
   },
+
   {
     "key": "cmd+/",
     "command": "-editor.action.commentLine",
@@ -138,4 +129,5 @@
     "key": "cmd+/",
     "command": "workbench.action.toggleEditorVisibility"
   },
+
 ]
