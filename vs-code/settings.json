@@ -29,7 +29,6 @@
   "explorer.openEditors.visible": 5,
 
   "files.defaultLanguage": "markdown",
-  "files.useExperimentalFileWatcher": true,
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -50,7 +49,6 @@
   "search.location": "sidebar",
 
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.explorerKind": "external",
   "terminal.integrated.scrollback": 2000,
   "terminal.integrated.fontSize": 13.5,
   "terminal.integrated.shellArgs.osx": ["-l"],
@@ -61,7 +59,6 @@
   "window.openFilesInNewWindow": "default",
   "window.nativeTabs": false,
   "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
-  "window.zoomLevel": 0,
   "workbench.editor.labelFormat": "short",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.activityBar.visible": false,
@@ -78,7 +75,6 @@
       "editor.findMatchHighlightBackground": "#fce4ec0a",
       "editor.findMatchHighlightBorder": "#fce4ec4f",
       "editor.findMatchBackground": "#c2185b"
-      // "breadcrumb": "#ff0000"
     },
     "[One Dark Pro Vivid]": {
       "tab.border": "#00000020",
@@ -122,12 +118,10 @@
         {
           "scope": [
             "string",
-            "punctuation.definition.string.begin", //{ "foreground": "#98c378" }
+            "punctuation.definition.string.begin",
             "punctuation.definition.string.end"
           ],
           "settings": {
-            // "foreground": "#89CA78",
-            // "foreground": "#bfe2b6",
             "foreground": "#9fd392"
           }
         }
@@ -446,19 +440,6 @@
   "gitlens.views.repositories.files.layout": "auto",
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
-  // "todo.timer.statusbar.enabled": "estimate",
-  "todo.statistics.statusbar.enabled": "false",
-  "todo.file.include": [
-    "**/TODO",
-    "**/*.todo",
-    "**/*.todos",
-    // "**/*.task",
-    "**/*.tasks",
-    // "**/*.taskpaper",
-    "**/todolist.txt",
-    "**/todo.txt",
-  ],
-  "todo.embedded.provider": "rg",
   "workbench.useExperimentalGridLayout": false,
   "workbench.colorTheme": "Dracula",
   "workbench.settings.editor": "json",
@@ -466,7 +447,7 @@
   "editor.find.seedSearchStringFromSelection": false,
   "editor.suggest.localityBonus": true,
   "editor.codeInsets": true,
-  "editor.hover.delay": 200,
+  "editor.hover.delay": 222,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "rgba(255, 255, 255, 0.08)",
   "vim.highlightedyank.duration": 250,
@@ -474,8 +455,21 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.largeFileOptimizations": false,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "debug.toolBarLocation": "docked",
+  "python.formatting.provider": "black",
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.emptySelectionClipboard": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "zenMode.hideLineNumbers": false,
+  "search.quickOpen.includeSymbols": true,
+  "search.runInExtensionHost": true,
+  "debug.internalConsoleOptions": "neverOpen",
+  "debug.openDebug": "openOnDebugBreak",
+  "debug.showInStatusBar": "never",
+  "terminal.integrated.enableLatencyMitigation": true,
+  "terminal.integrated.experimentalRefreshOnResume": true,
+  "workbench.dialogs.useSimplified": true,
 }
