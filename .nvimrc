@@ -63,6 +63,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/echodoc.vim')
   call dein#add('zchee/deoplete-zsh')
 
+  " PGN Syntax
+  call dein#add('artoj/pgn-syntax-vim')
+
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
