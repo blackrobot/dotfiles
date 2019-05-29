@@ -159,118 +159,75 @@
       "before": ["<C-l>"],
       "after": ["<Esc>"],
       "commands": [
-        {
-          "command": ":nohl"
-        },
-        {
-          // "command": "search.action.clearSearchResults",
-          "command": "closeFindWidget"
-        }
-      ]
+        { "command": ":nohl" },
+        { "command": "closeFindWidget" },
+      ],
     },
     {
       "before": ["<C-w>H"],
       "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.moveEditorToPreviousGroup",
-          "args": []
-        }
-      ]
+      "commands": [{ "command": "workbench.action.moveEditorToPreviousGroup" }],
     },
     {
       "before": ["<C-w>L"],
       "after": [],
-      "commands": [
-        {
-          "command": "workbench.action.moveEditorToNextGroup",
-          "args": []
-        }
-      ]
+      "commands": [{ "command": "workbench.action.moveEditorToNextGroup" }],
     },
     {
       // Toggle breadcrumbs
       "before": ["<leader>", "b"],
-      "commands": [
-        {
-          "command": "breadcrumbs.toggle"
-        }
-      ]
+      "commands": [{ "command": "breadcrumbs.toggle" }],
     },
     {
       "before": ["<leader>", "="],
-      "commands": [
-        {
-          "command": "workbench.action.minimizeOtherEditors"
-        }
-      ]
+      "commands": [{ "command": "workbench.action.minimizeOtherEditors" }],
     },
     {
       "before": ["g", "t"],
-      "commands": [
-        {
-          "command": "workbench.action.terminal.focus"
-        }
-      ]
+      "commands": [{ "command": "workbench.action.terminal.focus" }],
     },
     {
       "before": ["<leader>", "o"],
-      "commands": [
-        {
-          "command": "outline.focus"
-        }
-      ]
+      "commands": [{ "command": "outline.focus" }],
     },
     // Temporary fix for undo and redo
     {
       "before": ["u"],
       "after": [],
-      "commands": [
-        {
-          "command": "undo",
-          "args": []
-        }
-      ]
+      "commands": [{ "command": "undo" }],
     },
     {
       "before": ["<C-r>"],
       "after": [],
-      "commands": [
-        {
-          "command": "redo",
-          "args": []
-        }
-      ]
-    }
+      "commands": [{ "command": "redo" }],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "commands": ["editor.action.indentLines"],
     },
     {
       "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
+      "commands": ["editor.action.outdentLines"],
+    },
   ],
 
-  // "material-icon-theme.folders.color": "#42a5f5",
   "material-icon-theme.showUpdateMessage": false,
   "material-icon-theme.folders.color": "#e1bee7",
   "material-icon-theme.opacity": 1,
   "material-icon-theme.activeIconPack": "react_redux",
-  // "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.hidesExplorerArrows": true,
   "material-icon-theme.folders.associations": {
-    "hogo": "python"
+    "hogo": "python",
   },
 
   /* Python config */
   "[python]": {
     "editor.rulers": [72, 79, 120],
     "editor.wordWrap": "off",
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
   },
   "python.pythonPath": "/Users/damon/.pyenv/versions/3.7.0/bin/python",
   "python.venvPath": "~/.pyenv/versions/",
@@ -313,7 +270,7 @@
   ],
   "todohighlight.defaultStyle": {
     "backgroundColor": "#F44336",
-    "color": "#FFF"
+    "color": "#FFF",
   },
   "todohighlight.keywords": [
     "TODO:",
@@ -343,7 +300,7 @@
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true,
     "suppressUpdateNotice": true,
-    "suppressWelcomeNotice": true
+    "suppressWelcomeNotice": true,
   },
 
   "files.associations": {
@@ -354,7 +311,7 @@
     "*.env": "properties",
     ".gitconfig*": "properties",
     "*Dockerfile*": "dockerfile",
-    "*.toml": "toml"
+    "*.toml": "toml",
   },
 
   "spellright.statusBarIndicator": false,
@@ -377,8 +334,9 @@
     "MD013": false,
     "MD014": false,
     "MD026": false,
-    "MD041": false
+    "MD041": false,
   },
+
   "explorer.confirmDragAndDrop": false,
   "workbench.startupEditor": "newUntitledFile",
 
@@ -394,7 +352,7 @@
   "[csv]": {
     "editor.minimap.enabled": true,
     "editor.minimap.maxColumn": 80,
-    "editor.minimap.renderCharacters": false
+    "editor.minimap.renderCharacters": false,
   },
   "gitlens.keymap": "alternate",
   "sync.removeExtensions": true,
@@ -417,11 +375,13 @@
   "todohighlight.isEnable": true,
   "python.autoComplete.showAdvancedMembers": true,
   "python.linting.ignorePatterns": [
-    ".vscode/*.py", "**/site-packages/**/*.py", ".tmp/**/*.py",
+    ".vscode/*.py",
+    "**/site-packages/**/*.py",
+    ".tmp/**/*.py",
   ],
   "docker.showExplorer": true,
   "[git-commit]": {
-    "editor.rulers": [50, 72]
+    "editor.rulers": [50, 72],
   },
   "prettier.printWidth": 88,
   "prettier.disableLanguages": ["vue"],
@@ -453,10 +413,10 @@
   "vim.highlightedyank.duration": 250,
   "python.diagnostics.sourceMapsEnabled": false,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "vscode.json-language-features",
   },
   "debug.toolBarLocation": "docked",
   "python.formatting.provider": "black",
