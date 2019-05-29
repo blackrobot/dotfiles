@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import datetime as dt
-import sys
 import time
+
+import click
 
 
 ESC = '\x1b[%sm'
@@ -26,8 +27,6 @@ icon = '⏳'
 number_format = '0>2'  # Format as two digits with leading zero
 
 
-
-
 def render(hours, mins, secs):
     if hours + mins == 0 and secs <= 30 and secs % 2 == 0:
         if secs <= 10:
@@ -39,12 +38,13 @@ def render(hours, mins, secs):
 
     return render.template.format(hours, mins, secs, style=style)
 
+
 render.template = (
     '  {i}  {{style}}'
     # Hour : Minute : Second
     '{{:{nf}}}' '{s}' '{{:{nf}}}' '{s}' '{{:{nf}}}'
     ' \t{reset}'
-).format(i=icon, reset=RESET, nf='0>2', s=':')
+).format(i=icon, reset=RESET, nf=number_format, s=':')
 
 
 def get_time_tuple(time_remaining):
@@ -71,36 +71,36 @@ def countdown(then, tick=0.1):
         time.sleep(tick)
         now = dt.datetime.now()
 
-    print('')
+    print()
 
 
-def help():
-    print("{} [hours:][minutes:]seconds".format(sys.argv[0]))
-    sys.exit(1)
+def parse_time_text(text):
+    parts = [int(x) for x in text.split(":")]
+    hours, minutes, seconds = 0, 0, 0
+
+    if len(parts) > 3:
+        raise ValueError(f'The text "{text}" is not in the correct format.')
+    elif len(parts) == 1:
+        seconds = parts.pop()
+    elif len(parts) == 2:
+        minutes, seconds = parts
+    else:
+        hours, minutes, seconds = parts
+
+    hours *= 60 * 60
+    minutes *= 60
+
+    return dt.timedelta(seconds=hours + minutes + seconds)
+
+
+@click.command("countdown")
+@click.argument("time", metavar="[hours:][minutes:]seconds")
+def main(time: str):
+    """Shows a timer counting down to the specified time."""
+    delta = parse_time_text(time)
+    print()
+    countdown(dt.datetime.now() + delta)
 
 
 if __name__ == '__main__':
-    args = sys.argv[1:]
-
-    if len(args) != 1:
-        help()
-
-    bits = [int(x) for x in args[0].split(':')]
-    if len(bits) > 3:
-        help()
-    elif len(bits) == 1:
-        delta = dt.timedelta(seconds=bits[0])
-    elif len(bits) == 2:
-        delta = dt.timedelta(seconds=(bits[0] * 60) + bits[1])
-    else:
-        delta = dt.timedelta(
-            seconds=(bits[0] * 60 * 60) + (bits[1] * 60) + bits[2]
-        )
-
-    print("\n  Timer set for {:,} seconds from now".format(
-        int(delta.total_seconds())),
-    )
-    print('')
-
-    countdown(dt.datetime.now() + delta)
-    print('')
+    main()
