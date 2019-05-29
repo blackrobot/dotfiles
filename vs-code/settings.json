@@ -74,59 +74,14 @@
       "editor.lineHighlightBorder": "#ffffff00",
       "editor.findMatchHighlightBackground": "#fce4ec0a",
       "editor.findMatchHighlightBorder": "#fce4ec4f",
-      "editor.findMatchBackground": "#c2185b"
+      "editor.findMatchBackground": "#c2185b",
     },
-    "[One Dark Pro Vivid]": {
-      "tab.border": "#00000020",
-      "tab.activeBorder": "#00000020",
-      "editorGroupHeader.tabsBorder": "#00000000",
-      "editor.findMatchBorder": "#457dff60"
-    }
   },
   "editor.tokenColorCustomizations": {
     "[Dracula]": {
       "comments": { "fontStyle": "italic" },
-      "strings": { "foreground": "#E9F284E7" }
+      "strings": { "foreground": "#E9F284E7" },
     },
-    "[One Dark Pro Vivid]": {
-      "textMateRules": [
-        {
-          "scope": ["source.json meta.structure.dictionary support.type.property-name.json", "string.quoted.docstring.multi.python"],
-          "settings": {
-            "fontStyle": "italic"
-          }
-        },
-        {
-          "scope": [
-            "string.quoted.docstring.multi.python punctuation.definition.string.begin",
-            "string.quoted.docstring.multi.python punctuation.definition.string.end"
-          ],
-          "settings": {
-            "fontStyle": ""
-          }
-        },
-        {
-          "scope": [
-            "string.quoted.docstring.multi.python",
-            "string.quoted.docstring.multi.python punctuation.definition.string.begin",
-            "string.quoted.docstring.multi.python punctuation.definition.string.end"
-          ],
-          "settings": {
-            "foreground": "#7F848E"
-          }
-        },
-        {
-          "scope": [
-            "string",
-            "punctuation.definition.string.begin",
-            "punctuation.definition.string.end"
-          ],
-          "settings": {
-            "foreground": "#9fd392"
-          }
-        }
-      ]
-    }
   },
 
   /* Vim config
