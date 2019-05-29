@@ -47,6 +47,11 @@ function macos::defaults::fix_mojave {
   macos::defaults::set_false "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
   macos::defaults::set_false "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
   macos::defaults::set_false "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+  # Use font-smoothing fix for vscode-insiders
+  macos::defaults::set_false "com.microsoft.VSCodeInsiders" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper.NP" "CGFontRenderingFontSmoothingDisabled"
 
   # Use font-smoothing fix for spotify
   macos::defaults::set_false "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
@@ -61,6 +66,11 @@ function macos::defaults::unfix_mojave {
   macos::defaults::set_true "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
   macos::defaults::set_true "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
   macos::defaults::set_true "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+  # Use font-smoothing fix for vscode-insiders
+  macos::defaults::set_true "com.microsoft.VSCodeInsiders" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_true "com.microsoft.VSCodeInsiders.helper" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_true "com.microsoft.VSCodeInsiders.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+  macos::defaults::set_true "com.microsoft.VSCodeInsiders.helper.NP" "CGFontRenderingFontSmoothingDisabled"
 
   # Use font-smoothing fix for spotify
   macos::defaults::set_true "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
