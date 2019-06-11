@@ -51,6 +51,7 @@ function bubu {
 
   bubu::banner "$blue" "Upgrade"
   bubu::cmd "brew upgrade --display-times"
+  bubu::cmd "upgrade_oh_my_zsh"
 
   bubu::banner "$red" "${yellow}Done" "☭"
 }
