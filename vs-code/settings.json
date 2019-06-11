@@ -377,7 +377,6 @@
   "python.formatting.provider": "black",
   "editor.copyWithSyntaxHighlighting": false,
   "editor.emptySelectionClipboard": false,
-  "editor.cursorSmoothCaretAnimation": true,
   "zenMode.hideLineNumbers": false,
   "search.quickOpen.includeSymbols": true,
   "search.runInExtensionHost": true,
@@ -387,4 +386,7 @@
   "terminal.integrated.enableLatencyMitigation": true,
   "terminal.integrated.experimentalRefreshOnResume": true,
   "workbench.dialogs.useSimplified": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.suggest.completeFunctionCalls": true,
+  "githubPullRequests.showInSCM": true,
 }
