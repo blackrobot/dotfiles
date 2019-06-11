@@ -1,11 +1,25 @@
+"""
+The example configuration used can be found here: https://git.io/fjgyb
+"""
+
 from __future__ import unicode_literals
 import os
 
 from ptpython.layout import CompletionVisualisation
 
-__all__ = (
-    "configure",
-)
+
+__all__ = ["configure"]
+
+
+# True if interpreter is running inside of a Vim/NeoVim instance
+inside_of_vim = os.getenv("VIMRUNTIME", False)
+
+# Color Depths:
+#    1 = "DEPTH_1_BIT"
+#    4 = "DEPTH_4_BIT"
+#    8 = "DEPTH_8_BIT"
+#   24 = "DEPTH_24_BIT"  ->  Can't get truecolor to work properly :(
+color_depth = "DEPTH_8_BIT"
 
 
 def configure(repl):
@@ -15,7 +29,7 @@ def configure(repl):
     :param repl: `PythonRepl` instance.
     """
     # Show function signature (bool).
-    repl.show_signature = True
+    repl.show_signature = False
 
     # Show docstring (bool).
     repl.show_docstring = True
@@ -46,6 +60,10 @@ def configure(repl):
     # Line wrapping. (Instead of horizontal scrolling.)
     repl.wrap_lines = True
 
+    # Complete while typing. (Don't require tab before the completion
+    # menu is shown.). See `repl.enable_history_search`...
+    repl.complete_while_typing = True
+
     # Mouse support.
     repl.enable_mouse_support = False
 
@@ -58,17 +76,16 @@ def configure(repl):
     # Use the classic prompt. (Display '>>>' instead of 'In [1]'.)
     repl.prompt_style = "classic"  # 'classic' or 'ipython'
 
+    # Don't insert a blank line after the output.
+    repl.insert_blank_line_after_output = False
+
     # History Search.
     # When True, going back in history will filter the history on the records
     # starting with the current input. (Like readline.)
     # Note: When enable, please disable the `complete_while_typing` option.
     #       otherwise, when there is a completion available, the arrows will
     #       browse through the available completions instead of the history.
-    repl.enable_history_search = False
-
-    # Complete while typing. (Don't require tab before the
-    # completion menu is shown.)
-    repl.complete_while_typing = not repl.enable_history_search
+    repl.enable_history_search = not repl.complete_while_typing
 
     # Enable auto suggestions. (Pressing right arrow will complete the input,
     # based on the history.)
@@ -77,8 +94,7 @@ def configure(repl):
     # Enable open-in-editor. Pressing C-X C-E in emacs mode or 'v' in
     # Vi navigation mode will open the input in the current editor.
     # Only if not running inside of a neovim window
-    running_in_vim = os.environ.get("VIMRUNTIME", False)
-    repl.enable_open_in_editor = not running_in_vim
+    repl.enable_open_in_editor = not inside_of_vim
 
     # Enable system prompt. Pressing meta-! will display the system prompt.
     # Also enables Control-Z suspend.
@@ -97,8 +113,6 @@ def configure(repl):
 
     # Enable 24bit True color. (Not all terminals support this. -- maybe check
     # $TERM before changing.)
-    repl.true_color = True
-    # repl.color_depth = "DEPTH_24_bit"
-    repl.color_depth = "DEPTH_8_BIT"
+    repl.color_depth = color_depth
 
     repl.enable_syntax_highlighting = True
