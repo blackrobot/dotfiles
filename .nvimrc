@@ -37,6 +37,9 @@ if dein#load_state('~/.cache/dein')
   " Required:
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
+  " Dein UI
+  call dein#add('wsdjeg/dein-ui.vim')
+
   " Colors
   call dein#add('mhartington/oceanic-next')
   call dein#add('MaxSt/FlatColor')
@@ -83,7 +86,11 @@ if dein#check_install()
   " call map(dein#check_clean(), "delete(v:val, 'rf')")
   call dein#install()
   call dein#remote_plugins()
+  " call :UpdateRemotePlugins
 endif
+
+" To update all plugins:
+"   :call dein#update()
 
 "End dein Scripts-------------------------
 
