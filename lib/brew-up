@@ -51,9 +51,13 @@ function bubu {
 
   bubu::banner "$blue" "Upgrade"
   bubu::cmd "brew upgrade --display-times"
-  bubu::cmd "upgrade_oh_my_zsh"
+  bubu::cmd "( cd ~/.oh-my-zsh && git pull --rebase --stat origin master )"
 
   bubu::banner "$red" "${yellow}Done" "☭"
 }
 
+
 alias cbubu='clear ; bubu'
+
+# vim: set ft=zsh:
+
