@@ -10,7 +10,7 @@
   "editor.quickSuggestions": {
     "other": true,
     "comments": false,
-    "strings": false
+    "strings": false,
   },
   "editor.occurrencesHighlight": false,
   "editor.renderLineHighlight": "all",
@@ -30,13 +30,16 @@
 
   "files.defaultLanguage": "markdown",
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
     "**/.DS_Store": true,
+    "**/.cache": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    // python
+    "**/*.pyc": true,
     "**/__pycache__": true,
-    "**/*.pyc": true
+    "**/.pytest_cache": true,
   },
 
   "problems.decorations.enabled": true,
@@ -119,13 +122,11 @@
       ],
     },
     {
-      "before": ["<C-w>H"],
-      "after": [],
+      "before": ["<C-w>", "H"],
       "commands": [{ "command": "workbench.action.moveEditorToPreviousGroup" }],
     },
     {
-      "before": ["<C-w>L"],
-      "after": [],
+      "before": ["<C-w>", "L"],
       "commands": [{ "command": "workbench.action.moveEditorToNextGroup" }],
     },
     {
@@ -148,14 +149,28 @@
     // Temporary fix for undo and redo
     {
       "before": ["u"],
-      "after": [],
       "commands": [{ "command": "undo" }],
     },
     {
       "before": ["<C-r>"],
-      "after": [],
       "commands": [{ "command": "redo" }],
     },
+    {
+      "before": ["<leader>", "f"],
+      "commands": [
+        "editor.action.formatDocument",
+        "python.sortImports",
+      ]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": [
+        "python.sortImports",
+        "editor.action.formatDocument",
+        // "workbench.action.files.saveWithoutFormatting",
+        "workbench.action.files.save",
+      ]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -357,7 +372,6 @@
   "gitlens.views.lineHistory.enabled": true,
   "workbench.useExperimentalGridLayout": false,
   "workbench.colorTheme": "Dracula",
-  "workbench.settings.editor": "json",
   "editor.suggest.shareSuggestSelections": true,
   "editor.find.seedSearchStringFromSelection": false,
   "editor.suggest.localityBonus": true,
@@ -389,4 +403,5 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.completeFunctionCalls": true,
   "githubPullRequests.showInSCM": true,
+  "workbench.list.keyboardNavigation": "filter",
 }
