@@ -5,6 +5,7 @@ The example configuration used can be found here: https://git.io/fjgyb
 from __future__ import unicode_literals
 import os
 
+from prompt_toolkit.keys import Keys
 from ptpython.layout import CompletionVisualisation
 
 
@@ -20,6 +21,44 @@ inside_of_vim = os.getenv("VIMRUNTIME", False)
 #    8 = "DEPTH_8_BIT"
 #   24 = "DEPTH_24_BIT"  ->  Can't get truecolor to work properly :(
 color_depth = "DEPTH_8_BIT"
+
+# Styles
+# ------
+# To see the options for styles use:
+#     python -c 'from pygments.styles import STYLE_MAP as M; print("\n".join(sorted(M)))'
+#
+# Or look at the appropriate version of this file:
+# https://bitbucket.org/birkenfeld/pygments-main/src/40f3be5ba01a09703bd040e189977d1cac735458/pygments/styles/__init__.py#lines-17:53
+#
+# "abap"
+# "algol"
+# "algol_nu"
+# "arduino"
+# "autumn"
+# "borland"
+# "bw"
+# "colorful"
+# "default"
+# "emacs"
+# "friendly"
+# "fruity"
+# "igor"
+# "lovelace"
+# "manni"
+# "monokai"
+# "murphy"
+code_colorscheme = "native"
+# "paraiso-dark"
+# "paraiso-light"
+# "pastie"
+# "perldoc"
+# "rainbow_dash"
+# "rrt"
+# "tango"
+# "trac"
+# "vim"
+# "vs"
+# "xcode"
 
 
 def configure(repl):
@@ -116,3 +155,12 @@ def configure(repl):
     repl.color_depth = color_depth
 
     repl.enable_syntax_highlighting = True
+
+    @repl.add_key_binding(Keys.ControlSpace)  # "c-space" | "c-@"
+    def trigger_autosuggest(event):
+        buff = event.current_buffer
+        # buff = event.cli.current_buffer
+        if buff.complete_state:
+            buff.complete_next()
+        else:
+            buff.start_completion(select_first=False)
