@@ -36,22 +36,31 @@ function bubu {
       "${cmd_style}$(bubu::timestamp)${reset}"
   }
 
-  function bubu::cmd {
+  function bubu::style_cmd {
     printf "%s  $ %s %s \n" \
       "$cmd_style" \
       "$1" \
       "$reset"
+  }
 
+  function bubu::cmd {
+    bubu::style_cmd "$1"
     eval "$1"
     echo
   }
 
-  bubu::banner "$magenta" "Update"
+  bubu::banner "$magenta" "Update brew"
   bubu::cmd "brew update ${verbose}"
 
-  bubu::banner "$blue" "Upgrade"
+  bubu::banner "$blue" "Upgrade brew"
   bubu::cmd "brew upgrade --display-times"
+
+  bubu::banner "$blue" "Upgrade oh-my-zsh"
   bubu::cmd "( cd ~/.oh-my-zsh && git pull --rebase --stat origin master )"
+  local LAST_EPOCH=$(( $EPOCHSECONDS / 60 / 60 / 24 ))
+  bubu::style_cmd "echo \"LAST_EPOCH=${LAST_EPOCH}\" >! ${ZSH_CACHE_DIR//${HOME}/~}/.zsh-update"
+  echo "LAST_EPOCH=${LAST_EPOCH}" > "${ZSH_CACHE_DIR}/.zsh-update"
+  echo
 
   bubu::banner "$red" "${yellow}Done" "☭"
 }
