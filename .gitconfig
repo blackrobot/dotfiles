@@ -40,7 +40,7 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 --raw-control-chars --quit-if-one-screen --no-init
   whitespace = trailing-space,space-before-tab
   # Make `git rebase` safer on macOS
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
