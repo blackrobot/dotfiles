@@ -25,3 +25,6 @@ source "${DOTFILES}/lib/update-stuff"
 source "${DOTFILES}/lib/vi-mode"
 source "${DOTFILES}/lib/vman"
 source "${DOTFILES}/lib/when"
+
+# completion files
+# source "${DOTFILES}/lib/_aria2c"

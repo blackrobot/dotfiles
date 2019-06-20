@@ -1,6 +1,7 @@
 {
   "files.associations": {
     ".aliases": "shellscript",
+    "**/zfuncs/*": "shellscript",
     "**/lib/*": "shellscript",
     "lib-includes": "shellscript",
     ".*rc": "shellscript",

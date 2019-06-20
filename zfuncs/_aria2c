@@ -1,0 +1,5 @@
+#compdef aria2c
+
+compdef _gnu_generic aria2c
+
+# vim: ft=zsh:

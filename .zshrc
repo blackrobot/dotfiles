@@ -38,6 +38,9 @@ plugins=(
   # zsh-autosuggestions
 )
 
+fpath=( "${DOTFILES}/zfuncs" "${fpath[@]}" )
+# autoload -Uz compinit && compinit -u
+
 function source_if_exists {
   source "$1" 2>/dev/null || true
 }
