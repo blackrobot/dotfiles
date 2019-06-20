@@ -112,67 +112,82 @@
   "vim.enableNeovim": true,
   "vim.neovimPath": "/usr/local/bin/nvim",
   // vim: key bindings
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      // Clear all find and search highlighting from the editor
+      "before": ["<C-l>"],
+      "commands": [":nohl", "closeFindWidget"],
+    },
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
+      // Clear all find and search highlighting from the editor
       "before": ["<C-l>"],
       "after": ["<Esc>"],
-      "commands": [
-        { "command": ":nohl" },
-        { "command": "closeFindWidget" },
-      ],
+      "commands": [":nohl", "closeFindWidget"],
     },
     {
+      // Move editor to the LEFT split
       "before": ["<C-w>", "H"],
-      "commands": [{ "command": "workbench.action.moveEditorToPreviousGroup" }],
+      "commands": ["workbench.action.moveEditorToLeftGroup"],
     },
     {
+      // Move editor to the RIGHT split
       "before": ["<C-w>", "L"],
-      "commands": [{ "command": "workbench.action.moveEditorToNextGroup" }],
+      "commands": ["workbench.action.moveEditorToRightGroup"],
+    },
+    {
+      // Move editor to the ABOVE split
+      "before": ["<C-w>", "K"],
+      "commands": ["workbench.action.moveEditorToAboveGroup"],
+    },
+    {
+      // Move editor to the BELOW split
+      "before": ["<C-w>", "J"],
+      "commands": ["workbench.action.moveEditorToBelowGroup"],
+    },
+    {
+      "before": ["<C-w>", "\\"],
+      "commands": ["workbench.action.joinAllGroups"],
     },
     {
       // Toggle breadcrumbs
       "before": ["<leader>", "b"],
-      "commands": [{ "command": "breadcrumbs.toggle" }],
+      "commands": ["breadcrumbs.toggle"],
+    },
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.tasks.runTask"],
     },
     {
       "before": ["<leader>", "="],
-      "commands": [{ "command": "workbench.action.minimizeOtherEditors" }],
+      "commands": ["workbench.action.minimizeOtherEditors"],
     },
     {
       "before": ["g", "t"],
-      "commands": [{ "command": "workbench.action.terminal.focus" }],
+      "commands": ["workbench.action.terminal.focus"],
     },
     {
       "before": ["<leader>", "o"],
-      "commands": [{ "command": "outline.focus" }],
+      "commands": ["outline.focus"],
     },
     // Temporary fix for undo and redo
     {
       "before": ["u"],
-      "commands": [{ "command": "undo" }],
+      "commands": ["undo"],
     },
     {
       "before": ["<C-r>"],
-      "commands": [{ "command": "redo" }],
+      "commands": ["redo"],
     },
-    {
-      "before": ["<leader>", "f"],
-      "commands": [
-        "editor.action.formatDocument",
-        "python.sortImports",
-      ]
-    },
-    {
-      "before": ["<leader>", "s"],
-      "commands": [
-        "python.sortImports",
-        "editor.action.formatDocument",
-        // "workbench.action.files.saveWithoutFormatting",
-        "workbench.action.files.save",
-      ]
-    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      // Clear all find and search highlighting from the editor
+      "before": ["<C-l>"],
+      "after": ["<Esc>"],
+      "commands": [":nohl", "closeFindWidget"],
+    },
     {
       "before": [">"],
       "commands": ["editor.action.indentLines"],
