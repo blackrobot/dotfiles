@@ -54,8 +54,11 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.scrollback": 2000,
   "terminal.integrated.fontSize": 13.5,
-  "terminal.integrated.shellArgs.osx": ["-l"],
   "terminal.integrated.rendererType": "canvas",
+  "terminal.integrated.shellArgs.osx": ["-l"],
+  "terminal.integrated.env.osx": {
+    "TERM": "xterm-256color-italic",
+  },
 
   "telemetry.enableTelemetry": false,
 
