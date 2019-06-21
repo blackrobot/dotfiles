@@ -9,11 +9,6 @@ if [[ -d "${HOME}/.golang" ]]; then
   export PATH="${GOPATH}/bin:$PATH"
 fi
 
-# rvm
-if [[ -s "${HOME}/.rvm/scripts/rvm" ]]; then
-  source "${HOME}/.rvm/scripts/rvm"
-fi
-
 # direnv
 if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
