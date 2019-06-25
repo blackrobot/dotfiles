@@ -36,6 +36,9 @@ PYENV_ROOT="${HOME}/.pyenv"
 PATH="${PYENV_ROOT}/bin:${PATH}"
 # eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
 
+# Python Poetry
+add_to_path "${HOME}/.poetry/bin"
+
 # rust
 add_to_path "${HOME}/.cargo/bin"
 
