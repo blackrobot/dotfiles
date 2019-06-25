@@ -7,14 +7,31 @@ source "${ZPLUG_HOME}/init.zsh"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
+export CURRENT_ZSH_THEME="pure"
+
 # Pure theme
 #  - prompt color chart:
 #    https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 zplug 'mafredri/zsh-async', from:github
-zplug 'sindresorhus/pure', use:'pure.zsh', from:github, as:theme, \
-  hook-load:'PURE_PROMPT_VICMD_SYMBOL="%F{208}❮%f"'
+zplug 'sindresorhus/pure', \
+  use:'pure.zsh', \
+  from:github, \
+  as:theme, \
+  hook-load:'PURE_PROMPT_VICMD_SYMBOL="%F{208}❮%f"', \
+  if:"[[ $CURRENT_ZSH_THEME == pure ]]"
 
+zplug 'denysdovhan/spaceship-prompt', \
+  use:spaceship.zsh, \
+  from:github, \
+  as:theme, \
+  if:"[[ $CURRENT_ZSH_THEME == spaceship ]]"
+
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
 zplug 'zsh-users/zsh-autosuggestions'
+
+zplug 'zsh-users/zsh-completions', lazy:true
+zplug '/usr/local/opt/curl/share/zsh/site-functions', from:local, lazy:true
+
 zplug 'knu/z', use:'z.sh', defer:2
 # zplug 'plugins/z', from:'oh-my-zsh'
 # zplug 'rupa/z', use:'z.sh'
