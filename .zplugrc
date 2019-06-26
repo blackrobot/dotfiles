@@ -7,7 +7,7 @@ source "${ZPLUG_HOME}/init.zsh"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-export CURRENT_ZSH_THEME="pure"
+export CURRENT_ZSH_THEME="powerlevel10k"
 
 # Pure theme
 #  - prompt color chart:
@@ -20,11 +20,12 @@ zplug 'sindresorhus/pure', \
   hook-load:'PURE_PROMPT_VICMD_SYMBOL="%F{208}❮%f"', \
   if:"[[ $CURRENT_ZSH_THEME == pure ]]"
 
-zplug 'denysdovhan/spaceship-prompt', \
-  use:spaceship.zsh, \
+zplug 'romkatv/powerlevel10k', \
+  use:'powerlevel10k.zsh-theme', \
   from:github, \
   as:theme, \
-  if:"[[ $CURRENT_ZSH_THEME == spaceship ]]"
+  hook-load:"source ${DOTFILES}/.purepower", \
+  if:"[[ $CURRENT_ZSH_THEME == powerlevel10k ]]"
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 zplug 'zsh-users/zsh-autosuggestions'
