@@ -56,3 +56,4 @@ export LC_ALL="en_US.UTF-8"
 
 # Python startup
 export PYTHONSTARTUP="${DOTFILES}/python_startup.py"
+export VIRTUAL_ENV_DISABLE_PROMPT=1

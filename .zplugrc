@@ -24,7 +24,7 @@ zplug 'romkatv/powerlevel10k', \
   use:'powerlevel10k.zsh-theme', \
   from:github, \
   as:theme, \
-  hook-load:"source ${DOTFILES}/.purepower", \
+  hook-load:"source ${DOTFILES}/zsh/purepower/load.zsh", \
   if:"[[ $CURRENT_ZSH_THEME == powerlevel10k ]]"
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
