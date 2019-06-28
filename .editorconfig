@@ -1,0 +1,27 @@
+# http://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+indent_size = 2
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Python uses 4-space indents
+[*.{py,rst,ini}]
+indent_size = 4
+
+# Trailing whitespace is meaningful in HTML and Markdown
+[*.{html,md}]
+trim_trailing_whitespace = ignore
+
+# Leave json as is
+[*.json]
+insert_final_newline = ignore
+
+[Makefile]
+indent_style = tab
+indent_size = 4
