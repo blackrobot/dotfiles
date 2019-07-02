@@ -45,5 +45,8 @@
 
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=1
 
+  # Use muted gray for git stash count
+  typeset -g POWERLEVEL9K_VCS_{CLEAN,UNTRACKED,MODIFIED}_STASHFORMAT_FOREGROUND=$(_pp_c 8 240)
+
   unfunction _pp_c _pp_s
 } "$@"
