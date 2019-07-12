@@ -77,7 +77,6 @@ export LESS='-R --ignore-case --tabs=4'
 export BAT_THEME="OneHalfDark"
 
 # fzf
-source_if_exists "${HOME}/.fzf.zsh"
 source_dotfile ".fzfrc"
 
 source_dotfile ".aliases"

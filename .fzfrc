@@ -2,26 +2,23 @@
 # https://github.com/junegunn/fzf
 
 # Ignore files hidden by .gitignore in fzf
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .node_modules'
+FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .node_modules'
 
-# Use fd (https://github.com/sharkdp/fd) instead of the default find
-# command for listing path candidates.
-_fzf_compgen_path() {
+_fzf_compgen_base_command() {
   fd --hidden \
      --follow \
      --exclude .git \
      --exclude .node_modules \
-     . "$1"
+     "$@"
+}
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+_fzf_compgen_path() {
+  _fzf_compgen_base_command . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d \
-     --hidden \
-     --follow \
-     --exclude .git \
-     --exclude .node_modules \
-     . "$1"
+  _fzf_compgen_base_command --type d . "$1"
 }
-
-alias preview="fzf --preview 'bat --color \"always\" {}'"
