@@ -422,4 +422,6 @@
   "javascript.suggest.completeFunctionCalls": true,
   "githubPullRequests.showInSCM": true,
   "workbench.list.keyboardNavigation": "filter",
+  "git.autofetch": true,
+  "terminal.integrated.inheritEnv": true,
 }
