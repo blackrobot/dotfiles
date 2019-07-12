@@ -15,10 +15,16 @@ module.init = function(load, update)
 end
 
 module.loadSpoons = function()
+  spoon.SpoonInstall.use_syncinstall = true
+
   spoon.SpoonInstall:andUse("ReloadConfiguration", {
     start   = true,
     hotkeys = { reloadConfiguration = { hyper, "end" } },
   })
+
+  -- spoon.SpoonInstall:andUse("KSheet", {
+  --   hotkeys = { toggle = { hyper, "?" } },
+  -- })
 
   -- Can't get this to work :(
   -- spoon.SpoonInstall:andUse("MoveSpaces", {

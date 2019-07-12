@@ -34,11 +34,14 @@ hs.grid.ui.highlightStrokeWidth = 10
 hs.application.enableSpotlightForNameSearches(true)
 
 -- Window Hints
-hs.hints.fontName = "SFUIText-Regular"
-hs.hints.fontSize = 26.0
-hs.hints.showTitleThresh = 8
+-- https://www.hammerspoon.org/docs/hs.hints.html
+-- hs.hints.fontName = ""         -- Default uses system font
+hs.hints.fontSize = 22.0          -- Set to 0.0 to use default size
+-- hs.hints.hintChars = ""        -- Ignored when using "vimperator" style
+hs.hints.iconAlpha = 0.80         -- Default is 0.95
+hs.hints.showTitleThresh = 8      -- Default is 4
 hs.hints.style = "vimperator"
-hs.hints.titleMaxSize = 20
+hs.hints.titleMaxSize = 8
 
 -- * Hint all
 hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
@@ -132,27 +135,62 @@ hs.hotkey.bind(mash, "down", function()
   hs.grid.set(win, cell)
 end)
 
-local function activateApp(...)
-  for i, name in ipairs({...}) do
-    local app = hs.application.get(name)
+
+-- Frequently used app hotkey switching
+freq_app = {}
+
+freq_app.bundles = {
+  browsers = {
+    -- Google Chrome
+    "Google Chrome", "Chrome",
+    -- Mozilla Firefox
+    "Mozilla Firefox", "Firefox", "Nightly",
+    -- Other
+    "Safari",
+  },
+  terminals = { "iTerm2", "Alacritty", "Terminal" },
+  editors = {
+    "Code - Insiders",
+    "Code",
+    "VimR",
+    "Vim",
+  },
+}
+
+function freq_app.activate(app_names)
+  local fallback_app = nil
+
+  for i, name in ipairs(app_names) do
+    local app = hs.application.find(name)
+
     if app then
-      return app:activate()
+      local windows = app:allWindows()
+
+      if windows then
+        return windows[1]:focus()
+      end
+
+      fallback_app = app
     end
   end
+
+  if fallback_app then
+    return fallback_app:activate()
+  end
+
   return nil
 end
 
+function freq_app.factory(app_names)
+  return function() freq_app.activate(app_names) end
+end
 
-hs.hotkey.bind(mash, "h", function()
-  activateApp("Google Chrome", "Nightly", "FirefoxDeveloperEdition")
-end)
-hs.hotkey.bind(mash, "j", function() activateApp("iTerm2") end)
-hs.hotkey.bind(mash, "l", function() activateApp("Slack") end)
-hs.hotkey.bind(mash, "o", function() activateApp("Finder") end)
-hs.hotkey.bind(mash, "p", function() activateApp("Preview") end)
-hs.hotkey.bind(mash, "k", function()
-  activateApp("Code - Insiders", "Code", "VimR")
-end)
+hs.hotkey.bind(mash, "h", freq_app.factory(freq_app.bundles.browsers))
+hs.hotkey.bind(mash, "j", freq_app.factory(freq_app.bundles.terminals))
+hs.hotkey.bind(mash, "l", freq_app.factory({"Slack"}))
+hs.hotkey.bind(mash, "o", freq_app.factory({"Finder"}))
+hs.hotkey.bind(mash, "p", freq_app.factory({"Preview"}))
+hs.hotkey.bind(mash, "k", freq_app.factory(freq_app.bundles.editors))
 
 
 function changeVolume(ticks)
