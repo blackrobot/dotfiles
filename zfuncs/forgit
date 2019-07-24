@@ -1,0 +1,40 @@
+#!/usr/bin/env zsh
+
+##
+# Wrap forgit::* commands with `forgit <cmd>`
+#
+# https://github.com/wfxr/forgit
+##
+
+__forgit_show_commands() {
+  # functions -m 'forgit::*' \
+  #   | rg --color=never --only-matching 'forgit::[\w:-]+'
+  echo "
+    add
+    clean
+    diff
+    ignore
+    ignore::clean
+    ignore::get
+    ignore::list
+    ignore::update
+    info
+    inside_work_tree
+    log
+    restore
+    stash::show
+  "
+}
+
+__forgit_build_cmd() {
+  local forgit_cmd
+  forgit_cmd="forgit::${1}"
+
+  "$forgit_cmd" "${@:2}"
+}
+
+if [[ "$1" == "" || "${*}" == *"help"* || "${*}" == *"-h"* ]] ; then
+  __forgit_show_commands
+else
+  __forgit_build_cmd $*
+fi

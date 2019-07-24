@@ -1,6 +1,8 @@
 # Settings for fzf
 # https://github.com/junegunn/fzf
 
+[ -f "${HOME}/.fzf.zsh" ] && source "${HOME}/.fzf.zsh"
+
 # Ignore files hidden by .gitignore in fzf
 FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude .node_modules'
 

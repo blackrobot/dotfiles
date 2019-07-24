@@ -7,25 +7,11 @@ source "${ZPLUG_HOME}/init.zsh"
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
-export CURRENT_ZSH_THEME="powerlevel10k"
-
-# Pure theme
-#  - prompt color chart:
-#    https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
-zplug 'mafredri/zsh-async', from:github
-zplug 'sindresorhus/pure', \
-  use:'pure.zsh', \
-  from:github, \
-  as:theme, \
-  hook-load:'PURE_PROMPT_VICMD_SYMBOL="%F{208}❮%f"', \
-  if:"[[ $CURRENT_ZSH_THEME == pure ]]"
-
 zplug 'romkatv/powerlevel10k', \
   use:'powerlevel10k.zsh-theme', \
   from:github, \
   as:theme, \
-  hook-load:"source ${DOTFILES}/zsh/purepower/load.zsh", \
-  if:"[[ $CURRENT_ZSH_THEME == powerlevel10k ]]"
+  hook-load:"source ${DOTFILES}/zsh/purepower/load.zsh"
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 zplug 'zsh-users/zsh-autosuggestions'
@@ -56,30 +42,9 @@ zplug 'plugins/vi-mode', from:'oh-my-zsh', \
 ##
 # Setup and fix forgit environment
 ##
-
-FG_DISABLE="__fg_disable__"
-export forgit_add="fga" \
-       forgit_log="fgl" \
-       forgit_diff="fgd" \
-       forgit_ignore="fg-ignore" \
-       forgit_stash_show="fg-stash" \
-       forgit_restore=$FG_DISABLE \
-       forgit_clean=$FG_DISABLE
-
-function fg_cleanup {
-  unalias "${FG_DISABLE}" && \
-  unset FG_DISABLE \
-        forgit_add \
-        forgit_log \
-        forgit_diff \
-        forgit_ignore \
-        forgit_stash_show \
-        forgit_restore \
-        forgit_clean
-  unfunction fg_cleanup
-}
-
-zplug 'wfxr/forgit', defer:1, hook-load:"fg_cleanup"
+FORGIT_NO_ALIASES=1
+FORGIT_FZF_DEFAULT_OPTS="--layout=reverse"
+zplug 'wfxr/forgit', defer:1, hook-load:'unset FORGIT_NO_ALIASES; autoload forgit'
 
 
 if ! zplug check --verbose; then
