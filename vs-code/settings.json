@@ -229,6 +229,7 @@
 
   // Use microsoft's python language server
   "python.jediEnabled": false,
+  "python.analysis.downloadChannel": "beta",
 
   /* Markdown config */
   "[markdown]": {
@@ -279,16 +280,11 @@
   "sync.quietSync": true,
   "sync.askGistName": false,
   "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
+    "suppressCommitHasNoPreviousCommitWarning": true,
     "suppressFileNotUnderSourceControlWarning": true,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true,
     "suppressUpdateNotice": true,
-    "suppressWelcomeNotice": true,
+    "suppressWelcomeNotice": true
   },
 
   "files.associations": {
@@ -424,4 +420,8 @@
   "workbench.list.keyboardNavigation": "filter",
   "git.autofetch": true,
   "terminal.integrated.inheritEnv": true,
+  "material-icon-theme.showReloadMessage": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
 }
