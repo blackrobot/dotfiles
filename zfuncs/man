@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+autoload colors
+colors
+
+local man_cmd="${commands[man]}"
+
+env \
+  LESS_TERMCAP_mb="$fg_bold[red]" \
+  LESS_TERMCAP_md="$fg_bold[red]" \
+  LESS_TERMCAP_me="$reset_color" \
+  LESS_TERMCAP_se="$reset_color" \
+  LESS_TERMCAP_so="$fg_bold[magenta]$bg[cyan]" \
+  LESS_TERMCAP_ue="$reset_color" \
+  LESS_TERMCAP_us="$fg_bold[green]" \
+  _NROFF_U=1 \
+  "$man_cmd" \
+  "$@"

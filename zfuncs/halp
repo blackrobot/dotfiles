@@ -1,0 +1,33 @@
+#!/usr/bin/env zsh
+
+
+() {
+  function cheat_select {
+    curl -s 'https://cheat.sh/:list' \
+      | fzf --ansi \
+            --layout reverse \
+            --color dark \
+            --inline-info \
+            --preview-window 'right:75%:wrap' \
+            --preview 'curl -s https://cheat.sh/{}'
+  }
+
+  function tldr_select {
+    tldr --list \
+      | tr -s ',[:space:]' '\n' \
+      | fzf --ansi \
+            --layout reverse \
+            --color dark \
+            --inline-info \
+            --preview-window 'right:75%:wrap' \
+            --preview 'tldr {}'
+  }
+
+  local choice
+  choice=$(cheat_select)
+
+  if [[ -n "$choice" ]]; then
+    tldr "${choice}"
+  fi
+
+} "$@"

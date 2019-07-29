@@ -19,13 +19,11 @@ zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-completions', lazy:true
 zplug '/usr/local/opt/curl/share/zsh/site-functions', from:local, lazy:true
 
-zplug 'knu/z', use:'z.sh', defer:2
-# zplug 'plugins/z', from:'oh-my-zsh'
-# zplug 'rupa/z', use:'z.sh'
+zplug 'changyuheng/fz', defer:1
+zplug 'rupa/z', use:'z.sh'
 zplug 'changyuheng/zsh-interactive-cd'
 
 # oh-my-zsh plugins
-zplug 'plugins/colored-man-pages', from:'oh-my-zsh'
 zplug 'plugins/cp', from:'oh-my-zsh'
 zplug 'plugins/docker', from:'oh-my-zsh'
 zplug 'plugins/docker-compose', from:'oh-my-zsh'
@@ -34,6 +32,7 @@ zplug 'plugins/git', from:'oh-my-zsh'
 zplug 'plugins/git-extras', from:'oh-my-zsh'
 zplug 'plugins/github', from:'oh-my-zsh'
 zplug 'plugins/osx', from:'oh-my-zsh'
+zplug 'plugins/zsh_reload', from:'oh-my-zsh'
 zplug 'plugins/zsh-nvm', from:'oh-my-zsh'
 
 zplug 'plugins/vi-mode', from:'oh-my-zsh', \
