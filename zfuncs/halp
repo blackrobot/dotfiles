@@ -1,33 +1,47 @@
 #!/usr/bin/env zsh
 
+autoload -Uz cheat
 
 () {
-  function cheat_select {
-    curl -s 'https://cheat.sh/:list' \
-      | fzf --ansi \
-            --layout reverse \
-            --color dark \
-            --inline-info \
-            --preview-window 'right:75%:wrap' \
-            --preview 'curl -s https://cheat.sh/{}'
-  }
+  # $1 = seed the query to the select function
 
-  function tldr_select {
-    tldr --list \
-      | tr -s ',[:space:]' '\n' \
-      | fzf --ansi \
-            --layout reverse \
-            --color dark \
-            --inline-info \
-            --preview-window 'right:75%:wrap' \
-            --preview 'tldr {}'
-  }
-
+  local query
   local choice
-  choice=$(cheat_select)
 
-  if [[ -n "$choice" ]]; then
-    tldr "${choice}"
-  fi
+  fzf_select() {
+    # $1 = the query to start fzf with
 
-} "$@"
+    local query
+    query="$1"
+
+    fzf --layout reverse \
+        --color dark \
+        --inline-info \
+        --preview-window 'right:75%:wrap' \
+        --preview "${DOTFILES}/zfuncs/cheat {}" \
+        --query "$query"
+  }
+
+  cheat_select() {
+    cheat :list | fzf_select "$1"
+  }
+
+  ##
+  # This isn't used anymore, but may be useful in the future...
+  ##
+  # tldr_select() {
+  #   tldr --list \
+  #     | tr -s ',[:space:]' '\n' \
+  #     | fzf_select 'tldr {}' "$1"
+  # }
+  #
+  # if [[ -n "$choice" ]]; then
+  #   tldr "${choice}"
+  # fi
+  ##
+
+  query="$1"
+  choice=$(cheat_select "${query}")
+
+  return 0
+} "@"

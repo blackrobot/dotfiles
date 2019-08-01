@@ -31,11 +31,6 @@ function es {
   fi
 }
 
-# cheat.sh
-function cheat {
-  curl "https://cheat.sh/${1}"
-}
-
 # beep - plays a sound
 #   Sound files copied into ~/Library/Sounds/ from:
 #   /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/

@@ -56,7 +56,7 @@ HIST_STAMPS="yyyy-mm-dd"
 fpath=( "${DOTFILES}/zfuncs" "${fpath[@]}" )
 
 # Register functions for autoloading
-autoload -Uz bubu halp man
+autoload -Uz bubu cheat halp man
 alias cbubu='clear ; bubu'
 
 # Add the `help` command

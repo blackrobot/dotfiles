@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+##
+# Styles
+# - https://cheat.sh/:styles
+# - https://cheat.sh/:styles-demo
+local style="${CHEAT_STYLE:-"paraiso-dark"}"
+
+local query="${1:-":list"}"
+
+curl -s "https://cheat.sh/${query}?style=${style}"
