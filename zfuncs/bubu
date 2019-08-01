@@ -1,5 +1,9 @@
-# Alias for brew upgrading
-function bubu {
+#!/usr/bin/env zsh
+
+local _TERM_BACKUP="${TERM}"
+
+# Update and upgrade stuff
+() {
   TERM="xterm-256color"
 
   # Style
@@ -47,12 +51,19 @@ function bubu {
     echo
   }
 
+  # Homebrew
   bubu::banner "$magenta" "Update brew"
   bubu::cmd "brew update ${verbose}"
-
   bubu::banner "$blue" "Upgrade brew"
   bubu::cmd "brew upgrade --display-times"
+  echo
 
+  # pyenv
+  bubu::banner "$magenta" "Update pyenv"
+  bubu::cmd "pyenv update"
+  echo
+
+  # oh-my-zsh
   bubu::banner "$blue" "Upgrade oh-my-zsh"
   bubu::cmd "( cd ~/.oh-my-zsh && git pull --rebase --stat origin master )"
   local LAST_EPOCH=$(( $EPOCHSECONDS / 60 / 60 / 24 ))
@@ -60,11 +71,11 @@ function bubu {
   echo "LAST_EPOCH=${LAST_EPOCH}" > "${ZSH_CACHE_DIR}/.zsh-update"
   echo
 
+  TERM="$_TERM_BACKUP"
+  unset _TERM_BACKUP
+
   bubu::banner "$red" "${yellow}Done" "☭"
-}
+} "$@"
 
-
-alias cbubu='clear ; bubu'
 
 # vim: set ft=zsh:
-
