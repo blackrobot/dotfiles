@@ -45,7 +45,7 @@ function source_if_exists {
 }
 
 function source_dotfile {
-  source_if_exists "${DOTFILES}/${1}"
+  source "${DOTFILES}/${1}"
 }
 
 # oh-my-zsh opts
@@ -73,9 +73,6 @@ source "${ZSH}/oh-my-zsh.sh"
 # zplug
 source_dotfile ".zplugrc"
 
-# remove annoying `work_in_progress` garbage – git.io/vhTp1
-unfunction work_in_progress
-
 # zsh opts
 setopt hist_ignore_all_dups
 setopt hist_find_no_dups
@@ -87,9 +84,7 @@ unsetopt auto_name_dirs
 export LESS='-R --ignore-case --tabs=4'
 
 # bat options | https://github.com/sharkdp/bat
-# export BAT_THEME="TwoDark"
-# export BAT_THEME="OneDark"
-export BAT_THEME="OneHalfDark"
+export BAT_THEME='OneHalfDark'
 
 # fzf
 source_dotfile ".fzfrc"
