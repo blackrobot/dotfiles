@@ -44,4 +44,4 @@ autoload -Uz cheat
   choice=$(cheat_select "${query}")
 
   return 0
-} "@"
+} "$@"
