@@ -1,0 +1,13 @@
+# Key bindings for `halp`
+
+function halp-select() {
+  BUFFER=$(halp "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+
+zle -N halp-select
+stty -ixon
+
+bindkey '^h' halp-select
+
