@@ -4,7 +4,7 @@
   "editor.fontFamily": "Operator Mono",
   "editor.fontSize": 14.3,
   "editor.lineHeight": 0,
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "selection",
   "editor.lineNumbers": "relative",
   "editor.rulers": [88, 120],
   "editor.quickSuggestions": {
@@ -75,7 +75,8 @@
     "[Dracula]": {
       "editorLineNumber.activeForeground": "#ffffffde",
       "editorRuler.foreground": "#ffffff0f",
-      "editorWhitespace.foreground": "#ffffff0a",
+      "editorWhitespace.foreground": "#ffffffdd",
+      "editor.selectionBackground": "#c2185bff",
       "editor.lineHighlightBackground": "#ffffff05",
       "editor.lineHighlightBorder": "#ffffff00",
       "editor.findMatchHighlightBackground": "#fce4ec0a",
@@ -331,7 +332,6 @@
   "gitlens.recentChanges.highlight.locations": ["gutter", "line", "overview"],
 
   "search.smartCase": true,
-  "editor.suggestSelection": "first",
   "[csv]": {
     "editor.minimap.enabled": true,
     "editor.minimap.maxColumn": 80,
@@ -369,7 +369,6 @@
   "prettier.disableLanguages": ["vue"],
   "breadcrumbs.enabled": false,
   "editor.acceptSuggestionOnEnter": "smart",
-  "editor.quickSuggestionsDelay": 8,
   "git.allowForcePush": true,
   "git.rebaseWhenSync": true,
   "githubPullRequests.telemetry.enabled": false,
@@ -387,8 +386,7 @@
   "editor.suggest.localityBonus": true,
   "editor.hover.delay": 222,
   "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.color": "rgba(255, 255, 255, 0.08)",
-  "vim.highlightedyank.duration": 250,
+  "vim.highlightedyank.color": "#c2185b",
   "python.diagnostics.sourceMapsEnabled": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -420,4 +418,9 @@
   "files.simpleDialog.enable": true,
   "workbench.useExperimentalGridLayout": true,
   "workbench.colorTheme": "Dracula",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "files.hotExit": "onExitAndWindowClose",
+  "docker.truncateLongRegistryPaths": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
