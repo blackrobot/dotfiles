@@ -1,4 +1,4 @@
-DOTFILES="${HOME}/.dotfiles"
+DOTFILES="${HOME}/dotfiles"
 EDITOR=vim
 PAGER=less
 
