@@ -38,41 +38,84 @@ function macos::defaults::set_true {
 function macos::defaults::set_false {
   macos::defaults::set_bool "$1" "$2" NO
 }
+function macos::defaults::read {
+  printf '"%s" = %s \n\n' "$1" "$1"
+}
+function macos::defaults::delete {
+  local bundle_id="$1"
+  local setting_key="$2"
+
+  set -x
+  defaults delete "$bundle_id" "$setting_key"
+  { set +x ; } 2>/dev/null
+}
+function macos::defaults::exists {
+  # Checks that the given domain exists, using fixed strings -- not regexes.
+  #     macos::defaults::exists "foo.bar.FizzBuzz"    =>  true
+  #     macos::defaults::exists "foo\.bar\.FizzBuzz"  =>  false
+  defaults domains | rg --quiet --fixed-strings "$1"
+}
 function macos::defaults::fix_mojave {
-  # Use darkmode fix for vscode
-  macos::defaults::set_false "com.microsoft.VSCode" "NSRequiresAquaSystemAppearance"
+  if ( macos::defaults::exists "com.microsoft.VSCode" ); then
+    macos::defaults::read "com.microsoft.VSCode"
 
-  # Use font-smoothing fix for vscode
-  macos::defaults::set_false "com.microsoft.VSCode" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_false "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_false "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_false "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
-  # Use font-smoothing fix for vscode-insiders
-  macos::defaults::set_false "com.microsoft.VSCodeInsiders" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper.EH" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+    # Use darkmode fix for vscode
+    # macos::defaults::set_false "com.microsoft.VSCode" "NSRequiresAquaSystemAppearance"
 
-  # Use font-smoothing fix for spotify
-  macos::defaults::set_false "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_false "com.spotify.client.helper" "CGFontRenderingFontSmoothingDisabled"
+    # Use font-smoothing fix for vscode
+    macos::defaults::set_false "com.microsoft.VSCode" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::set_false "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::set_false "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::set_false "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+  fi
+
+  if ( macos::defaults::exists "com.microsoft.VSCodeInsiders" ); then
+    macos::defaults::read "com.microsoft.VSCodeInsiders"
+
+    # Use font-smoothing fix for vscode-insiders
+    macos::defaults::set_false "com.microsoft.VSCodeInsiders" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::set_false "com.microsoft.VSCodeInsiders.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+  fi
+
+  if ( macos::defaults::exists "com.spotify.client" ); then
+    macos::defaults::read "com.spotify.client"
+
+    # Use font-smoothing fix for spotify
+    macos::defaults::set_false "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::set_false "com.spotify.client.helper" "CGFontRenderingFontSmoothingDisabled"
+  fi
 }
 function macos::defaults::unfix_mojave {
-  # Use darkmode fix for vscode
-  macos::defaults::set_true "com.microsoft.VSCode" "NSRequiresAquaSystemAppearance"
+  if ( macos::defaults::exists "com.microsoft.VSCode" ); then
+    macos::defaults::read "com.microsoft.VSCode"
 
-  # Use font-smoothing fix for vscode
-  macos::defaults::set_true "com.microsoft.VSCode" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_true "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_true "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_true "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
-  # Use font-smoothing fix for vscode-insiders
-  macos::defaults::set_true "com.microsoft.VSCodeInsiders" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_true "com.microsoft.VSCodeInsiders.helper" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_true "com.microsoft.VSCodeInsiders.helper.EH" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_true "com.microsoft.VSCodeInsiders.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+    # Use darkmode fix for vscode
+    # macos::defaults::delete "com.microsoft.VSCode" "NSRequiresAquaSystemAppearance"
 
-  # Use font-smoothing fix for spotify
-  macos::defaults::set_true "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
-  macos::defaults::set_true "com.spotify.client.helper" "CGFontRenderingFontSmoothingDisabled"
+    # Use font-smoothing fix for vscode
+    macos::defaults::delete "com.microsoft.VSCode" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::delete "com.microsoft.VSCode.helper" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::delete "com.microsoft.VSCode.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::delete "com.microsoft.VSCode.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+  fi
+
+  if ( macos::defaults::exists "com.microsoft.VSCodeInsiders" ); then
+    macos::defaults::read "com.microsoft.VSCodeInsiders"
+
+    # Use font-smoothing fix for vscode-insiders
+    macos::defaults::delete "com.microsoft.VSCodeInsiders" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::delete "com.microsoft.VSCodeInsiders.helper" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::delete "com.microsoft.VSCodeInsiders.helper.EH" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::delete "com.microsoft.VSCodeInsiders.helper.NP" "CGFontRenderingFontSmoothingDisabled"
+  fi
+
+  if ( macos::defaults::exists "com.spotify.client" ); then
+    macos::defaults::read "com.spotify.client"
+
+    # Use font-smoothing fix for spotify
+    macos::defaults::delete "com.spotify.client" "CGFontRenderingFontSmoothingDisabled"
+    macos::defaults::delete "com.spotify.client.helper" "CGFontRenderingFontSmoothingDisabled"
+  fi
 }
