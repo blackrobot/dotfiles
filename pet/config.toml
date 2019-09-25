@@ -2,14 +2,14 @@
   snippetfile = "~/.config/pet/snippet.toml"
   editor = "code --wait --new-window"
   column = 40
-  selectcmd = "~/.dotfiles/lib/pet-preview.sh"
+  selectcmd = "~/dotfiles/lib/pet-preview.sh"
   backend = "gist"
   sortby = "description"
 
 [Gist]
   file_name = "pet-snippet.toml"
   access_token = ""
-  gist_id = ""
+  gist_id = "b54e821a26ee3a666c9eea29c33b09d0"
   public = false
   auto_sync = true
 
