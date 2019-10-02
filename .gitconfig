@@ -108,5 +108,9 @@
   name = damon
   useConfigOnly = false
 
+[credential]
+  helper = osxkeychain
+
 [include]
   path = ~/.gitconfig.local
+
