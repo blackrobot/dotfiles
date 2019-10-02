@@ -58,11 +58,6 @@ local _TERM_BACKUP="${TERM}"
   bubu::cmd "brew upgrade --display-times"
   echo
 
-  # pyenv
-  bubu::banner "$magenta" "Update pyenv"
-  bubu::cmd "pyenv update"
-  echo
-
   # oh-my-zsh
   bubu::banner "$blue" "Upgrade oh-my-zsh"
   bubu::cmd "( cd ~/.oh-my-zsh && git pull --rebase --stat origin master )"
