@@ -2,22 +2,55 @@
 # https://github.com/zplug/zplug
 
 export ZPLUG_HOME="/usr/local/opt/zplug"
-
 source "${ZPLUG_HOME}/init.zsh"
 
+
+# zplug self-management
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
+
+# theme
 zplug 'romkatv/powerlevel10k', \
   use:'powerlevel10k.zsh-theme', \
   from:github, \
   as:theme, \
   hook-load:"source ${DOTFILES}/zsh/purepower/load.zsh"
 
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
+
+# autosuggest
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#888888'
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 zplug 'zsh-users/zsh-autosuggestions'
 
+
+# completions
 zplug 'zsh-users/zsh-completions', lazy:true
 zplug '/usr/local/opt/curl/share/zsh/site-functions', from:local, lazy:true
+
+
+# vi mode
+zplug 'plugins/vi-mode', from:'oh-my-zsh', \
+  hook-load:'unset RPS1 MODE_INDICATOR'  # Prevent the plugin from adding the right prompt
+
+
+# substring history search
+function setup_history_substring_bindings {
+  # up/down arrow keys
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+
+  # j/k in vim-mode
+  bindkey -M vicmd 'k' history-substring-search-up
+  bindkey -M vicmd 'j' history-substring-search-down
+
+  # cleanup
+  unset setup_history_substring_bindings
+}
+zplug 'zsh-users/zsh-history-substring-search', \
+  hook-load:'setup_history_substring_bindings'
+
 
 zplug 'changyuheng/fz', defer:1
 zplug 'rupa/z', use:'z.sh'
@@ -36,8 +69,6 @@ zplug 'plugins/pip', from:'oh-my-zsh', defer:1
 zplug 'plugins/zsh_reload', from:'oh-my-zsh'
 zplug 'plugins/zsh-nvm', from:'oh-my-zsh'
 
-zplug 'plugins/vi-mode', from:'oh-my-zsh', \
-  hook-load:'unset RPS1 MODE_INDICATOR'  # Prevent the plugin from adding the right prompt
 
 ##
 # Setup and fix forgit environment
@@ -58,3 +89,5 @@ fi
 
 
 zplug load
+
+# vim: set ft=zsh:

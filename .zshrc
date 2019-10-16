@@ -17,29 +17,6 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 # set to blank string for pure prompt
 ZSH_THEME=""
 
-# Plugins
-plugins=(
-  # aws
-  # colored-man-pages
-  # command-not-found
-  # cp
-  # docker-compose
-  # docker
-  # encode64
-  # extract
-  # git
-  # git-extras
-  # github
-  # httpie
-  # rsync
-  # vi-mode
-  vi-history-substring
-  # yarn
-  # z
-  # zsh-nvm
-  # zsh-autosuggestions
-)
-
 function source_if_exists {
   source "$1" 2>/dev/null || true
 }
@@ -74,18 +51,55 @@ source "${ZSH}/oh-my-zsh.sh"
 # zplug
 source_dotfile ".zplugrc"
 
-# zsh opts
-setopt hist_ignore_all_dups
-setopt hist_find_no_dups
-setopt hist_save_no_dups
-setopt hist_reduce_blanks
-unsetopt auto_name_dirs
+
+##
+# zsh opts | http://zsh.sourceforge.net/Doc/Release/Options.html
+##
+
+## zsh opts > history
+setopt BANG_HIST                # expand '!' in history
+setopt EXTENDED_HISTORY         # save timestamp and duration
+setopt HIST_EXPIRE_DUPS_FIRST   # rm dupes before unique cmds
+setopt HIST_FCNTL_LOCK          # use os locking of history file
+setopt HIST_FIND_NO_DUPS        # don't diplay dupes when searching
+setopt HIST_IGNORE_DUPS         # don't add cmds to history if dupes of previous
+setopt HIST_IGNORE_SPACE        # don't add cmds that start with a space
+setopt HIST_NO_STORE            # don't store the `history` command itself
+setopt HIST_REDUCE_BLANKS       # see doc
+setopt HIST_VERIFY              # show the history cmd without executing
+setopt INC_APPEND_HISTORY       # cmds are recorded in order of execution
+setopt SHARE_HISTORY            # see doc
+# NOTE: This can be slow!
+# setopt HIST_LEX_WORDS         # correctly handle whitespace
+
+## zsh opts > completion
+setopt ALWAYS_TO_END            # move cursor to end after completing word
+setopt AUTO_LIST
+setopt AUTO_MENU                # use menu after pressing `tab` twice
+setopt AUTO_PARAM_KEYS
+setopt COMPLETE_IN_WORD
+setopt LIST_TYPES
+setopt NO_AUTO_NAME_DIRS        # UNSET "~dir" aliasing
+
+## zsh opts > changing directories
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+
+## zsh opts > input/output
+setopt INTERACTIVE_COMMENTS     # allow comments in interactive shell
+setopt NO_FLOW_CONTROL          # UNSET
+
+##
+# /zsh opts
+##
+
 
 # less options
-export LESS='-R --ignore-case --tabs=4'
+LESS='-R --ignore-case --tabs=4'
 
 # bat options | https://github.com/sharkdp/bat
-export BAT_THEME='OneHalfDark'
+BAT_THEME='OneHalfDark'
 
 # fzf
 source_dotfile ".fzfrc"
@@ -118,3 +132,4 @@ source_if_exists "${HOME}/.zshrc.local"
   fi
 
 } &!
+
