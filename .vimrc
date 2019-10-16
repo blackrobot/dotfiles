@@ -41,6 +41,50 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 set spelllang=en_us
 set spellfile=$DOTFILES/vim/dictionary.en.utf-8.add
 
+" Wildignore
+set wildignore+=*.pyc,*.zip,*.gz,*.tar
+set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
+set wildignore+=*.pdf,*.doc,*.docx
+set wildignore+=.gitkeep
+
+" Command tabbing
+" set wildmode=longest,list,full
+set wildmenu
+
+" Terminal
+autocmd TermOpen * setlocal bufhidden=hide
+
+if has('persistent_undo')
+  set undofile
+endif
+
+""
+" Vim Plug
+""
+" https://github.com/junegunn/vim-plug
+"
+" Install by downloading the vim script and putting it in the right directory:
+"
+"   # neovim
+"   $ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
+"   # vim
+"   $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+""
+call plug#begin('~/.vim/plugged')
+
+" FZF
+Plug '/usr/local/opt/fzf'
+
+" Better Whitespace
+let g:better_whitespace_enabled=1
+Plug 'ntpeters/vim-better-whitespace'
+
+call plug#end()
+
+
 " Highlight codetags
 augroup codetags
   autocmd!
@@ -58,7 +102,7 @@ augroup python
   autocmd FileType python setlocal sts=4 sw=4 ts=4 tw=79
   autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
   autocmd BufRead,BufNewFile *.py match BadWhitespace /^\t\+/
-  autocmd BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
+  " autocmd BufRead,BufNewFile *.py match BadWhitespace /\s\+$/
 augroup END
 
 " Git messages
@@ -84,21 +128,4 @@ augroup crontab_settings
   autocmd!
   autocmd FileType crontab setlocal backupcopy=yes
 augroup END
-
-" Wildignore
-set wildignore+=*.pyc,*.zip,*.gz,*.tar
-set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.ico,*.psd,*.swf
-set wildignore+=*.pdf,*.doc,*.docx
-set wildignore+=.gitkeep
-
-" Command tabbing
-" set wildmode=longest,list,full
-set wildmenu
-
-" Terminal
-autocmd TermOpen * setlocal bufhidden=hide
-
-if has('persistent_undo')
-  set undofile
-endif
 
