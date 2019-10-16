@@ -11,6 +11,7 @@ local _TERM_BACKUP="${TERM}"
   local bold="$(tput bold)"
   local icon="➥"
   local cmd_style="$(tput setaf 102)"
+  local log_style="$(tput setaf 59)"
   # Colors
   local blue="$(tput setaf 4)"
   local magenta="$(tput setaf 5)"
@@ -45,9 +46,19 @@ local _TERM_BACKUP="${TERM}"
       "$reset"
   }
 
+  function bubu::style_output {
+    # Pipe command output to this function for formatted output.
+    #
+    # For example:
+    #     echo 'Hello world :)' | bubu::style_output
+    # output:
+    #     >>  | Hello world :)
+    sed 's/^\(.*\)$/'"${log_style}  | ${reset}"'\1/g'
+  }
+
   function bubu::cmd {
     bubu::style_cmd "$1"
-    eval "$1"
+    eval "$1" 2>&1 | bubu::style_output
     echo
   }
 
