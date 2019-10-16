@@ -42,11 +42,6 @@ add_to_path "${HOME}/.poetry/bin"
 # rust
 add_to_path "${HOME}/.cargo/bin"
 
-# android
-ANDROID_HOME="${HOME}/Library/Android/sdk"
-add_to_path "${ANDROID_HOME}/tools" 'append'
-add_to_path "${ANDROID_HOME}/platform-tools" 'append'
-
 # first in $PATH
 add_to_path "${DOTFILES}/bin"
 
