@@ -33,16 +33,23 @@ HIST_STAMPS="yyyy-mm-dd"
 fpath=( "${DOTFILES}/zfuncs" "${fpath[@]}" )
 
 # Register functions for autoloading
-autoload -Uz bubu cheat halp man
+autoload -Uz \
+  brewfind \
+  bubu \
+  cheat \
+  halp \
+  man
 alias cbubu='clear ; bubu'
+alias brinfo='brewfind'
 
 # Add the `help` command
-autoload -Uz run-help
-autoload -Uz run-help-git
-autoload -Uz run-help-ip
-autoload -Uz run-help-openssl
-autoload -Uz run-help-sudo
-autoload -Uz run-help-svk
+autoload -Uz \
+  run-help \
+  run-help-git \
+  run-help-ip \
+  run-help-openssl \
+  run-help-sudo \
+  run-help-svk
 unalias run-help
 alias help='run-help'
 

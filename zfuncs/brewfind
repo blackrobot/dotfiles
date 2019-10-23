@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+() {
+  # $1 = seed the query to brew info
+
+  local query
+
+  fzf_select() {
+    # $1 = the query to start fzf with
+
+    fzf --multi \
+        --layout reverse \
+        --inline-info \
+        --ansi \
+        --header='[brew:info]' \
+        --preview-window 'right:75%:wrap' \
+        --preview 'brew info {}'
+  }
+
+  brew search "$1" | fzf_select
+
+} "$@"
