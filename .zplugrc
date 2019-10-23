@@ -6,7 +6,8 @@ source "${ZPLUG_HOME}/init.zsh"
 
 
 # zplug self-management
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+# NOTE: Temporarily disabled! You must call this manually.
+# zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 
 # theme
@@ -78,14 +79,18 @@ FORGIT_FZF_DEFAULT_OPTS="--layout=reverse"
 zplug 'wfxr/forgit', defer:1, hook-load:'unset FORGIT_NO_ALIASES; autoload forgit'
 
 
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  else
-    echo
-  fi
-fi
+###
+# NOTE: Temporarily disabled! You must manually call `zplug install`!
+###
+
+# if ! zplug check --verbose; then
+#   printf "Install? [y/N]: "
+#   if read -q; then
+#     echo; zplug install
+#   else
+#     echo
+#   fi
+# fi
 
 
 zplug load

@@ -1,5 +1,5 @@
-DOTFILES="${HOME}/dotfiles"
-EDITOR=vim
+export DOTFILES="${HOME}/dotfiles"
+EDITOR=nvim
 PAGER=less
 
 # Prevent tar from adding ._* files

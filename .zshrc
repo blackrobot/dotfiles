@@ -57,6 +57,8 @@ source_dotfile ".zplugrc"
 ##
 
 ## zsh opts > history
+HISTSIZE=$(( 10 ** 7 ))         # 10 million lines of history in file
+SAVEHIST=$(( 10 ** 6 ))         # 1 million lines of history in mem
 setopt BANG_HIST                # expand '!' in history
 setopt EXTENDED_HISTORY         # save timestamp and duration
 setopt HIST_EXPIRE_DUPS_FIRST   # rm dupes before unique cmds
@@ -96,10 +98,10 @@ setopt NO_FLOW_CONTROL          # UNSET
 
 
 # less options
-LESS='-R --ignore-case --tabs=4'
+export LESS='-R --ignore-case --tabs=4'
 
 # bat options | https://github.com/sharkdp/bat
-BAT_THEME='OneHalfDark'
+export BAT_THEME='OneHalfDark'
 
 # fzf
 source_dotfile ".fzfrc"
