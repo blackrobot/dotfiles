@@ -14,13 +14,13 @@ smart_completion = True
 
 # Display the completions in several columns. (More completions will be
 # visible.)
-wider_completion_menu = False
+wider_completion_menu = True
 
 # Multi-line mode allows breaking up the sql statements into multiple lines. If
 # this is set to True, then the end of the statements must have a semi-colon.
 # If this is set to False then sql statements can't be split into multiple
 # lines. End of line (return) is considered as the end of the statement.
-multi_line = False
+multi_line = True
 
 # If multi_line_mode is set to "psql", in multi-line mode, [Enter] will execute
 # the current input if the input ends in a semicolon.
@@ -41,7 +41,7 @@ expand = False
 auto_expand = False
 
 # If set to True, table suggestions will include a table alias
-generate_aliases = False
+generate_aliases = True
 
 # log_file location.
 # In Unix/Linux: ~/.config/pgcli/log
@@ -60,7 +60,7 @@ casing_file = default
 
 # If generate_casing_file is set to True and there is no file in the above
 # location, one will be generated based on usage in SQL/PLPGSQL functions.
-generate_casing_file = False
+generate_casing_file = True
 
 # Casing of column headers based on the casing_file described above
 case_column_headers = True
@@ -102,13 +102,13 @@ table_format = psql
 # Syntax Style. Possible values: manni, igor, xcode, vim, autumn, vs, rrt,
 # native, perldoc, borland, tango, emacs, friendly, monokai, paraiso-dark,
 # colorful, murphy, bw, pastie, paraiso-light, trac, default, fruity
-syntax_style = default
+syntax_style = monokai
 
 # Keybindings:
 # When Vi mode is enabled you can use modal editing features offered by Vi in the REPL.
 # When Vi mode is disabled emacs keybindings such as Ctrl-A for home and Ctrl-E
 # for end are available in the REPL.
-vi = False
+vi = True
 
 # Error handling
 # When one of multiple SQL statements causes an error, choose to either
@@ -133,7 +133,7 @@ less_chatty = False
 # \# - "@" sign if logged in as superuser, '>' in other case
 # \n - Newline
 # \dsn_alias - name of dsn alias if -D option is used (empty otherwise)
-prompt = '\u@\h:\d> '
+prompt = '\h:\d> '
 
 # Number of lines to reserve for the suggestion menu
 min_num_menu_lines = 4
@@ -147,7 +147,7 @@ null_string = '<null>'
 # manage pager on startup
 enable_pager = True
 
-# Use keyring to automatically save and load password in a secure manner 
+# Use keyring to automatically save and load password in a secure manner
 keyring = True
 
 # Custom colors for the completion menu, toolbar, etc.
@@ -183,7 +183,7 @@ output.even-row = ""
 
 # DSN to call by -D option
 [alias_dsn]
-# example_dsn = postgresql://[user[:password]@][netloc][:port][/dbname]
+hogo = postgresql://howgood@localhost/howgood
 
 # Format for number representation
 # for decimal "d" - 12345678, ",d" - 12,345,678
