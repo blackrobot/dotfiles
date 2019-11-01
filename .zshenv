@@ -1,9 +1,9 @@
 export DOTFILES="${HOME}/dotfiles"
-EDITOR=nvim
-PAGER=less
+export EDITOR=nvim
+export PAGER=less
 
 # Prevent tar from adding ._* files
-COPYFILE_DISABLE=1
+export COPYFILE_DISABLE=1
 
 
 function add_to_path {
