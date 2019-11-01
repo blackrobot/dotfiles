@@ -1421,6 +1421,10 @@
 	<string>1775 66 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 2560 456 0 0 2560 1417 </string>
+	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF_selection</key>
+	<integer>0</integer>
 	<key>NeverWarnAboutShortLivedSessions_7660E191-860D-4380-8CFA-18905996B952</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_7660E191-860D-4380-8CFA-18905996B952_selection</key>
@@ -4384,8 +4388,10 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.5beta3</string>
 		<string>3.3.5beta1</string>
 		<string>3.3.5beta2</string>
+		<string>3.3.7beta1</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -4403,14 +4409,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{820, 1005}</string>
+		<string>{978, 1049}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>8954C67C-55B2-410C-B8C9-BC4D8625D9BF</string>
 	<key>NoSyncLastTipTime</key>
 	<real>591135872.14904404</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>9</integer>
+	<integer>13</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4916,11 +4922,11 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -4982,6 +4988,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentSession.jobPid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>tmuxWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -5023,6 +5037,14 @@
 				<true/>
 				<key>name</key>
 				<string>window</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentSession.lastCommand</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -5102,23 +5124,23 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxWindow</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>tmuxWindow</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -5243,7 +5265,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-30T17:27:02Z</date>
+	<date>2019-10-23T18:10:38Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5331,7 +5353,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.5beta2</string>
+	<string>3.3.7beta1</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
