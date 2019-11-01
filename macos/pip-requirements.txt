@@ -1,0 +1,13 @@
+-e git+ssh://git@github.com/iancmcc/ouimeaux.git@master#egg=ouimeaux-dev
+awscli
+black
+click
+flake8
+ipython
+isort
+jedi
+jupyter[notebook]
+neovim
+pandas
+ptpython
+requests
