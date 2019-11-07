@@ -12,10 +12,9 @@ source "${ZPLUG_HOME}/init.zsh"
 
 # theme
 zplug 'romkatv/powerlevel10k', \
-  use:'powerlevel10k.zsh-theme', \
   from:github, \
   as:theme, \
-  hook-load:"source ${DOTFILES}/zsh/purepower/load.zsh"
+  depth:1
 
 
 # autosuggest
