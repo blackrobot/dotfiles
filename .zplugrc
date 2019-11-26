@@ -57,6 +57,7 @@ zplug 'rupa/z', use:'z.sh'
 zplug 'changyuheng/zsh-interactive-cd'
 
 # oh-my-zsh plugins
+zplug 'plugins/aws', from:'oh-my-zsh'
 zplug 'plugins/cp', from:'oh-my-zsh'
 zplug 'plugins/docker', from:'oh-my-zsh'
 zplug 'plugins/docker-compose', from:'oh-my-zsh'
