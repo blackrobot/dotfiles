@@ -5,6 +5,67 @@
 # Configuration file for ipython.
 ##
 
+import sys
+
+from prompt_toolkit.key_binding.vi_state import InputMode, ViState
+
+
+# Less delay when typing
+if sys.version_info[0] == 3:
+    # Decrease input flush timeout from 500ms to 10ms
+    from prompt_toolkit.application.current import get_app
+
+    app = get_app()
+    app.ttimeoutlen = 0.01
+
+
+# Vi mode indicators
+# https://github.com/prompt-toolkit/python-prompt-toolkit/issues/192#issuecomment-557800620
+class ViModeIndicator:
+    def __init__(self, use_blinking_cursor=True):
+        if use_blinking_cursor:
+            self.input_mode_map = {
+                InputMode.NAVIGATION: 1,
+                InputMode.REPLACE: 3,
+            }
+            self.input_mode_default = 5
+        else:
+            self.input_mode_map = {
+                InputMode.NAVIGATION: 2,
+                InputMode.REPLACE: 4,
+            }
+            self.input_mode_default = 6
+
+    def setup_vi_state(self):
+        mode_map = self.input_mode_map
+        mode_def = self.input_mode_default
+
+        if hasattr(sys.stdout, "_cli"):
+            write_to_stdout = sys.stdout._cli.output.write_raw
+        else:
+            write_to_stdout = sys.stdout.write
+
+        def get_input_mode(inst):
+            return inst._input_mode
+
+        def set_input_mode(inst, mode):
+            shape = mode_map.get(mode, mode_def)
+            raw = f"\x1b[{shape} q"
+
+            write_to_stdout(raw)
+            sys.stdout.flush()
+
+            inst._input_mode = mode
+
+        ViState._input_mode = InputMode.INSERT
+        ViState.input_mode = property(get_input_mode, set_input_mode)
+
+        return ViState
+
+# !!!: Disabled
+# ViModeIndicator().setup_vi_state()
+## /End Vi mode indicators ##
+
 c.InteractiveShellApp.exec_PYTHONSTARTUP = False
 
 ## A list of dotted module names of IPython extensions to load.
@@ -65,7 +126,7 @@ c.InteractiveShell.banner1 = (
 c.InteractiveShell.color_info = True
 
 ## Set the color scheme (NoColor, Neutral, Linux, or LightBG).
-# c.InteractiveShell.colors = 'Neutral'
+c.InteractiveShell.colors = "Linux"
 
 ## Don't call post-execute functions that have failed in the past.
 # c.InteractiveShell.disable_failing_post_execute = False
@@ -88,7 +149,7 @@ c.InteractiveShell.history_load_length = 1_000
 
 ## Enables rich html representation of docstrings. (This requires the docrepr
 #  module).
-c.InteractiveShell.sphinxify_docstring = True
+c.InteractiveShell.sphinxify_docstring = False
 
 ##
 # c.InteractiveShell.wildcards_case_sensitive = True
@@ -125,7 +186,12 @@ c.TerminalInteractiveShell.highlight_matching_brackets = True
 ## The name or class of a Pygments style to use for syntax highlighting. To see
 #  available styles, run `pygmentize -L styles`.
 # c.TerminalInteractiveShell.highlighting_style = traitlets.Undefined
-c.TerminalInteractiveShell.highlighting_style = "native"
+#
+# These are the nicest highlighting styles I've found:
+#   ["rrt", "inkpot", "pastie", "bw", "stata-dark"]
+# Test them in ipython using:
+#   %config TerminalInteractiveShell.highlighting_style = "example"
+c.TerminalInteractiveShell.highlighting_style = "rrt"
 
 ## Enable mouse support in the prompt (Note: prevents selecting text with the
 #  mouse)
