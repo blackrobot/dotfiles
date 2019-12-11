@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AboutToPasteTabsWithCancel</key>
+	<true/>
+	<key>AboutToPasteTabsWithCancel_selection</key>
+	<integer>2</integer>
 	<key>AddNewTabAtEndOfTabs</key>
 	<true/>
 	<key>AdjustWindowForFontSizeChange</key>
@@ -1420,7 +1424,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1775 66 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 456 0 0 2560 1417 </string>
+	<string>0 0 2560 477 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF_selection</key>
@@ -4388,10 +4392,13 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.7beta1</string>
 		<string>3.3.5beta3</string>
 		<string>3.3.5beta1</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.7beta3</string>
 		<string>3.3.5beta2</string>
-		<string>3.3.7beta1</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -4416,7 +4423,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>591135872.14904404</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>13</integer>
+	<integer>16</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -5204,7 +5211,7 @@
 	<key>PasteFromClipboard</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>PerformDNSLookups</key>
 	<true/>
 	<key>PointerActions</key>
@@ -5265,11 +5272,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-23T18:10:38Z</date>
+	<date>2019-11-27T02:42:56Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -5353,7 +5360,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.7beta1</string>
+	<string>3.3.7beta4</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
