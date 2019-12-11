@@ -21,12 +21,6 @@ build/
 !.fonts/Powerline*
 !.fonts/Ubuntu*
 
-# ipython
-.ipython/db/*
-.ipython/history
-.ipython/profile_default
-.ipython/README
-
 # ptpython
 .ptpython/*
 !.ptpython/config.py
