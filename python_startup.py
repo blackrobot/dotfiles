@@ -10,18 +10,22 @@ import sys
 dt = datetime
 
 
-class setup:
+class bootstrap:
     PYTHON = "PYTHON"
     PTPYTHON = "PTPYTHON"
     IPYTHON = "IPYTHON"
     PTIPYTHON = "PTIPYTHON"
+    JUPYTER = "JUPYTER"
     UNKNOWN = "UNKNOWN"
 
-    interpreters = (PYTHON, PTPYTHON, IPYTHON, PTIPYTHON)
+    interpreters = (PYTHON, PTPYTHON, IPYTHON, PTIPYTHON, JUPYTER)
 
     def __init__(self):
         if self.interpreter in (self.PYTHON, self.UNKNOWN):
+            self.using_plain_python = True
             self.setup_plain_python()
+        else:
+            self.using_plain_python = False
 
     @property
     def interpreter(self):
@@ -72,5 +76,10 @@ class setup:
         print("", flush=True)
 
 
-setup.instance = setup()
-del setup
+bootstrap.instance = bootstrap()
+
+if bootstrap.using_plain_python:
+    _bootstrap_pyterm, bootstrap = bootstrap, None
+
+del bootstrap
+
