@@ -78,7 +78,7 @@ class bootstrap:
 
 bootstrap.instance = bootstrap()
 
-if bootstrap.using_plain_python:
+if bootstrap.instance.using_plain_python:
     _bootstrap_pyterm, bootstrap = bootstrap, None
 
 del bootstrap
