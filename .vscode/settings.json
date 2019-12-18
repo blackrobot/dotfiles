@@ -19,4 +19,5 @@
   "git.detectSubmodules": false,
   "shellcheck.enable": false,
   "python.formatting.provider": "black",
+  "python.pythonPath": "~/.pyenv/versions/3.8.0/bin/python",
 }
