@@ -1,5 +1,6 @@
 require('console').init()
 require('spoons').init(true)
+require('organize_downloads').init()
 
 -- General settings
 mash = { "ctrl", "alt" }
