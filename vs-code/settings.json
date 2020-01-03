@@ -72,6 +72,30 @@
   "workbench.editor.tabSizing": "shrink",
   "workbench.tips.enabled": true,
   "workbench.colorCustomizations": {
+    /*
+     * Opacity values are hex values ranging from 0x00 to 0xFF (0-255). Some common
+     * values are:
+     *
+     *     +------------+
+     *     | Perc | Hex |
+     *     |------+-----|
+     *     |  25% |  40 |
+     *     |  33% |  54 |
+     *     |  50% |  80 |
+     *     |  66% |  A8 |
+     *     |  75% |  BF |
+     *     | 100% |  FF |
+     *     +------------+
+     *
+     * Use this script to convert a decimal or percentage value to hex:
+     *
+     *     hexperc() {
+     *       python -c 'p='$1'; print(hex(round(255 * (p <= 1 and p or p/100)))[2:].upper())'
+     *     }
+     *     $ hexperc 0.66
+     *     A8
+     *
+     */
     "[Dracula]": {
       "editorLineNumber.activeForeground": "#ffffffde",
       "editorRuler.foreground": "#ffffff0f",
