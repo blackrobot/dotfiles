@@ -2,8 +2,7 @@
   /* Main config */
   "editor.fontLigatures": true,
   "editor.fontFamily": "Operator Mono",
-  "editor.fontSize": 14.3,
-  "editor.lineHeight": 0,
+  "editor.fontSize": 14.5,
   "editor.renderWhitespace": "selection",
   "editor.lineNumbers": "relative",
   "editor.rulers": [88, 120],
@@ -16,12 +15,17 @@
   "editor.renderLineHighlight": "all",
   "editor.renderControlCharacters": true,
   "editor.roundedSelection": true,
-  "editor.minimap.enabled": false,
   "editor.smoothScrolling": true,
   "editor.overviewRulerBorder": true,
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "bottom",
   "editor.suggestFontSize": 14,
+  /* Minimap
+     By default it is disabled, but can be toggled with a keyboard command
+  */
+  "editor.minimap.enabled": false,
+  "editor.minimap.maxColumn": 120,
+  "editor.minimap.renderCharacters": false,
 
   "extensions.ignoreRecommendations": false,
   "extensions.showRecommendationsOnlyOnDemand": true,
@@ -54,13 +58,17 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.scrollback": 2000,
   "terminal.integrated.fontSize": 13.5,
-  "terminal.integrated.rendererType": "canvas",
+  "terminal.integrated.rendererType": "experimentalWebgl",
   "terminal.integrated.shellArgs.osx": ["-l"],
   "terminal.integrated.env.osx": {
     "TERM": "xterm-256color-italic",
   },
 
   "telemetry.enableTelemetry": false,
+
+  /* Breadcrumbs */
+  "breadcrumbs.enabled": false,
+  "breadcrumbs.symbolSortOrder": "type",
 
   "window.openFilesInNewWindow": "default",
   "window.nativeTabs": false,
@@ -75,7 +83,6 @@
     /*
      * Opacity values are hex values ranging from 0x00 to 0xFF (0-255). Some common
      * values are:
-     *
      *     +------------+
      *     | Perc | Hex |
      *     |------+-----|
@@ -84,20 +91,19 @@
      *     |  50% |  80 |
      *     |  66% |  A8 |
      *     |  75% |  BF |
-     *     | 100% |  FF |
      *     +------------+
      *
      * Use this script to convert a decimal or percentage value to hex:
-     *
      *     hexperc() {
      *       python -c 'p='$1'; print(hex(round(255 * (p <= 1 and p or p/100)))[2:].upper())'
      *     }
      *     $ hexperc 0.66
      *     A8
-     *
      */
     "[Dracula]": {
-      "editorLineNumber.activeForeground": "#ffffffde",
+      // Color Palette
+      // https://github.com/dracula/dracula-theme/#color-palette
+      "editorLineNumber.activeForeground": "#ff79c6",
       "editorRuler.foreground": "#ffffff0f",
       "editorWhitespace.foreground": "#ffffffdd",
       "editor.selectionBackground": "#c2185bff",
@@ -123,7 +129,7 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.visualstar": true,
-  "vim.foldfix": false, // causes bug when `true` - git.io/vbfWp
+  "vim.foldfix": false, // causes bug when `true` - https://git.io/vbfWp
   // vim: easy motion
   "vim.easymotion": true,
   "vim.easymotionMarkerFontWeight": "bold",
@@ -136,9 +142,15 @@
   "vim.cursorStylePerMode.visual": "block-outline",
   "vim.cursorStylePerMode.visualline": "block-outline",
   "vim.cursorStylePerMode.visualblock": "block-outline",
+  // vim: highlight yank selection
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#FFFFFF",      // #C2185B
+  "vim.highlightedyank.textColor": "#E53935",  // #FFFFFF
+  "vim.highlightedyank.duration": 321,
   // vim: neovim
   "vim.enableNeovim": true,
   "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.debug.silent": true,
   // vim: key bindings
   "vim.insertModeKeyBindingsNonRecursive": [
     {
@@ -179,6 +191,11 @@
       "commands": ["workbench.action.joinAllGroups"],
     },
     {
+      // Toggle minimap
+      "before": ["<leader>", "m"],
+      "commands": ["editor.action.toggleMinimap"],
+    },
+    {
       // Toggle breadcrumbs
       "before": ["<leader>", "b"],
       "commands": ["breadcrumbs.toggle"],
@@ -194,6 +211,10 @@
     {
       "before": ["g", "t"],
       "commands": ["workbench.action.terminal.focus"],
+    },
+    {
+      "before": ["g", "o"],
+      "commands": ["editor.action.showDefinitionPreviewHover"],
     },
     {
       "before": ["<leader>", "o"],
@@ -242,29 +263,53 @@
     "editor.wordWrap": "off",
     "editor.tabSize": 4,
   },
-  "python.pythonPath": "/Users/damon/.pyenv/versions/3.7.4/bin/python",
+  "python.disableInstallationCheck": true,
+  "python.globalModuleInstallation": true,
+  "python.pythonPath": "~/.pyenv/versions/3.8.0/bin/python",
   "python.venvPath": "~/.pyenv/versions/",
   "python.terminal.activateEnvironment": false,
+  "python.formatting.provider": "black",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.lintOnSave": true,
-  "python.autoComplete.addBrackets": false,
-
-  "python.globalModuleInstallation": true,
+  "python.linting.ignorePatterns": [
+    ".vscode/*.py",
+    "**/site-packages/**/*.py",
+    ".tmp/**/*.py",
+  ],
 
   // Use microsoft's python language server
   "python.jediEnabled": false,
+  "python.autoComplete.showAdvancedMembers": true,
+  "python.diagnostics.sourceMapsEnabled": false,
+  "python.analysis.memory.keepLibraryLocalVariables": true,
+  "python.analysis.memory.keepLibraryAst": true,
+  // NOTE: This setting is undocumented, so it will appear grayed out. The options
+  // are: "stable", "beta", and "daily".
+  // https://github.com/microsoft/python-language-server/wiki/Versioning-and-download-channels
+  "python.analysis.downloadChannel": "daily",
 
   /* Markdown config */
   "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.wrappingIndent": "deepIndent",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 120,
+    "editor.wrappingIndent": "same",
     "editor.quickSuggestions": false,
   },
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.toc.githubCompatibility": true,
   "markdown.extension.toc.orderedList": false,
   "markdown.extension.toc.updateOnSave": false,
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.print.imgToBase64": true,
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "markdown-preview-enhanced.enableScriptExecution": true,
+  "markdown-preview-enhanced.enableTypographer": true,
+  "markdown-preview-enhanced.mathRenderingOnlineService": "https://latex.codecogs.com/png.latex",
+  "markdown-preview-enhanced.printBackground": true,
+  "markdown-preview-enhanced.protocolsWhiteList": "http://, https://, file://, mailto:, tel:",
+  "markdown-preview-enhanced.usePuppeteerCore": false,
+  "markdown-preview-enhanced.mermaidTheme": "default",
 
   /* Other extension config */
   "git.enableCommitSigning": true,
@@ -302,7 +347,6 @@
   "sync.autoDownload": false,
   "sync.forceDownload": false,
   "sync.quietSync": true,
-  "sync.askGistName": false,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": true,
     "suppressFileNotUnderSourceControlWarning": true,
@@ -358,7 +402,6 @@
   "search.smartCase": true,
   "[csv]": {
     "editor.minimap.enabled": true,
-    "editor.minimap.maxColumn": 80,
     "editor.minimap.renderCharacters": false,
   },
   "gitlens.keymap": "alternate",
@@ -379,20 +422,11 @@
   "spellright.language": ["en"],
   "spellright.documentTypes": ["markdown", "latex", "git-commit"],
   "editor.tabSize": 2,
-  "todohighlight.isEnable": true,
-  "python.autoComplete.showAdvancedMembers": true,
-  "python.linting.ignorePatterns": [
-    ".vscode/*.py",
-    "**/site-packages/**/*.py",
-    ".tmp/**/*.py",
-  ],
   "[git-commit]": {
     "editor.rulers": [50, 72],
   },
   "prettier.printWidth": 88,
-  "prettier.disableLanguages": ["vue"],
-  "breadcrumbs.enabled": false,
-  "editor.acceptSuggestionOnEnter": "smart",
+  "editor.acceptSuggestionOnEnter": "off",
   "git.allowForcePush": true,
   "git.rebaseWhenSync": true,
   "githubPullRequests.telemetry.enabled": false,
@@ -409,9 +443,6 @@
   "editor.find.seedSearchStringFromSelection": false,
   "editor.suggest.localityBonus": true,
   "editor.hover.delay": 222,
-  "vim.highlightedyank.enable": true,
-  "vim.highlightedyank.color": "#c2185b",
-  "python.diagnostics.sourceMapsEnabled": false,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
@@ -419,7 +450,6 @@
     "editor.defaultFormatter": "vscode.json-language-features",
   },
   "debug.toolBarLocation": "docked",
-  "python.formatting.provider": "black",
   "editor.copyWithSyntaxHighlighting": false,
   "editor.emptySelectionClipboard": false,
   "zenMode.hideLineNumbers": false,
@@ -432,7 +462,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.completeFunctionCalls": true,
   "githubPullRequests.showInSCM": true,
-  "workbench.list.keyboardNavigation": "filter",
   "git.autofetch": true,
   "terminal.integrated.inheritEnv": true,
   "material-icon-theme.showReloadMessage": false,
@@ -446,12 +475,44 @@
   "docker.truncateLongRegistryPaths": true,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "terminal.integrated.experimentalUseTitleEvent": true,
-  "python.dataScience.autoPreviewNotebooksInInteractivePane": true,
-  "leetcode.defaultLanguage": "python3",
-  "leetcode.showCommentDescription": true,
-  "leetcode.showLocked": true,
-  "leetcode.workspaceFolder": "/Users/damon/Workspace/python/leetcode.com",
-  "leetcode.hint.configWebviewMarkdown": false,
-  "leetcode.hint.commandShortcut": false,
+  "gitlens.advanced.telemetry.enabled": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "sqltools.disableReleaseNotifications": true,
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "cfnLint.validateUsingJsonSchema": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--extend-ignore=E265,E266"
+  ],
+  "search.enableSearchEditorPreview": true,
+  "scm.defaultViewMode": "tree",
 }
