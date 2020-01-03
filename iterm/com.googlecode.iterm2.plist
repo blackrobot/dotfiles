@@ -1336,6 +1336,8 @@
 	<true/>
 	<key>HideTabNumber</key>
 	<false/>
+	<key>HighVisibility</key>
+	<false/>
 	<key>HighlightTabLabels</key>
 	<true/>
 	<key>HotKeyBookmark</key>
@@ -1424,7 +1426,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1775 66 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 477 0 0 2560 1417 </string>
+	<string>1600 0 960 1417 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF_selection</key>
@@ -4339,6 +4341,8 @@
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>1</integer>
+			<key>Title Components</key>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.10630750317258883</real>
 			<key>Triggers</key>
@@ -4370,6 +4374,8 @@
 			<false/>
 			<key>Use Cursor Guide</key>
 			<false/>
+			<key>Use Custom Window Title</key>
+			<false/>
 			<key>Use HFS Plus Mapping</key>
 			<false/>
 			<key>Use Italic Font</key>
@@ -4392,13 +4398,16 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.7beta1</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.5beta1</string>
-		<string>3.3.7beta2</string>
 		<string>3.3.7beta4</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.7beta1</string>
 		<string>3.3.5beta2</string>
+		<string>3.3.8beta3</string>
+		<string>3.3.5beta1</string>
+		<string>3.3.8beta2</string>
+		<string>3.3.8beta1</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -4416,14 +4425,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{978, 1049}</string>
+		<string>{1368, 1217}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>8954C67C-55B2-410C-B8C9-BC4D8625D9BF</string>
 	<key>NoSyncLastTipTime</key>
 	<real>591135872.14904404</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>16</integer>
+	<integer>21</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -5272,7 +5281,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-27T02:42:56Z</date>
+	<date>2019-12-20T21:19:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5360,7 +5369,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.7beta4</string>
+	<string>3.3.8beta3</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
