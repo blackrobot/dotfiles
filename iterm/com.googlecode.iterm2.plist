@@ -20,6 +20,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -42,6 +44,8 @@
 	<integer>3</integer>
 	<key>BadgeTopMargin</key>
 	<integer>3</integer>
+	<key>BracketedPasteMode</key>
+	<true/>
 	<key>CGFontRenderingFontSmoothingDisabled</key>
 	<false/>
 	<key>CheckTestRelease</key>
@@ -56,6 +60,8 @@
 	<real>35</real>
 	<key>Control</key>
 	<integer>1</integer>
+	<key>ConvertDosNewlines</key>
+	<true/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
@@ -1204,6 +1210,8 @@
 	<false/>
 	<key>EnableRendezvous</key>
 	<false/>
+	<key>EscapeShellCharsWithBackslash</key>
+	<false/>
 	<key>FlashTabBarInFullscreen</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -1422,11 +1430,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>972 932 616 174 0 0 2560 1417 </string>
+	<string>971 932 616 174 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1775 66 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1600 0 960 1417 0 0 2560 1417 </string>
+	<string>1920 0 640 1417 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF_selection</key>
@@ -4398,16 +4406,18 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.8beta1</string>
 		<string>3.3.7beta4</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.8beta5</string>
 		<string>3.3.7beta2</string>
+		<string>3.3.8beta4</string>
 		<string>3.3.5beta3</string>
 		<string>3.3.7beta1</string>
 		<string>3.3.5beta2</string>
+		<string>3.3.8beta2</string>
 		<string>3.3.8beta3</string>
 		<string>3.3.5beta1</string>
-		<string>3.3.8beta2</string>
-		<string>3.3.8beta1</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -4420,6 +4430,10 @@
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
@@ -4432,7 +4446,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>591135872.14904404</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>21</integer>
+	<integer>30</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -5219,6 +5233,12 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
+	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>2</integer>
 	<key>PerformDNSLookups</key>
@@ -5281,7 +5301,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-20T21:19:09Z</date>
+	<date>2020-02-05T01:24:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5369,7 +5389,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta3</string>
+	<string>3.3.8beta5</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
