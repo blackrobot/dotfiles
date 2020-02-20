@@ -107,17 +107,17 @@
   {
     "key": "ctrl+f",
     "command": "-extension.vim_ctrl+f",
-    "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl"
+    // "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl"
   },
   {
       "key": "ctrl+n",
       "command": "-extension.vim_ctrl+n",
-      "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl"
+      // "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl"
   },
   {
       "key": "ctrl+w",
       "command": "-extension.vim_ctrl+w",
-      "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+      // "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
   },
 
   {
@@ -129,5 +129,9 @@
     "key": "cmd+/",
     "command": "workbench.action.toggleEditorVisibility"
   },
-
+  {
+    "key": "ctrl+space",
+    "command": "-emacs.startRegionMode",
+    // "when": "editorFocus && vim.mode == 'Insert'"
+  },
 ]
