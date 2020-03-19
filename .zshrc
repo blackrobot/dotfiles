@@ -41,6 +41,7 @@ fpath=( "${DOTFILES}/zfuncs" "${fpath[@]}" )
 
 # Register functions for autoloading
 autoload -Uz \
+  android-mirror \
   brewfind \
   bubu \
   cheat \

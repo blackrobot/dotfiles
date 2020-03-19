@@ -1,0 +1,35 @@
+#!/usr/bin/env zsh
+
+##
+# Mirror and control your android phone through your computer.
+#
+# https://github.com/genymobile/scrcpy
+#
+# References:
+#   • [installation]: https://github.com/genymobile/scrcpy#macos
+#   • [options]: https://github.com/genymobile/scrcpy#features
+##
+
+
+autoload colors; colors
+
+
+if [[ ! -e "${commands[scrcpy]}" ]]; then
+  {
+    printf '\n%sThe "scrcpy" bin was not found on $PATH. To install, follow the instructions here:%s\n' \
+      "$fg_no_bold[red]" \
+      "$reset_color"
+    echo
+    echo '  https://github.com/genymobile/scrcpy#macos'
+    echo
+    echo '  $ brew cask install android-platform-tools'
+    echo '  $ brew install scrcpy'
+    echo
+  } >&2 && return 1
+fi
+
+
+scrcpy \
+  --turn-screen-off \
+  --max-size 1920 \
+  "$@"
