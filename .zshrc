@@ -126,29 +126,5 @@ source_dotfile "lib-includes"
 
 source_if_exists "${HOME}/.zshrc.local"
 
-# Update stuff in the background
-{
-  if (( $+commands[tldr] )); then
-    tldr --update > /dev/null 2>&1
-  fi
-
-  ##
-  # Compile completion dumped files
-  # https://htr3n.github.io/2018/07/faster-zsh/#compiling-completion-dumped-files
-  ##
-
-  # Compile zcompdump, if modified, to increase startup speed.
-  zcompdump="$ZSH_COMPDUMP"
-
-  if [[ -z "$zcompdump" ]]; then
-    zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
-  fi
-
-  if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
-    zcompile "$zcompdump"
-  fi
-
-} &!
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
