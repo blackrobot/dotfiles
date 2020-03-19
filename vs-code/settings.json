@@ -528,4 +528,5 @@
   "explorer.incrementalNaming": "smart",
 "timeline.showView": true,
 "sync.forceUpload": true,
+"window.zoomLevel": 0,
 }
