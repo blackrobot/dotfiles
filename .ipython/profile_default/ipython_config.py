@@ -104,10 +104,7 @@ c.InteractiveShell.autoindent = True
 # c.InteractiveShell.automagic = True
 
 ## The part of the banner to be printed before the profile
-c.InteractiveShell.banner1 = (
-    "Python 3.8.0 -- IPython 7.10.1\n"
-    "Type '?' for help.\n"
-)
+c.InteractiveShell.banner1 = sys.version.splitlines()[0].strip()
 
 ## The part of the banner to be printed after the profile
 # c.InteractiveShell.banner2 = ''
