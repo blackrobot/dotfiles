@@ -1,8 +1,16 @@
 [
   /**
+   * Use <⌘ + N> to create new files from the file explorer
+   */
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus",
+  },
+
+  /**
    * Use <^ + ⌘ + H> and <^ + ⌘ + L> to move editor into prev/next group
    */
-
   {
     "key": "ctrl+cmd+h",
     "command": "workbench.action.moveEditorToPreviousGroup"
@@ -33,6 +41,30 @@
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
   },
+
+  /**
+   * Use <^ + w> <^ + h/j/l> to move panel left, down, or to the right
+   */
+  {
+    "key": "ctrl+w shift+j",
+    "command": "workbench.action.positionPanelBottom",
+    "when": "terminalFocus",
+  },
+  {
+    "key": "ctrl+w shift+l",
+    "command": "workbench.action.positionPanelRight",
+    "when": "terminalFocus",
+  },
+  {
+    "key": "ctrl+w shift+h",
+    "command": "workbench.action.positionPanelLeft",
+    "when": "terminalFocus",
+  },
+  // {
+  //   "key": "ctrl+w ctrl+t",
+  //   "command": "workbench.action.positionPanelBottom",
+  //   "when": "terminal",
+  // },
 
   /**
    * Use <⇧ + ⌘ + \> to toggle between horizontal and vertical split layouts

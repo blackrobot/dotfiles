@@ -30,8 +30,6 @@
   "extensions.ignoreRecommendations": false,
   "extensions.showRecommendationsOnlyOnDemand": true,
 
-  "explorer.openEditors.visible": 5,
-
   "files.defaultLanguage": "markdown",
   "files.exclude": {
     "**/.DS_Store": true,
@@ -54,6 +52,7 @@
     "**/tags": true
   },
 
+  /* Terminal config */
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.scrollback": 2000,
   "terminal.integrated.fontSize": 13.5,
@@ -74,7 +73,6 @@
   "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
   "workbench.editor.labelFormat": "short",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.activityBar.visible": false,
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.tips.enabled": true,
@@ -213,6 +211,10 @@
       "commands": ["workbench.action.minimizeOtherEditors"],
     },
     {
+      "before": ["<leader>", "c"],
+      "commands": ["git.openChange"],
+    },
+    {
       "before": ["g", "t"],
       "commands": ["workbench.action.terminal.focus"],
     },
@@ -335,13 +337,14 @@
     "color": "#FFF",
   },
   "todohighlight.keywords": [
+    // Keywords taken from https://www.python.org/dev/peps/pep-0350/#mnemonics
     "TODO:",
     "FIXME:",
-    "???:",
     "!!!:",
     "BUG:",
     { "text": "HACK:", "backgroundColor": "#9C27B0" },
     { "text": "NOTE:", "backgroundColor": "#2196F3" },
+    { "text": "???:", "backgroundColor": "#4CAF50" },
   ],
   // "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDelete": false,
@@ -529,4 +532,9 @@
 "timeline.showView": true,
 "sync.forceUpload": true,
 "window.zoomLevel": 0,
+"workbench.activityBar.visible": false,
+"git.suggestSmartCommit": false,
+"python.dataScience.askForKernelRestart": false,
+"search.collapseResults": "auto",
+"search.searchOnTypeDebouncePeriod": 111,
 }
