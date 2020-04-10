@@ -39,13 +39,19 @@ hs.application.enableSpotlightForNameSearches(true)
 -- hs.hints.fontName = ""         -- Default uses system font
 hs.hints.fontSize = 22.0          -- Set to 0.0 to use default size
 -- hs.hints.hintChars = ""        -- Ignored when using "vimperator" style
-hs.hints.iconAlpha = 0.80         -- Default is 0.95
+hs.hints.iconAlpha = 0.68         -- Default is 0.95
 hs.hints.showTitleThresh = 8      -- Default is 4
 hs.hints.style = "vimperator"
-hs.hints.titleMaxSize = 8
+hs.hints.titleMaxSize = 16
 
 -- * Hint all
-hs.hotkey.bind("alt", "tab", hs.hints.windowHints)
+hs.hotkey.bind("alt", "tab", function()
+  hs.hints.windowHints(
+    nil,  -- windows
+    nil,  -- callback
+    true  -- allowNonStandard: all windows will be included, not just standard ones
+  )
+end)
 -- * Hint current app
 hs.hotkey.bind("alt", "`", function()
   hs.hints.windowHints(
