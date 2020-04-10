@@ -1,23 +1,36 @@
 {
+  /**
+   * Use the shell directive on zsh files to make them compatible with shellcheck:
+   *
+   *     #!/usr/bin/env zsh
+   *     # shellcheck shell=bash
+   *     set -e ; "etc..."
+   *
+   */
   "files.associations": {
-    ".aliases": "shellscript",
-    "**/zfuncs/*": "shellscript",
-    "**/lib/*": "shellscript",
-    "lib-includes": "shellscript",
+    // https://code.visualstudio.com/docs/languages/overview#_can-i-map-additional-file-extensions-to-a-language
     ".*rc": "shellscript",
+    ".aliases": "shellscript",
     ".z*": "shellscript",
-
-    "zsh.plugins/*": "shellscript",
+    "**/bin/*": "shellscript",
+    "**/lib/*": "shellscript",
+    "**/zfuncs/*": "shellscript",
+    "lib-includes": "shellscript",
     "zsh.custom/*": "shellscript",
-    "async": "shellscript",
-    "prompt_pure_*": "shellscript",
+    "zsh.plugins/*": "shellscript",
 
     ".*vim": "viml",
     ".*vimrc": "viml",
   },
   // "git.detectSubmodulesLimit": 20,
   "git.detectSubmodules": false,
-  "shellcheck.enable": false,
+
+  "shellcheck.enable": true,
+  "shellcheck.ignorePatterns": {
+    "**/*.zsh": true,
+    ".zlogin": true,
+  },
+
   "python.formatting.provider": "black",
   "python.pythonPath": "~/.pyenv/versions/3.8.0/bin/python",
 }
