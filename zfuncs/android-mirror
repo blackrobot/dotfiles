@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# shellcheck shell=bash
 
 ##
 # Mirror and control your android phone through your computer.
@@ -14,6 +15,7 @@
 autoload colors; colors
 
 
+# shellcheck disable=SC2016,SC1087,SC2154
 if [[ ! -e "${commands[scrcpy]}" ]]; then
   {
     printf '\n%sThe "scrcpy" bin was not found on $PATH. To install, follow the instructions here:%s\n' \
