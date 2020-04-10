@@ -19,6 +19,8 @@ local module = {}
 
 
 module.init = function()
+  local SHOW_NOTIFICATION = false
+
   local homePath = os.getenv("HOME")
   local downloadPath = homePath .. "/Downloads/"
   local torrentPath = downloadPath .. "torrents/"
@@ -61,10 +63,13 @@ module.init = function()
     if context.extension == "torrent" and context.inRoot then
       local newPath = torrentPath .. context.filename
 
-      notify.new({
-        title = "Hammerspoon",
-        informativeText = "Moved torrent file to " .. newPath,
-      }):send()
+      if SHOW_NOTIFICATION then
+        notify.new({
+          title = "Hammerspoon",
+          informativeText = "Moved torrent file to " .. newPath,
+        }):send()
+      end
+
       return os.rename(context.path, newPath)
     end
 
