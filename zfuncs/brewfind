@@ -14,7 +14,7 @@
         --ansi \
         --header='[brew:info]' \
         --preview-window 'right:75%:wrap' \
-        --preview 'brew info {}'
+        --preview 'brew info {} || true'
   }
 
   brew search "$1" | fzf_select
