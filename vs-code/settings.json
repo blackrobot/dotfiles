@@ -294,6 +294,7 @@
   // are: "stable", "beta", and "daily".
   // https://github.com/microsoft/python-language-server/wiki/Versioning-and-download-channels
   "python.analysis.downloadChannel": "daily",
+  // "python.languageServer": "Microsoft",
 
   /* Markdown config */
   "[markdown]": {
