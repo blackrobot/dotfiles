@@ -1384,6 +1384,14 @@
 	<real>0.0</real>
 	<key>MojaveVisualEffectView</key>
 	<true/>
+	<key>NSColorPanelMode</key>
+	<string>7</string>
+	<key>NSColorPickerPreferredRGBEntryMode</key>
+	<integer>2</integer>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 6</string>
+	<key>NSFontPanelSizeSliderParams</key>
+	<string>1 0 100</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1398,8 +1406,8 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 228.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 228.000000, 43.000000, NO, NO</string>
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
@@ -1429,12 +1437,18 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSColorPanel</key>
+	<string>1192 713 228 280 0 0 2560 1417 </string>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1561 502 445 205 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>971 932 616 174 0 0 2560 1417 </string>
+	<string>972 932 616 174 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1775 66 620 392 0 0 2560 1417 </string>
+	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
+	<string>479 631 260 148 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 0 640 1417 0 0 2560 1417 </string>
+	<string>0 0 2560 456 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF_selection</key>
@@ -2672,7 +2686,7 @@
 			<key>HotKey Window Floats</key>
 			<true/>
 			<key>HotKey Window Reopens On Activation</key>
-			<false/>
+			<true/>
 			<key>Icon</key>
 			<integer>1</integer>
 			<key>Idle Code</key>
@@ -3509,7 +3523,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>12.579479298857867</real>
+			<real>8.5360544892131962</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -4016,8 +4030,10 @@
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
+			<key>Send Session Ended Alert</key>
+			<false/>
 			<key>Session Close Undo Timeout</key>
-			<integer>15</integer>
+			<integer>300</integer>
 			<key>Set Local Environment Vars</key>
 			<true/>
 			<key>Shortcut</key>
@@ -4129,8 +4145,23 @@
 				<dict>
 					<key>algorithm</key>
 					<integer>1</integer>
+					<key>auto-rainbow style</key>
+					<integer>0</integer>
+					<key>default text color</key>
+					<dict>
+						<key>Alpha Component</key>
+						<real>1</real>
+						<key>Blue Component</key>
+						<real>0.60000002384185791</real>
+						<key>Color Space</key>
+						<string>sRGB</string>
+						<key>Green Component</key>
+						<real>0.60000002384185791</real>
+						<key>Red Component</key>
+						<real>0.60000002384185791</real>
+					</dict>
 					<key>font</key>
-					<string>.AppleSystemUIFont 12</string>
+					<string>Monaco 11</string>
 				</dict>
 				<key>components</key>
 				<array>
@@ -4144,31 +4175,33 @@
 								<key>base: compression resistance</key>
 								<real>0.0</real>
 								<key>base: priority</key>
-								<real>5</real>
+								<real>2</real>
 								<key>maxwidth</key>
 								<real>+infinity</real>
 								<key>minwidth</key>
 								<real>0.0</real>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>0.5</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>0.5</real>
-									<key>Red Component</key>
-									<real>0.5</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.60000002384185791</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.60000002384185791</real>
+									<key>Red Component</key>
+									<real>0.60000002384185791</real>
+								</dict>
 								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
+								<string>Monaco 11</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4186,8 +4219,23 @@
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.60000002384185791</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.60000002384185791</real>
+									<key>Red Component</key>
+									<real>0.60000002384185791</real>
+								</dict>
 								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
+								<string>Monaco 11</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4200,26 +4248,28 @@
 							<dict>
 								<key>base: priority</key>
 								<real>5</real>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>0.5</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>0.5</real>
-									<key>Red Component</key>
-									<real>0.5</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.60000002384185791</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.60000002384185791</real>
+									<key>Red Component</key>
+									<real>0.60000002384185791</real>
+								</dict>
 								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
+								<string>Monaco 11</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4232,26 +4282,28 @@
 							<dict>
 								<key>base: priority</key>
 								<real>5</real>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>0.5</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>0.5</real>
-									<key>Red Component</key>
-									<real>0.5</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.60000002384185791</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.60000002384185791</real>
+									<key>Red Component</key>
+									<real>0.60000002384185791</real>
+								</dict>
 								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
+								<string>Monaco 11</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4264,26 +4316,28 @@
 							<dict>
 								<key>base: priority</key>
 								<real>5</real>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>0.5</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>0.5</real>
-									<key>Red Component</key>
-									<real>0.5</real>
-								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.60000002384185791</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.60000002384185791</real>
+									<key>Red Component</key>
+									<real>0.60000002384185791</real>
+								</dict>
 								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
+								<string>Monaco 11</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4297,29 +4351,33 @@
 								<key>base: compression resistance</key>
 								<real>0.0</real>
 								<key>base: priority</key>
-								<real>5</real>
+								<real>1</real>
 								<key>format</key>
 								<string>MM-dd hh:mm</string>
-								<key>shared text color</key>
-								<dict>
-									<key>Alpha Component</key>
-									<real>1</real>
-									<key>Blue Component</key>
-									<real>0.5</real>
-									<key>Color Space</key>
-									<string>sRGB</string>
-									<key>Green Component</key>
-									<real>0.5</real>
-									<key>Red Component</key>
-									<real>0.5</real>
-								</dict>
+								<key>localize</key>
+								<integer>1</integer>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
 								<integer>1</integer>
+								<key>auto-rainbow style</key>
+								<integer>0</integer>
+								<key>default text color</key>
+								<dict>
+									<key>Alpha Component</key>
+									<real>1</real>
+									<key>Blue Component</key>
+									<real>0.60000002384185791</real>
+									<key>Color Space</key>
+									<string>sRGB</string>
+									<key>Green Component</key>
+									<real>0.60000002384185791</real>
+									<key>Red Component</key>
+									<real>0.60000002384185791</real>
+								</dict>
 								<key>font</key>
-								<string>.AppleSystemUIFont 12</string>
+								<string>Monaco 11</string>
 							</dict>
 						</dict>
 					</dict>
@@ -4352,7 +4410,7 @@
 			<key>Title Components</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.10630750317258883</real>
+			<real>0.17319360723350255</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Underline Color</key>
@@ -4406,18 +4464,24 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.8beta1</string>
-		<string>3.3.7beta4</string>
-		<string>3.3.7beta3</string>
-		<string>3.3.8beta5</string>
-		<string>3.3.7beta2</string>
-		<string>3.3.8beta4</string>
-		<string>3.3.5beta3</string>
-		<string>3.3.7beta1</string>
-		<string>3.3.5beta2</string>
-		<string>3.3.8beta2</string>
+		<string>3.3.10beta3</string>
 		<string>3.3.8beta3</string>
+		<string>3.3.10beta4</string>
+		<string>3.3.7beta1</string>
+		<string>3.3.8beta5</string>
+		<string>3.3.5beta2</string>
+		<string>3.3.7beta3</string>
+		<string>3.3.11beta1</string>
+		<string>3.3.8beta2</string>
 		<string>3.3.5beta1</string>
+		<string>3.3.8beta4</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.5beta3</string>
+		<string>3.3.10beta1</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.9beta1</string>
+		<string>3.3.10beta2</string>
+		<string>3.3.8beta1</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -4434,6 +4498,10 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>1</integer>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
@@ -4444,9 +4512,9 @@
 	<key>NoSyncInstallationId</key>
 	<string>8954C67C-55B2-410C-B8C9-BC4D8625D9BF</string>
 	<key>NoSyncLastTipTime</key>
-	<real>591135872.14904404</real>
+	<real>609357726.011958</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>30</integer>
+	<integer>55</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -4783,6 +4851,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.jobPid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>frame</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -4952,11 +5028,11 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -5160,17 +5236,17 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>currentSession.terminalWindowName</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -5209,12 +5285,13 @@
 	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
-		<string>000</string>
-		<string>0000</string>
-		<string>0001</string>
-		<string>0002</string>
 		<string>0003</string>
+		<string>0000</string>
 		<string>0004</string>
+		<string>000</string>
+		<string>0001</string>
+		<string>0005</string>
+		<string>0002</string>
 		<string>0005</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
@@ -5301,7 +5378,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-05T01:24:41Z</date>
+	<date>2020-06-17T18:19:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5355,7 +5432,14 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
 	<key>URLHandlersByGuid</key>
-	<dict/>
+	<dict>
+		<key>ssh</key>
+		<string>0512D078-CA41-4C92-A20F-B33B3AC465DF</string>
+		<key>telnet</key>
+		<string>0512D078-CA41-4C92-A20F-B33B3AC465DF</string>
+		<key>whois</key>
+		<string>0512D078-CA41-4C92-A20F-B33B3AC465DF</string>
+	</dict>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseCompactLabel</key>
@@ -5389,7 +5473,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta5</string>
+	<string>3.3.11beta1</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
