@@ -253,14 +253,27 @@
     },
   ],
 
+  /* Material Icon Theme config
+   *   https://github.com/PKief/vscode-material-icon-theme
+   */
   "material-icon-theme.showUpdateMessage": false,
   "material-icon-theme.folders.color": "#e1bee7",
   "material-icon-theme.opacity": 1,
   "material-icon-theme.activeIconPack": "react_redux",
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.files.associations": {
+    "manage.py": "django",
+    ".coverage": "python-misc",
+    ".coveragerc": "python-misc",
+  },
   "material-icon-theme.folders.associations": {
     "hogo": "python",
+    ".ebextensions": "aws",
+    ".elasticbeanstalk": "aws",
+    ".notes": "content",
+    "coverage-html": "coverage",
+    "etc": "config",
   },
 
   /* Python config */
@@ -271,7 +284,6 @@
   },
   "python.disableInstallationCheck": true,
   "python.globalModuleInstallation": true,
-  "python.pythonPath": "~/.pyenv/versions/3.8.0/bin/python",
   "python.venvPath": "~/.pyenv/versions/",
   "python.terminal.activateEnvironment": false,
   "python.formatting.provider": "black",
@@ -349,6 +361,11 @@
   ],
   // "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDelete": false,
+
+  // Github Issues & Pull Requests
+  "githubPullRequests.telemetry.enabled": false,
+  "githubPullRequests.showInSCM": true,
+  "githubIssues.useBranchForIssues": "prompt",
 
   // Sync
   "sync.gist": "f2aa95e3b9fe5f217af6a3399005b514",
@@ -439,7 +456,6 @@
   "editor.acceptSuggestionOnEnter": "off",
   "git.allowForcePush": true,
   "git.rebaseWhenSync": true,
-  "githubPullRequests.telemetry.enabled": false,
   "extensions.autoUpdate": true,
   "git.confirmSync": false,
   "search.showLineNumbers": true,
@@ -471,7 +487,6 @@
   "terminal.integrated.experimentalRefreshOnResume": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.completeFunctionCalls": true,
-  "githubPullRequests.showInSCM": true,
   "git.autofetch": true,
   "terminal.integrated.inheritEnv": true,
   "material-icon-theme.showReloadMessage": false,
@@ -524,18 +539,21 @@
     "--extend-ignore=E265,E266"
   ],
   "search.enableSearchEditorPreview": true,
-  "scm.defaultViewMode": "tree",
   "editor.semanticHighlighting.enabled": true,
   "workbench.view.experimental.allowMovingToNewContainer": true,
   "shellcheck.enableQuickFix": true,
   "vsintellicode.features.python.deepLearning": "enabled",
   "explorer.incrementalNaming": "smart",
-"timeline.showView": true,
-"sync.forceUpload": true,
-"window.zoomLevel": 0,
-"workbench.activityBar.visible": false,
-"git.suggestSmartCommit": false,
-"python.dataScience.askForKernelRestart": false,
-"search.collapseResults": "auto",
-"search.searchOnTypeDebouncePeriod": 111,
+  "timeline.showView": true,
+  "sync.forceUpload": true,
+  "window.zoomLevel": 0,
+  "workbench.activityBar.visible": false,
+  "git.suggestSmartCommit": false,
+  "python.dataScience.askForKernelRestart": false,
+  "search.collapseResults": "auto",
+  "search.searchOnTypeDebouncePeriod": 111,
+  "git.inputValidation": "always",
+  "aws.telemetry": false,
+  "aws.profile": "profile:default",
+  "docker.containers.sortBy": "Label",
 }
