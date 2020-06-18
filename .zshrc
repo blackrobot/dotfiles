@@ -1,3 +1,5 @@
+# shellcheck shell=bash disable=SC2034
+
 # Path to your oh-my-zsh configuration.
 ZSH="${HOME}/.oh-my-zsh"
 
@@ -18,10 +20,12 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 ZSH_THEME=""
 
 function source_if_exists {
+  # shellcheck source=/dev/null
   source "$1" 2>/dev/null || true
 }
 
 function source_dotfile {
+  # shellcheck source=/dev/null
   source "${DOTFILES}/${1}"
 }
 
@@ -54,6 +58,7 @@ autoload -Uz \
 unalias run-help
 alias help='run-help'
 
+# shellcheck source=/dev/null
 source "${ZSH}/oh-my-zsh.sh"
 
 # zplug
@@ -120,4 +125,5 @@ source_dotfile "lib-includes"
 source_if_exists "${HOME}/.zshrc.local"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# shellcheck source=.p10k.zsh disable=SC1094
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
