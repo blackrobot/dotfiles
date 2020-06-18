@@ -9,15 +9,16 @@
   },
 
   /**
-   * Use <^ + ⌘ + H> and <^ + ⌘ + L> to move editor into prev/next group
+   * Use <^ + ⇧ + PgUp> and <^ + ⇧ + PgDn> to move editor left and right
+   * inside of the current editor group
    */
   {
-    "key": "ctrl+cmd+h",
-    "command": "workbench.action.moveEditorToPreviousGroup"
+    "key": "ctrl+shift+pageup",
+    "command": "workbench.action.moveEditorLeftInGroup"
   },
   {
-    "key": "ctrl+cmd+l",
-    "command": "workbench.action.moveEditorToNextGroup"
+    "key": "ctrl+shift+pagedown",
+    "command": "workbench.action.moveEditorRightInGroup"
   },
 
   /**
