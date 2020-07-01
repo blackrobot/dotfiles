@@ -60,6 +60,12 @@ local _TERM_BACKUP="${TERM}"
     bubu::style_cmd "$1"
     eval "$1" 2>&1 | bubu::style_output
     echo
+
+    # TODO: Use `script` to capture colored output
+    # https://stackoverflow.com/questions/3515208/can-colorized-output-be-captured-via-shell-redirect
+    #   local args=( "$@" )
+    #   bubu::style_cmd "${args}"
+    #   script -q /dev/null --command "${args}" < /dev/null | bubu::style_output
   }
 
   # Homebrew
