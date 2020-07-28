@@ -40,7 +40,8 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  pager = diff-so-fancy | less --tabs=4 --raw-control-chars --quit-if-one-screen --no-init
+  # https://github.com/dandavison/delta
+  pager = delta
   whitespace = trailing-space,space-before-tab
   # Make `git rebase` safer on macOS
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -65,6 +66,20 @@
 
 [diff-so-fancy]
   useUnicodeRuler = true
+
+[delta]
+  # https://github.com/dandavison/delta
+  # side-by-side = true
+  # diff-so-fancy = true
+  # plus-color = "#012800"
+  # minus-color = "#340001"
+  line-numbers = true
+  # syntax-theme = Monokai Extended
+  # syntax-theme = Dracula
+
+[interactive]
+  # https://github.com/dandavison/delta
+  diffFilter = delta --color-only
 
 [fetch]
   prune = true
