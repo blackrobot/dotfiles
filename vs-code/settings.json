@@ -42,6 +42,7 @@
     "**/*.pyc": true,
     "**/__pycache__": true,
     "**/.pytest_cache": true,
+    "**/settings/local.py": false,
   },
 
   "problems.decorations.enabled": true,
@@ -49,7 +50,8 @@
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
-    "**/tags": true
+    "**/tags": true,
+    "**/settings/local.py": false,
   },
 
   /* Terminal config */
@@ -127,9 +129,15 @@
   "vim.hlsearch": true,
   "vim.visualstar": true,
   "vim.foldfix": false, // causes bug when `true` - https://git.io/vbfWp
-  // vim: easy motion
+  // vim: easy motion - https://github.com/VSCodeVim/Vim#vim-easymotion
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontWeight": "bold",
+  // "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf;",
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf\\",
+  "vim.easymotionMarkerFontWeight": "500",
+  "vim.easymotionMarkerBackgroundColor": "#FFFFFF",
+  "vim.easymotionMarkerForegroundColorOneChar": "#F44336",
+  "vim.easymotionMarkerForegroundColorTwoChar": "#03A9F4",
+  "vim.easymotionDimBackground": true,
   // vim: status bar
   "vim.showmodename": true,
   "vim.statusBarColorControl": false,
@@ -207,8 +215,9 @@
       "commands": ["workbench.action.tasks.runTask"],
     },
     {
-      "before": ["<leader>", "="],
-      "commands": ["workbench.action.minimizeOtherEditors"],
+      // Toggle editor group between maximized and equal width
+      "before": ["<C-w>", "="],
+      "commands": ["workbench.action.toggleEditorWidths"],
     },
     {
       "before": ["<leader>", "c"],
@@ -282,6 +291,7 @@
     "editor.wordWrap": "off",
     "editor.tabSize": 4,
   },
+  "python.autoComplete.addBrackets": true,
   "python.disableInstallationCheck": true,
   "python.globalModuleInstallation": true,
   "python.venvPath": "~/.pyenv/versions/",
@@ -297,16 +307,12 @@
   ],
 
   // Use microsoft's python language server
-  "python.jediEnabled": false,
+  "python.languageServer": "Microsoft",
   "python.autoComplete.showAdvancedMembers": true,
   "python.diagnostics.sourceMapsEnabled": false,
   "python.analysis.memory.keepLibraryLocalVariables": true,
   "python.analysis.memory.keepLibraryAst": true,
-  // NOTE: This setting is undocumented, so it will appear grayed out. The options
-  // are: "stable", "beta", and "daily".
-  // https://github.com/microsoft/python-language-server/wiki/Versioning-and-download-channels
-  "python.analysis.downloadChannel": "daily",
-  // "python.languageServer": "Microsoft",
+  "python.experiments.enabled": true,
 
   /* Markdown config */
   "[markdown]": {
@@ -358,6 +364,7 @@
     { "text": "HACK:", "backgroundColor": "#9C27B0" },
     { "text": "NOTE:", "backgroundColor": "#2196F3" },
     { "text": "???:", "backgroundColor": "#4CAF50" },
+    { "text": "WARN:", "backgroundColor": "#FFC107" },
   ],
   // "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDelete": false,
@@ -556,4 +563,6 @@
   "aws.telemetry": false,
   "aws.profile": "profile:default",
   "docker.containers.sortBy": "Label",
+  "timeline.excludeSources": [],
+  "python.showStartPage": false,
 }
