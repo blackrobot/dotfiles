@@ -4,7 +4,7 @@ alias grepir='grep -Ir'
 alias ssh='TERM=xterm-256color ssh'
 alias mkdirs='mkdir -p'
 alias cat='/usr/local/bin/bat'
-alias ping='/usr/local/bin/prettyping --nolegend'
+alias pping='/usr/local/bin/prettyping --nolegend'
 alias du='ncdu --color dark -rr -x --exclude .git --exclude node_modules'
 alias ptpy='ptipython'
 
