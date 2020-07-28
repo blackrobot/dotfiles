@@ -127,3 +127,6 @@ source_if_exists "${HOME}/.zshrc.local"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # shellcheck source=.p10k.zsh disable=SC1094
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

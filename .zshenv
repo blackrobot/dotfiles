@@ -34,7 +34,6 @@ add_to_path "${HOME}/.yarn/bin"
 # pyenv
 PYENV_ROOT="${HOME}/.pyenv"
 PATH="${PYENV_ROOT}/bin:${PATH}"
-# eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
 
 # Python Poetry
 add_to_path "${HOME}/.poetry/bin"
@@ -52,3 +51,4 @@ export LC_ALL="en_US.UTF-8"
 # Python startup
 export PYTHONSTARTUP="${DOTFILES}/python_startup.py"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
