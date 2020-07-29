@@ -164,6 +164,14 @@ freq_app.bundles = {
   },
 }
 
+
+function freq_app.focus(window)
+  local frame = window:frame()
+  local screen = window:screen()
+  return window:focus():move(frame, screen, true, 5)
+end
+
+
 function freq_app.activate(app_names)
   local fallback_app = nil
 
@@ -174,7 +182,7 @@ function freq_app.activate(app_names)
       local windows = app:allWindows()
 
       if windows then
-        return windows[1]:focus()
+        return freq_app.focus(windows[1])
       end
 
       fallback_app = app
