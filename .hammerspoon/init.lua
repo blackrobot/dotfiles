@@ -168,7 +168,7 @@ freq_app.bundles = {
 function freq_app.focus(window)
   local frame = window:frame()
   local screen = window:screen()
-  return window:focus():move(frame, screen, true, 5)
+  return window:focus():move(frame, screen, true, 0)
 end
 
 
