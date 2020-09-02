@@ -1456,7 +1456,7 @@
 	<key>NSWindow Frame com.apple.typography_panel_Monaco</key>
 	<string>479 631 260 148 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 455 0 0 2560 1417 </string>
+	<string>1920 0 640 1417 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_0512D078-CA41-4C92-A20F-B33B3AC465DF_selection</key>
@@ -4418,7 +4418,7 @@
 			<key>Title Components</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.10413031408629442</real>
+			<real>0.065226443527918787</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Underline Color</key>
@@ -5694,7 +5694,7 @@
 		<string>3.3.8beta5</string>
 		<string>3.3.5beta2</string>
 		<string>3.3.7beta3</string>
-		<string>3.3.10beta2</string>
+		<string>3.3.10beta1</string>
 		<string>3.4.0beta2</string>
 		<string>3.3.8beta2</string>
 		<string>3.3.5beta1</string>
@@ -5702,9 +5702,9 @@
 		<string>3.3.5beta3</string>
 		<string>3.3.9beta1</string>
 		<string>3.3.7beta2</string>
-		<string>3.3.7beta4</string>
-		<string>3.3.10beta1</string>
 		<string>3.3.11beta1</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.10beta2</string>
 		<string>3.3.10beta3</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
@@ -5740,7 +5740,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>609357726.011958</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>68</integer>
+	<integer>70</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -6637,7 +6637,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-22T19:30:08Z</date>
+	<date>2020-08-05T19:36:48Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
