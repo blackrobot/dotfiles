@@ -83,6 +83,7 @@
 
 [fetch]
   prune = true
+  parallel = 4
 
 [filter "lfs"]
   process = git-lfs filter-process
