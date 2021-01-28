@@ -11,7 +11,8 @@
     "comments": false,
     "strings": false,
   },
-  "editor.occurrencesHighlight": false,
+  "editor.find.autoFindInSelection": "multiline",
+  "editor.find.seedSearchStringFromSelection": false,
   "editor.renderLineHighlight": "all",
   "editor.renderControlCharacters": true,
   "editor.roundedSelection": true,
@@ -56,11 +57,26 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.scrollback": 4096,
   "terminal.integrated.fontSize": 13.5,
-  "terminal.integrated.rendererType": "experimentalWebgl",
-  "terminal.integrated.shellArgs.osx": ["-l"],
+  // "terminal.integrated.shellArgs.osx": ["-l"],
+  // "terminal.integrated.experimentalRefreshOnResume": true,
+  "terminal.integrated.inheritEnv": true,
   "terminal.integrated.env.osx": {
     "TERM": "xterm-256color-italic",
   },
+  /*
+  Added these settings in an attempt to fix lag in the macos integrated terminal.
+  https://github.com/microsoft/vscode/issues/108590
+
+  I'm also going to try and remove the code signing signature:
+  https://github.com/microsoft/vscode/issues/108590#issuecomment-745503151
+
+  Original:
+    "terminal.integrated.rendererType": "experimentalWebgl",
+  */
+  "terminal.integrated.rendererType": "experimentalWebgl",
+  "terminal.integrated.experimentalLinkProvider": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  // "terminal.integrated.allowChords": true,
 
   "telemetry.enableTelemetry": false,
 
@@ -71,11 +87,11 @@
   "window.openFilesInNewWindow": "default",
   "window.nativeTabs": false,
   "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
-  "workbench.editor.labelFormat": "short",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.revealIfOpen": true,
   "workbench.editor.tabSizing": "shrink",
   "workbench.tips.enabled": true,
+  "workbench.editor.pinnedTabSizing": "compact",
   "workbench.colorCustomizations": {
     /*
      * Opacity values are hex values ranging from 0x00 to 0xFF (0-255). Some common
@@ -98,14 +114,29 @@
      *     A8
      */
     "[Dracula]": {
-      // Color Palette
-      // https://github.com/dracula/dracula-theme/#color-palette
+      /*
+       * Color Palette
+       * https://github.com/dracula/dracula-theme/#color-palette
+       *
+       * https://github.com/dracula/visual-studio-code/blob/8ba354/src/dracula.yml#L8
+       * bg        #282A36
+       * fg        #F8F8F2
+       * selection #44475A
+       * comment   #6272A4
+       * cyan      #8BE9FD
+       * green     #50FA7B
+       * orange    #FFB86C
+       * pink      #FF79C6
+       * purple    #BD93F9
+       * red       #FF5555
+       * yellow    #F1FA8C
+       */
       "editorLineNumber.activeForeground": "#ff79c6",
       "editorRuler.foreground": "#ffffff0f",
       "editorWhitespace.foreground": "#ffffffdd",
-      "editor.selectionBackground": "#c2185bff",
       "editor.lineHighlightBackground": "#ffffff05",
       "editor.lineHighlightBorder": "#ffffff00",
+      "editor.selectionBackground": "#c2185bff",
       "editor.findMatchHighlightBackground": "#fce4ec0a",
       "editor.findMatchHighlightBorder": "#fce4ec4f",
       "editor.findMatchBackground": "#c2185b",
@@ -113,9 +144,33 @@
   },
   "editor.tokenColorCustomizations": {
     "[Dracula]": {
-      "comments": { "fontStyle": "italic" },
-      "strings": { "foreground": "#E9F284E7" },
-    },
+      "comments": {
+        "fontStyle": "italic"
+      },
+      "strings": {
+        "foreground": "#E9F284E7"
+      },
+      "textMateRules": [
+        {
+          "scope": "entity.name.function.member",
+          "settings": {
+            "foreground": "#F8F8F2"
+          }
+        }
+      ]
+    }
+  },
+  "editor.semanticHighlighting.enabled": "configuredByTheme",
+  "editor.semanticTokenColorCustomizations": {
+    "[Dracula]": {
+      "enabled": true,
+      "rules": {
+        "*.typeHint:python": {
+          // "foreground": "#8BE9FD55",
+          "italic": true,
+        }
+      },
+    }
   },
 
   /* Vim config
@@ -134,7 +189,8 @@
   "vim.easymotionMarkerFontWeight": "500",
   "vim.easymotionMarkerBackgroundColor": "#FFFFFF",
   "vim.easymotionMarkerForegroundColorOneChar": "#F44336",
-  "vim.easymotionMarkerForegroundColorTwoChar": "#03A9F4",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#03A9F4",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#03A9F4",
   "vim.easymotionDimBackground": true,
   // vim: status bar
   "vim.showmodename": true,
@@ -289,10 +345,9 @@
     "editor.wordWrap": "off",
     "editor.tabSize": 4,
   },
-  "python.autoComplete.addBrackets": true,
   "python.disableInstallationCheck": true,
   "python.globalModuleInstallation": true,
-  "python.venvPath": "~/.pyenv/versions/",
+  "python.venvPath": "~/.pyenv",
   "python.terminal.activateEnvironment": false,
   "python.formatting.provider": "black",
   "python.linting.pylintEnabled": false,
@@ -304,11 +359,11 @@
     ".tmp/**/*.py",
   ],
 
-  // Use microsoft's python language server
-  "python.languageServer": "Microsoft",
+  // Use microsoft's experimental python language server: pylance
+  // https://github.com/microsoft/pylance-release
+  "python.languageServer": "Pylance",
   "python.autoComplete.showAdvancedMembers": true,
-  "python.diagnostics.sourceMapsEnabled": false,
-  "python.analysis.memory.keepLibraryLocalVariables": true,
+  "python.diagnostics.sourceMapsEnabled": true,
   "python.analysis.memory.keepLibraryAst": true,
   "python.experiments.enabled": true,
 
@@ -413,6 +468,21 @@
   "projectManager.removeCurrentProjectFromList": true,
   "projectManager.groupList": true,
 
+  /* Git Graph - https://github.com/mhutchie/vscode-git-graph */
+  "git-graph.showStatusBarItem": false,
+  "git-graph.graph.colours": [
+    // These colors were taken from the Dracula theme
+    "#F8F8F2",
+    "#8BE9FD",
+    "#50FA7B",
+    "#FFB86C",
+    "#FF79C6",
+    "#BD93F9",
+    "#FF5555",
+    "#F1FA8C",
+    "#6272A4",
+  ],
+
   "markdownlint.config": {
     "MD001": false,
     "MD002": false,
@@ -471,7 +541,6 @@
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
   "editor.suggest.shareSuggestSelections": true,
-  "editor.find.seedSearchStringFromSelection": false,
   "editor.suggest.localityBonus": true,
   "editor.hover.delay": 222,
   "[javascript]": {
@@ -489,11 +558,9 @@
   "debug.internalConsoleOptions": "neverOpen",
   "debug.openDebug": "openOnDebugBreak",
   "debug.showInStatusBar": "never",
-  "terminal.integrated.experimentalRefreshOnResume": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.suggest.completeFunctionCalls": true,
   "git.autofetch": true,
-  "terminal.integrated.inheritEnv": true,
   "material-icon-theme.showReloadMessage": false,
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -544,7 +611,6 @@
     "--extend-ignore=E265,E266"
   ],
   "search.enableSearchEditorPreview": true,
-  "editor.semanticHighlighting.enabled": true,
   "workbench.view.experimental.allowMovingToNewContainer": true,
   "shellcheck.enableQuickFix": true,
   "vsintellicode.features.python.deepLearning": "enabled",
@@ -553,8 +619,7 @@
   "sync.forceUpload": true,
   "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
-  "git.suggestSmartCommit": false,
-  "python.dataScience.askForKernelRestart": false,
+"git.suggestSmartCommit": false,
   "search.collapseResults": "auto",
   "search.searchOnTypeDebouncePeriod": 111,
   "git.inputValidation": "always",
@@ -567,4 +632,10 @@
   "task.saveBeforeRun": "never",
   "terminal.integrated.experimentalUseTitleEvent": true,
   "extensions.webWorker": true,
+"workbench.editor.labelFormat": "medium",
+  "references.preferredLocation": "view",
+"python.testing.promptToConfigure": false,
+"jupyter.askForKernelRestart": false,
+"jupyter.codeLenses": "python.datascience.runcell,  python.datascience.runallcellsabove",
+"diffEditor.renderSideBySide": false,
 }
