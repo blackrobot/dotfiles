@@ -32,14 +32,14 @@ function es {
 }
 
 # beep - plays a sound
-#   Sound files copied into ~/Library/Sounds/ from:
-#   /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/
+#    macOS sound files can be found in:
+#    /System/Library/PrivateFrameworks/ToneLibrary.framework/Resources/AlertTones
 function beep {
   if [[ -z "$BEEP_SOUND_FILE" || ! -e "$BEEP_SOUND_FILE" ]]; then
-    BEEP_SOUND_FILE="${HOME}/Library/Sounds/sms_alert_popcorn.caf"
+    BEEP_SOUND_FILE="/System/Library/PrivateFrameworks/ToneLibrary.framework/Resources/AlertTones/PhotosMemoriesNotification.caf"
   fi
 
-  afplay "$BEEP_SOUND_FILE" > /dev/null 2>&1
+  ( afplay "$BEEP_SOUND_FILE" > /dev/null 2>&1 ) &
 }
 
 # Restart the docker-for-mac app
