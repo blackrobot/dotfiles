@@ -48,6 +48,7 @@ autoload -Uz \
   halp \
   man
 alias cbubu='clear ; bubu'
+alias resesh='reset ; bubu && exec "$SHELL"'
 alias brinfo='brewfind'
 
 # Add the `help` command
