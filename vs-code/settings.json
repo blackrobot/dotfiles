@@ -344,6 +344,7 @@
     "editor.rulers": [72, 79, 120],
     "editor.wordWrap": "off",
     "editor.tabSize": 4,
+    "editor.formatOnSave": true,
   },
   "python.disableInstallationCheck": true,
   "python.globalModuleInstallation": true,
@@ -617,7 +618,6 @@
   "explorer.incrementalNaming": "smart",
   "timeline.showView": true,
   "sync.forceUpload": true,
-  "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
 "git.suggestSmartCommit": false,
   "search.collapseResults": "auto",
@@ -626,7 +626,6 @@
   "aws.telemetry": false,
   "aws.profile": "profile:default",
   "docker.containers.sortBy": "Label",
-  "python.showStartPage": false,
   "timeline.pageOnScroll": true,
   "problems.showCurrentInStatus": true,
   "task.saveBeforeRun": "never",
@@ -637,5 +636,38 @@
 "python.testing.promptToConfigure": false,
 "jupyter.askForKernelRestart": false,
 "jupyter.codeLenses": "python.datascience.runcell,  python.datascience.runallcellsabove",
-"diffEditor.renderSideBySide": false,
+"workbench.editor.decorations.colors": true,
+"workbench.editor.decorations.badges": true,
+"search.experimental.searchInOpenEditors": true,
+"python.workspaceSymbols.enabled": true,
+"python.showStartPage": false,
+"codestream.email": "damonjablons@gmail.com",
+"sqltools.highlightQuery": false,
+"workbench.editorAssociations": [
+  {
+    "viewType": "jupyter.notebook.ipynb",
+    "filenamePattern": "*.ipynb"
+  }
+],
+"docker.showStartPage": false,
+"githubPullRequests.queries": [
+  {
+    "label": "Waiting For My Review",
+    "query": "is:open review-requested:${user}"
+  },
+  {
+    "label": "Assigned To Me",
+    "query": "is:open assignee:${user}"
+  },
+  {
+    "label": "Created By Me",
+    "query": "is:open author:${user}"
+  },
+  {
+    "label": "All Closed",
+    "query": "is:closed sort:updated-desc"
+  }
+],
+"python.defaultInterpreterPath": "/Users/damon/.pyenv/shims/python",
+"editor.wordWrap": "on",
 }

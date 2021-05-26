@@ -167,4 +167,13 @@
     "command": "-emacs.startRegionMode",
     // "when": "editorFocus && vim.mode == 'Insert'"
   },
+  {
+    "key": "ctrl+s",
+    "command": "-issue.createIssueFromFile",
+    "when": "resourceScheme == 'newIssue' && config.files.autoSave != 'off'"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.sortLinesAscending"
+  },
 ]
