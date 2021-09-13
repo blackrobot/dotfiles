@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+# shellcheck shell=bash
+
+##
+# Watch twitch streams in IINA.
+#
+# Requires:
+#   - Streamlink
+#       https://streamlink.github.io/
+#       https://github.com/streamlink/streamlink
+#   - IINA
+#       https://iina.io
+#       https://github.com/iina/iina
+##
+
+function opstream_usage {
+  echo "OpStream"
+  echo "Watch twitch streams in IINA"
+  echo
+  echo "Usage: opstream [STREAM]"
+  echo "    [STREAM]        a twitch stream url, eg: twitch.tv/hasanabi"
+}
+
+
+if [[ "$1" == "" || "$1" == "--help" || "$1" == "-h" ]]; then
+  opstream_usage; false
+
+else
+  streamlink \
+    -a '--cache=yes --demuxer-max-bytes=4096' \
+    --stdout \
+    --twitch-disable-ads \
+    "$1" best \
+    | iina --stdin
+
+fi

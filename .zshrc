@@ -46,6 +46,7 @@ autoload -Uz \
   cheat \
   fprev \
   halp \
+  opstream \
   man
 alias cbubu='clear ; bubu'
 alias resesh='reset ; bubu && exec "$SHELL"'
@@ -118,7 +119,7 @@ setopt NO_FLOW_CONTROL          # UNSET
 export LESS='-R --ignore-case --tabs=4'
 
 # bat options | https://github.com/sharkdp/bat
-export BAT_THEME='OneHalfDark'
+export BAT_THEME='Sublime Snazzy'
 
 # fzf
 source_dotfile ".fzfrc"
