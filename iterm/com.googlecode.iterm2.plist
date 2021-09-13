@@ -10,11 +10,16 @@
 	<array>
 		<dict>
 			<key>action</key>
-			<integer>0</integer>
+			<integer>63</integer>
 			<key>parameter</key>
-			<string></string>
+			<dict>
+				<key>guid</key>
+				<string>21F7D31D-BD94-4858-A79F-40C5226A558F</string>
+			</dict>
 			<key>title</key>
-			<string>test shortcut 1</string>
+			<string>resesh</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>AddNewTabAtEndOfTabs</key>
@@ -2698,6 +2703,20 @@
 					<key>Text</key>
 					<string>0x7f</string>
 				</dict>
+				<key>0x4c-0x60000-0x25</key>
+				<dict>
+					<key>Action</key>
+					<integer>63</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<dict>
+						<key>guid</key>
+						<string>21F7D31D-BD94-4858-A79F-40C5226A558F</string>
+					</dict>
+					<key>Version</key>
+					<integer>1</integer>
+				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -3661,6 +3680,20 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x4c-0x60000-0x25</key>
+				<dict>
+					<key>Action</key>
+					<integer>63</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<dict>
+						<key>guid</key>
+						<string>21F7D31D-BD94-4858-A79F-40C5226A558F</string>
+					</dict>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -4801,7 +4834,7 @@
 			<key>HotKey Window Animates</key>
 			<true/>
 			<key>HotKey Window AutoHides</key>
-			<false/>
+			<true/>
 			<key>HotKey Window Dock Click Action</key>
 			<integer>0</integer>
 			<key>HotKey Window Floats</key>
@@ -4875,6 +4908,20 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x7f</string>
+				</dict>
+				<key>0x4c-0x60000-0x25</key>
+				<dict>
+					<key>Action</key>
+					<integer>63</integer>
+					<key>Label</key>
+					<string></string>
+					<key>Text</key>
+					<dict>
+						<key>guid</key>
+						<string>21F7D31D-BD94-4858-A79F-40C5226A558F</string>
+					</dict>
+					<key>Version</key>
+					<integer>1</integer>
 				</dict>
 				<key>0xf700-0x220000</key>
 				<dict>
@@ -5568,7 +5615,7 @@
 			<key>Title Components</key>
 			<integer>1</integer>
 			<key>Transparency</key>
-			<real>0.30921438769035531</real>
+			<real>0.071421159216286167</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Underline Color</key>
@@ -5712,11 +5759,26 @@
 	<key>Snippets</key>
 	<array>
 		<dict>
+			<key>guid</key>
+			<string>67cec8b6820682ebd5849377b9372196a374bbd01bc5587d021b26dbb8bdd5e2</string>
 			<key>title</key>
 			<string>test snippet 1</string>
 			<key>value</key>
 			<string>printf '[%s] This is %stest snippet #1%s' "$(date '+%x %X')" "$(tput bold)" "$(tput sgr0)" ; echo
 </string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>guid</key>
+			<string>21F7D31D-BD94-4858-A79F-40C5226A558F</string>
+			<key>title</key>
+			<string>resesh: reset then update</string>
+			<key>value</key>
+			<string>resesh
+</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>SoundForEsc</key>
