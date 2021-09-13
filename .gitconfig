@@ -12,36 +12,8 @@
   interactive = auto
   ui = auto
 
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-
-[color "diff"]
-  # meta = 227
-  meta = yellow
-  frag = magenta bold
-  # commit = 227 bold
-  commit = yellow bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
-
-[color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
-
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
-
 [core]
   excludesfile = ~/.gitignore_global
-  # https://github.com/dandavison/delta
-  pager = delta
   whitespace = trailing-space,space-before-tab
   # Make `git rebase` safer on macOS
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
@@ -50,6 +22,41 @@
   # https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
 
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  # https://github.com/dandavison/delta
+  colorMoved = default
+  # diff-so-fancy = true
+  hyperlinks = true
+  relative-paths = true
+  side-by-side = false
+  features = damo-style
+  # Allow navigating the diff using `n` to move forward and `N` to jump back
+  # https://github.com/dandavison/delta#navigation-keybindings-for-large-diffs
+  navigate = true
+  # To preview themes, run this shell cmd: `delta --show-syntax-themes`
+  # syntax-theme = Coldark-Dark
+  # minus-style = normal auto
+  # plus-style = syntax auto
+
+[delta "damo-style"]
+  dark = true
+  file-added-label = [+]
+  file-copied-label = [C]
+  file-modified-label = [M]
+  file-removed-label = [-]
+  file-renamed-label = [R]
+  line-numbers = true
+  syntax-theme = Vibrant Sunburst
+
 [diff]
   algorithm = histogram
   indentHeuristic = true
@@ -57,29 +64,34 @@
   prompt = false
   suppressBlankEmpty = true
 
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
+[difftool "kdiff3"]
+  path = /usr/local/bin/kdiff3
+
 [difftool]
   prompt = false
+  keepBackup = false
+  trustExitCode = false
 
-[difftool "meld"]
+[merge]
+  keepBackup = false
+  prompt = false
+  stat = true
+  tool = kdiff3
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+  keepTemporaries = false
+
+[mergetool "vscode"]
   trustExitCode = true
-  cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+  cmd = code --wait $MERGED
 
-[diff-so-fancy]
-  useUnicodeRuler = true
-
-[delta]
-  # https://github.com/dandavison/delta
-  # side-by-side = true
-  # diff-so-fancy = true
-  # plus-color = "#012800"
-  # minus-color = "#340001"
-  line-numbers = true
-  # syntax-theme = Monokai Extended
-  # syntax-theme = Dracula
-
-[interactive]
-  # https://github.com/dandavison/delta
-  diffFilter = delta --color-only
+[mergetool "kdiff3"]
+  path = /usr/local/bin/kdiff3
 
 [fetch]
   prune = true
@@ -93,19 +105,6 @@
 
 [github]
   user = blackrobot
-
-[merge]
-  keepBackup = false
-  prompt = false
-  stat = true
-  tool = meld
-
-[mergetool]
-  prompt = false
-
-[mergetool "meld"]
-  trustExitCode = true
-  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
 
 [pull]
   rebase = true
