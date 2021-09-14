@@ -23,14 +23,16 @@ function opstream_usage {
 
 
 if [[ "$1" == "" || "$1" == "--help" || "$1" == "-h" ]]; then
-  opstream_usage; false
+  opstream_usage
 
 else
-  streamlink \
-    -a '--cache=yes --demuxer-max-bytes=4096' \
-    --stdout \
-    --twitch-disable-ads \
-    "$1" best \
-    | iina --stdin
+  {
+    streamlink \
+      -a '--cache=yes --demuxer-max-bytes=4096' \
+      --stdout \
+      --twitch-disable-ads \
+      "$1" best \
+      | iina --stdin ;
+  } > /dev/null 2>&1 &
 
 fi
