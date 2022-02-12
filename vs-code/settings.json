@@ -364,6 +364,7 @@
     "editor.wordWrap": "off",
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.python",
   },
   "python.disableInstallationCheck": true,
   "python.globalModuleInstallation": true,
@@ -394,6 +395,9 @@
     "editor.wrappingIndent": "same",
     "editor.quickSuggestions": false,
     "editor.fontSize": 15.5,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
   },
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.toc.githubCompatibility": true,
@@ -570,7 +574,7 @@
   "editor.suggest.localityBonus": true,
   "editor.hover.delay": 222,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
@@ -591,6 +595,7 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "files.simpleDialog.enable": true,
+  // "workbench.colorTheme": "Dracula",
   "workbench.colorTheme": "Dracula",
   "editor.suggest.snippetsPreventQuickSuggestions": false,
   "files.hotExit": "onExitAndWindowClose",
@@ -706,12 +711,19 @@
   "jupyter-notebook": "left"
 },
 "editor.inlineSuggest.enabled": true,
-"terminal.integrated.tabs.enabled": false,
 "github.copilot.enable": {
-  "*": true,
+  "*": false,
   "yaml": false,
   "plaintext": false,
-  "markdown": true
+  "markdown": false,
+  "html": true
 },
 "redhat.telemetry.enabled": false,
+"markdown.preview.typographer": true,
+"hediet.vscode-drawio.local-storage": "eyIuZHJhd2lvLWNvbmZpZyI6IntcImxhbmd1YWdlXCI6XCJcIixcImN1c3RvbUZvbnRzXCI6W3tcIm5hbWVcIjpcIlVidW50dVwiLFwidXJsXCI6XCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9VWJ1bnR1XCJ9XSxcImxpYnJhcmllc1wiOlwiZ2VuZXJhbDtiYXNpYzthcnJvd3MyO2Zsb3djaGFydDtkZmQ7ZXI7dW1sMjVcIixcImN1c3RvbUxpYnJhcmllc1wiOltdLFwicGx1Z2luc1wiOltdLFwicmVjZW50Q29sb3JzXCI6W1wiRkZGRkZGXCIsXCI0RDRENERcIixcIjgwODA4MFwiLFwiRkZDQ0U2XCIsXCJGRkZBRTZcIixcIkY1RjVGNVwiLFwiRTVDQ0ZGXCJdLFwiZm9ybWF0V2lkdGhcIjpcIjI0MFwiLFwiY3JlYXRlVGFyZ2V0XCI6ZmFsc2UsXCJwYWdlRm9ybWF0XCI6e1wieFwiOjAsXCJ5XCI6MCxcIndpZHRoXCI6OTAwLFwiaGVpZ2h0XCI6ODAwfSxcInNlYXJjaFwiOnRydWUsXCJzaG93U3RhcnRTY3JlZW5cIjp0cnVlLFwiZ3JpZENvbG9yXCI6XCIjZDBkMGQwXCIsXCJkYXJrR3JpZENvbG9yXCI6XCIjNmU2ZTZlXCIsXCJhdXRvc2F2ZVwiOnRydWUsXCJyZXNpemVJbWFnZXNcIjpudWxsLFwib3BlbkNvdW50ZXJcIjowLFwidmVyc2lvblwiOjE4LFwidW5pdFwiOjEsXCJpc1J1bGVyT25cIjpmYWxzZSxcInVpXCI6XCJcIn0ifQ==",
+"hediet.vscode-drawio.theme": "min",
+"terminal.integrated.tabs.enabled": false,
+"editor.bracketPairColorization.enabled": true,
+"editor.guides.bracketPairs": "active",
+"python.formatting.blackPath": "/Users/damon/.pyenv/shims/black",
 }
