@@ -1,10 +1,12 @@
 # shellcheck shell=bash
 
+BREW_BINPATH="$(brew --prefix)/bin"
+
 alias grepir='grep -Ir'
 alias ssh='TERM=xterm-256color ssh'
 alias mkdirs='mkdir -p'
-alias cat='/usr/local/bin/bat'
-alias pping='/usr/local/bin/prettyping --nolegend'
+alias cat="${BREW_BINPATH}/bat"
+alias pping="${BREW_BINPATH}/prettyping --nolegend"
 alias du='ncdu --color dark -rr -x --exclude .git --exclude node_modules'
 alias ptpy='ptipython'
 

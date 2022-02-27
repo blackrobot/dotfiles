@@ -218,6 +218,7 @@
   // vim: neovim
   "vim.enableNeovim": true,
   "vim.neovimPath": "/usr/local/bin/nvim",
+  // "vim.neovimPath": "/opt/homebrew/bin/nvim",
   "vim.debug.silent": true,
   // vim: key bindings
   "vim.insertModeKeyBindingsNonRecursive": [

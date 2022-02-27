@@ -38,10 +38,10 @@ echo "CFLAGS                = $CFLAGS"
 echo "LDFLAGS               = $LDFLAGS"
 echo "PYTHON_CONFIGURE_OPTS = $PYTHON_CONFIGURE_OPTS"
 echo
-echo "/usr/local/bin/pyenv install --force --verbose $1"
+echo "${HOMEBREW_PREFIX}/bin/pyenv install --force --verbose $1"
 echo
 
-/usr/local/bin/pyenv install --force --verbose "$1"
+${HOMEBREW_PREFIX}/bin/pyenv install --force --verbose "$1"
 
 # Install default packages
 echo
@@ -49,7 +49,7 @@ echo "Upgrading pip and installing default packages:"
 echo
 (
   set -x;
-  /usr/local/bin/pyenv shell "$1" && \
+  ${HOMEBREW_PREFIX}/bin/pyenv shell "$1" && \
   pip install --upgrade pip && \
   pip install --upgrade black \
                         flake8 \

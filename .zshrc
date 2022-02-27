@@ -36,7 +36,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 fpath=( "${DOTFILES}/zfuncs" "${fpath[@]}" )
 # Added explicit FPATH export
-export FPATH="/usr/local/share/zsh/functions:$FPATH"
+export FPATH="${HOMEBREW_PREFIX}/share/zsh/functions:$FPATH"
 
 # Register functions for autoloading
 autoload -Uz \
@@ -137,3 +137,6 @@ source_if_exists "${HOME}/.zshrc.local"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

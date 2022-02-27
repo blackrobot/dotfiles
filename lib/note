@@ -27,7 +27,7 @@ function note {
 
   cp "${NOTES}/_template.md" "$note_full_path"
 
-  /usr/local/bin/code --new-window --wait "$NOTES" "$note_full_path" && (
+  code --new-window --wait "$NOTES" "$note_full_path" && (
     {
       pushd "$NOTES";
       git add "$note_full_path";

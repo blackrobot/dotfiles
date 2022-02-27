@@ -25,10 +25,9 @@ export RIPGREP_CONFIG_PATH="${DOTFILES}/.ripgreprc"
 # NVM_LAZY_LOAD=true
 NVM_DIR="${HOME}/.nvm"
 
-add_to_path "/usr/local/opt/python/libexec/bin"
-add_to_path "/usr/local/sbin"
-add_to_path "/usr/local/opt/coreutils/libexec/gnubin"
-add_to_path "${HOME}/.yarn/bin"
+add_to_path "${HOMEBREW_PREFIX}/opt/python/libexec/bin"
+add_to_path "${HOMEBREW_PREFIX}/sbin"
+add_to_path "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin"
 # add_to_path "~/.config/yarn/global/node_modules/.bin" 'append'
 
 # pyenv

@@ -112,7 +112,9 @@ endif
 
 if filereadable(expand("~/.vimrc.before"))
   " fzf
-  set rtp+=/usr/local/opt/fzf
+  set rtp+=/opt/homebrew/opt/fzf
+  "Old homebrew path
+  "set rtp+=/usr/local/opt/fzf
   call janus#disable_plugin('ctrlp')
   source ~/.vimrc.before
 endif

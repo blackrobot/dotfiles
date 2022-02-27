@@ -1,13 +1,12 @@
 # Config for zplug
 # https://github.com/zplug/zplug
 
-export ZPLUG_HOME="/usr/local/opt/zplug"
+export ZPLUG_HOME="${HOME}/.zplug"
 source "${ZPLUG_HOME}/init.zsh"
 
 
 # zplug self-management
-# NOTE: Temporarily disabled! You must call this manually.
-# zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 
 # theme
@@ -27,7 +26,7 @@ zplug 'zsh-users/zsh-autosuggestions'
 
 # completions
 zplug 'zsh-users/zsh-completions', lazy:true
-zplug '/usr/local/opt/curl/share/zsh/site-functions', from:local, lazy:true
+zplug "$(brew --prefix)/opt/curl/share/zsh/site-functions", from:local, lazy:true
 
 
 # vi mode
@@ -83,14 +82,14 @@ zplug 'wfxr/forgit', defer:1, hook-load:'unset FORGIT_NO_ALIASES; autoload forgi
 # NOTE: Temporarily disabled! You must manually call `zplug install`!
 ###
 
-# if ! zplug check --verbose; then
-#   printf "Install? [y/N]: "
-#   if read -q; then
-#     echo; zplug install
-#   else
-#     echo
-#   fi
-# fi
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  else
+    echo
+  fi
+fi
 
 
 zplug load
