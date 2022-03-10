@@ -2,7 +2,8 @@
 
 ##
 # Mostly copied from
-# https://github.com/mathiasbynens/dotfiles/blob/299b7dc6db8715a8b306267c14f62673286a19f3/.macos
+# https://github.com/mathiasbynens/dotfiles/blob/66ba9/.macos
+# https://mths.be/macos
 ##
 
 

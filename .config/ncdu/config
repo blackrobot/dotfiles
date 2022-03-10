@@ -1,0 +1,9 @@
+# config for ncdu
+# https://dev.yorhel.nl/ncdu
+
+# Always enable extended mode
+-e
+
+--color dark
+--group-directories-first
+

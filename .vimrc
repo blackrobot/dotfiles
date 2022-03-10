@@ -79,7 +79,8 @@ let brew_prefix = system('brew --prefix') . '/'
 
 " FZF
 " Plug $brew_prefix . 'opt/fzf' " '/usr/local/opt/fzf'
-Plug '/opt/homebrew/opt/fzf' " '/usr/local/opt/fzf'
+" '/usr/local/opt/fzf'
+Plug '/opt/homebrew/opt/fzf'
 
 " Better Whitespace
 let g:better_whitespace_enabled=1
