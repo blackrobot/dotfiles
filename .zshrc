@@ -1,7 +1,7 @@
 # shellcheck shell=bash disable=SC2034
 
 # Path to your oh-my-zsh configuration.
-ZSH="${HOME}/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set to the name theme to load. Change it if user is SSHing.
 [[ -z "$SSH_CLIENT" ]] && DEFAULT_USER="damon"
@@ -134,9 +134,9 @@ source_if_exists "${HOME}/.zshrc.local"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
