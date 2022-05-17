@@ -30,4 +30,4 @@ build/
 
 # zsh
 *.zwc
-*.zwc.old
+*.zwc.*
