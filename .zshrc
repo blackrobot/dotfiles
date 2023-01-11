@@ -119,7 +119,7 @@ setopt NO_FLOW_CONTROL          # UNSET
 export LESS='-R --ignore-case --tabs=4'
 
 # bat options | https://github.com/sharkdp/bat
-export BAT_THEME="OneHalfDark"
+export BAT_THEME="Dracula"
 
 # fzf
 source_dotfile ".fzfrc"
