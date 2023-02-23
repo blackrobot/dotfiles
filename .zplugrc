@@ -55,6 +55,10 @@ zplug 'changyuheng/fz', defer:1
 zplug 'rupa/z', use:'z.sh'
 zplug 'changyuheng/zsh-interactive-cd'
 
+# git-fuzzy
+# https://github.com/bigH/git-fuzzy
+zplug 'bigH/git-fuzzy', as:command, use:'bin/git-fuzzy'
+
 # oh-my-zsh plugins
 zplug 'plugins/aws', from:'oh-my-zsh'
 zplug 'plugins/cp', from:'oh-my-zsh'
