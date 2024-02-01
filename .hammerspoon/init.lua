@@ -49,7 +49,8 @@ hs.hotkey.bind("alt", "tab", function()
   hs.hints.windowHints(
     nil,  -- windows
     nil,  -- callback
-    true  -- allowNonStandard: all windows will be included, not just standard ones
+    -- true  -- allowNonStandard: all windows will be included, not just standard ones
+    false -- don't allow non-standard windows
   )
 end)
 -- * Hint current app
