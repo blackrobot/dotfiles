@@ -55,7 +55,7 @@
   file-removed-label = [-]
   file-renamed-label = [R]
   line-numbers = true
-  syntax-theme = Vibrant Sunburst
+  syntax-theme = Dracula
 
 [diff]
   algorithm = histogram
@@ -63,6 +63,7 @@
   mnemonicprefix = true
   prompt = false
   suppressBlankEmpty = true
+  tool = vscode
 
 [difftool "vscode"]
   cmd = code --wait --diff $LOCAL $REMOTE
