@@ -26,7 +26,7 @@ zplug 'zsh-users/zsh-autosuggestions'
 
 # completions
 zplug 'zsh-users/zsh-completions', lazy:true
-zplug "$(brew --prefix)/opt/curl/share/zsh/site-functions", from:local, lazy:true
+# zplug "$(brew --prefix)/opt/curl/share/zsh/site-functions", from:local, lazy:true
 
 
 # vi mode
@@ -77,9 +77,10 @@ zplug 'plugins/zsh-nvm', from:'oh-my-zsh'
 ##
 # Setup and fix forgit environment
 ##
-FORGIT_NO_ALIASES=1
+export FORGIT_NO_ALIASES=1
 FORGIT_FZF_DEFAULT_OPTS="--layout=reverse"
-zplug 'wfxr/forgit', defer:1, hook-load:'unset FORGIT_NO_ALIASES; autoload forgit'
+# zplug 'wfxr/forgit', defer:1, hook-load:'unset FORGIT_NO_ALIASES; autoload forgit'
+zplug 'wfxr/forgit', defer:1, hook-load:'FORGIT_NO_ALIASES=1 autoload forgit'
 
 
 ###
