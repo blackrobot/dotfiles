@@ -30,13 +30,6 @@ add_to_path "${HOMEBREW_PREFIX}/sbin"
 add_to_path "${HOMEBREW_PREFIX}/opt/coreutils/libexec/gnubin"
 # add_to_path "~/.config/yarn/global/node_modules/.bin" 'append'
 
-# pyenv
-PYENV_ROOT="${HOME}/.pyenv"
-PATH="${PYENV_ROOT}/bin:${PATH}"
-
-# Python Poetry
-add_to_path "${HOME}/.poetry/bin"
-
 # rust
 add_to_path "${HOME}/.cargo/bin"
 
@@ -50,4 +43,3 @@ export LC_ALL="en_US.UTF-8"
 # Python startup
 export PYTHONSTARTUP="${DOTFILES}/python_startup.py"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-
