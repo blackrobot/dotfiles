@@ -113,3 +113,6 @@ alias rcopy='rsync -vhxpogiW --progress --stats --numeric-ids'
 # lookup remote ssh algos using: nmap --script ssh2-enum-algos -sV -p <port> <host>
 alias rcopy-remote='rsync -vhxirP --stats --progress -e "ssh -T -o Ciphers=aes128-gcm@openssh.com,aes256-gcm@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr,* -o Compression=no -x"'
 
+# Shorten the `pnpm` command (it's a faster alternative to npm)
+alias pn='pnpm'
+alias pnx='pnpm dlx'
