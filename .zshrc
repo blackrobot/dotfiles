@@ -19,6 +19,10 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 # set to blank string for pure prompt
 ZSH_THEME=""
 
+function filepath_exists {
+  [[ -f "$1" || -d "$1" ]]
+}
+
 function source_if_exists {
   # shellcheck source=/dev/null
   source "$1" 2>/dev/null || true
@@ -133,10 +137,7 @@ source_if_exists "${HOME}/.zshrc.local"
 # shellcheck source=.p10k.zsh disable=SC1094
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# Include antigravity if installed
+if filepath_exists "${HOME}/.antigravity/antigravity/bin"; then
+  export PATH="${HOME}/.antigravity/antigravity/bin:${PATH}"
+fi
