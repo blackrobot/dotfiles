@@ -10,23 +10,23 @@ function log {
 cd "$HOME"
 
 
-# Install ohmyzsh/ohmyzsh
-# https://github.com/ohmyzsh/ohmyzsh
-if [[ ! -e ~/.oh-my-zsh/.git/ ]]; then
-  log "Installing oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Install antidote plugin manager
+# https://github.com/mattmc3/antidote
+if [[ ! -e ~/.antidote/.git/ ]]; then
+  log "Installing antidote"
+  git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote
 else
-  log "Skipping oh-my-zsh install since it already exists!"
+  log "Skipping antidote install since it already exists!"
 fi
 
 
-# Install zplug/zplug
-# https://github.com/zplug/zplug
-if [[ ! -e ~/.zplug/.git/ ]]; then
-  log "Installing zplug"
-  git clone https://github.com/zplug/zplug ~/.zplug
+# Install zoxide (smarter directory jumping)
+# https://github.com/ajeetdsouza/zoxide
+if ! command -v zoxide &> /dev/null; then
+  log "Installing zoxide"
+  brew install zoxide
 else
-  log "Skipping zplug install since it already exists!"
+  log "Skipping zoxide install since it already exists!"
 fi
 
 

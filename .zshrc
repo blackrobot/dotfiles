@@ -1,23 +1,11 @@
 # shellcheck shell=bash disable=SC2034
 
-# Path to your oh-my-zsh configuration.
-export ZSH="${HOME}/.oh-my-zsh"
-
-# Set to the name theme to load. Change it if user is SSHing.
+# Set default user for prompt (hide user@host when not SSHing)
 [[ -z "$SSH_CLIENT" ]] && DEFAULT_USER="damon"
 
-COMPLETION_WAITING_DOTS=true
-DISABLE_UNTRACKED_FILES_DIRTY=true
-DISABLE_UPDATE_PROMPT=true
-DISABLE_AUTO_UPDATE=true
-ZSH_COMPDUMP="${HOME}/.zcompdump"
-ZSH_CUSTOM="${DOTFILES}/zsh.custom"
-
-# async suggestions
-ZSH_AUTOSUGGEST_USE_ASYNC=1
-
-# set to blank string for pure prompt
-ZSH_THEME=""
+##
+# Helper functions
+##
 
 function filepath_exists {
   [[ -f "$1" || -d "$1" ]]
@@ -33,13 +21,22 @@ function source_dotfile {
   source "${DOTFILES}/${1}"
 }
 
-# oh-my-zsh opts
-DISABLE_CORRECTION=1
-HIST_IGNORE_SPACE=1
-HIST_STAMPS="yyyy-mm-dd"
+##
+# Pre-plugin setup
+##
 
+# zsh-autosuggestions config (must be set before loading plugin)
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#888888'
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+# forgit config
+export FORGIT_NO_ALIASES=1
+export FORGIT_FZF_DEFAULT_OPTS="--layout=reverse"
+
+# fpath for custom functions and completions
 fpath=( "${DOTFILES}/zfuncs" "${fpath[@]}" )
-# Added explicit FPATH export
 export FPATH="${HOMEBREW_PREFIX}/share/zsh/functions:$FPATH"
 
 # Register functions for autoloading
@@ -64,14 +61,45 @@ autoload -Uz \
   run-help-openssl \
   run-help-sudo \
   run-help-svk
-unalias run-help
+unalias run-help 2>/dev/null
 alias help='run-help'
 
-# shellcheck source=/dev/null
-source "${ZSH}/oh-my-zsh.sh"
+##
+# Completion system (must be before plugins that use compdef)
+##
 
-# zplug
-source_dotfile ".zplugrc"
+# Set cache dir for oh-my-zsh plugins that need it
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/zsh"
+[[ -d "$ZSH_CACHE_DIR/completions" ]] || mkdir -p "$ZSH_CACHE_DIR/completions"
+
+# Initialize completion system
+autoload -Uz compinit
+compinit -d "${ZSH_CACHE_DIR}/zcompdump"
+
+##
+# Antidote plugin manager
+# https://antidote.sh/
+##
+
+ANTIDOTE_HOME="${HOME}/.antidote"
+if [[ ! -d "$ANTIDOTE_HOME" ]]; then
+  git clone --depth=1 https://github.com/mattmc3/antidote.git "$ANTIDOTE_HOME"
+fi
+source "${ANTIDOTE_HOME}/antidote.zsh"
+antidote load "${DOTFILES}/.zsh_plugins.txt"
+
+##
+# Post-plugin setup
+##
+
+# History substring search keybindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# Zoxide (smarter directory jumping)
+eval "$(zoxide init zsh)"
 
 
 ##

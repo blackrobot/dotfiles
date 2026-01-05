@@ -31,3 +31,4 @@ build/
 # zsh
 *.zwc
 *.zwc.*
+.zsh_plugins.zsh
