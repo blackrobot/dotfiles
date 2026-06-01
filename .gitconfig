@@ -112,6 +112,7 @@
 
 [push]
   default = simple
+  autoSetupRemote = true
 
 [submodule]
   fetchJobs = 4
