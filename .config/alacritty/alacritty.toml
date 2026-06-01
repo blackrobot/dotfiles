@@ -1,0 +1,85 @@
+##
+# Alacritty theme derived from the iTerm2 "Main" profile in
+# iterm/com.googlecode.iterm2.plist.
+#
+# Docs: https://alacritty.org/config-alacritty.html
+##
+
+[general]
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+opacity = 0.92
+blur = true
+option_as_alt = "Both"
+padding = { x = 2, y = 22 }
+dynamic_padding = true
+decorations = "Transparent"
+title = "alacritty"
+dynamic_title = true
+decorations_theme_variant = "Dark"
+
+[scrolling]
+history = 100000
+
+[font]
+size = 12.5
+
+[font.normal]
+family = "Operator Mono SSm Lig"
+style = "Book"
+
+[font.bold]
+family = "Operator Mono SSm Lig"
+style = "Bold"
+
+[font.italic]
+family = "Operator Mono SSm Lig"
+style = "Book Italic"
+
+[font.bold_italic]
+family = "Operator Mono SSm Lig"
+style = "Bold Italic"
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+unfocused_hollow = false
+
+[colors]
+draw_bold_text_with_bright_colors = true
+transparent_background_colors = true
+
+[colors.primary]
+background = "#1E2127"
+foreground = "#9BA2B3"
+
+[colors.cursor]
+cursor = "#BBBBBB"
+text = "#FFFFFF"
+
+[colors.selection]
+background = "#2F3441"
+text = "#9BA2B3"
+
+[colors.normal]
+black = "#1E2127"
+red = "#D65562"
+green = "#88B966"
+yellow = "#DEB468"
+blue = "#519DEB"
+magenta = "#B85DD5"
+cyan = "#48A8B5"
+white = "#9BA2B1"
+
+[colors.bright]
+black = "#2F3441"
+red = "#AE3B36"
+green = "#88B966"
+yellow = "#C58853"
+blue = "#519DEB"
+magenta = "#B85DD5"
+cyan = "#48A8B5"
+white = "#4A535D"

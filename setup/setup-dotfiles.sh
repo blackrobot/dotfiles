@@ -43,9 +43,10 @@ ln -sf dotfiles/.zshenv
 ln -sf dotfiles/.zshrc
 
 
-# Make ~/.config/nvim
-log "Making ~/.config/nvim symlinks"
+# Make ~/.config symlinks
+log "Making ~/.config symlinks"
 mkdir -vp ~/.config
+ln -sf ~/dotfiles/.config/alacritty ~/.config/
 ln -sf ~/dotfiles/.config/nvim ~/.config/
 
 
@@ -59,4 +60,3 @@ curl -fLo \
   "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
   --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
