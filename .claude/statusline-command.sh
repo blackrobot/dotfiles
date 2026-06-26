@@ -45,7 +45,6 @@ pct_color() {
 
 left=()
 right=()
-left_extra_cols=0   # extra display columns from double-width glyphs in `left` (the worktree emoji) that vis_len counts as 1
 
 # user@host — only when SSH'd in or running as root
 user=$(whoami)
@@ -54,10 +53,11 @@ if [[ -n "$SSH_CLIENT" ]] || [[ "$user" == "root" ]]; then
   left+=("${grey}${user}@${host}${reset}")
 fi
 
-# Linked git worktree → show the main repo path (shorter, familiar) with a tree
-# glyph, instead of the long worktree checkout path. A linked worktree's git dir
-# is always <common>/.git/worktrees/<name>; the main worktree / a plain repo is not.
-worktree_icon=""
+# Linked git worktree → show the main repo path (shorter, familiar) plus a
+# [worktree] tag, instead of the long worktree checkout path. A linked worktree's
+# git dir is always <common>/.git/worktrees/<name>; the main worktree / a plain
+# repo is not.
+worktree_tag=""
 display_root="$cwd"
 git_dir=$(git -C "$cwd" --no-optional-locks rev-parse --absolute-git-dir 2>/dev/null)
 if [[ "$git_dir" == */worktrees/* ]]; then
@@ -70,8 +70,7 @@ if [[ "$git_dir" == */worktrees/* ]]; then
   sub=$(git -C "$cwd" --no-optional-locks rev-parse --show-prefix 2>/dev/null)
   sub="${sub%/}"
   if [[ -n "$main_root" ]]; then
-    worktree_icon=$(printf '\360\237\214\263')           # deciduous tree emoji (U+1F333), 2 cols wide
-    left_extra_cols=1
+    worktree_tag="[worktree]"
     # Re-root onto the main repo path, preserving any subdir within the worktree.
     if [[ -n "$sub" ]]; then
       display_root="$main_root/$sub"
@@ -94,8 +93,9 @@ elif [[ "$display_root" == "$home_dir"/* ]]; then
 else
   cwd_display="$display_root"
 fi
-[[ -n "$worktree_icon" ]] && cwd_display="${worktree_icon} ${cwd_display}"
 left+=("${bold_blue}${cwd_display}${reset}")
+# Worktree indicator as its own segment, so it sits between the path and the branch
+[[ -n "$worktree_tag" ]] && left+=("${cyan}${worktree_tag}${reset}")
 
 # Git branch + dirty/ahead/behind indicators — skip optional locks
 if git -C "$cwd" rev-parse --git-dir --no-optional-locks >/dev/null 2>&1; then
@@ -233,7 +233,7 @@ right_str=$(join "${right[@]}")
 
 if [[ -n "$right_str" ]]; then
   cols="${COLUMNS:-80}"
-  pad=$(( cols - $(vis_len "$left_str") - left_extra_cols - $(vis_len "$right_str") ))
+  pad=$(( cols - $(vis_len "$left_str") - $(vis_len "$right_str") ))
   (( pad < 1 )) && pad=1
   printf '%s%*s%s\n' "$left_str" "$pad" "" "$right_str"
 else
