@@ -45,6 +45,7 @@ pct_color() {
 
 left=()
 right=()
+left_extra_cols=0   # extra display columns from double-width glyphs in `left` (the worktree emoji) that vis_len counts as 1
 
 # user@host — only when SSH'd in or running as root
 user=$(whoami)
@@ -69,7 +70,8 @@ if [[ "$git_dir" == */worktrees/* ]]; then
   sub=$(git -C "$cwd" --no-optional-locks rev-parse --show-prefix 2>/dev/null)
   sub="${sub%/}"
   if [[ -n "$main_root" ]]; then
-    worktree_icon=$(printf '\357\206\273')           # literal nf-fa-tree (U+F1BB)
+    worktree_icon=$(printf '\360\237\214\263')           # deciduous tree emoji (U+1F333), 2 cols wide
+    left_extra_cols=1
     # Re-root onto the main repo path, preserving any subdir within the worktree.
     if [[ -n "$sub" ]]; then
       display_root="$main_root/$sub"
@@ -231,7 +233,7 @@ right_str=$(join "${right[@]}")
 
 if [[ -n "$right_str" ]]; then
   cols="${COLUMNS:-80}"
-  pad=$(( cols - $(vis_len "$left_str") - $(vis_len "$right_str") ))
+  pad=$(( cols - $(vis_len "$left_str") - left_extra_cols - $(vis_len "$right_str") ))
   (( pad < 1 )) && pad=1
   printf '%s%*s%s\n' "$left_str" "$pad" "" "$right_str"
 else
