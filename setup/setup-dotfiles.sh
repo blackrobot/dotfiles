@@ -30,6 +30,16 @@ else
 fi
 
 
+# Install tpm (Tmux Plugin Manager)
+# https://github.com/tmux-plugins/tpm
+if [[ ! -e ~/.tmux/plugins/tpm/.git/ ]]; then
+  log "Installing tpm"
+  git clone --depth=1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+  log "Skipping tpm install since it already exists!"
+fi
+
+
 # Symlink everything
 log "Symlinking dotfiles and dotdirs"
 ln -sf dotfiles/.gitconfig
@@ -37,6 +47,7 @@ ln -sf dotfiles/.hammerspoon
 ln -sf dotfiles/.jupyter
 ln -sf dotfiles/.p10k.zsh
 ln -sf dotfiles/.ptpython
+ln -sf dotfiles/.tmux.conf
 ln -sf dotfiles/.vimrc
 ln -sf dotfiles/.zlogin
 ln -sf dotfiles/.zshenv
