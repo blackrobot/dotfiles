@@ -19,7 +19,7 @@ The script should do this: \(ai.prompt)</string>
 	<key>AITermAPI</key>
 	<integer>2</integer>
 	<key>AIVectorStore</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>AboutToPasteTabsWithCancel</key>
 	<true/>
 	<key>AboutToPasteTabsWithCancel_selection</key>
@@ -45,11 +45,11 @@ The script should do this: \(ai.prompt)</string>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AiMaxTokens</key>
-	<integer>1000000</integer>
+	<integer>1050000</integer>
 	<key>AiModel</key>
-	<string>gpt-4.1</string>
+	<string>gpt-5.4</string>
 	<key>AiResponseMaxTokens</key>
-	<integer>32768</integer>
+	<integer>128000</integer>
 	<key>AitermURL</key>
 	<string>https://api.openai.com/v1/responses</string>
 	<key>AlertsIndicateShortcuts</key>
@@ -84,6 +84,33 @@ The script should do this: \(ai.prompt)</string>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
 	<true/>
+	<key>CodeReviewSavedPrompts</key>
+	<data>
+	W3sidXVpZCI6IjU5Q0JCQTkyLUZEMjktNDVFMi1COUFFLUIzQTA2QzAxMkNENSIsIm5h
+	bWUiOiJEZWZhdWx0IiwidGV4dCI6IlJldmlldyB0aGUgcGVuZGluZyBjaGFuZ2VzIGlu
+	IHRoaXMgcmVwby4gRmxhZyBpc3N1ZXMgYSBjYXJlZnVsIG1haW50YWluZXIgd291bGQg
+	YmxvY2sgb24gYmVmb3JlIG1lcmdlLCBpbiByb3VnaGx5IHRoaXMgb3JkZXI6XG4gIDEu
+	IENvcnJlY3RuZXNzIOKAlCBsb2dpYyBlcnJvcnMsIGJyb2tlbiBpbnZhcmlhbnRzLCBt
+	aXNzZWQgZWRnZSBjYXNlcywgb2ZmLWJ5LW9uZSwgcmFjZXMsIGxpZmV0aW1lXC9tZW1v
+	cnkgYnVncywgZXJyb3IgcGF0aHMgdGhhdCBzd2FsbG93IGZhaWx1cmVzLlxuICAyLiBT
+	ZWN1cml0eSDigJQgaW5qZWN0aW9uLCBhdXRoblwvYXV0aHogbWlzdGFrZXMsIHNlY3Jl
+	dCBoYW5kbGluZywgdW5zYWZlIGRlc2VyaWFsaXphdGlvbiwgdW5zYWZlIGRlZmF1bHRz
+	LCBUT0NUT1UuXG4gIDMuIFJlbGlhYmlsaXR5ICYgcGVyZm9ybWFuY2Ug4oCUIGJsb2Nr
+	aW5nIHRoZSB3cm9uZyB0aHJlYWQsIHVuYm91bmRlZCByZXNvdXJjZSB1c2UsIGFjY2lk
+	ZW50YWwgTyhOwrIpLCByZXRyaWVzIHdpdGhvdXQgYmFja29mZiwgc2lsZW50IGZhaWx1
+	cmUgcGF0aHMuXG4gIDQuIENvbnRyYWN0IHJpc2sg4oCUIGJlaGF2aW9yIGNoYW5nZXMg
+	Y2FsbGVycyByZWx5IG9uLCBzaWxlbnRseSBjaGFuZ2VkIGRlZmF1bHRzLCBicm9rZW4g
+	YmFja3dhcmQgY29tcGF0aWJpbGl0eSwgbWlzc2luZyBtaWdyYXRpb25zLlxuXG5Gb3Ig
+	ZWFjaCBmaW5kaW5nIGNpdGUgYGZpbGU6bGluZWAsIGV4cGxhaW4gKndoeSogaXQgaXMg
+	d3JvbmcgKG5vdCB3aGF0IHRoZSBjb2RlIGRvZXMpLCBhbmQgcHJvcG9zZSBhIGNvbmNy
+	ZXRlIGZpeCB3aGVuIG9uZSBpcyBvYnZpb3VzLiBCZSBjYWxpYnJhdGVkOiBpZiBhIGZp
+	bmRpbmcgaXMgbm90IGhpZ2gtY29uZmlkZW5jZSwgc2F5IHNvIG9yIHNraXAgaXQuIFZl
+	cmlmeSBjbGFpbXMgYWdhaW5zdCB0aGUgYWN0dWFsIGNvZGUgcmF0aGVyIHRoYW4gaW5m
+	ZXJyaW5nIGZyb20gbmFtZXMuXG5cblNraXAgcHVyZSBzdHlsZSwgZm9ybWF0dGluZywg
+	bmFtaW5nLCBhbmQgYW55dGhpbmcgYSBsaW50ZXIgb3IgQ0kgYWxyZWFkeSBlbmZvcmNl
+	cy5cblxuSWYgeW91IGZpbmQgbm90aGluZyB3b3J0aCBmaXhpbmcsIHNheSBzbyBwbGFp
+	bmx5LiJ9XQ==
+	</data>
 	<key>ColoredSelectedTabOutlineStrength</key>
 	<real>0.5</real>
 	<key>CommandSelection</key>
@@ -1957,7 +1984,7 @@ The script should do this: \(ai.prompt)</string>
 			<key>Triggers</key>
 			<array/>
 			<key>Unicode Normalization</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
@@ -2659,7 +2686,7 @@ The script should do this: \(ai.prompt)</string>
 				<real>0.15686274509803921</real>
 			</dict>
 			<key>Unicode Normalization</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
@@ -3154,13 +3181,13 @@ The script should do this: \(ai.prompt)</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Reduce Flicker</key>
 			<false/>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>300</integer>
 			<key>Screen</key>
@@ -3605,7 +3632,7 @@ The script should do this: \(ai.prompt)</string>
 				<real>0.15686274509803921</real>
 			</dict>
 			<key>Unicode Normalization</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
@@ -4554,7 +4581,7 @@ The script should do this: \(ai.prompt)</string>
 				<real>0.15686274509803921</real>
 			</dict>
 			<key>Unicode Normalization</key>
-			<integer>3</integer>
+			<integer>1</integer>
 			<key>Unicode Version</key>
 			<integer>8</integer>
 			<key>Unlimited Scrollback</key>
@@ -4771,6 +4798,36 @@ The script should do this: \(ai.prompt)</string>
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>Workgroups</key>
+	<data>
+	W3sic2Vzc2lvbnMiOlt7InRvb2xiYXJJdGVtcyI6W3sia2luZCI6Im1vZGVTd2l0Y2hl
+	ciJ9LHsia2luZCI6ImdpdFN0YXR1cyJ9XSwiY29tbWFuZCI6IiIsImRpc3BsYXlOYW1l
+	IjoiQ2hhdCIsImtpbmQiOnsia2luZCI6InJvb3QifSwibW9kZSI6InJlZ3VsYXIiLCJw
+	ZXJGaWxlQ29tbWFuZCI6IiIsInVuaXF1ZUlkZW50aWZpZXIiOiJidWlsdGluLmNsYXVk
+	ZUNvZGUubWFpbiIsInVybFN0cmluZyI6IiJ9LHsidG9vbGJhckl0ZW1zIjpbeyJraW5k
+	IjoibW9kZVN3aXRjaGVyIn0seyJraW5kIjoiY2hhbmdlZEZpbGVTZWxlY3RvciJ9LHsi
+	a2luZCI6ImdpdEJhc2VTZWxlY3RvciJ9LHsiZm9yd2FyZFNob3J0Y3V0Ijp7InNlcmlh
+	bGl6ZWQiOiIweGY3MDMtMHgzNDAwMDAtMHg3YyJ9LCJyZWxvYWRTaG9ydGN1dCI6eyJz
+	ZXJpYWxpemVkIjoiMHg3Mi0weDEwMDAwMC0weGYifSwiYmFja1Nob3J0Y3V0Ijp7InNl
+	cmlhbGl6ZWQiOiIweGY3MDItMHgzNDAwMDAtMHg3YiJ9LCJraW5kIjoibmF2aWdhdGlv
+	biJ9XSwicGFyZW50SUQiOiJidWlsdGluLmNsYXVkZUNvZGUubWFpbiIsInVybFN0cmlu
+	ZyI6IiIsImtpbmQiOnsia2luZCI6InBlZXIifSwiY29tbWFuZCI6ImdpdCBkaWZmdG9v
+	bCAteSAteCB2aW1kaWZmIFxcKGdpdEJhc2UpIiwibW9kZSI6ImRpZmYiLCJ1bmlxdWVJ
+	ZGVudGlmaWVyIjoiYnVpbHRpbi5jbGF1ZGVDb2RlLmRpZmYiLCJkaXNwbGF5TmFtZSI6
+	IkRpZmYiLCJwZXJGaWxlQ29tbWFuZCI6ImdpdCBkaWZmdG9vbCAteSAteCB2aW1kaWZm
+	IFxcKGdpdEJhc2UpIC0tIFxcKGZpbGUpIn0seyJ0b29sYmFySXRlbXMiOlt7ImtpbmQi
+	OiJtb2RlU3dpdGNoZXIifSx7InNob3J0Y3V0Ijp7InNlcmlhbGl6ZWQiOiIweDcyLTB4
+	MTAwMDAwLTB4ZiJ9LCJraW5kIjoicmVsb2FkIn1dLCJ1cmxTdHJpbmciOiIiLCJwYXJl
+	bnRJRCI6ImJ1aWx0aW4uY2xhdWRlQ29kZS5tYWluIiwidW5pcXVlSWRlbnRpZmllciI6
+	ImJ1aWx0aW4uY2xhdWRlQ29kZS5yZXZpZXciLCJwZXJGaWxlQ29tbWFuZCI6IiIsIm1v
+	ZGUiOiJjb2RlUmV2aWV3Iiwia2luZCI6eyJraW5kIjoicGVlciJ9LCJkaXNwbGF5TmFt
+	ZSI6IkNvZGUgUmV2aWV3IiwiY29tbWFuZCI6ImNsYXVkZSBcXChjb2RlUmV2aWV3UHJv
+	bXB0KSAtLWFwcGVuZC1zeXN0ZW0tcHJvbXB0LWZpbGUgJ1xcKGNvZGVSZXZpZXdTeXN0
+	ZW1Qcm9tcHRGaWxlKScgLS1zZXR0aW5ncyAnXFwoaXRlcm0yLmFwcEJ1bmRsZVBhdGgp
+	XC9Db250ZW50c1wvUmVzb3VyY2VzXC9jb2RlLXJldmlldy1zZXR0aW5ncy50eHQnIn1d
+	LCJuYW1lIjoiQ2xhdWRlIENvZGUiLCJ1bmlxdWVJZGVudGlmaWVyIjoiYnVpbHRpbi5j
+	bGF1ZGVDb2RlIn1d
+	</data>
 	<key>ZippyTextDrawing</key>
 	<true/>
 	<key>findIgnoreCase_iTerm</key>
