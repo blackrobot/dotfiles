@@ -61,6 +61,12 @@ ln -sf ~/dotfiles/.config/alacritty ~/.config/
 ln -sf ~/dotfiles/.config/nvim ~/.config/
 
 
+# Make ~/.claude symlinks
+log "Making ~/.claude symlinks"
+mkdir -vp ~/.claude
+ln -sf ~/dotfiles/.claude/statusline-command.sh ~/.claude/statusline-command.sh
+
+
 ##
 # Setup vim stuff
 ##
