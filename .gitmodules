@@ -1,102 +1,14 @@
-[submodule ".janus/vim-surround"]
-  path = .janus/vim-surround
-  url = git://github.com/tpope/vim-surround.git
-  ignore = dirty
-[submodule ".janus/vim-indent-guides"]
-  path = .janus/vim-indent-guides
-  url = git://github.com/nathanaelkane/vim-indent-guides.git
-  ignore = dirty
-[submodule ".janus/vim-snippets"]
-  path = .janus/vim-snippets
-  url = git://github.com/honza/vim-snippets.git
-  ignore = dirty
-[submodule ".janus/emmet-vim"]
-  path = .janus/emmet-vim
-  url = git://github.com/mattn/emmet-vim.git
-  ignore = dirty
 [submodule ".janus/vim-colors-solarized"]
   path = .janus/vim-colors-solarized
   url = git://github.com/altercation/vim-colors-solarized.git
-  ignore = dirty
-[submodule ".janus/vim-ansible-yaml"]
-  path = .janus/vim-ansible-yaml
-  url = git://github.com/chase/vim-ansible-yaml.git
-  ignore = dirty
-[submodule ".janus/Vim-Jinja2-Syntax"]
-  path = .janus/Vim-Jinja2-Syntax
-  url = git://github.com/Glench/Vim-Jinja2-Syntax.git
-  ignore = dirty
-[submodule ".janus/delimitMate"]
-  path = .janus/delimitMate
-  url = git://github.com/Raimondi/delimitMate.git
-  ignore = dirty
-[submodule ".janus/vim-systemd-syntax"]
-  path = .janus/vim-systemd-syntax
-  url = git://github.com/Matt-Deacalion/vim-systemd-syntax.git
-  ignore = dirty
-[submodule ".janus/dash.vim"]
-  path = .janus/dash.vim
-  url = git://github.com/rizzatti/dash.vim.git
-  ignore = dirty
-[submodule ".janus/vim-over"]
-  path = .janus/vim-over
-  url = git://github.com/osyo-manga/vim-over.git
   ignore = dirty
 [submodule ".janus/python-syntax"]
   path = .janus/python-syntax
   url = git://github.com/hdima/python-syntax.git
   ignore = dirty
-[submodule ".janus/papercolor-theme"]
-  path = .janus/papercolor-theme
-  url = git://github.com/NLKNguyen/papercolor-theme.git
-  ignore = dirty
-[submodule ".janus/vim-startify"]
-  path = .janus/vim-startify
-  url = git://github.com/mhinz/vim-startify.git
-  ignore = dirty
-[submodule ".janus/vim-javascript"]
-  path = .janus/vim-javascript
-  url = git://github.com/pangloss/vim-javascript.git
-  ignore = dirty
-[submodule ".janus/vim-jsx"]
-  path = .janus/vim-jsx
-  url = git://github.com/mxw/vim-jsx.git
-  ignore = dirty
-[submodule ".janus/vim-airline"]
-  path = .janus/vim-airline
-  url = git://github.com/vim-airline/vim-airline.git
-  ignore = dirty
-[submodule ".janus/vim-airline-themes"]
-  path = .janus/vim-airline-themes
-  url = git://github.com/vim-airline/vim-airline-themes.git
-  ignore = dirty
-[submodule ".janus/vim-vinegar"]
-  path = .janus/vim-vinegar
-  url = git://github.com/tpope/vim-vinegar.git
-[submodule ".janus/vim-rsi"]
-  path = .janus/vim-rsi
-  url = git://github.com/tpope/vim-rsi.git
-[submodule ".janus/vim-netrw-tree"]
-  path = .janus/vim-netrw-tree
-  url = git://github.com/blackrobot/vim-netrw-tree.git
-[submodule ".janus/onedark.vim"]
-  path = .janus/onedark.vim
-  url = git@github.com:joshdick/onedark.vim.git
-[submodule ".janus/ale"]
-  path = .janus/ale
-  url = git@github.com:w0rp/ale.git
 [submodule "zsh.custom/plugins/zsh-nvm"]
   path = zsh.custom/plugins/zsh-nvm
   url = git@github.com:lukechilds/zsh-nvm.git
-[submodule ".janus/rainbow_parentheses.vim"]
-  path = .janus/rainbow_parentheses.vim
-  url = git@github.com:junegunn/rainbow_parentheses.vim.git
-[submodule ".janus/requirements.txt.vim"]
-  path = .janus/requirements.txt.vim
-  url = git@github.com:raimon49/requirements.txt.vim.git
-[submodule ".janus/editorconfig-vim"]
-	path = .janus/editorconfig-vim
-	url = git@github.com:editorconfig/editorconfig-vim.git
 [submodule "zsh.custom/plugins/zsh-autosuggestions"]
 	path = zsh.custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git

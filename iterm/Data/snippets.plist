@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>snippets</key>
+	<array>
+		<dict>
+			<key>guid</key>
+			<string>67cec8b6820682ebd5849377b9372196a374bbd01bc5587d021b26dbb8bdd5e2</string>
+			<key>title</key>
+			<string>test snippet 1</string>
+			<key>value</key>
+			<string>printf '[%s] This is %stest snippet #1%s' "$(date '+%x %X')" "$(tput bold)" "$(tput sgr0)" ; echo
+</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>guid</key>
+			<string>21F7D31D-BD94-4858-A79F-40C5226A558F</string>
+			<key>title</key>
+			<string>resesh: reset then update</string>
+			<key>value</key>
+			<string>resesh
+</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
