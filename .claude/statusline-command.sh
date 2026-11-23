@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Claude Code status line — mirrors p10k Pure style
 # Left:   user@host  ~/dir  branch*  |  Model (1M / xhigh)  42%
-# Right:  output-style  FAST  5h 85%  cache→3:47p  [session]  (right-justified to $COLUMNS)
+# Right:  output-style  FAST  5h 85%  ⏳4m  [session]  (right-justified to $COLUMNS)
 
 input=$(cat)
 
@@ -162,12 +162,13 @@ if [[ -n "$rate_5h" ]]; then
   (( rate_rounded >= 80 )) && right+=("$(pct_color "$rate_rounded")5h ${rate_rounded}%${reset}")
 fi
 
-# Prompt-cache TTL window — Anthropic's prompt cache stays warm for CACHE_TTL_SECONDS
-# after the last turn. The status line only re-renders on conversation activity (not
-# on an idle timer), so a ticking countdown would freeze; instead show the wall-clock
-# time the cache expires (cache→3:47p), which you can compare to the real clock at a
-# glance. Once a render lands past expiry, warn that the next turn pays full price.
-CACHE_TTL_SECONDS=300
+# Prompt-cache TTL — Claude Code uses a 1h prompt-cache TTL (5m during usage overage,
+# which the status line can't detect). Stay hidden while warm, show a dim countdown
+# in the last CACHE_WARN_SECONDS (refreshInterval keeps it ticking), then warn loudly
+# once expired since the next turn pays full price.
+CACHE_TTL_SECONDS=3600
+CACHE_WARN_SECONDS=300
+SECONDS_PER_MINUTE=60
 if [[ -n "$transcript_path" && -f "$transcript_path" ]]; then
   # Last timestamp in the transcript = last turn that warmed the cache. Scan only
   # the tail (bounded) and tolerate non-JSON lines via fromjson?.
@@ -179,15 +180,12 @@ if [[ -n "$transcript_path" && -f "$transcript_path" ]]; then
     clean=${last_ts%Z}; clean=${clean%.*}
     last_epoch=$(date -j -u -f "%Y-%m-%dT%H:%M:%S" "$clean" +%s 2>/dev/null || true)
     if [[ -n "$last_epoch" ]]; then
-      now=$(date +%s)
-      expiry=$(( last_epoch + CACHE_TTL_SECONDS ))
-      if (( now >= expiry )); then
+      remaining=$(( last_epoch + CACHE_TTL_SECONDS - $(date +%s) ))
+      if (( remaining <= 0 )); then
         right+=("${orange}⚠ uncached${reset}")
-      else
-        # Local wall-clock expiry, e.g. " 3:47PM" → "3:47p"
-        clk=$(date -r "$expiry" "+%l:%M%p" 2>/dev/null | tr 'APM' 'apm')
-        clk="${clk# }"; clk="${clk%m}"
-        right+=("${grey}cache→${clk}${reset}")
+      elif (( remaining <= CACHE_WARN_SECONDS )); then
+        mins=$(( (remaining + SECONDS_PER_MINUTE - 1) / SECONDS_PER_MINUTE ))
+        right+=("${grey}⏳${mins}m${reset}")
       fi
     fi
   fi
